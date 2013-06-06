@@ -30,8 +30,7 @@ end
 #  erb :drinkorder
 #end
 
-get '/venue/:venue' do
-  @venue = "#{params[:venue]}"
+get '/:venue/:table/drinkorder' do
   erb :drinkorder
 end
 
@@ -39,17 +38,17 @@ end
 #  erb :order_confirm
 #end
 
-get '/checkin/:venue' do 
+get '/:venue/checkin' do 
+  @venue = params[:venue]
   erb :login_form
 end
 
-post '/checkin/attempt' do
-  @firstname = params['firstname']
-  @lastname = params['username']
-  @table = params['table']
+post '/:venue/:table/attempt' do
+  @venue = params[:venue]
+  @table = params[:table]
   session[:identity] = params['username']
   #where_user_came_from = session[:previous_url] || '/'
-  redirect '/venue/219west'
+  redirect '/:venue/:table/drinkorder'
 end
 
 get '/logout' do
