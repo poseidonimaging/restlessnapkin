@@ -9,7 +9,7 @@ end
 
 helpers do
   def username
-    session[:identity] ? session[:identity] : 'Hello stranger'
+    session[:identity] ? session[:identity] : 'Hello Stranger'
   end
 end
 
@@ -22,26 +22,39 @@ before '/secure/*' do
 end
 
 get '/' do
-  erb 'Can you handle a <a href="/secure/place">secret</a>?'
+  erb :checkin
 end
 
-get '/form' do
-  erb :form
+#post '/checkin' do
+#  @venue = params['venue']
+#  erb :drinkorder
+#end
+
+get '/venue/:venue' do
+  @venue = "#{params[:venue]}"
+  erb :drinkorder
 end
 
-get '/login/form' do 
+#post '/orderconfirm' do
+#  erb :order_confirm
+#end
+
+get '/checkin/:venue' do 
   erb :login_form
 end
 
-post '/login/attempt' do
+post '/checkin/attempt' do
+  @firstname = params['firstname']
+  @lastname = params['username']
+  @table = params['table']
   session[:identity] = params['username']
-  where_user_came_from = session[:previous_url] || '/'
-  redirect to where_user_came_from 
+  #where_user_came_from = session[:previous_url] || '/'
+  redirect '/venue/219west'
 end
 
 get '/logout' do
   session.delete(:identity)
-  erb "<div class='alert alert-message'>Logged out</div>"
+  erb "<div class='alert alert-message'>Your check will arrive shortly</div>"
 end
 
 
