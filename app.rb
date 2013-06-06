@@ -34,9 +34,9 @@ get '/:venue/:table/drinkorder' do
   erb :drinkorder
 end
 
-#post '/orderconfirm' do
-#  erb :order_confirm
-#end
+post '/confirm' do
+  erb :confirm
+end
 
 get '/:venue/checkin' do 
   @venue = params[:venue]
