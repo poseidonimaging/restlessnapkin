@@ -1,13 +1,14 @@
 <div class="container-fluid">
 	<div class="span12">
 
-		<h1><%= @venue %><%= @table %></h1>
-
 		<form action='/confirm' method='post' class="form-horizontal">
   			
-  			<p><input class="span12" type="text" name='order1' placeholder="2 Tito's and Sodas with Lime" autofocus></p>
+			<p><span class="span8 uneditable-input"><%= venue %></span>
+				<span class="span4 uneditable-input"><%= table %></span></p>
 
-  			<p><input class="span12" type="text" name='order2' placeholder="3 Miller Lite Drafts"></p>
+  			<p><input class="span12" type="text" name='order1' placeholder="ex. 2 Tito's and Sodas with Lime" autofocus></p>
+
+  			<p><input class="span12" type="text" name='order2'></p>
 
   			<p><input class="span12" type="text" name='order3'></p>
 

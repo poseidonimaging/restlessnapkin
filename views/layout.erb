@@ -23,7 +23,7 @@
                 <a href="#"
                       class="dropdown-toggle"
                       data-toggle="dropdown">
-                      <%=username%>
+                      <%= username %>
                       <b class="caret"></b>
                 </a>
                 <ul class="dropdown-menu">
@@ -40,7 +40,7 @@
 
 	<div class="container">
 		<%if @error then %>
-			<div class="alert alert-error"><%=@error%></div>
+			<div class="alert alert-error"><%= @error %></div>
 		<% end %>
     	<%= yield %>
 	</div>
