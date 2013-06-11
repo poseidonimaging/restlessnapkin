@@ -33,7 +33,7 @@ get '/' do
   erb :checkin
 end
 
-get '/:venue/checkin' do 
+get '/:venue/checkin/*' do 
   session[:venue] = params['venue']
   erb :login_form
 end
@@ -41,7 +41,6 @@ end
 post '/checkin/attempt' do
   session[:table] = params['table']
   session[:identity] = params['username']
-  #where_user_came_from = session[:previous_url] || '/'
   redirect '/drinkorder'
 end
 
@@ -50,20 +49,9 @@ get '/logout' do
   erb "<div class='alert alert-message'>Your check will arrive shortly</div>"
 end
 
-#post '/checkin' do
-#  @venue = params['venue']
-#  erb :drinkorder
-#end
-
 get '/drinkorder' do
   erb :drinkorder
 end
-
-#post '/:venue/:table' do
-#  @venue = params[:venue]
-#  @table = params[:table]
-#  erb :drinkorder
-#end
 
 post '/confirm' do
   erb :confirm
