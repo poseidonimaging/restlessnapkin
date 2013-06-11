@@ -1,9 +1,11 @@
 <div class="container-fluid">
 	<div class="span12">
 
+		<h1><%= venue %></h1>
+
 		<form action='/checkin/attempt' method='post' class="form-horizontal">
 			
-			<p><span class="span12 uneditable-input" name='<%= venue %>'><%= venue %></span></p>
+			
 
 			<p>
 			<input class="span12" type="text" name='firstname' placeholder="Firstname" autofocus>
