@@ -8,6 +8,14 @@ configure do
 end
 
 helpers do
+  def phone
+    session[:phone] ? session[:phone] : 'No Phone'
+  end
+
+  def firstname
+    session[:firstname] ? session[:firstname] : 'No Firstname'
+  end
+
   def lastname
     session[:identity] ? session[:identity] : 'Hello Stranger'
   end
@@ -35,12 +43,15 @@ end
 
 get '/:venue/checkin/*' do 
   session[:venue] = params['venue']
+  session[:phone] = params[:splat]
   erb :checkin
 end
 
 post '/checkin/attempt' do
-  session[:table] = params['table']
+  session[:firstname] = params['firstname']
   session[:identity] = params['lastname']
+  session[:table] = params['table']
+  
   redirect '/drinkorder'
 end
 

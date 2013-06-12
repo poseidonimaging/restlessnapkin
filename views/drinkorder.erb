@@ -1,8 +1,8 @@
 <div class="container-fluid">
 	<div class="span12">
-	<div class='alert alert-info'>Be specific so the bartender doesn't totally screw up  your drink order. We'll all be sad if that happens. </div>
+	<div class='alert alert-info'>Be specific so the bartender doesn't totally screw up  your drink order. Everyone will be sad if <%= firstname %>'s drinks are wrong.</div>
 
-		<h3>@<%= venue %> - Table <%= table %></h3>
+		<h3>@<%= venue %> | Table <%= table %> | <%= phone %></h3>
 
 		<form action='/confirm' method='post' class="form-horizontal">
   			
