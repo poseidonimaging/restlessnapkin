@@ -1,18 +1,28 @@
 <div class="container-fluid">
 	<div class="span12">
-    <h2>To order drinks, check in to a venue</h2>
 
-		<form action='/:venue/checkin' method='post' class="form-horizontal">
+		<h3>@<%= venue %></h3>
+
+		<form action='/checkin/attempt' method='post' class="form-horizontal">
 			
-      <p><select>
-        <option>219West</option>
-        <option>CafeJosie</option>
-        <option>AbelsontheLake</option>
-        <option>Woodrows</option>
-        <option>Clarks</option>
-      </select></p>
+			
 
-  		<p><input name='<%= @venue %>' class="btn btn-large btn-info" type='submit' value='Checkin'></p>
-      </form>
-  </div>
+			<p>
+			<input class="span12" type="text" name='firstname' placeholder="Firstname" autofocus>
+			</p>
+
+			<p>
+  			<input class="span12" type="text" name='lastname' placeholder="Lastname">
+  			</p>
+
+  			<p>
+  			<div class="input-prepend">
+  				<span class="add-on">Table #</span>
+  				<input class="span2" id="prependedInput" type="text" name='table' placeholder="4">
+			</div>
+			</p>
+
+  			<p><input class="btn btn-large btn-info" type='submit' value='Check in'></p>
+		</form>
+	</div>
 </div>
