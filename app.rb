@@ -1,6 +1,12 @@
 
 require 'rubygems'
 require 'sinatra'
+require 'sinatra/activerecord'
+
+set :database, "sqlite3:///orders.db"
+
+class Order < ActiveRecord::Base
+end
 
 configure do
   set :public_folder, Proc.new { File.join(root, "static") }
@@ -29,22 +35,15 @@ helpers do
   end
 end
 
-before '/secure/*' do
-  if !session[:identity] then
-    session[:previous_url] = request.path
-    @error = 'Sorry guacamole, you need to be logged in to visit ' + request.path
-    halt erb(:checkin)
-  end
-end
-
 get '/' do
-  erb :checkin
+  @orders = Order.order("created_at DESC")
+  erb :"orders/index"
 end
 
 get '/:venue/checkin/*' do 
   session[:venue] = params['venue']
   session[:phone] = params[:splat]
-  erb :checkin
+  erb :"orders/checkin"
 end
 
 post '/checkin/attempt' do
@@ -52,7 +51,34 @@ post '/checkin/attempt' do
   session[:identity] = params['lastname']
   session[:table] = params['table']
   
-  redirect '/drinkorder'
+  redirect '/orders/drinks'
+end
+
+# Get the New Order form
+get '/orders/drinks' do
+  @order = Order.new
+  erb :"orders/drinks"
+end
+
+# New Order form sends POST request here
+post '/orders' do
+  @order = Order.new(params[:order])
+  if @order.save
+    redirect "order/#{@order.id}"
+  else
+    erb :"orders/drinks"
+  end
+end
+
+# Get individual orders
+get "/orders/:id" do
+  @order = Order.find(params[:id])
+  @lastname = @order.lastname
+  erb :"orders/show"
+end
+
+post '/confirm' do
+  erb :"orders/confirm"
 end
 
 get '/checkout' do
@@ -65,16 +91,12 @@ post '/checkout' do
   erb "<div class='alert alert-success'>Your check will arrive shortly</div>"
 end
 
-get '/drinkorder' do
-  erb :drinkorder
-end
-
-post '/drinkorder' do
-  erb :drinkorder
-end
-
-post '/confirm' do
-  erb :confirm
+before '/secure/*' do
+  if !session[:identity] then
+    session[:previous_url] = request.path
+    @error = 'Sorry guacamole, you need to be logged in to visit ' + request.path
+    halt erb(:checkin)
+  end
 end
 
 get '/secure/place' do

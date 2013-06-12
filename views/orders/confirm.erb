@@ -1,0 +1,16 @@
+<div class="container-fluid">
+	<div class="span12">
+    <div class='alert alert-info'><%= firstname %>, your order has been sent to the bar.</div>
+
+    <form action='/drinkorder' method='post' class="form-horizontal">
+    	<p><input class="btn btn-large btn-info" type='submit' value='Another Drink Order'></p>
+	</form>
+
+    <h1>or</h1>
+    
+    <form action='/checkout' method='post' class="form-horizontal">
+    	<p><input class="btn btn-large btn-danger" type='submit' value='Get the Check'></p>
+    </form>
+
+  </div>
+</div>

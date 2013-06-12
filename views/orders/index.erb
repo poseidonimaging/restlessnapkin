@@ -1,0 +1,10 @@
+<h1>All the Orders</h1>
+<ul>
+<% @orders.each do |order| %>
+  <li>
+    <h2><a href="/orders/<%= order.id %>"><%= order.lastname %></a>
+    <span><%= order.drinks %></span>
+    </h2>
+  </li>
+<% end %>
+</ul>
