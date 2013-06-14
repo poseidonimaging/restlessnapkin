@@ -4,6 +4,10 @@ require 'sinatra'
 require 'sinatra/activerecord'
 require 'open-uri'
 require 'uri'
+#require 'twilio-ruby'
+
+#phone_number = '+15128616050'
+#Twilio::REST::Client.new(ACc3d70d00cdb2818a1ea2564283aeffce,35583e7b60273fbd9560991dd0969860)
 
 configure :development do
   set :database, "sqlite3:///orders.db"
