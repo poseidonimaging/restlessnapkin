@@ -53,6 +53,13 @@ helpers do
   end
 end
 
+#before '/*/*' do
+#  if !session[:lastname] then
+#    session[:previous_url] = request.path
+#    erb(:checkin_alert)
+#  end
+#end
+
 #Shows all orders by all users
 get '/' do
   @orders = Order.order("created_at DESC")
@@ -68,7 +75,21 @@ end
 get '/:venue/checkin/*' do 
   session[:venue] = params['venue']
   session[:phone] = params[:splat]
-  erb :"orders/checkin"
+  erb :"/checkin"
+end
+
+# Get form for main menu drink order access
+get '/orders/drinks' do
+  if session[:lastname]
+    @order = Order.new
+    erb :"orders/drinks"
+  else
+    @order = Order.new
+    session[:lastname] = params['lastname']
+    session[:firstname] = params['firstname']
+    session[:table] = params['table']
+    erb :"orders/drinks"
+  end
 end
 
 # After checkin, shows form for drink order. Upon reordering, keeps session via lastname
@@ -94,27 +115,43 @@ post '/orders' do
   @order.lastname = session[:lastname]
   @order.phone = session[:phone]
   if @order.save
-    redirect "/confirm"
+    redirect "/orders/confirm"
   else
     erb :"orders/drinks"
   end
 end
 
-# Get individual orders
-#get "/orders/:id" do
-#  @order = Order.find(params[:id])
-#  erb :"orders/show"
+#Get orders by user's table
+#get "/orders/:venue" do
+#  @order = Order.find(params[:venue])
+#  erb :"orders/table"
 #end
 
-#Get orders by user's table
-get "/orders/:venue" do
-  @order = Order.find(params[:venue])
-  erb :"orders/table"
+# Provides next step options to user after order
+get '/orders/confirm' do
+  erb :"orders/confirm"
 end
 
-# Provides next step options to user after order
-get '/confirm' do
-  erb :"/confirm"
+# Table change via main menu
+get '/table/change' do
+  erb :"table/change"
+end
+
+# Provides next step options to user after table change
+post '/table/change' do
+  erb :"table/change"
+end
+
+# Provides next step options to user after table change
+post '/table/confirm' do
+  session[:table] = params['table']
+  erb :"table/confirm"
+end
+
+# Showing all orders via main menu
+get '/orders/index' do
+  @orders = Order.order("created_at DESC")
+  erb :"orders/index"
 end
 
 # Showing all orders via confirm screen
@@ -123,17 +160,25 @@ post '/orders/index' do
   erb :"orders/index"
 end
 
+# Get individual orders
+get "/orders/:id" do
+  @order = Order.find(params[:id])
+  erb :"orders/show"
+end
+
 #User checkout of venue
 get '/checkout' do
   session.delete(:lastname)
-  erb "<div class='alert alert-success'>Your check will arrive shortly</div>"
+  erb :checkout
 end
 
 #User checkout of venue
 post '/checkout' do
   session.delete(:lastname)
-  erb "<div class='alert alert-success'>Your check will arrive shortly</div>"
+  erb :checkout
 end
+
+
 
 #Ancillary secure pages from sinatra/bootstrap github repo
 before '/secure/*' do

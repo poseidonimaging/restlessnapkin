@@ -2,19 +2,9 @@
 	<div class="span12">
 	<div class='alert alert-info'>Tell us who you are and where you're sitting.</div>
 
-		<h3>@<%= venue %></h3>
+		<h3><%= firstname %> <%= lastname %> @<%= venue %></h3>
 
-		<form action='/orders/drinks' method='post' class="form-horizontal">
-			
-			
-
-			<p>
-			<input class="span12" type="text" name='firstname' placeholder="Firstname" autofocus>
-			</p>
-
-			<p>
-  			<input class="span12" type="text" name='lastname' placeholder="Lastname">
-  			</p>
+		<form action='/table/confirm' method='post' class="form-horizontal">
 
   			<p>
   			<div class="input-prepend">
