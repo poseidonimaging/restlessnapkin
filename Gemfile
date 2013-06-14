@@ -1,8 +1,11 @@
 source "https://rubygems.org"
-gem "pg"
 gem "sinatra"
 gem "activerecord"
 gem "sinatra-activerecord"
+
+group :production, :staging do
+	gem "pg"
+end
 
 group :development do
 	gem "sqlite3"
