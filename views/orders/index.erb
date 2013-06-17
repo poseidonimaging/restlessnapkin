@@ -1,19 +1,12 @@
 <div class="container-fluid">
 	<div class="span12">
-		<h1>All Orders</h1>
-			<table class="table table-striped">
-				<tbody>
-	
-					<% @orders.each do |order| %>
-  				<tr>
-    				<td><b><a href="/orders/<%= order.id %>"><%= order.lastname %></a></b></td>
-    				<td><b><%= order.table %></b></td>
-    				<td><%= pretty_date(order.created_at) %></td>
-    				<td><b><%= order.drinks %></b></td>
-  				</tr>
-  				<% end %>
-
- 				</tbody>
-			</table>
+		<h1>All Orders</h1><br>
+			<% @orders.each do |order| %>
+  				
+    			<h4><a href="/orders/<%= order.id %>"><%= order.lastname %></a> at Table <%= order.table %></h4>
+    			<h3><%= order.drinks %></h3>
+    			<p><%= pretty_date(order.created_at) %></p>
+    			<br>
+  		<% end %>
 	</div>
 </div>
