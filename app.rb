@@ -28,6 +28,11 @@ configure :production do
 end
 
 class Order < ActiveRecord::Base
+  validates :venue, presence: true, length: { minimum: 3}
+  validates :table, presence: true, length: { minimum: 1}
+  validates :lastname, presence: true, length: { minimum: 2}
+  validates :phone, presence: true, length: { minimum: 10}
+  validates :drinks, presence: true, length: { minimum: 5}
 end
 
 configure do
@@ -55,6 +60,22 @@ helpers do
   def table
     session[:table] ? session[:table] : 'No Table'
   end
+
+  def pretty_date(stamp)
+    now = Time.new
+    diff = now - stamp
+    day_diff = ((now - stamp) / 86400).floor
+ 
+    day_diff == 0 && (
+      diff < 60 && "just now" ||
+      diff < 120 && "1 minute ago" ||
+      diff < 3600 && (diff / 60).floor.to_s + " minutes ago" ||
+      diff < 7200 && "1 hour ago" ||
+      diff < 86400 && (diff/3600).floor.to_s + " hours ago") ||
+    day_diff == 1 && "Yesterday" ||
+    day_diff < 7 && day_diff.to_s + " days ago" ||
+    day_diff < 31 && (day_diff.to_s / 7).ceil + " weeks ago";
+  end
 end
 
 #before '/*/*' do
@@ -78,7 +99,7 @@ end
 #Looks at the venue and the phone number(splat), then shows form for checkin
 get '/:venue/checkin/*' do 
   session[:venue] = params['venue']
-  session[:phone] = params[:splat]
+  session[:phone] = params[:splat].first
   erb :"/checkin"
 end
 
