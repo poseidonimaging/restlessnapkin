@@ -3,7 +3,7 @@
     <h1>Orders for this User</h1><br>
       <% @orders.each do |order| %>
           
-          <h4><%= order.lastname %> at <a href="/venue/<%= order.venue %>"><%= order.venue %></a> Table <%= order.table %></h4>
+          <h4><%= order.lastname %> at <a href="/venue/<%= order.venue %>"><%= order.venue %></a> <a href="/venue/<%= order.venue %>/table/<%= order.table %>">Table <%= order.table %></a></h4>
           <h3><a href="/orders/<%= order.id %>"><%= order.drinks %></a></h3>
           <p><%= pretty_date(order.created_at) %> from <%= order.phone %></p>
           <br>

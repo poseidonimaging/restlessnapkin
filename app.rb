@@ -205,8 +205,12 @@ get "/user/:phone" do
 end
 
 # Get orders by venue and table
-#get "/orders/:venue/:table" do
-#  @order = Order.
+get "/venue/:venue/table/:table" do
+  @venue = params[:venue]
+  @table = params[:table]
+  @orders = Order.where(:venue => params[:venue],:table => params[:table]).order("created_at DESC")
+  erb :"venue/table/show"
+end
 
 #User checkout of venue
 get '/checkout' do
