@@ -191,6 +191,22 @@ get "/orders/:id" do
   erb :"orders/show"
 end
 
+# Get orders by venue
+get "/orders/:venue" do
+  @order = Order.find(params[:venue])
+  erb :"orders/venue"
+end
+
+# Get orders by venue and table
+#get "/orders/:venue/:table" do
+#  @order = Order.
+
+# Get orders by user(phone)
+get "/orders/:phone" do
+  @order = Order.find(params[:phone])
+  erb :"orders/user"
+end
+
 #User checkout of venue
 get '/checkout' do
   session.delete(:lastname)

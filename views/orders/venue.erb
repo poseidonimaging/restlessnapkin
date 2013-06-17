@@ -1,6 +1,6 @@
 <div class="container-fluid">
 	<div class="span12">
-		<h1>All Orders</h1><br>
+		<h1><%= order.venue %></h1><br>
 			<% @orders.each do |order| %>
   				
     			<h4><a href="/orders/<%= order.id %>"><%= order.lastname %></a> at <%= order.venue %> Table <%= order.table %></h4>
