@@ -1,0 +1,12 @@
+<div class="container-fluid">
+  <div class="span12">
+    <h1><%= @venue %></h1><br>
+      <% @orders.each do |order| %>
+          
+          <h4><a href="/user/<%= order.phone %>"><%= order.lastname %></a> at <%= order.venue %> Table <%= order.table %></h4>
+          <h3><a href="/orders/<%= order.id %>"><%= order.drinks %></a></h3>
+          <p><%= pretty_date(order.created_at) %> from <a href="/user/<%= order.phone %>"><%= order.phone %></a></p>
+          <br>
+      <% end %>
+  </div>
+</div>

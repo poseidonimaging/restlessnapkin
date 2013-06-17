@@ -192,20 +192,21 @@ get "/orders/:id" do
 end
 
 # Get orders by venue
-get "/orders/:venue" do
-  @order = Order.find(params[:venue])
-  erb :"orders/venue"
+get "/venue/:venue" do
+  @venue = params[:venue]
+  @orders = Order.where(:venue => params[:venue]).order("created_at DESC")
+  erb :"venue/show"
+end
+
+# Get orders by user(phone)
+get "/user/:phone" do
+  @orders = Order.where(:phone => params[:phone]).order("created_at DESC")
+  erb :"user/show"
 end
 
 # Get orders by venue and table
 #get "/orders/:venue/:table" do
 #  @order = Order.
-
-# Get orders by user(phone)
-get "/orders/:phone" do
-  @order = Order.find(params[:phone])
-  erb :"orders/user"
-end
 
 #User checkout of venue
 get '/checkout' do
