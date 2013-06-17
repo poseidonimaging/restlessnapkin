@@ -5,7 +5,7 @@
   				
     			<h4><a href="/orders/<%= order.id %>"><%= order.lastname %></a> at Table <%= order.table %></h4>
     			<h3><%= order.drinks %></h3>
-    			<p><%= pretty_date(order.created_at) %></p>
+    			<p><%= pretty_date(order.created_at) %> from <%= order.phone %></p>
     			<br>
   		<% end %>
 	</div>
