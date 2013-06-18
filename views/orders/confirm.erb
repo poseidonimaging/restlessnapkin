@@ -1,22 +1,17 @@
-<div class="container-fluid">
-	<div class="span12">
-    <div class='alert alert-info'><%= firstname %>, your order has been sent to the bar.</div>
+<div class='alert alert-info'><%= firstname %>, your order has been sent to the bar.</div>
 
-    <form action='/orders/drinks' method='post' class="form-horizontal">
-    	<p><input class="btn btn-large btn-info" type='submit' value='Another Drink Order'></p>
+  <form action='/orders/drinks' method='post' class="form-horizontal">
+    <p><input class="btn btn-large btn-info" type='submit' value='Another Drink Order'></p>
 	</form>
 
-    <form action='/' method='post' class="form-horizontal">
-        <p><input class="btn btn-large" type='submit' value='See All Orders'></p>
-    </form>
+  <form action='/' method='post' class="form-horizontal">
+    <p><input class="btn btn-large" type='submit' value='See All Orders'></p>
+  </form>
 
-    <form action='/table/change' method='post' class="form-horizontal">
-        <p><input class="btn btn-large" type='submit' value='Change Tables'></p>
-    </form>
+  <form action='/table/change' method='post' class="form-horizontal">
+    <p><input class="btn btn-large" type='submit' value='Change Tables'></p>
+  </form>
     
-    <form action='/checkout' method='post' class="form-horizontal">
-    	<p><input class="btn btn-large btn-danger" type='submit' value='Get the Check'></p>
-    </form>
-
-  </div>
-</div>
+  <form action='/checkout' method='post' class="form-horizontal">
+    <p><input class="btn btn-large btn-danger" type='submit' value='Get the Check'></p>
+  </form>

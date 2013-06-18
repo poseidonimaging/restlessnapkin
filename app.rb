@@ -2,10 +2,11 @@
 require 'rubygems'
 require 'sinatra'
 require 'sinatra/activerecord'
+require 'json'
 require 'open-uri'
 require 'uri'
-#require 'twilio-ruby'
 
+#require 'twilio-ruby'
 #phone_number = '+15128616050'
 #Twilio::REST::Client.new(ACc3d70d00cdb2818a1ea2564283aeffce,35583e7b60273fbd9560991dd0969860)
 
@@ -78,17 +79,14 @@ helpers do
   end
 end
 
-#before '/*/*' do
-#  if !session[:lastname] then
-#    session[:previous_url] = request.path
-#    erb(:checkin_alert)
-#  end
+#before do
+#    content_type 'application/json'
 #end
 
 #Shows all orders by all users
 get '/' do
   @orders = Order.order("created_at DESC")
-  erb :"orders/index"
+  erb :"orders/index", :layout => (request.xhr? ? false : :layout)
 end
 
 post '/' do
@@ -113,7 +111,7 @@ get '/orders/drinks' do
     session[:lastname] = params['lastname']
     session[:firstname] = params['firstname']
     session[:table] = params['table']
-    erb :"orders/drinks"
+    erb :"orders/drinks", :layout => (request.xhr? ? false : :layout)
   end
 end
 
@@ -127,7 +125,7 @@ post '/orders/drinks' do
     session[:lastname] = params['lastname']
     session[:firstname] = params['firstname']
     session[:table] = params['table']
-    erb :"orders/drinks"
+    erb :"orders/drinks", :layout => (request.xhr? ? false : :layout)
   end
 end
 
