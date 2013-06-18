@@ -5,4 +5,12 @@
      <h3><a href="/orders/<%= order.id %>"><%= order.drinks %></a></h3>
      <p><%= pretty_date(order.created_at) %> from <a href="/user/<%= order.phone %>"><%= order.phone %></a></p>
      <br>
+     <script>
+      function updateContent(){
+        // Assuming we have #content
+        $('#content').load('/venue/<%= order.venue %>/table/<%= order.table %>');
+      }
+      setTimeout( "updateContent()", 10000 );
+    </script>
+</div>
   <% end %>
