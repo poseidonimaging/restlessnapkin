@@ -7,11 +7,10 @@
     <p><%= pretty_date(order.created_at) %> from <%= order.phone %></p>
     <br>
     <script>
-      function updateContent(){
-        // Assuming we have #content
-        $('#content').load('/user/<%= order.phone %>');
-      }
-      setTimeout( "updateContent()", 15000 );
+      $(document).ready(function() {
+      	setTimeout(function() {
+        	$('#content').load('/');}, 10000);
+      });
     </script>
   <% end %>
 </div>

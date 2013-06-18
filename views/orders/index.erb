@@ -8,10 +8,9 @@
     	<br>
   	<% end %>
 		<script>
-      function updateContent(){
-        // Assuming we have #content
-        $('#content').load('/');
-      }
-      setTimeout( "updateContent()", 15000 );
+      $(document).ready(function() {
+      	setTimeout(function() {
+        	$('#content').load('/');}, 10000);
+      });
     </script>
 </div>
