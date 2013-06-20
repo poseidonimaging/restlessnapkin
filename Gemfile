@@ -2,11 +2,11 @@ source "https://rubygems.org"
 gem "sinatra"
 gem "activerecord"
 gem "sinatra-activerecord"
-gem "json"
+#gem "json"
 
 group :production, :staging do
 	gem "pg"
-	gem "newrelic_rpm"
+	#gem "newrelic_rpm"
 end
 
 group :development do
