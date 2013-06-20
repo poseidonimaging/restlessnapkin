@@ -3,7 +3,6 @@ ruby '1.9.3'
 gem "sinatra"
 gem "activerecord"
 gem "sinatra-activerecord"
-gem "json"
 
 group :production, :staging do
 	gem "pg"

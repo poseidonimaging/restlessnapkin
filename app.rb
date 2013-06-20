@@ -2,7 +2,6 @@
 require 'rubygems'
 require 'sinatra'
 require 'sinatra/activerecord'
-require 'json'
 require 'newrelic_rpm'
 require 'open-uri'
 require 'uri'
