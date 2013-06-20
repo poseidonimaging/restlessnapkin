@@ -105,7 +105,6 @@ end
 # Get form for main menu drink order access
 get '/orders/drinks' do
   if session[:lastname]
-    @order = Order.new
     erb :"orders/drinks"
   else
     @order = Order.new
@@ -120,6 +119,9 @@ end
 post '/orders/drinks' do
   if session[:venue]
     @order = Order.new
+    session[:lastname] = params['lastname']
+    session[:firstname] = params['firstname']
+    session[:table] = params['table']
     erb :"orders/drinks"
   else
     erb "There has been an error saving your checkin information. Please try again later."
