@@ -122,11 +122,7 @@ post '/orders/drinks' do
     @order = Order.new
     erb :"orders/drinks"
   else
-    @order = Order.new
-    session[:lastname] = params['lastname']
-    session[:firstname] = params['firstname']
-    session[:table] = params['table']
-    erb :"orders/drinks", :layout => (request.xhr? ? false : :layout)
+    erb "There has been an error."
   end
 end
 
