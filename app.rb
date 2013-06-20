@@ -40,7 +40,7 @@ end
 configure do
   set :public_folder, Proc.new { File.join(root, "static") }
   enable :sessions
-  set :session_secret, ENV['SESSION_KEY']
+  set :session_secret, 'H65uT0A4s9uY41w3'
 end
 
 helpers do
@@ -123,7 +123,7 @@ post '/orders/drinks' do
     @order = Order.new
     erb :"orders/drinks"
   else
-    erb "There has been an error."
+    erb "There has been an error saving your checkin information. Please try again later."
   end
 end
 
