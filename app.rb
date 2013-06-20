@@ -14,7 +14,7 @@ require 'uri'
 configure do
   set :public_folder, Proc.new { File.join(root, "static") }
   enable :sessions
-  set :session_secret, ENV['SESSION_KEY'] ||= 'super secret'
+  set :session_secret, ENV['SESSION_KEY']
 end
 
 configure :development do
@@ -100,7 +100,11 @@ end
 get '/:venue/checkin/*' do 
   session[:venue] = params['venue']
   session[:phone] = params[:splat].first
-  erb :"/checkin"
+  if session[:venue]
+    erb :"/checkin"
+  else
+    erb "I have not saved the venue"
+  end
 end
 
 # Get form for main menu drink order access
