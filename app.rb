@@ -40,6 +40,7 @@ end
 configure do
   set :public_folder, Proc.new { File.join(root, "static") }
   enable :sessions
+  set :session_secret, ENV['SESSION_KEY']
 end
 
 helpers do
