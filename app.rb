@@ -81,9 +81,9 @@ helpers do
   end
 end
 
-#before do
-#    content_type 'application/json'
-#end
+before do
+    content_type 'application/json'
+end
 
 #Shows all orders by all users
 get '/' do
