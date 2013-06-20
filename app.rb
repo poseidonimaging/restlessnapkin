@@ -11,12 +11,15 @@ require 'uri'
 #phone_number = '+15128616050'
 #Twilio::REST::Client.new(ACc3d70d00cdb2818a1ea2564283aeffce,35583e7b60273fbd9560991dd0969860)
 
+configure do
+  set :public_folder, Proc.new { File.join(root, "static") }
+  enable :sessions
+  set :session_secret, ENV['SESSION_KEY'] ||= 'super secret'
+end
+
 configure :development do
   set :database, "sqlite3:///orders.db"
 end
-
-enable :sessions
-  set :session_secret, 'H65uT0A4s9uY41w3'
 
 configure :production do
   db = URI.parse(ENV['DATABASE_URL'] || 'postgres://localhost/mydb')
@@ -38,10 +41,6 @@ class Order < ActiveRecord::Base
   validates :lastname, presence: true, length: { minimum: 2}
   validates :phone, presence: true, length: { minimum: 10}
   validates :drinks, presence: true, length: { minimum: 5}
-end
-
-configure do
-  set :public_folder, Proc.new { File.join(root, "static") }
 end
 
 helpers do

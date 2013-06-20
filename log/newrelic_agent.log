@@ -22727,3 +22727,951 @@
 [06/20/13 11:19:58 -0500 Chadwick-Air.local (3159)] INFO : Installing Net instrumentation
 [06/20/13 11:19:58 -0500 Chadwick-Air.local (3159)] INFO : Installing Sinatra instrumentation
 [06/20/13 11:19:58 -0500 Chadwick-Air.local (3159)] INFO : Finished instrumentation
+[06/20/13 11:20:09 -0500 Chadwick-Air.local (3163)] INFO : Starting the New Relic agent in "development" environment.
+[06/20/13 11:20:09 -0500 Chadwick-Air.local (3163)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "development" section of your newrelic.yml.
+[06/20/13 11:20:09 -0500 Chadwick-Air.local (3163)] INFO : Reading configuration from newrelic.yml
+[06/20/13 11:20:09 -0500 Chadwick-Air.local (3163)] INFO : Disabling the Request Sampler.
+[06/20/13 11:20:09 -0500 Chadwick-Air.local (3163)] INFO : Environment: development
+[06/20/13 11:20:09 -0500 Chadwick-Air.local (3163)] INFO : Dispatcher: webrick
+[06/20/13 11:20:09 -0500 Chadwick-Air.local (3163)] INFO : Application: My Application
+[06/20/13 11:20:09 -0500 Chadwick-Air.local (3163)] WARN : Agent configured not to send data in this environment.
+[06/20/13 11:20:09 -0500 Chadwick-Air.local (3163)] INFO : Installing ActiveRecord instrumentation
+[06/20/13 11:20:09 -0500 Chadwick-Air.local (3163)] INFO : Installing Net instrumentation
+[06/20/13 11:20:09 -0500 Chadwick-Air.local (3163)] INFO : Installing Sinatra instrumentation
+[06/20/13 11:20:09 -0500 Chadwick-Air.local (3163)] INFO : Finished instrumentation
+[06/20/13 11:20:20 -0500 Chadwick-Air.local (3166)] INFO : Starting the New Relic agent in "development" environment.
+[06/20/13 11:20:20 -0500 Chadwick-Air.local (3166)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "development" section of your newrelic.yml.
+[06/20/13 11:20:20 -0500 Chadwick-Air.local (3166)] INFO : Reading configuration from newrelic.yml
+[06/20/13 11:20:20 -0500 Chadwick-Air.local (3166)] INFO : Disabling the Request Sampler.
+[06/20/13 11:20:20 -0500 Chadwick-Air.local (3166)] INFO : Environment: development
+[06/20/13 11:20:20 -0500 Chadwick-Air.local (3166)] INFO : Dispatcher: webrick
+[06/20/13 11:20:20 -0500 Chadwick-Air.local (3166)] INFO : Application: My Application
+[06/20/13 11:20:20 -0500 Chadwick-Air.local (3166)] WARN : Agent configured not to send data in this environment.
+[06/20/13 11:20:20 -0500 Chadwick-Air.local (3166)] INFO : Installing ActiveRecord instrumentation
+[06/20/13 11:20:20 -0500 Chadwick-Air.local (3166)] INFO : Installing Net instrumentation
+[06/20/13 11:20:20 -0500 Chadwick-Air.local (3166)] INFO : Installing Sinatra instrumentation
+[06/20/13 11:20:20 -0500 Chadwick-Air.local (3166)] INFO : Finished instrumentation
+[06/20/13 11:20:31 -0500 Chadwick-Air.local (3169)] INFO : Starting the New Relic agent in "development" environment.
+[06/20/13 11:20:31 -0500 Chadwick-Air.local (3169)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "development" section of your newrelic.yml.
+[06/20/13 11:20:31 -0500 Chadwick-Air.local (3169)] INFO : Reading configuration from newrelic.yml
+[06/20/13 11:20:31 -0500 Chadwick-Air.local (3169)] INFO : Disabling the Request Sampler.
+[06/20/13 11:20:31 -0500 Chadwick-Air.local (3169)] INFO : Environment: development
+[06/20/13 11:20:31 -0500 Chadwick-Air.local (3169)] INFO : Dispatcher: webrick
+[06/20/13 11:20:31 -0500 Chadwick-Air.local (3169)] INFO : Application: My Application
+[06/20/13 11:20:31 -0500 Chadwick-Air.local (3169)] WARN : Agent configured not to send data in this environment.
+[06/20/13 11:20:31 -0500 Chadwick-Air.local (3169)] INFO : Installing ActiveRecord instrumentation
+[06/20/13 11:20:31 -0500 Chadwick-Air.local (3169)] INFO : Installing Net instrumentation
+[06/20/13 11:20:31 -0500 Chadwick-Air.local (3169)] INFO : Installing Sinatra instrumentation
+[06/20/13 11:20:31 -0500 Chadwick-Air.local (3169)] INFO : Finished instrumentation
+[06/20/13 11:20:42 -0500 Chadwick-Air.local (3173)] INFO : Starting the New Relic agent in "development" environment.
+[06/20/13 11:20:42 -0500 Chadwick-Air.local (3173)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "development" section of your newrelic.yml.
+[06/20/13 11:20:42 -0500 Chadwick-Air.local (3173)] INFO : Reading configuration from newrelic.yml
+[06/20/13 11:20:42 -0500 Chadwick-Air.local (3173)] INFO : Disabling the Request Sampler.
+[06/20/13 11:20:42 -0500 Chadwick-Air.local (3173)] INFO : Environment: development
+[06/20/13 11:20:42 -0500 Chadwick-Air.local (3173)] INFO : Dispatcher: webrick
+[06/20/13 11:20:42 -0500 Chadwick-Air.local (3173)] INFO : Application: My Application
+[06/20/13 11:20:42 -0500 Chadwick-Air.local (3173)] WARN : Agent configured not to send data in this environment.
+[06/20/13 11:20:42 -0500 Chadwick-Air.local (3173)] INFO : Installing ActiveRecord instrumentation
+[06/20/13 11:20:42 -0500 Chadwick-Air.local (3173)] INFO : Installing Net instrumentation
+[06/20/13 11:20:42 -0500 Chadwick-Air.local (3173)] INFO : Installing Sinatra instrumentation
+[06/20/13 11:20:42 -0500 Chadwick-Air.local (3173)] INFO : Finished instrumentation
+[06/20/13 11:20:53 -0500 Chadwick-Air.local (3179)] INFO : Starting the New Relic agent in "development" environment.
+[06/20/13 11:20:53 -0500 Chadwick-Air.local (3179)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "development" section of your newrelic.yml.
+[06/20/13 11:20:53 -0500 Chadwick-Air.local (3179)] INFO : Reading configuration from newrelic.yml
+[06/20/13 11:20:53 -0500 Chadwick-Air.local (3179)] INFO : Disabling the Request Sampler.
+[06/20/13 11:20:53 -0500 Chadwick-Air.local (3179)] INFO : Environment: development
+[06/20/13 11:20:53 -0500 Chadwick-Air.local (3179)] INFO : Dispatcher: webrick
+[06/20/13 11:20:53 -0500 Chadwick-Air.local (3179)] INFO : Application: My Application
+[06/20/13 11:20:53 -0500 Chadwick-Air.local (3179)] WARN : Agent configured not to send data in this environment.
+[06/20/13 11:20:53 -0500 Chadwick-Air.local (3179)] INFO : Installing ActiveRecord instrumentation
+[06/20/13 11:20:53 -0500 Chadwick-Air.local (3179)] INFO : Installing Net instrumentation
+[06/20/13 11:20:53 -0500 Chadwick-Air.local (3179)] INFO : Installing Sinatra instrumentation
+[06/20/13 11:20:53 -0500 Chadwick-Air.local (3179)] INFO : Finished instrumentation
+[06/20/13 11:21:04 -0500 Chadwick-Air.local (3183)] INFO : Starting the New Relic agent in "development" environment.
+[06/20/13 11:21:04 -0500 Chadwick-Air.local (3183)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "development" section of your newrelic.yml.
+[06/20/13 11:21:04 -0500 Chadwick-Air.local (3183)] INFO : Reading configuration from newrelic.yml
+[06/20/13 11:21:04 -0500 Chadwick-Air.local (3183)] INFO : Disabling the Request Sampler.
+[06/20/13 11:21:04 -0500 Chadwick-Air.local (3183)] INFO : Environment: development
+[06/20/13 11:21:04 -0500 Chadwick-Air.local (3183)] INFO : Dispatcher: webrick
+[06/20/13 11:21:04 -0500 Chadwick-Air.local (3183)] INFO : Application: My Application
+[06/20/13 11:21:04 -0500 Chadwick-Air.local (3183)] WARN : Agent configured not to send data in this environment.
+[06/20/13 11:21:04 -0500 Chadwick-Air.local (3183)] INFO : Installing ActiveRecord instrumentation
+[06/20/13 11:21:05 -0500 Chadwick-Air.local (3183)] INFO : Installing Net instrumentation
+[06/20/13 11:21:05 -0500 Chadwick-Air.local (3183)] INFO : Installing Sinatra instrumentation
+[06/20/13 11:21:05 -0500 Chadwick-Air.local (3183)] INFO : Finished instrumentation
+[06/20/13 11:21:15 -0500 Chadwick-Air.local (3186)] INFO : Starting the New Relic agent in "development" environment.
+[06/20/13 11:21:15 -0500 Chadwick-Air.local (3186)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "development" section of your newrelic.yml.
+[06/20/13 11:21:15 -0500 Chadwick-Air.local (3186)] INFO : Reading configuration from newrelic.yml
+[06/20/13 11:21:15 -0500 Chadwick-Air.local (3186)] INFO : Disabling the Request Sampler.
+[06/20/13 11:21:15 -0500 Chadwick-Air.local (3186)] INFO : Environment: development
+[06/20/13 11:21:15 -0500 Chadwick-Air.local (3186)] INFO : Dispatcher: webrick
+[06/20/13 11:21:15 -0500 Chadwick-Air.local (3186)] INFO : Application: My Application
+[06/20/13 11:21:15 -0500 Chadwick-Air.local (3186)] WARN : Agent configured not to send data in this environment.
+[06/20/13 11:21:15 -0500 Chadwick-Air.local (3186)] INFO : Installing ActiveRecord instrumentation
+[06/20/13 11:21:16 -0500 Chadwick-Air.local (3186)] INFO : Installing Net instrumentation
+[06/20/13 11:21:16 -0500 Chadwick-Air.local (3186)] INFO : Installing Sinatra instrumentation
+[06/20/13 11:21:16 -0500 Chadwick-Air.local (3186)] INFO : Finished instrumentation
+[06/20/13 11:21:26 -0500 Chadwick-Air.local (3189)] INFO : Starting the New Relic agent in "development" environment.
+[06/20/13 11:21:26 -0500 Chadwick-Air.local (3189)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "development" section of your newrelic.yml.
+[06/20/13 11:21:27 -0500 Chadwick-Air.local (3189)] INFO : Reading configuration from newrelic.yml
+[06/20/13 11:21:27 -0500 Chadwick-Air.local (3189)] INFO : Disabling the Request Sampler.
+[06/20/13 11:21:27 -0500 Chadwick-Air.local (3189)] INFO : Environment: development
+[06/20/13 11:21:27 -0500 Chadwick-Air.local (3189)] INFO : Dispatcher: webrick
+[06/20/13 11:21:27 -0500 Chadwick-Air.local (3189)] INFO : Application: My Application
+[06/20/13 11:21:27 -0500 Chadwick-Air.local (3189)] WARN : Agent configured not to send data in this environment.
+[06/20/13 11:21:27 -0500 Chadwick-Air.local (3189)] INFO : Installing ActiveRecord instrumentation
+[06/20/13 11:21:27 -0500 Chadwick-Air.local (3189)] INFO : Installing Net instrumentation
+[06/20/13 11:21:27 -0500 Chadwick-Air.local (3189)] INFO : Installing Sinatra instrumentation
+[06/20/13 11:21:27 -0500 Chadwick-Air.local (3189)] INFO : Finished instrumentation
+[06/20/13 11:21:38 -0500 Chadwick-Air.local (3192)] INFO : Starting the New Relic agent in "development" environment.
+[06/20/13 11:21:38 -0500 Chadwick-Air.local (3192)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "development" section of your newrelic.yml.
+[06/20/13 11:21:38 -0500 Chadwick-Air.local (3192)] INFO : Reading configuration from newrelic.yml
+[06/20/13 11:21:38 -0500 Chadwick-Air.local (3192)] INFO : Disabling the Request Sampler.
+[06/20/13 11:21:38 -0500 Chadwick-Air.local (3192)] INFO : Environment: development
+[06/20/13 11:21:38 -0500 Chadwick-Air.local (3192)] INFO : Dispatcher: webrick
+[06/20/13 11:21:38 -0500 Chadwick-Air.local (3192)] INFO : Application: My Application
+[06/20/13 11:21:38 -0500 Chadwick-Air.local (3192)] WARN : Agent configured not to send data in this environment.
+[06/20/13 11:21:38 -0500 Chadwick-Air.local (3192)] INFO : Installing ActiveRecord instrumentation
+[06/20/13 11:21:38 -0500 Chadwick-Air.local (3192)] INFO : Installing Net instrumentation
+[06/20/13 11:21:38 -0500 Chadwick-Air.local (3192)] INFO : Installing Sinatra instrumentation
+[06/20/13 11:21:38 -0500 Chadwick-Air.local (3192)] INFO : Finished instrumentation
+[06/20/13 11:21:49 -0500 Chadwick-Air.local (3195)] INFO : Starting the New Relic agent in "development" environment.
+[06/20/13 11:21:49 -0500 Chadwick-Air.local (3195)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "development" section of your newrelic.yml.
+[06/20/13 11:21:49 -0500 Chadwick-Air.local (3195)] INFO : Reading configuration from newrelic.yml
+[06/20/13 11:21:49 -0500 Chadwick-Air.local (3195)] INFO : Disabling the Request Sampler.
+[06/20/13 11:21:49 -0500 Chadwick-Air.local (3195)] INFO : Environment: development
+[06/20/13 11:21:49 -0500 Chadwick-Air.local (3195)] INFO : Dispatcher: webrick
+[06/20/13 11:21:49 -0500 Chadwick-Air.local (3195)] INFO : Application: My Application
+[06/20/13 11:21:49 -0500 Chadwick-Air.local (3195)] WARN : Agent configured not to send data in this environment.
+[06/20/13 11:21:49 -0500 Chadwick-Air.local (3195)] INFO : Installing ActiveRecord instrumentation
+[06/20/13 11:21:49 -0500 Chadwick-Air.local (3195)] INFO : Installing Net instrumentation
+[06/20/13 11:21:49 -0500 Chadwick-Air.local (3195)] INFO : Installing Sinatra instrumentation
+[06/20/13 11:21:49 -0500 Chadwick-Air.local (3195)] INFO : Finished instrumentation
+[06/20/13 11:22:00 -0500 Chadwick-Air.local (3198)] INFO : Starting the New Relic agent in "development" environment.
+[06/20/13 11:22:00 -0500 Chadwick-Air.local (3198)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "development" section of your newrelic.yml.
+[06/20/13 11:22:00 -0500 Chadwick-Air.local (3198)] INFO : Reading configuration from newrelic.yml
+[06/20/13 11:22:00 -0500 Chadwick-Air.local (3198)] INFO : Disabling the Request Sampler.
+[06/20/13 11:22:00 -0500 Chadwick-Air.local (3198)] INFO : Environment: development
+[06/20/13 11:22:00 -0500 Chadwick-Air.local (3198)] INFO : Dispatcher: webrick
+[06/20/13 11:22:00 -0500 Chadwick-Air.local (3198)] INFO : Application: My Application
+[06/20/13 11:22:00 -0500 Chadwick-Air.local (3198)] WARN : Agent configured not to send data in this environment.
+[06/20/13 11:22:00 -0500 Chadwick-Air.local (3198)] INFO : Installing ActiveRecord instrumentation
+[06/20/13 11:22:00 -0500 Chadwick-Air.local (3198)] INFO : Installing Net instrumentation
+[06/20/13 11:22:00 -0500 Chadwick-Air.local (3198)] INFO : Installing Sinatra instrumentation
+[06/20/13 11:22:00 -0500 Chadwick-Air.local (3198)] INFO : Finished instrumentation
+[06/20/13 11:22:11 -0500 Chadwick-Air.local (3201)] INFO : Starting the New Relic agent in "development" environment.
+[06/20/13 11:22:11 -0500 Chadwick-Air.local (3201)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "development" section of your newrelic.yml.
+[06/20/13 11:22:11 -0500 Chadwick-Air.local (3201)] INFO : Reading configuration from newrelic.yml
+[06/20/13 11:22:11 -0500 Chadwick-Air.local (3201)] INFO : Disabling the Request Sampler.
+[06/20/13 11:22:11 -0500 Chadwick-Air.local (3201)] INFO : Environment: development
+[06/20/13 11:22:11 -0500 Chadwick-Air.local (3201)] INFO : Dispatcher: webrick
+[06/20/13 11:22:11 -0500 Chadwick-Air.local (3201)] INFO : Application: My Application
+[06/20/13 11:22:11 -0500 Chadwick-Air.local (3201)] WARN : Agent configured not to send data in this environment.
+[06/20/13 11:22:11 -0500 Chadwick-Air.local (3201)] INFO : Installing ActiveRecord instrumentation
+[06/20/13 11:22:11 -0500 Chadwick-Air.local (3201)] INFO : Installing Net instrumentation
+[06/20/13 11:22:11 -0500 Chadwick-Air.local (3201)] INFO : Installing Sinatra instrumentation
+[06/20/13 11:22:11 -0500 Chadwick-Air.local (3201)] INFO : Finished instrumentation
+[06/20/13 11:22:22 -0500 Chadwick-Air.local (3204)] INFO : Starting the New Relic agent in "development" environment.
+[06/20/13 11:22:22 -0500 Chadwick-Air.local (3204)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "development" section of your newrelic.yml.
+[06/20/13 11:22:22 -0500 Chadwick-Air.local (3204)] INFO : Reading configuration from newrelic.yml
+[06/20/13 11:22:22 -0500 Chadwick-Air.local (3204)] INFO : Disabling the Request Sampler.
+[06/20/13 11:22:22 -0500 Chadwick-Air.local (3204)] INFO : Environment: development
+[06/20/13 11:22:22 -0500 Chadwick-Air.local (3204)] INFO : Dispatcher: webrick
+[06/20/13 11:22:22 -0500 Chadwick-Air.local (3204)] INFO : Application: My Application
+[06/20/13 11:22:22 -0500 Chadwick-Air.local (3204)] WARN : Agent configured not to send data in this environment.
+[06/20/13 11:22:22 -0500 Chadwick-Air.local (3204)] INFO : Installing ActiveRecord instrumentation
+[06/20/13 11:22:23 -0500 Chadwick-Air.local (3204)] INFO : Installing Net instrumentation
+[06/20/13 11:22:23 -0500 Chadwick-Air.local (3204)] INFO : Installing Sinatra instrumentation
+[06/20/13 11:22:23 -0500 Chadwick-Air.local (3204)] INFO : Finished instrumentation
+[06/20/13 11:22:33 -0500 Chadwick-Air.local (3207)] INFO : Starting the New Relic agent in "development" environment.
+[06/20/13 11:22:33 -0500 Chadwick-Air.local (3207)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "development" section of your newrelic.yml.
+[06/20/13 11:22:33 -0500 Chadwick-Air.local (3207)] INFO : Reading configuration from newrelic.yml
+[06/20/13 11:22:33 -0500 Chadwick-Air.local (3207)] INFO : Disabling the Request Sampler.
+[06/20/13 11:22:33 -0500 Chadwick-Air.local (3207)] INFO : Environment: development
+[06/20/13 11:22:33 -0500 Chadwick-Air.local (3207)] INFO : Dispatcher: webrick
+[06/20/13 11:22:33 -0500 Chadwick-Air.local (3207)] INFO : Application: My Application
+[06/20/13 11:22:33 -0500 Chadwick-Air.local (3207)] WARN : Agent configured not to send data in this environment.
+[06/20/13 11:22:33 -0500 Chadwick-Air.local (3207)] INFO : Installing ActiveRecord instrumentation
+[06/20/13 11:22:34 -0500 Chadwick-Air.local (3207)] INFO : Installing Net instrumentation
+[06/20/13 11:22:34 -0500 Chadwick-Air.local (3207)] INFO : Installing Sinatra instrumentation
+[06/20/13 11:22:34 -0500 Chadwick-Air.local (3207)] INFO : Finished instrumentation
+[06/20/13 11:22:45 -0500 Chadwick-Air.local (3210)] INFO : Starting the New Relic agent in "development" environment.
+[06/20/13 11:22:45 -0500 Chadwick-Air.local (3210)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "development" section of your newrelic.yml.
+[06/20/13 11:22:45 -0500 Chadwick-Air.local (3210)] INFO : Reading configuration from newrelic.yml
+[06/20/13 11:22:45 -0500 Chadwick-Air.local (3210)] INFO : Disabling the Request Sampler.
+[06/20/13 11:22:45 -0500 Chadwick-Air.local (3210)] INFO : Environment: development
+[06/20/13 11:22:45 -0500 Chadwick-Air.local (3210)] INFO : Dispatcher: webrick
+[06/20/13 11:22:45 -0500 Chadwick-Air.local (3210)] INFO : Application: My Application
+[06/20/13 11:22:45 -0500 Chadwick-Air.local (3210)] WARN : Agent configured not to send data in this environment.
+[06/20/13 11:22:45 -0500 Chadwick-Air.local (3210)] INFO : Installing ActiveRecord instrumentation
+[06/20/13 11:22:45 -0500 Chadwick-Air.local (3210)] INFO : Installing Net instrumentation
+[06/20/13 11:22:45 -0500 Chadwick-Air.local (3210)] INFO : Installing Sinatra instrumentation
+[06/20/13 11:22:45 -0500 Chadwick-Air.local (3210)] INFO : Finished instrumentation
+[06/20/13 11:22:56 -0500 Chadwick-Air.local (3213)] INFO : Starting the New Relic agent in "development" environment.
+[06/20/13 11:22:56 -0500 Chadwick-Air.local (3213)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "development" section of your newrelic.yml.
+[06/20/13 11:22:56 -0500 Chadwick-Air.local (3213)] INFO : Reading configuration from newrelic.yml
+[06/20/13 11:22:56 -0500 Chadwick-Air.local (3213)] INFO : Disabling the Request Sampler.
+[06/20/13 11:22:56 -0500 Chadwick-Air.local (3213)] INFO : Environment: development
+[06/20/13 11:22:56 -0500 Chadwick-Air.local (3213)] INFO : Dispatcher: webrick
+[06/20/13 11:22:56 -0500 Chadwick-Air.local (3213)] INFO : Application: My Application
+[06/20/13 11:22:56 -0500 Chadwick-Air.local (3213)] WARN : Agent configured not to send data in this environment.
+[06/20/13 11:22:56 -0500 Chadwick-Air.local (3213)] INFO : Installing ActiveRecord instrumentation
+[06/20/13 11:22:56 -0500 Chadwick-Air.local (3213)] INFO : Installing Net instrumentation
+[06/20/13 11:22:56 -0500 Chadwick-Air.local (3213)] INFO : Installing Sinatra instrumentation
+[06/20/13 11:22:56 -0500 Chadwick-Air.local (3213)] INFO : Finished instrumentation
+[06/20/13 11:23:07 -0500 Chadwick-Air.local (3216)] INFO : Starting the New Relic agent in "development" environment.
+[06/20/13 11:23:07 -0500 Chadwick-Air.local (3216)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "development" section of your newrelic.yml.
+[06/20/13 11:23:07 -0500 Chadwick-Air.local (3216)] INFO : Reading configuration from newrelic.yml
+[06/20/13 11:23:07 -0500 Chadwick-Air.local (3216)] INFO : Disabling the Request Sampler.
+[06/20/13 11:23:07 -0500 Chadwick-Air.local (3216)] INFO : Environment: development
+[06/20/13 11:23:07 -0500 Chadwick-Air.local (3216)] INFO : Dispatcher: webrick
+[06/20/13 11:23:07 -0500 Chadwick-Air.local (3216)] INFO : Application: My Application
+[06/20/13 11:23:07 -0500 Chadwick-Air.local (3216)] WARN : Agent configured not to send data in this environment.
+[06/20/13 11:23:07 -0500 Chadwick-Air.local (3216)] INFO : Installing ActiveRecord instrumentation
+[06/20/13 11:23:07 -0500 Chadwick-Air.local (3216)] INFO : Installing Net instrumentation
+[06/20/13 11:23:07 -0500 Chadwick-Air.local (3216)] INFO : Installing Sinatra instrumentation
+[06/20/13 11:23:07 -0500 Chadwick-Air.local (3216)] INFO : Finished instrumentation
+[06/20/13 11:23:18 -0500 Chadwick-Air.local (3219)] INFO : Starting the New Relic agent in "development" environment.
+[06/20/13 11:23:18 -0500 Chadwick-Air.local (3219)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "development" section of your newrelic.yml.
+[06/20/13 11:23:18 -0500 Chadwick-Air.local (3219)] INFO : Reading configuration from newrelic.yml
+[06/20/13 11:23:18 -0500 Chadwick-Air.local (3219)] INFO : Disabling the Request Sampler.
+[06/20/13 11:23:18 -0500 Chadwick-Air.local (3219)] INFO : Environment: development
+[06/20/13 11:23:18 -0500 Chadwick-Air.local (3219)] INFO : Dispatcher: webrick
+[06/20/13 11:23:18 -0500 Chadwick-Air.local (3219)] INFO : Application: My Application
+[06/20/13 11:23:18 -0500 Chadwick-Air.local (3219)] WARN : Agent configured not to send data in this environment.
+[06/20/13 11:23:18 -0500 Chadwick-Air.local (3219)] INFO : Installing ActiveRecord instrumentation
+[06/20/13 11:23:18 -0500 Chadwick-Air.local (3219)] INFO : Installing Net instrumentation
+[06/20/13 11:23:18 -0500 Chadwick-Air.local (3219)] INFO : Installing Sinatra instrumentation
+[06/20/13 11:23:18 -0500 Chadwick-Air.local (3219)] INFO : Finished instrumentation
+[06/20/13 11:23:29 -0500 Chadwick-Air.local (3222)] INFO : Starting the New Relic agent in "development" environment.
+[06/20/13 11:23:29 -0500 Chadwick-Air.local (3222)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "development" section of your newrelic.yml.
+[06/20/13 11:23:29 -0500 Chadwick-Air.local (3222)] INFO : Reading configuration from newrelic.yml
+[06/20/13 11:23:29 -0500 Chadwick-Air.local (3222)] INFO : Disabling the Request Sampler.
+[06/20/13 11:23:29 -0500 Chadwick-Air.local (3222)] INFO : Environment: development
+[06/20/13 11:23:29 -0500 Chadwick-Air.local (3222)] INFO : Dispatcher: webrick
+[06/20/13 11:23:29 -0500 Chadwick-Air.local (3222)] INFO : Application: My Application
+[06/20/13 11:23:29 -0500 Chadwick-Air.local (3222)] WARN : Agent configured not to send data in this environment.
+[06/20/13 11:23:29 -0500 Chadwick-Air.local (3222)] INFO : Installing ActiveRecord instrumentation
+[06/20/13 11:23:30 -0500 Chadwick-Air.local (3222)] INFO : Installing Net instrumentation
+[06/20/13 11:23:30 -0500 Chadwick-Air.local (3222)] INFO : Installing Sinatra instrumentation
+[06/20/13 11:23:30 -0500 Chadwick-Air.local (3222)] INFO : Finished instrumentation
+[06/20/13 11:23:36 -0500 Chadwick-Air.local (3226)] INFO : Starting the New Relic agent in "development" environment.
+[06/20/13 11:23:36 -0500 Chadwick-Air.local (3226)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "development" section of your newrelic.yml.
+[06/20/13 11:23:36 -0500 Chadwick-Air.local (3226)] INFO : Reading configuration from newrelic.yml
+[06/20/13 11:23:36 -0500 Chadwick-Air.local (3226)] INFO : Disabling the Request Sampler.
+[06/20/13 11:23:36 -0500 Chadwick-Air.local (3226)] INFO : Environment: development
+[06/20/13 11:23:36 -0500 Chadwick-Air.local (3226)] INFO : Dispatcher: webrick
+[06/20/13 11:23:36 -0500 Chadwick-Air.local (3226)] INFO : Application: My Application
+[06/20/13 11:23:36 -0500 Chadwick-Air.local (3226)] WARN : Agent configured not to send data in this environment.
+[06/20/13 11:23:36 -0500 Chadwick-Air.local (3226)] INFO : Installing ActiveRecord instrumentation
+[06/20/13 11:23:36 -0500 Chadwick-Air.local (3226)] INFO : Installing Net instrumentation
+[06/20/13 11:23:36 -0500 Chadwick-Air.local (3226)] INFO : Installing Sinatra instrumentation
+[06/20/13 11:23:36 -0500 Chadwick-Air.local (3226)] INFO : Finished instrumentation
+[06/20/13 11:23:38 -0500 Chadwick-Air.local (3231)] INFO : Starting the New Relic agent in "development" environment.
+[06/20/13 11:23:38 -0500 Chadwick-Air.local (3231)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "development" section of your newrelic.yml.
+[06/20/13 11:23:38 -0500 Chadwick-Air.local (3230)] INFO : Starting the New Relic agent in "development" environment.
+[06/20/13 11:23:38 -0500 Chadwick-Air.local (3231)] INFO : Reading configuration from newrelic.yml
+[06/20/13 11:23:38 -0500 Chadwick-Air.local (3230)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "development" section of your newrelic.yml.
+[06/20/13 11:23:38 -0500 Chadwick-Air.local (3230)] INFO : Reading configuration from newrelic.yml
+[06/20/13 11:23:38 -0500 Chadwick-Air.local (3231)] INFO : Disabling the Request Sampler.
+[06/20/13 11:23:38 -0500 Chadwick-Air.local (3230)] INFO : Disabling the Request Sampler.
+[06/20/13 11:23:38 -0500 Chadwick-Air.local (3231)] INFO : Environment: development
+[06/20/13 11:23:38 -0500 Chadwick-Air.local (3230)] INFO : Environment: development
+[06/20/13 11:23:38 -0500 Chadwick-Air.local (3231)] INFO : Dispatcher: webrick
+[06/20/13 11:23:38 -0500 Chadwick-Air.local (3230)] INFO : Dispatcher: webrick
+[06/20/13 11:23:38 -0500 Chadwick-Air.local (3231)] INFO : Application: My Application
+[06/20/13 11:23:38 -0500 Chadwick-Air.local (3230)] INFO : Application: My Application
+[06/20/13 11:23:38 -0500 Chadwick-Air.local (3231)] WARN : Agent configured not to send data in this environment.
+[06/20/13 11:23:38 -0500 Chadwick-Air.local (3230)] WARN : Agent configured not to send data in this environment.
+[06/20/13 11:23:38 -0500 Chadwick-Air.local (3229)] INFO : Starting the New Relic agent in "development" environment.
+[06/20/13 11:23:38 -0500 Chadwick-Air.local (3229)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "development" section of your newrelic.yml.
+[06/20/13 11:23:38 -0500 Chadwick-Air.local (3229)] INFO : Reading configuration from newrelic.yml
+[06/20/13 11:23:38 -0500 Chadwick-Air.local (3229)] INFO : Disabling the Request Sampler.
+[06/20/13 11:23:38 -0500 Chadwick-Air.local (3229)] INFO : Environment: development
+[06/20/13 11:23:38 -0500 Chadwick-Air.local (3229)] INFO : Dispatcher: webrick
+[06/20/13 11:23:38 -0500 Chadwick-Air.local (3229)] INFO : Application: My Application
+[06/20/13 11:23:38 -0500 Chadwick-Air.local (3229)] WARN : Agent configured not to send data in this environment.
+[06/20/13 11:23:38 -0500 Chadwick-Air.local (3232)] INFO : Starting the New Relic agent in "development" environment.
+[06/20/13 11:23:38 -0500 Chadwick-Air.local (3232)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "development" section of your newrelic.yml.
+[06/20/13 11:23:38 -0500 Chadwick-Air.local (3232)] INFO : Reading configuration from newrelic.yml
+[06/20/13 11:23:38 -0500 Chadwick-Air.local (3232)] INFO : Disabling the Request Sampler.
+[06/20/13 11:23:38 -0500 Chadwick-Air.local (3232)] INFO : Environment: development
+[06/20/13 11:23:38 -0500 Chadwick-Air.local (3232)] INFO : Dispatcher: webrick
+[06/20/13 11:23:38 -0500 Chadwick-Air.local (3232)] INFO : Application: My Application
+[06/20/13 11:23:38 -0500 Chadwick-Air.local (3232)] WARN : Agent configured not to send data in this environment.
+[06/20/13 11:23:38 -0500 Chadwick-Air.local (3230)] INFO : Installing ActiveRecord instrumentation
+[06/20/13 11:23:38 -0500 Chadwick-Air.local (3231)] INFO : Installing ActiveRecord instrumentation
+[06/20/13 11:23:38 -0500 Chadwick-Air.local (3229)] INFO : Installing ActiveRecord instrumentation
+[06/20/13 11:23:38 -0500 Chadwick-Air.local (3232)] INFO : Installing ActiveRecord instrumentation
+[06/20/13 11:23:38 -0500 Chadwick-Air.local (3230)] INFO : Installing Net instrumentation
+[06/20/13 11:23:38 -0500 Chadwick-Air.local (3229)] INFO : Installing Net instrumentation
+[06/20/13 11:23:38 -0500 Chadwick-Air.local (3231)] INFO : Installing Net instrumentation
+[06/20/13 11:23:38 -0500 Chadwick-Air.local (3230)] INFO : Installing Sinatra instrumentation
+[06/20/13 11:23:38 -0500 Chadwick-Air.local (3231)] INFO : Installing Sinatra instrumentation
+[06/20/13 11:23:38 -0500 Chadwick-Air.local (3230)] INFO : Finished instrumentation
+[06/20/13 11:23:38 -0500 Chadwick-Air.local (3229)] INFO : Installing Sinatra instrumentation
+[06/20/13 11:23:38 -0500 Chadwick-Air.local (3231)] INFO : Finished instrumentation
+[06/20/13 11:23:38 -0500 Chadwick-Air.local (3229)] INFO : Finished instrumentation
+[06/20/13 11:23:38 -0500 Chadwick-Air.local (3232)] INFO : Installing Net instrumentation
+[06/20/13 11:23:38 -0500 Chadwick-Air.local (3232)] INFO : Installing Sinatra instrumentation
+[06/20/13 11:23:38 -0500 Chadwick-Air.local (3232)] INFO : Finished instrumentation
+[06/20/13 11:23:40 -0500 Chadwick-Air.local (3241)] INFO : Starting the New Relic agent in "development" environment.
+[06/20/13 11:23:40 -0500 Chadwick-Air.local (3241)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "development" section of your newrelic.yml.
+[06/20/13 11:23:40 -0500 Chadwick-Air.local (3241)] INFO : Reading configuration from newrelic.yml
+[06/20/13 11:23:40 -0500 Chadwick-Air.local (3241)] INFO : Disabling the Request Sampler.
+[06/20/13 11:23:40 -0500 Chadwick-Air.local (3241)] INFO : Environment: development
+[06/20/13 11:23:40 -0500 Chadwick-Air.local (3241)] INFO : Dispatcher: webrick
+[06/20/13 11:23:40 -0500 Chadwick-Air.local (3241)] INFO : Application: My Application
+[06/20/13 11:23:40 -0500 Chadwick-Air.local (3241)] WARN : Agent configured not to send data in this environment.
+[06/20/13 11:23:40 -0500 Chadwick-Air.local (3241)] INFO : Installing ActiveRecord instrumentation
+[06/20/13 11:23:41 -0500 Chadwick-Air.local (3241)] INFO : Installing Net instrumentation
+[06/20/13 11:23:41 -0500 Chadwick-Air.local (3241)] INFO : Installing Sinatra instrumentation
+[06/20/13 11:23:41 -0500 Chadwick-Air.local (3241)] INFO : Finished instrumentation
+[06/20/13 11:23:44 -0500 Chadwick-Air.local (3244)] INFO : Starting the New Relic agent in "development" environment.
+[06/20/13 11:23:44 -0500 Chadwick-Air.local (3244)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "development" section of your newrelic.yml.
+[06/20/13 11:23:44 -0500 Chadwick-Air.local (3244)] INFO : Reading configuration from newrelic.yml
+[06/20/13 11:23:44 -0500 Chadwick-Air.local (3244)] INFO : Disabling the Request Sampler.
+[06/20/13 11:23:44 -0500 Chadwick-Air.local (3244)] INFO : Environment: development
+[06/20/13 11:23:44 -0500 Chadwick-Air.local (3244)] INFO : Dispatcher: webrick
+[06/20/13 11:23:44 -0500 Chadwick-Air.local (3244)] INFO : Application: My Application
+[06/20/13 11:23:44 -0500 Chadwick-Air.local (3244)] WARN : Agent configured not to send data in this environment.
+[06/20/13 11:23:45 -0500 Chadwick-Air.local (3244)] INFO : Installing ActiveRecord instrumentation
+[06/20/13 11:23:45 -0500 Chadwick-Air.local (3244)] INFO : Installing Net instrumentation
+[06/20/13 11:23:45 -0500 Chadwick-Air.local (3244)] INFO : Installing Sinatra instrumentation
+[06/20/13 11:23:45 -0500 Chadwick-Air.local (3244)] INFO : Finished instrumentation
+[06/20/13 11:23:50 -0500 Chadwick-Air.local (3247)] INFO : Starting the New Relic agent in "development" environment.
+[06/20/13 11:23:50 -0500 Chadwick-Air.local (3247)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "development" section of your newrelic.yml.
+[06/20/13 11:23:50 -0500 Chadwick-Air.local (3247)] INFO : Reading configuration from newrelic.yml
+[06/20/13 11:23:50 -0500 Chadwick-Air.local (3247)] INFO : Disabling the Request Sampler.
+[06/20/13 11:23:50 -0500 Chadwick-Air.local (3247)] INFO : Environment: development
+[06/20/13 11:23:50 -0500 Chadwick-Air.local (3247)] INFO : Dispatcher: webrick
+[06/20/13 11:23:50 -0500 Chadwick-Air.local (3247)] INFO : Application: My Application
+[06/20/13 11:23:50 -0500 Chadwick-Air.local (3247)] WARN : Agent configured not to send data in this environment.
+[06/20/13 11:23:50 -0500 Chadwick-Air.local (3247)] INFO : Installing ActiveRecord instrumentation
+[06/20/13 11:23:51 -0500 Chadwick-Air.local (3247)] INFO : Installing Net instrumentation
+[06/20/13 11:23:51 -0500 Chadwick-Air.local (3247)] INFO : Installing Sinatra instrumentation
+[06/20/13 11:23:51 -0500 Chadwick-Air.local (3247)] INFO : Finished instrumentation
+[06/20/13 11:23:52 -0500 Chadwick-Air.local (3250)] INFO : Starting the New Relic agent in "development" environment.
+[06/20/13 11:23:52 -0500 Chadwick-Air.local (3250)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "development" section of your newrelic.yml.
+[06/20/13 11:23:52 -0500 Chadwick-Air.local (3250)] INFO : Reading configuration from newrelic.yml
+[06/20/13 11:23:52 -0500 Chadwick-Air.local (3250)] INFO : Disabling the Request Sampler.
+[06/20/13 11:23:52 -0500 Chadwick-Air.local (3250)] INFO : Environment: development
+[06/20/13 11:23:52 -0500 Chadwick-Air.local (3250)] INFO : Dispatcher: webrick
+[06/20/13 11:23:52 -0500 Chadwick-Air.local (3250)] INFO : Application: My Application
+[06/20/13 11:23:52 -0500 Chadwick-Air.local (3250)] WARN : Agent configured not to send data in this environment.
+[06/20/13 11:23:52 -0500 Chadwick-Air.local (3250)] INFO : Installing ActiveRecord instrumentation
+[06/20/13 11:23:52 -0500 Chadwick-Air.local (3250)] INFO : Installing Net instrumentation
+[06/20/13 11:23:52 -0500 Chadwick-Air.local (3250)] INFO : Installing Sinatra instrumentation
+[06/20/13 11:23:52 -0500 Chadwick-Air.local (3250)] INFO : Finished instrumentation
+[06/20/13 11:24:03 -0500 Chadwick-Air.local (3253)] INFO : Starting the New Relic agent in "development" environment.
+[06/20/13 11:24:03 -0500 Chadwick-Air.local (3253)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "development" section of your newrelic.yml.
+[06/20/13 11:24:03 -0500 Chadwick-Air.local (3253)] INFO : Reading configuration from newrelic.yml
+[06/20/13 11:24:03 -0500 Chadwick-Air.local (3253)] INFO : Disabling the Request Sampler.
+[06/20/13 11:24:03 -0500 Chadwick-Air.local (3253)] INFO : Environment: development
+[06/20/13 11:24:03 -0500 Chadwick-Air.local (3253)] INFO : Dispatcher: webrick
+[06/20/13 11:24:03 -0500 Chadwick-Air.local (3253)] INFO : Application: My Application
+[06/20/13 11:24:03 -0500 Chadwick-Air.local (3253)] WARN : Agent configured not to send data in this environment.
+[06/20/13 11:24:03 -0500 Chadwick-Air.local (3253)] INFO : Installing ActiveRecord instrumentation
+[06/20/13 11:24:03 -0500 Chadwick-Air.local (3253)] INFO : Installing Net instrumentation
+[06/20/13 11:24:03 -0500 Chadwick-Air.local (3253)] INFO : Installing Sinatra instrumentation
+[06/20/13 11:24:03 -0500 Chadwick-Air.local (3253)] INFO : Finished instrumentation
+[06/20/13 11:24:14 -0500 Chadwick-Air.local (3256)] INFO : Starting the New Relic agent in "development" environment.
+[06/20/13 11:24:14 -0500 Chadwick-Air.local (3256)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "development" section of your newrelic.yml.
+[06/20/13 11:24:14 -0500 Chadwick-Air.local (3256)] INFO : Reading configuration from newrelic.yml
+[06/20/13 11:24:14 -0500 Chadwick-Air.local (3256)] INFO : Disabling the Request Sampler.
+[06/20/13 11:24:14 -0500 Chadwick-Air.local (3256)] INFO : Environment: development
+[06/20/13 11:24:14 -0500 Chadwick-Air.local (3256)] INFO : Dispatcher: webrick
+[06/20/13 11:24:14 -0500 Chadwick-Air.local (3256)] INFO : Application: My Application
+[06/20/13 11:24:14 -0500 Chadwick-Air.local (3256)] WARN : Agent configured not to send data in this environment.
+[06/20/13 11:24:14 -0500 Chadwick-Air.local (3256)] INFO : Installing ActiveRecord instrumentation
+[06/20/13 11:24:14 -0500 Chadwick-Air.local (3256)] INFO : Installing Net instrumentation
+[06/20/13 11:24:14 -0500 Chadwick-Air.local (3256)] INFO : Installing Sinatra instrumentation
+[06/20/13 11:24:14 -0500 Chadwick-Air.local (3256)] INFO : Finished instrumentation
+[06/20/13 11:24:25 -0500 Chadwick-Air.local (3259)] INFO : Starting the New Relic agent in "development" environment.
+[06/20/13 11:24:25 -0500 Chadwick-Air.local (3259)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "development" section of your newrelic.yml.
+[06/20/13 11:24:25 -0500 Chadwick-Air.local (3259)] INFO : Reading configuration from newrelic.yml
+[06/20/13 11:24:25 -0500 Chadwick-Air.local (3259)] INFO : Disabling the Request Sampler.
+[06/20/13 11:24:25 -0500 Chadwick-Air.local (3259)] INFO : Environment: development
+[06/20/13 11:24:25 -0500 Chadwick-Air.local (3259)] INFO : Dispatcher: webrick
+[06/20/13 11:24:25 -0500 Chadwick-Air.local (3259)] INFO : Application: My Application
+[06/20/13 11:24:25 -0500 Chadwick-Air.local (3259)] WARN : Agent configured not to send data in this environment.
+[06/20/13 11:24:25 -0500 Chadwick-Air.local (3259)] INFO : Installing ActiveRecord instrumentation
+[06/20/13 11:24:25 -0500 Chadwick-Air.local (3259)] INFO : Installing Net instrumentation
+[06/20/13 11:24:25 -0500 Chadwick-Air.local (3259)] INFO : Installing Sinatra instrumentation
+[06/20/13 11:24:25 -0500 Chadwick-Air.local (3259)] INFO : Finished instrumentation
+[06/20/13 11:24:36 -0500 Chadwick-Air.local (3262)] INFO : Starting the New Relic agent in "development" environment.
+[06/20/13 11:24:36 -0500 Chadwick-Air.local (3262)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "development" section of your newrelic.yml.
+[06/20/13 11:24:36 -0500 Chadwick-Air.local (3262)] INFO : Reading configuration from newrelic.yml
+[06/20/13 11:24:36 -0500 Chadwick-Air.local (3262)] INFO : Disabling the Request Sampler.
+[06/20/13 11:24:36 -0500 Chadwick-Air.local (3262)] INFO : Environment: development
+[06/20/13 11:24:36 -0500 Chadwick-Air.local (3262)] INFO : Dispatcher: webrick
+[06/20/13 11:24:36 -0500 Chadwick-Air.local (3262)] INFO : Application: My Application
+[06/20/13 11:24:36 -0500 Chadwick-Air.local (3262)] WARN : Agent configured not to send data in this environment.
+[06/20/13 11:24:36 -0500 Chadwick-Air.local (3262)] INFO : Installing ActiveRecord instrumentation
+[06/20/13 11:24:36 -0500 Chadwick-Air.local (3262)] INFO : Installing Net instrumentation
+[06/20/13 11:24:36 -0500 Chadwick-Air.local (3262)] INFO : Installing Sinatra instrumentation
+[06/20/13 11:24:37 -0500 Chadwick-Air.local (3262)] INFO : Finished instrumentation
+[06/20/13 11:24:47 -0500 Chadwick-Air.local (3265)] INFO : Starting the New Relic agent in "development" environment.
+[06/20/13 11:24:47 -0500 Chadwick-Air.local (3265)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "development" section of your newrelic.yml.
+[06/20/13 11:24:47 -0500 Chadwick-Air.local (3265)] INFO : Reading configuration from newrelic.yml
+[06/20/13 11:24:47 -0500 Chadwick-Air.local (3265)] INFO : Disabling the Request Sampler.
+[06/20/13 11:24:47 -0500 Chadwick-Air.local (3265)] INFO : Environment: development
+[06/20/13 11:24:47 -0500 Chadwick-Air.local (3265)] INFO : Dispatcher: webrick
+[06/20/13 11:24:47 -0500 Chadwick-Air.local (3265)] INFO : Application: My Application
+[06/20/13 11:24:47 -0500 Chadwick-Air.local (3265)] WARN : Agent configured not to send data in this environment.
+[06/20/13 11:24:47 -0500 Chadwick-Air.local (3265)] INFO : Installing ActiveRecord instrumentation
+[06/20/13 11:24:48 -0500 Chadwick-Air.local (3265)] INFO : Installing Net instrumentation
+[06/20/13 11:24:48 -0500 Chadwick-Air.local (3265)] INFO : Installing Sinatra instrumentation
+[06/20/13 11:24:48 -0500 Chadwick-Air.local (3265)] INFO : Finished instrumentation
+[06/20/13 11:24:58 -0500 Chadwick-Air.local (3268)] INFO : Starting the New Relic agent in "development" environment.
+[06/20/13 11:24:58 -0500 Chadwick-Air.local (3268)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "development" section of your newrelic.yml.
+[06/20/13 11:24:58 -0500 Chadwick-Air.local (3268)] INFO : Reading configuration from newrelic.yml
+[06/20/13 11:24:58 -0500 Chadwick-Air.local (3268)] INFO : Disabling the Request Sampler.
+[06/20/13 11:24:58 -0500 Chadwick-Air.local (3268)] INFO : Environment: development
+[06/20/13 11:24:58 -0500 Chadwick-Air.local (3268)] INFO : Dispatcher: webrick
+[06/20/13 11:24:58 -0500 Chadwick-Air.local (3268)] INFO : Application: My Application
+[06/20/13 11:24:58 -0500 Chadwick-Air.local (3268)] WARN : Agent configured not to send data in this environment.
+[06/20/13 11:24:58 -0500 Chadwick-Air.local (3268)] INFO : Installing ActiveRecord instrumentation
+[06/20/13 11:24:59 -0500 Chadwick-Air.local (3268)] INFO : Installing Net instrumentation
+[06/20/13 11:24:59 -0500 Chadwick-Air.local (3268)] INFO : Installing Sinatra instrumentation
+[06/20/13 11:24:59 -0500 Chadwick-Air.local (3268)] INFO : Finished instrumentation
+[06/20/13 11:25:10 -0500 Chadwick-Air.local (3271)] INFO : Starting the New Relic agent in "development" environment.
+[06/20/13 11:25:10 -0500 Chadwick-Air.local (3271)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "development" section of your newrelic.yml.
+[06/20/13 11:25:10 -0500 Chadwick-Air.local (3271)] INFO : Reading configuration from newrelic.yml
+[06/20/13 11:25:10 -0500 Chadwick-Air.local (3271)] INFO : Disabling the Request Sampler.
+[06/20/13 11:25:10 -0500 Chadwick-Air.local (3271)] INFO : Environment: development
+[06/20/13 11:25:10 -0500 Chadwick-Air.local (3271)] INFO : Dispatcher: webrick
+[06/20/13 11:25:10 -0500 Chadwick-Air.local (3271)] INFO : Application: My Application
+[06/20/13 11:25:10 -0500 Chadwick-Air.local (3271)] WARN : Agent configured not to send data in this environment.
+[06/20/13 11:25:10 -0500 Chadwick-Air.local (3271)] INFO : Installing ActiveRecord instrumentation
+[06/20/13 11:25:10 -0500 Chadwick-Air.local (3271)] INFO : Installing Net instrumentation
+[06/20/13 11:25:10 -0500 Chadwick-Air.local (3271)] INFO : Installing Sinatra instrumentation
+[06/20/13 11:25:10 -0500 Chadwick-Air.local (3271)] INFO : Finished instrumentation
+[06/20/13 11:25:15 -0500 Chadwick-Air.local (3274)] INFO : Starting the New Relic agent in "development" environment.
+[06/20/13 11:25:15 -0500 Chadwick-Air.local (3274)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "development" section of your newrelic.yml.
+[06/20/13 11:25:15 -0500 Chadwick-Air.local (3274)] INFO : Reading configuration from newrelic.yml
+[06/20/13 11:25:15 -0500 Chadwick-Air.local (3274)] INFO : Disabling the Request Sampler.
+[06/20/13 11:25:15 -0500 Chadwick-Air.local (3274)] INFO : Environment: development
+[06/20/13 11:25:15 -0500 Chadwick-Air.local (3274)] INFO : Dispatcher: webrick
+[06/20/13 11:25:15 -0500 Chadwick-Air.local (3274)] INFO : Application: My Application
+[06/20/13 11:25:15 -0500 Chadwick-Air.local (3274)] WARN : Agent configured not to send data in this environment.
+[06/20/13 11:25:15 -0500 Chadwick-Air.local (3274)] INFO : Installing ActiveRecord instrumentation
+[06/20/13 11:25:15 -0500 Chadwick-Air.local (3274)] INFO : Installing Net instrumentation
+[06/20/13 11:25:15 -0500 Chadwick-Air.local (3274)] INFO : Installing Sinatra instrumentation
+[06/20/13 11:25:15 -0500 Chadwick-Air.local (3274)] INFO : Finished instrumentation
+[06/20/13 11:25:21 -0500 Chadwick-Air.local (3277)] INFO : Starting the New Relic agent in "development" environment.
+[06/20/13 11:25:21 -0500 Chadwick-Air.local (3277)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "development" section of your newrelic.yml.
+[06/20/13 11:25:21 -0500 Chadwick-Air.local (3277)] INFO : Reading configuration from newrelic.yml
+[06/20/13 11:25:21 -0500 Chadwick-Air.local (3277)] INFO : Disabling the Request Sampler.
+[06/20/13 11:25:21 -0500 Chadwick-Air.local (3277)] INFO : Environment: development
+[06/20/13 11:25:21 -0500 Chadwick-Air.local (3277)] INFO : Dispatcher: webrick
+[06/20/13 11:25:21 -0500 Chadwick-Air.local (3277)] INFO : Application: My Application
+[06/20/13 11:25:21 -0500 Chadwick-Air.local (3277)] WARN : Agent configured not to send data in this environment.
+[06/20/13 11:25:21 -0500 Chadwick-Air.local (3277)] INFO : Installing ActiveRecord instrumentation
+[06/20/13 11:25:21 -0500 Chadwick-Air.local (3277)] INFO : Installing Net instrumentation
+[06/20/13 11:25:21 -0500 Chadwick-Air.local (3277)] INFO : Installing Sinatra instrumentation
+[06/20/13 11:25:21 -0500 Chadwick-Air.local (3277)] INFO : Finished instrumentation
+[06/20/13 11:25:22 -0500 Chadwick-Air.local (3280)] INFO : Starting the New Relic agent in "development" environment.
+[06/20/13 11:25:22 -0500 Chadwick-Air.local (3280)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "development" section of your newrelic.yml.
+[06/20/13 11:25:22 -0500 Chadwick-Air.local (3280)] INFO : Reading configuration from newrelic.yml
+[06/20/13 11:25:22 -0500 Chadwick-Air.local (3280)] INFO : Disabling the Request Sampler.
+[06/20/13 11:25:22 -0500 Chadwick-Air.local (3280)] INFO : Environment: development
+[06/20/13 11:25:22 -0500 Chadwick-Air.local (3280)] INFO : Dispatcher: webrick
+[06/20/13 11:25:22 -0500 Chadwick-Air.local (3280)] INFO : Application: My Application
+[06/20/13 11:25:22 -0500 Chadwick-Air.local (3280)] WARN : Agent configured not to send data in this environment.
+[06/20/13 11:25:22 -0500 Chadwick-Air.local (3280)] INFO : Installing ActiveRecord instrumentation
+[06/20/13 11:25:22 -0500 Chadwick-Air.local (3280)] INFO : Installing Net instrumentation
+[06/20/13 11:25:22 -0500 Chadwick-Air.local (3280)] INFO : Installing Sinatra instrumentation
+[06/20/13 11:25:22 -0500 Chadwick-Air.local (3280)] INFO : Finished instrumentation
+[06/20/13 11:25:32 -0500 Chadwick-Air.local (3283)] INFO : Starting the New Relic agent in "development" environment.
+[06/20/13 11:25:32 -0500 Chadwick-Air.local (3283)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "development" section of your newrelic.yml.
+[06/20/13 11:25:32 -0500 Chadwick-Air.local (3283)] INFO : Reading configuration from newrelic.yml
+[06/20/13 11:25:32 -0500 Chadwick-Air.local (3283)] INFO : Disabling the Request Sampler.
+[06/20/13 11:25:32 -0500 Chadwick-Air.local (3283)] INFO : Environment: development
+[06/20/13 11:25:32 -0500 Chadwick-Air.local (3283)] INFO : Dispatcher: webrick
+[06/20/13 11:25:32 -0500 Chadwick-Air.local (3283)] INFO : Application: My Application
+[06/20/13 11:25:32 -0500 Chadwick-Air.local (3283)] WARN : Agent configured not to send data in this environment.
+[06/20/13 11:25:32 -0500 Chadwick-Air.local (3283)] INFO : Installing ActiveRecord instrumentation
+[06/20/13 11:25:32 -0500 Chadwick-Air.local (3283)] INFO : Installing Net instrumentation
+[06/20/13 11:25:32 -0500 Chadwick-Air.local (3283)] INFO : Installing Sinatra instrumentation
+[06/20/13 11:25:32 -0500 Chadwick-Air.local (3283)] INFO : Finished instrumentation
+[06/20/13 11:25:43 -0500 Chadwick-Air.local (3286)] INFO : Starting the New Relic agent in "development" environment.
+[06/20/13 11:25:43 -0500 Chadwick-Air.local (3286)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "development" section of your newrelic.yml.
+[06/20/13 11:25:43 -0500 Chadwick-Air.local (3286)] INFO : Reading configuration from newrelic.yml
+[06/20/13 11:25:43 -0500 Chadwick-Air.local (3286)] INFO : Disabling the Request Sampler.
+[06/20/13 11:25:43 -0500 Chadwick-Air.local (3286)] INFO : Environment: development
+[06/20/13 11:25:43 -0500 Chadwick-Air.local (3286)] INFO : Dispatcher: webrick
+[06/20/13 11:25:43 -0500 Chadwick-Air.local (3286)] INFO : Application: My Application
+[06/20/13 11:25:43 -0500 Chadwick-Air.local (3286)] WARN : Agent configured not to send data in this environment.
+[06/20/13 11:25:43 -0500 Chadwick-Air.local (3286)] INFO : Installing ActiveRecord instrumentation
+[06/20/13 11:25:43 -0500 Chadwick-Air.local (3286)] INFO : Installing Net instrumentation
+[06/20/13 11:25:43 -0500 Chadwick-Air.local (3286)] INFO : Installing Sinatra instrumentation
+[06/20/13 11:25:43 -0500 Chadwick-Air.local (3286)] INFO : Finished instrumentation
+[06/20/13 11:25:54 -0500 Chadwick-Air.local (3289)] INFO : Starting the New Relic agent in "development" environment.
+[06/20/13 11:25:54 -0500 Chadwick-Air.local (3289)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "development" section of your newrelic.yml.
+[06/20/13 11:25:54 -0500 Chadwick-Air.local (3289)] INFO : Reading configuration from newrelic.yml
+[06/20/13 11:25:54 -0500 Chadwick-Air.local (3289)] INFO : Disabling the Request Sampler.
+[06/20/13 11:25:54 -0500 Chadwick-Air.local (3289)] INFO : Environment: development
+[06/20/13 11:25:54 -0500 Chadwick-Air.local (3289)] INFO : Dispatcher: webrick
+[06/20/13 11:25:54 -0500 Chadwick-Air.local (3289)] INFO : Application: My Application
+[06/20/13 11:25:54 -0500 Chadwick-Air.local (3289)] WARN : Agent configured not to send data in this environment.
+[06/20/13 11:25:54 -0500 Chadwick-Air.local (3289)] INFO : Installing ActiveRecord instrumentation
+[06/20/13 11:25:54 -0500 Chadwick-Air.local (3289)] INFO : Installing Net instrumentation
+[06/20/13 11:25:54 -0500 Chadwick-Air.local (3289)] INFO : Installing Sinatra instrumentation
+[06/20/13 11:25:54 -0500 Chadwick-Air.local (3289)] INFO : Finished instrumentation
+[06/20/13 11:26:01 -0500 Chadwick-Air.local (3292)] INFO : Starting the New Relic agent in "development" environment.
+[06/20/13 11:26:01 -0500 Chadwick-Air.local (3292)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "development" section of your newrelic.yml.
+[06/20/13 11:26:01 -0500 Chadwick-Air.local (3292)] INFO : Reading configuration from newrelic.yml
+[06/20/13 11:26:01 -0500 Chadwick-Air.local (3292)] INFO : Disabling the Request Sampler.
+[06/20/13 11:26:01 -0500 Chadwick-Air.local (3292)] INFO : Environment: development
+[06/20/13 11:26:01 -0500 Chadwick-Air.local (3292)] INFO : Dispatcher: webrick
+[06/20/13 11:26:01 -0500 Chadwick-Air.local (3292)] INFO : Application: My Application
+[06/20/13 11:26:01 -0500 Chadwick-Air.local (3292)] WARN : Agent configured not to send data in this environment.
+[06/20/13 11:26:01 -0500 Chadwick-Air.local (3292)] INFO : Installing ActiveRecord instrumentation
+[06/20/13 11:26:02 -0500 Chadwick-Air.local (3292)] INFO : Installing Net instrumentation
+[06/20/13 11:26:02 -0500 Chadwick-Air.local (3292)] INFO : Installing Sinatra instrumentation
+[06/20/13 11:26:02 -0500 Chadwick-Air.local (3292)] INFO : Finished instrumentation
+[06/20/13 11:26:05 -0500 Chadwick-Air.local (3295)] INFO : Starting the New Relic agent in "development" environment.
+[06/20/13 11:26:05 -0500 Chadwick-Air.local (3295)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "development" section of your newrelic.yml.
+[06/20/13 11:26:05 -0500 Chadwick-Air.local (3295)] INFO : Reading configuration from newrelic.yml
+[06/20/13 11:26:05 -0500 Chadwick-Air.local (3295)] INFO : Disabling the Request Sampler.
+[06/20/13 11:26:05 -0500 Chadwick-Air.local (3295)] INFO : Environment: development
+[06/20/13 11:26:05 -0500 Chadwick-Air.local (3295)] INFO : Dispatcher: webrick
+[06/20/13 11:26:05 -0500 Chadwick-Air.local (3295)] INFO : Application: My Application
+[06/20/13 11:26:05 -0500 Chadwick-Air.local (3295)] WARN : Agent configured not to send data in this environment.
+[06/20/13 11:26:05 -0500 Chadwick-Air.local (3295)] INFO : Installing ActiveRecord instrumentation
+[06/20/13 11:26:06 -0500 Chadwick-Air.local (3295)] INFO : Installing Net instrumentation
+[06/20/13 11:26:06 -0500 Chadwick-Air.local (3295)] INFO : Installing Sinatra instrumentation
+[06/20/13 11:26:06 -0500 Chadwick-Air.local (3295)] INFO : Finished instrumentation
+[06/20/13 11:26:08 -0500 Chadwick-Air.local (3298)] INFO : Starting the New Relic agent in "development" environment.
+[06/20/13 11:26:08 -0500 Chadwick-Air.local (3298)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "development" section of your newrelic.yml.
+[06/20/13 11:26:08 -0500 Chadwick-Air.local (3298)] INFO : Reading configuration from newrelic.yml
+[06/20/13 11:26:08 -0500 Chadwick-Air.local (3298)] INFO : Disabling the Request Sampler.
+[06/20/13 11:26:08 -0500 Chadwick-Air.local (3298)] INFO : Environment: development
+[06/20/13 11:26:08 -0500 Chadwick-Air.local (3298)] INFO : Dispatcher: webrick
+[06/20/13 11:26:08 -0500 Chadwick-Air.local (3298)] INFO : Application: My Application
+[06/20/13 11:26:08 -0500 Chadwick-Air.local (3298)] WARN : Agent configured not to send data in this environment.
+[06/20/13 11:26:08 -0500 Chadwick-Air.local (3298)] INFO : Installing ActiveRecord instrumentation
+[06/20/13 11:26:08 -0500 Chadwick-Air.local (3298)] INFO : Installing Net instrumentation
+[06/20/13 11:26:08 -0500 Chadwick-Air.local (3298)] INFO : Installing Sinatra instrumentation
+[06/20/13 11:26:08 -0500 Chadwick-Air.local (3298)] INFO : Finished instrumentation
+[06/20/13 11:26:16 -0500 Chadwick-Air.local (3301)] INFO : Starting the New Relic agent in "development" environment.
+[06/20/13 11:26:16 -0500 Chadwick-Air.local (3301)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "development" section of your newrelic.yml.
+[06/20/13 11:26:16 -0500 Chadwick-Air.local (3301)] INFO : Reading configuration from newrelic.yml
+[06/20/13 11:26:16 -0500 Chadwick-Air.local (3301)] INFO : Disabling the Request Sampler.
+[06/20/13 11:26:16 -0500 Chadwick-Air.local (3301)] INFO : Environment: development
+[06/20/13 11:26:16 -0500 Chadwick-Air.local (3301)] INFO : Dispatcher: webrick
+[06/20/13 11:26:16 -0500 Chadwick-Air.local (3301)] INFO : Application: My Application
+[06/20/13 11:26:16 -0500 Chadwick-Air.local (3301)] WARN : Agent configured not to send data in this environment.
+[06/20/13 11:26:16 -0500 Chadwick-Air.local (3301)] INFO : Installing ActiveRecord instrumentation
+[06/20/13 11:26:17 -0500 Chadwick-Air.local (3301)] INFO : Installing Net instrumentation
+[06/20/13 11:26:17 -0500 Chadwick-Air.local (3301)] INFO : Installing Sinatra instrumentation
+[06/20/13 11:26:17 -0500 Chadwick-Air.local (3301)] INFO : Finished instrumentation
+[06/20/13 11:26:28 -0500 Chadwick-Air.local (3304)] INFO : Starting the New Relic agent in "development" environment.
+[06/20/13 11:26:28 -0500 Chadwick-Air.local (3304)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "development" section of your newrelic.yml.
+[06/20/13 11:26:28 -0500 Chadwick-Air.local (3304)] INFO : Reading configuration from newrelic.yml
+[06/20/13 11:26:28 -0500 Chadwick-Air.local (3304)] INFO : Disabling the Request Sampler.
+[06/20/13 11:26:28 -0500 Chadwick-Air.local (3304)] INFO : Environment: development
+[06/20/13 11:26:28 -0500 Chadwick-Air.local (3304)] INFO : Dispatcher: webrick
+[06/20/13 11:26:28 -0500 Chadwick-Air.local (3304)] INFO : Application: My Application
+[06/20/13 11:26:28 -0500 Chadwick-Air.local (3304)] WARN : Agent configured not to send data in this environment.
+[06/20/13 11:26:28 -0500 Chadwick-Air.local (3304)] INFO : Installing ActiveRecord instrumentation
+[06/20/13 11:26:28 -0500 Chadwick-Air.local (3304)] INFO : Installing Net instrumentation
+[06/20/13 11:26:28 -0500 Chadwick-Air.local (3304)] INFO : Installing Sinatra instrumentation
+[06/20/13 11:26:28 -0500 Chadwick-Air.local (3304)] INFO : Finished instrumentation
+[06/20/13 11:26:39 -0500 Chadwick-Air.local (3307)] INFO : Starting the New Relic agent in "development" environment.
+[06/20/13 11:26:39 -0500 Chadwick-Air.local (3307)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "development" section of your newrelic.yml.
+[06/20/13 11:26:39 -0500 Chadwick-Air.local (3307)] INFO : Reading configuration from newrelic.yml
+[06/20/13 11:26:39 -0500 Chadwick-Air.local (3307)] INFO : Disabling the Request Sampler.
+[06/20/13 11:26:39 -0500 Chadwick-Air.local (3307)] INFO : Environment: development
+[06/20/13 11:26:39 -0500 Chadwick-Air.local (3307)] INFO : Dispatcher: webrick
+[06/20/13 11:26:39 -0500 Chadwick-Air.local (3307)] INFO : Application: My Application
+[06/20/13 11:26:39 -0500 Chadwick-Air.local (3307)] WARN : Agent configured not to send data in this environment.
+[06/20/13 11:26:39 -0500 Chadwick-Air.local (3307)] INFO : Installing ActiveRecord instrumentation
+[06/20/13 11:26:39 -0500 Chadwick-Air.local (3307)] INFO : Installing Net instrumentation
+[06/20/13 11:26:39 -0500 Chadwick-Air.local (3307)] INFO : Installing Sinatra instrumentation
+[06/20/13 11:26:39 -0500 Chadwick-Air.local (3307)] INFO : Finished instrumentation
+[06/20/13 11:26:50 -0500 Chadwick-Air.local (3310)] INFO : Starting the New Relic agent in "development" environment.
+[06/20/13 11:26:50 -0500 Chadwick-Air.local (3310)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "development" section of your newrelic.yml.
+[06/20/13 11:26:50 -0500 Chadwick-Air.local (3310)] INFO : Reading configuration from newrelic.yml
+[06/20/13 11:26:50 -0500 Chadwick-Air.local (3310)] INFO : Disabling the Request Sampler.
+[06/20/13 11:26:50 -0500 Chadwick-Air.local (3310)] INFO : Environment: development
+[06/20/13 11:26:50 -0500 Chadwick-Air.local (3310)] INFO : Dispatcher: webrick
+[06/20/13 11:26:50 -0500 Chadwick-Air.local (3310)] INFO : Application: My Application
+[06/20/13 11:26:50 -0500 Chadwick-Air.local (3310)] WARN : Agent configured not to send data in this environment.
+[06/20/13 11:26:50 -0500 Chadwick-Air.local (3310)] INFO : Installing ActiveRecord instrumentation
+[06/20/13 11:26:50 -0500 Chadwick-Air.local (3310)] INFO : Installing Net instrumentation
+[06/20/13 11:26:50 -0500 Chadwick-Air.local (3310)] INFO : Installing Sinatra instrumentation
+[06/20/13 11:26:50 -0500 Chadwick-Air.local (3310)] INFO : Finished instrumentation
+[06/20/13 11:27:01 -0500 Chadwick-Air.local (3313)] INFO : Starting the New Relic agent in "development" environment.
+[06/20/13 11:27:01 -0500 Chadwick-Air.local (3313)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "development" section of your newrelic.yml.
+[06/20/13 11:27:01 -0500 Chadwick-Air.local (3313)] INFO : Reading configuration from newrelic.yml
+[06/20/13 11:27:01 -0500 Chadwick-Air.local (3313)] INFO : Disabling the Request Sampler.
+[06/20/13 11:27:01 -0500 Chadwick-Air.local (3313)] INFO : Environment: development
+[06/20/13 11:27:01 -0500 Chadwick-Air.local (3313)] INFO : Dispatcher: webrick
+[06/20/13 11:27:01 -0500 Chadwick-Air.local (3313)] INFO : Application: My Application
+[06/20/13 11:27:01 -0500 Chadwick-Air.local (3313)] WARN : Agent configured not to send data in this environment.
+[06/20/13 11:27:01 -0500 Chadwick-Air.local (3313)] INFO : Installing ActiveRecord instrumentation
+[06/20/13 11:27:01 -0500 Chadwick-Air.local (3313)] INFO : Installing Net instrumentation
+[06/20/13 11:27:01 -0500 Chadwick-Air.local (3313)] INFO : Installing Sinatra instrumentation
+[06/20/13 11:27:01 -0500 Chadwick-Air.local (3313)] INFO : Finished instrumentation
+[06/20/13 11:27:12 -0500 Chadwick-Air.local (3316)] INFO : Starting the New Relic agent in "development" environment.
+[06/20/13 11:27:12 -0500 Chadwick-Air.local (3316)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "development" section of your newrelic.yml.
+[06/20/13 11:27:12 -0500 Chadwick-Air.local (3316)] INFO : Reading configuration from newrelic.yml
+[06/20/13 11:27:12 -0500 Chadwick-Air.local (3316)] INFO : Disabling the Request Sampler.
+[06/20/13 11:27:12 -0500 Chadwick-Air.local (3316)] INFO : Environment: development
+[06/20/13 11:27:12 -0500 Chadwick-Air.local (3316)] INFO : Dispatcher: webrick
+[06/20/13 11:27:12 -0500 Chadwick-Air.local (3316)] INFO : Application: My Application
+[06/20/13 11:27:12 -0500 Chadwick-Air.local (3316)] WARN : Agent configured not to send data in this environment.
+[06/20/13 11:27:12 -0500 Chadwick-Air.local (3316)] INFO : Installing ActiveRecord instrumentation
+[06/20/13 11:27:13 -0500 Chadwick-Air.local (3316)] INFO : Installing Net instrumentation
+[06/20/13 11:27:13 -0500 Chadwick-Air.local (3316)] INFO : Installing Sinatra instrumentation
+[06/20/13 11:27:13 -0500 Chadwick-Air.local (3316)] INFO : Finished instrumentation
+[06/20/13 11:27:16 -0500 Chadwick-Air.local (3319)] INFO : Starting the New Relic agent in "development" environment.
+[06/20/13 11:27:16 -0500 Chadwick-Air.local (3319)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "development" section of your newrelic.yml.
+[06/20/13 11:27:16 -0500 Chadwick-Air.local (3319)] INFO : Reading configuration from newrelic.yml
+[06/20/13 11:27:16 -0500 Chadwick-Air.local (3319)] INFO : Disabling the Request Sampler.
+[06/20/13 11:27:16 -0500 Chadwick-Air.local (3319)] INFO : Environment: development
+[06/20/13 11:27:16 -0500 Chadwick-Air.local (3319)] INFO : Dispatcher: webrick
+[06/20/13 11:27:16 -0500 Chadwick-Air.local (3319)] INFO : Application: My Application
+[06/20/13 11:27:16 -0500 Chadwick-Air.local (3319)] WARN : Agent configured not to send data in this environment.
+[06/20/13 11:27:16 -0500 Chadwick-Air.local (3319)] INFO : Installing ActiveRecord instrumentation
+[06/20/13 11:27:16 -0500 Chadwick-Air.local (3319)] INFO : Installing Net instrumentation
+[06/20/13 11:27:16 -0500 Chadwick-Air.local (3319)] INFO : Installing Sinatra instrumentation
+[06/20/13 11:27:17 -0500 Chadwick-Air.local (3319)] INFO : Finished instrumentation
+[06/20/13 11:27:22 -0500 Chadwick-Air.local (3322)] INFO : Starting the New Relic agent in "development" environment.
+[06/20/13 11:27:22 -0500 Chadwick-Air.local (3322)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "development" section of your newrelic.yml.
+[06/20/13 11:27:22 -0500 Chadwick-Air.local (3322)] INFO : Reading configuration from newrelic.yml
+[06/20/13 11:27:22 -0500 Chadwick-Air.local (3322)] INFO : Disabling the Request Sampler.
+[06/20/13 11:27:22 -0500 Chadwick-Air.local (3322)] INFO : Environment: development
+[06/20/13 11:27:22 -0500 Chadwick-Air.local (3322)] INFO : Dispatcher: webrick
+[06/20/13 11:27:22 -0500 Chadwick-Air.local (3322)] INFO : Application: My Application
+[06/20/13 11:27:22 -0500 Chadwick-Air.local (3322)] WARN : Agent configured not to send data in this environment.
+[06/20/13 11:27:22 -0500 Chadwick-Air.local (3322)] INFO : Installing ActiveRecord instrumentation
+[06/20/13 11:27:22 -0500 Chadwick-Air.local (3322)] INFO : Installing Net instrumentation
+[06/20/13 11:27:22 -0500 Chadwick-Air.local (3322)] INFO : Installing Sinatra instrumentation
+[06/20/13 11:27:22 -0500 Chadwick-Air.local (3322)] INFO : Finished instrumentation
+[06/20/13 11:27:23 -0500 Chadwick-Air.local (3325)] INFO : Starting the New Relic agent in "development" environment.
+[06/20/13 11:27:23 -0500 Chadwick-Air.local (3325)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "development" section of your newrelic.yml.
+[06/20/13 11:27:23 -0500 Chadwick-Air.local (3325)] INFO : Reading configuration from newrelic.yml
+[06/20/13 11:27:23 -0500 Chadwick-Air.local (3325)] INFO : Disabling the Request Sampler.
+[06/20/13 11:27:23 -0500 Chadwick-Air.local (3325)] INFO : Environment: development
+[06/20/13 11:27:23 -0500 Chadwick-Air.local (3325)] INFO : Dispatcher: webrick
+[06/20/13 11:27:23 -0500 Chadwick-Air.local (3325)] INFO : Application: My Application
+[06/20/13 11:27:23 -0500 Chadwick-Air.local (3325)] WARN : Agent configured not to send data in this environment.
+[06/20/13 11:27:23 -0500 Chadwick-Air.local (3325)] INFO : Installing ActiveRecord instrumentation
+[06/20/13 11:27:24 -0500 Chadwick-Air.local (3325)] INFO : Installing Net instrumentation
+[06/20/13 11:27:24 -0500 Chadwick-Air.local (3325)] INFO : Installing Sinatra instrumentation
+[06/20/13 11:27:24 -0500 Chadwick-Air.local (3325)] INFO : Finished instrumentation
+[06/20/13 11:27:34 -0500 Chadwick-Air.local (3330)] INFO : Starting the New Relic agent in "development" environment.
+[06/20/13 11:27:34 -0500 Chadwick-Air.local (3330)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "development" section of your newrelic.yml.
+[06/20/13 11:27:34 -0500 Chadwick-Air.local (3330)] INFO : Reading configuration from newrelic.yml
+[06/20/13 11:27:34 -0500 Chadwick-Air.local (3330)] INFO : Disabling the Request Sampler.
+[06/20/13 11:27:34 -0500 Chadwick-Air.local (3330)] INFO : Environment: development
+[06/20/13 11:27:34 -0500 Chadwick-Air.local (3330)] INFO : Dispatcher: webrick
+[06/20/13 11:27:34 -0500 Chadwick-Air.local (3330)] INFO : Application: My Application
+[06/20/13 11:27:34 -0500 Chadwick-Air.local (3330)] WARN : Agent configured not to send data in this environment.
+[06/20/13 11:27:34 -0500 Chadwick-Air.local (3330)] INFO : Installing ActiveRecord instrumentation
+[06/20/13 11:27:35 -0500 Chadwick-Air.local (3330)] INFO : Installing Net instrumentation
+[06/20/13 11:27:35 -0500 Chadwick-Air.local (3330)] INFO : Installing Sinatra instrumentation
+[06/20/13 11:27:35 -0500 Chadwick-Air.local (3330)] INFO : Finished instrumentation
+[06/20/13 11:27:46 -0500 Chadwick-Air.local (3333)] INFO : Starting the New Relic agent in "development" environment.
+[06/20/13 11:27:46 -0500 Chadwick-Air.local (3333)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "development" section of your newrelic.yml.
+[06/20/13 11:27:46 -0500 Chadwick-Air.local (3333)] INFO : Reading configuration from newrelic.yml
+[06/20/13 11:27:46 -0500 Chadwick-Air.local (3333)] INFO : Disabling the Request Sampler.
+[06/20/13 11:27:46 -0500 Chadwick-Air.local (3333)] INFO : Environment: development
+[06/20/13 11:27:46 -0500 Chadwick-Air.local (3333)] INFO : Dispatcher: webrick
+[06/20/13 11:27:46 -0500 Chadwick-Air.local (3333)] INFO : Application: My Application
+[06/20/13 11:27:46 -0500 Chadwick-Air.local (3333)] WARN : Agent configured not to send data in this environment.
+[06/20/13 11:27:46 -0500 Chadwick-Air.local (3333)] INFO : Installing ActiveRecord instrumentation
+[06/20/13 11:27:46 -0500 Chadwick-Air.local (3333)] INFO : Installing Net instrumentation
+[06/20/13 11:27:46 -0500 Chadwick-Air.local (3333)] INFO : Installing Sinatra instrumentation
+[06/20/13 11:27:46 -0500 Chadwick-Air.local (3333)] INFO : Finished instrumentation
+[06/20/13 11:27:57 -0500 Chadwick-Air.local (3336)] INFO : Starting the New Relic agent in "development" environment.
+[06/20/13 11:27:57 -0500 Chadwick-Air.local (3336)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "development" section of your newrelic.yml.
+[06/20/13 11:27:57 -0500 Chadwick-Air.local (3336)] INFO : Reading configuration from newrelic.yml
+[06/20/13 11:27:57 -0500 Chadwick-Air.local (3336)] INFO : Disabling the Request Sampler.
+[06/20/13 11:27:57 -0500 Chadwick-Air.local (3336)] INFO : Environment: development
+[06/20/13 11:27:57 -0500 Chadwick-Air.local (3336)] INFO : Dispatcher: webrick
+[06/20/13 11:27:57 -0500 Chadwick-Air.local (3336)] INFO : Application: My Application
+[06/20/13 11:27:57 -0500 Chadwick-Air.local (3336)] WARN : Agent configured not to send data in this environment.
+[06/20/13 11:27:57 -0500 Chadwick-Air.local (3336)] INFO : Installing ActiveRecord instrumentation
+[06/20/13 11:27:57 -0500 Chadwick-Air.local (3336)] INFO : Installing Net instrumentation
+[06/20/13 11:27:57 -0500 Chadwick-Air.local (3336)] INFO : Installing Sinatra instrumentation
+[06/20/13 11:27:57 -0500 Chadwick-Air.local (3336)] INFO : Finished instrumentation
+[06/20/13 11:28:08 -0500 Chadwick-Air.local (3339)] INFO : Starting the New Relic agent in "development" environment.
+[06/20/13 11:28:08 -0500 Chadwick-Air.local (3339)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "development" section of your newrelic.yml.
+[06/20/13 11:28:08 -0500 Chadwick-Air.local (3339)] INFO : Reading configuration from newrelic.yml
+[06/20/13 11:28:08 -0500 Chadwick-Air.local (3339)] INFO : Disabling the Request Sampler.
+[06/20/13 11:28:08 -0500 Chadwick-Air.local (3339)] INFO : Environment: development
+[06/20/13 11:28:08 -0500 Chadwick-Air.local (3339)] INFO : Dispatcher: webrick
+[06/20/13 11:28:08 -0500 Chadwick-Air.local (3339)] INFO : Application: My Application
+[06/20/13 11:28:08 -0500 Chadwick-Air.local (3339)] WARN : Agent configured not to send data in this environment.
+[06/20/13 11:28:08 -0500 Chadwick-Air.local (3339)] INFO : Installing ActiveRecord instrumentation
+[06/20/13 11:28:08 -0500 Chadwick-Air.local (3339)] INFO : Installing Net instrumentation
+[06/20/13 11:28:08 -0500 Chadwick-Air.local (3339)] INFO : Installing Sinatra instrumentation
+[06/20/13 11:28:08 -0500 Chadwick-Air.local (3339)] INFO : Finished instrumentation
+[06/20/13 11:28:19 -0500 Chadwick-Air.local (3342)] INFO : Starting the New Relic agent in "development" environment.
+[06/20/13 11:28:19 -0500 Chadwick-Air.local (3342)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "development" section of your newrelic.yml.
+[06/20/13 11:28:19 -0500 Chadwick-Air.local (3342)] INFO : Reading configuration from newrelic.yml
+[06/20/13 11:28:19 -0500 Chadwick-Air.local (3342)] INFO : Disabling the Request Sampler.
+[06/20/13 11:28:19 -0500 Chadwick-Air.local (3342)] INFO : Environment: development
+[06/20/13 11:28:19 -0500 Chadwick-Air.local (3342)] INFO : Dispatcher: webrick
+[06/20/13 11:28:19 -0500 Chadwick-Air.local (3342)] INFO : Application: My Application
+[06/20/13 11:28:19 -0500 Chadwick-Air.local (3342)] WARN : Agent configured not to send data in this environment.
+[06/20/13 11:28:19 -0500 Chadwick-Air.local (3342)] INFO : Installing ActiveRecord instrumentation
+[06/20/13 11:28:19 -0500 Chadwick-Air.local (3342)] INFO : Installing Net instrumentation
+[06/20/13 11:28:19 -0500 Chadwick-Air.local (3342)] INFO : Installing Sinatra instrumentation
+[06/20/13 11:28:19 -0500 Chadwick-Air.local (3342)] INFO : Finished instrumentation
+[06/20/13 11:28:30 -0500 Chadwick-Air.local (3345)] INFO : Starting the New Relic agent in "development" environment.
+[06/20/13 11:28:30 -0500 Chadwick-Air.local (3345)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "development" section of your newrelic.yml.
+[06/20/13 11:28:30 -0500 Chadwick-Air.local (3345)] INFO : Reading configuration from newrelic.yml
+[06/20/13 11:28:30 -0500 Chadwick-Air.local (3345)] INFO : Disabling the Request Sampler.
+[06/20/13 11:28:30 -0500 Chadwick-Air.local (3345)] INFO : Environment: development
+[06/20/13 11:28:30 -0500 Chadwick-Air.local (3345)] INFO : Dispatcher: webrick
+[06/20/13 11:28:30 -0500 Chadwick-Air.local (3345)] INFO : Application: My Application
+[06/20/13 11:28:30 -0500 Chadwick-Air.local (3345)] WARN : Agent configured not to send data in this environment.
+[06/20/13 11:28:30 -0500 Chadwick-Air.local (3345)] INFO : Installing ActiveRecord instrumentation
+[06/20/13 11:28:30 -0500 Chadwick-Air.local (3345)] INFO : Installing Net instrumentation
+[06/20/13 11:28:30 -0500 Chadwick-Air.local (3345)] INFO : Installing Sinatra instrumentation
+[06/20/13 11:28:30 -0500 Chadwick-Air.local (3345)] INFO : Finished instrumentation
+[06/20/13 11:28:41 -0500 Chadwick-Air.local (3348)] INFO : Starting the New Relic agent in "development" environment.
+[06/20/13 11:28:41 -0500 Chadwick-Air.local (3348)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "development" section of your newrelic.yml.
+[06/20/13 11:28:41 -0500 Chadwick-Air.local (3348)] INFO : Reading configuration from newrelic.yml
+[06/20/13 11:28:41 -0500 Chadwick-Air.local (3348)] INFO : Disabling the Request Sampler.
+[06/20/13 11:28:41 -0500 Chadwick-Air.local (3348)] INFO : Environment: development
+[06/20/13 11:28:41 -0500 Chadwick-Air.local (3348)] INFO : Dispatcher: webrick
+[06/20/13 11:28:41 -0500 Chadwick-Air.local (3348)] INFO : Application: My Application
+[06/20/13 11:28:41 -0500 Chadwick-Air.local (3348)] WARN : Agent configured not to send data in this environment.
+[06/20/13 11:28:41 -0500 Chadwick-Air.local (3348)] INFO : Installing ActiveRecord instrumentation
+[06/20/13 11:28:42 -0500 Chadwick-Air.local (3348)] INFO : Installing Net instrumentation
+[06/20/13 11:28:42 -0500 Chadwick-Air.local (3348)] INFO : Installing Sinatra instrumentation
+[06/20/13 11:28:42 -0500 Chadwick-Air.local (3348)] INFO : Finished instrumentation
+[06/20/13 11:28:52 -0500 Chadwick-Air.local (3351)] INFO : Starting the New Relic agent in "development" environment.
+[06/20/13 11:28:52 -0500 Chadwick-Air.local (3351)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "development" section of your newrelic.yml.
+[06/20/13 11:28:52 -0500 Chadwick-Air.local (3351)] INFO : Reading configuration from newrelic.yml
+[06/20/13 11:28:52 -0500 Chadwick-Air.local (3351)] INFO : Disabling the Request Sampler.
+[06/20/13 11:28:52 -0500 Chadwick-Air.local (3351)] INFO : Environment: development
+[06/20/13 11:28:52 -0500 Chadwick-Air.local (3351)] INFO : Dispatcher: webrick
+[06/20/13 11:28:52 -0500 Chadwick-Air.local (3351)] INFO : Application: My Application
+[06/20/13 11:28:52 -0500 Chadwick-Air.local (3351)] WARN : Agent configured not to send data in this environment.
+[06/20/13 11:28:52 -0500 Chadwick-Air.local (3351)] INFO : Installing ActiveRecord instrumentation
+[06/20/13 11:28:53 -0500 Chadwick-Air.local (3351)] INFO : Installing Net instrumentation
+[06/20/13 11:28:53 -0500 Chadwick-Air.local (3351)] INFO : Installing Sinatra instrumentation
+[06/20/13 11:28:53 -0500 Chadwick-Air.local (3351)] INFO : Finished instrumentation
+[06/20/13 11:29:04 -0500 Chadwick-Air.local (3354)] INFO : Starting the New Relic agent in "development" environment.
+[06/20/13 11:29:04 -0500 Chadwick-Air.local (3354)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "development" section of your newrelic.yml.
+[06/20/13 11:29:04 -0500 Chadwick-Air.local (3354)] INFO : Reading configuration from newrelic.yml
+[06/20/13 11:29:04 -0500 Chadwick-Air.local (3354)] INFO : Disabling the Request Sampler.
+[06/20/13 11:29:04 -0500 Chadwick-Air.local (3354)] INFO : Environment: development
+[06/20/13 11:29:04 -0500 Chadwick-Air.local (3354)] INFO : Dispatcher: webrick
+[06/20/13 11:29:04 -0500 Chadwick-Air.local (3354)] INFO : Application: My Application
+[06/20/13 11:29:04 -0500 Chadwick-Air.local (3354)] WARN : Agent configured not to send data in this environment.
+[06/20/13 11:29:04 -0500 Chadwick-Air.local (3354)] INFO : Installing ActiveRecord instrumentation
+[06/20/13 11:29:04 -0500 Chadwick-Air.local (3354)] INFO : Installing Net instrumentation
+[06/20/13 11:29:04 -0500 Chadwick-Air.local (3354)] INFO : Installing Sinatra instrumentation
+[06/20/13 11:29:04 -0500 Chadwick-Air.local (3354)] INFO : Finished instrumentation
+[06/20/13 11:29:15 -0500 Chadwick-Air.local (3357)] INFO : Starting the New Relic agent in "development" environment.
+[06/20/13 11:29:15 -0500 Chadwick-Air.local (3357)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "development" section of your newrelic.yml.
+[06/20/13 11:29:15 -0500 Chadwick-Air.local (3357)] INFO : Reading configuration from newrelic.yml
+[06/20/13 11:29:15 -0500 Chadwick-Air.local (3357)] INFO : Disabling the Request Sampler.
+[06/20/13 11:29:15 -0500 Chadwick-Air.local (3357)] INFO : Environment: development
+[06/20/13 11:29:15 -0500 Chadwick-Air.local (3357)] INFO : Dispatcher: webrick
+[06/20/13 11:29:15 -0500 Chadwick-Air.local (3357)] INFO : Application: My Application
+[06/20/13 11:29:15 -0500 Chadwick-Air.local (3357)] WARN : Agent configured not to send data in this environment.
+[06/20/13 11:29:15 -0500 Chadwick-Air.local (3357)] INFO : Installing ActiveRecord instrumentation
+[06/20/13 11:29:15 -0500 Chadwick-Air.local (3357)] INFO : Installing Net instrumentation
+[06/20/13 11:29:15 -0500 Chadwick-Air.local (3357)] INFO : Installing Sinatra instrumentation
+[06/20/13 11:29:15 -0500 Chadwick-Air.local (3357)] INFO : Finished instrumentation
+[06/20/13 11:29:26 -0500 Chadwick-Air.local (3360)] INFO : Starting the New Relic agent in "development" environment.
+[06/20/13 11:29:26 -0500 Chadwick-Air.local (3360)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "development" section of your newrelic.yml.
+[06/20/13 11:29:26 -0500 Chadwick-Air.local (3360)] INFO : Reading configuration from newrelic.yml
+[06/20/13 11:29:26 -0500 Chadwick-Air.local (3360)] INFO : Disabling the Request Sampler.
+[06/20/13 11:29:26 -0500 Chadwick-Air.local (3360)] INFO : Environment: development
+[06/20/13 11:29:26 -0500 Chadwick-Air.local (3360)] INFO : Dispatcher: webrick
+[06/20/13 11:29:26 -0500 Chadwick-Air.local (3360)] INFO : Application: My Application
+[06/20/13 11:29:26 -0500 Chadwick-Air.local (3360)] WARN : Agent configured not to send data in this environment.
+[06/20/13 11:29:26 -0500 Chadwick-Air.local (3360)] INFO : Installing ActiveRecord instrumentation
+[06/20/13 11:29:26 -0500 Chadwick-Air.local (3360)] INFO : Installing Net instrumentation
+[06/20/13 11:29:26 -0500 Chadwick-Air.local (3360)] INFO : Installing Sinatra instrumentation
+[06/20/13 11:29:26 -0500 Chadwick-Air.local (3360)] INFO : Finished instrumentation
+[06/20/13 11:29:37 -0500 Chadwick-Air.local (3363)] INFO : Starting the New Relic agent in "development" environment.
+[06/20/13 11:29:37 -0500 Chadwick-Air.local (3363)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "development" section of your newrelic.yml.
+[06/20/13 11:29:37 -0500 Chadwick-Air.local (3363)] INFO : Reading configuration from newrelic.yml
+[06/20/13 11:29:37 -0500 Chadwick-Air.local (3363)] INFO : Disabling the Request Sampler.
+[06/20/13 11:29:37 -0500 Chadwick-Air.local (3363)] INFO : Environment: development
+[06/20/13 11:29:37 -0500 Chadwick-Air.local (3363)] INFO : Dispatcher: webrick
+[06/20/13 11:29:37 -0500 Chadwick-Air.local (3363)] INFO : Application: My Application
+[06/20/13 11:29:37 -0500 Chadwick-Air.local (3363)] WARN : Agent configured not to send data in this environment.
+[06/20/13 11:29:37 -0500 Chadwick-Air.local (3363)] INFO : Installing ActiveRecord instrumentation
+[06/20/13 11:29:37 -0500 Chadwick-Air.local (3363)] INFO : Installing Net instrumentation
+[06/20/13 11:29:37 -0500 Chadwick-Air.local (3363)] INFO : Installing Sinatra instrumentation
+[06/20/13 11:29:37 -0500 Chadwick-Air.local (3363)] INFO : Finished instrumentation
+[06/20/13 11:29:48 -0500 Chadwick-Air.local (3367)] INFO : Starting the New Relic agent in "development" environment.
+[06/20/13 11:29:48 -0500 Chadwick-Air.local (3367)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "development" section of your newrelic.yml.
+[06/20/13 11:29:48 -0500 Chadwick-Air.local (3367)] INFO : Reading configuration from newrelic.yml
+[06/20/13 11:29:48 -0500 Chadwick-Air.local (3367)] INFO : Disabling the Request Sampler.
+[06/20/13 11:29:48 -0500 Chadwick-Air.local (3367)] INFO : Environment: development
+[06/20/13 11:29:48 -0500 Chadwick-Air.local (3367)] INFO : Dispatcher: webrick
+[06/20/13 11:29:48 -0500 Chadwick-Air.local (3367)] INFO : Application: My Application
+[06/20/13 11:29:48 -0500 Chadwick-Air.local (3367)] WARN : Agent configured not to send data in this environment.
+[06/20/13 11:29:48 -0500 Chadwick-Air.local (3367)] INFO : Installing ActiveRecord instrumentation
+[06/20/13 11:29:49 -0500 Chadwick-Air.local (3367)] INFO : Installing Net instrumentation
+[06/20/13 11:29:49 -0500 Chadwick-Air.local (3367)] INFO : Installing Sinatra instrumentation
+[06/20/13 11:29:49 -0500 Chadwick-Air.local (3367)] INFO : Finished instrumentation
+[06/20/13 11:29:59 -0500 Chadwick-Air.local (3370)] INFO : Starting the New Relic agent in "development" environment.
+[06/20/13 11:29:59 -0500 Chadwick-Air.local (3370)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "development" section of your newrelic.yml.
+[06/20/13 11:29:59 -0500 Chadwick-Air.local (3370)] INFO : Reading configuration from newrelic.yml
+[06/20/13 11:29:59 -0500 Chadwick-Air.local (3370)] INFO : Disabling the Request Sampler.
+[06/20/13 11:29:59 -0500 Chadwick-Air.local (3370)] INFO : Environment: development
+[06/20/13 11:29:59 -0500 Chadwick-Air.local (3370)] INFO : Dispatcher: webrick
+[06/20/13 11:29:59 -0500 Chadwick-Air.local (3370)] INFO : Application: My Application
+[06/20/13 11:29:59 -0500 Chadwick-Air.local (3370)] WARN : Agent configured not to send data in this environment.
+[06/20/13 11:29:59 -0500 Chadwick-Air.local (3370)] INFO : Installing ActiveRecord instrumentation
+[06/20/13 11:30:00 -0500 Chadwick-Air.local (3370)] INFO : Installing Net instrumentation
+[06/20/13 11:30:00 -0500 Chadwick-Air.local (3370)] INFO : Installing Sinatra instrumentation
+[06/20/13 11:30:00 -0500 Chadwick-Air.local (3370)] INFO : Finished instrumentation
+[06/20/13 11:30:11 -0500 Chadwick-Air.local (3375)] INFO : Starting the New Relic agent in "development" environment.
+[06/20/13 11:30:11 -0500 Chadwick-Air.local (3375)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "development" section of your newrelic.yml.
+[06/20/13 11:30:11 -0500 Chadwick-Air.local (3375)] INFO : Reading configuration from newrelic.yml
+[06/20/13 11:30:11 -0500 Chadwick-Air.local (3375)] INFO : Disabling the Request Sampler.
+[06/20/13 11:30:11 -0500 Chadwick-Air.local (3375)] INFO : Environment: development
+[06/20/13 11:30:11 -0500 Chadwick-Air.local (3375)] INFO : Dispatcher: webrick
+[06/20/13 11:30:11 -0500 Chadwick-Air.local (3375)] INFO : Application: My Application
+[06/20/13 11:30:11 -0500 Chadwick-Air.local (3375)] WARN : Agent configured not to send data in this environment.
+[06/20/13 11:30:11 -0500 Chadwick-Air.local (3375)] INFO : Installing ActiveRecord instrumentation
+[06/20/13 11:30:11 -0500 Chadwick-Air.local (3375)] INFO : Installing Net instrumentation
+[06/20/13 11:30:11 -0500 Chadwick-Air.local (3375)] INFO : Installing Sinatra instrumentation
+[06/20/13 11:30:11 -0500 Chadwick-Air.local (3375)] INFO : Finished instrumentation
+[06/20/13 11:30:22 -0500 Chadwick-Air.local (3378)] INFO : Starting the New Relic agent in "development" environment.
+[06/20/13 11:30:22 -0500 Chadwick-Air.local (3378)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "development" section of your newrelic.yml.
+[06/20/13 11:30:22 -0500 Chadwick-Air.local (3378)] INFO : Reading configuration from newrelic.yml
+[06/20/13 11:30:22 -0500 Chadwick-Air.local (3378)] INFO : Disabling the Request Sampler.
+[06/20/13 11:30:22 -0500 Chadwick-Air.local (3378)] INFO : Environment: development
+[06/20/13 11:30:22 -0500 Chadwick-Air.local (3378)] INFO : Dispatcher: webrick
+[06/20/13 11:30:22 -0500 Chadwick-Air.local (3378)] INFO : Application: My Application
+[06/20/13 11:30:22 -0500 Chadwick-Air.local (3378)] WARN : Agent configured not to send data in this environment.
+[06/20/13 11:30:22 -0500 Chadwick-Air.local (3378)] INFO : Installing ActiveRecord instrumentation
+[06/20/13 11:30:22 -0500 Chadwick-Air.local (3378)] INFO : Installing Net instrumentation
+[06/20/13 11:30:22 -0500 Chadwick-Air.local (3378)] INFO : Installing Sinatra instrumentation
+[06/20/13 11:30:22 -0500 Chadwick-Air.local (3378)] INFO : Finished instrumentation
+[06/20/13 11:30:33 -0500 Chadwick-Air.local (3381)] INFO : Starting the New Relic agent in "development" environment.
+[06/20/13 11:30:33 -0500 Chadwick-Air.local (3381)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "development" section of your newrelic.yml.
+[06/20/13 11:30:33 -0500 Chadwick-Air.local (3381)] INFO : Reading configuration from newrelic.yml
+[06/20/13 11:30:33 -0500 Chadwick-Air.local (3381)] INFO : Disabling the Request Sampler.
+[06/20/13 11:30:33 -0500 Chadwick-Air.local (3381)] INFO : Environment: development
+[06/20/13 11:30:33 -0500 Chadwick-Air.local (3381)] INFO : Dispatcher: webrick
+[06/20/13 11:30:33 -0500 Chadwick-Air.local (3381)] INFO : Application: My Application
+[06/20/13 11:30:33 -0500 Chadwick-Air.local (3381)] WARN : Agent configured not to send data in this environment.
+[06/20/13 11:30:33 -0500 Chadwick-Air.local (3381)] INFO : Installing ActiveRecord instrumentation
+[06/20/13 11:30:33 -0500 Chadwick-Air.local (3381)] INFO : Installing Net instrumentation
+[06/20/13 11:30:33 -0500 Chadwick-Air.local (3381)] INFO : Installing Sinatra instrumentation
+[06/20/13 11:30:33 -0500 Chadwick-Air.local (3381)] INFO : Finished instrumentation
+[06/20/13 11:30:44 -0500 Chadwick-Air.local (3384)] INFO : Starting the New Relic agent in "development" environment.
+[06/20/13 11:30:44 -0500 Chadwick-Air.local (3384)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "development" section of your newrelic.yml.
+[06/20/13 11:30:44 -0500 Chadwick-Air.local (3384)] INFO : Reading configuration from newrelic.yml
+[06/20/13 11:30:44 -0500 Chadwick-Air.local (3384)] INFO : Disabling the Request Sampler.
+[06/20/13 11:30:44 -0500 Chadwick-Air.local (3384)] INFO : Environment: development
+[06/20/13 11:30:44 -0500 Chadwick-Air.local (3384)] INFO : Dispatcher: webrick
+[06/20/13 11:30:44 -0500 Chadwick-Air.local (3384)] INFO : Application: My Application
+[06/20/13 11:30:44 -0500 Chadwick-Air.local (3384)] WARN : Agent configured not to send data in this environment.
+[06/20/13 11:30:44 -0500 Chadwick-Air.local (3384)] INFO : Installing ActiveRecord instrumentation
+[06/20/13 11:30:44 -0500 Chadwick-Air.local (3384)] INFO : Installing Net instrumentation
+[06/20/13 11:30:44 -0500 Chadwick-Air.local (3384)] INFO : Installing Sinatra instrumentation
+[06/20/13 11:30:44 -0500 Chadwick-Air.local (3384)] INFO : Finished instrumentation
+[06/20/13 11:30:55 -0500 Chadwick-Air.local (3387)] INFO : Starting the New Relic agent in "development" environment.
+[06/20/13 11:30:55 -0500 Chadwick-Air.local (3387)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "development" section of your newrelic.yml.
+[06/20/13 11:30:55 -0500 Chadwick-Air.local (3387)] INFO : Reading configuration from newrelic.yml
+[06/20/13 11:30:55 -0500 Chadwick-Air.local (3387)] INFO : Disabling the Request Sampler.
+[06/20/13 11:30:55 -0500 Chadwick-Air.local (3387)] INFO : Environment: development
+[06/20/13 11:30:55 -0500 Chadwick-Air.local (3387)] INFO : Dispatcher: webrick
+[06/20/13 11:30:55 -0500 Chadwick-Air.local (3387)] INFO : Application: My Application
+[06/20/13 11:30:55 -0500 Chadwick-Air.local (3387)] WARN : Agent configured not to send data in this environment.
+[06/20/13 11:30:55 -0500 Chadwick-Air.local (3387)] INFO : Installing ActiveRecord instrumentation
+[06/20/13 11:30:56 -0500 Chadwick-Air.local (3387)] INFO : Installing Net instrumentation
+[06/20/13 11:30:56 -0500 Chadwick-Air.local (3387)] INFO : Installing Sinatra instrumentation
+[06/20/13 11:30:56 -0500 Chadwick-Air.local (3387)] INFO : Finished instrumentation
+[06/20/13 11:31:06 -0500 Chadwick-Air.local (3390)] INFO : Starting the New Relic agent in "development" environment.
+[06/20/13 11:31:06 -0500 Chadwick-Air.local (3390)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "development" section of your newrelic.yml.
+[06/20/13 11:31:06 -0500 Chadwick-Air.local (3390)] INFO : Reading configuration from newrelic.yml
+[06/20/13 11:31:06 -0500 Chadwick-Air.local (3390)] INFO : Disabling the Request Sampler.
+[06/20/13 11:31:06 -0500 Chadwick-Air.local (3390)] INFO : Environment: development
+[06/20/13 11:31:06 -0500 Chadwick-Air.local (3390)] INFO : Dispatcher: webrick
+[06/20/13 11:31:06 -0500 Chadwick-Air.local (3390)] INFO : Application: My Application
+[06/20/13 11:31:06 -0500 Chadwick-Air.local (3390)] WARN : Agent configured not to send data in this environment.
+[06/20/13 11:31:06 -0500 Chadwick-Air.local (3390)] INFO : Installing ActiveRecord instrumentation
+[06/20/13 11:31:07 -0500 Chadwick-Air.local (3390)] INFO : Installing Net instrumentation
+[06/20/13 11:31:07 -0500 Chadwick-Air.local (3390)] INFO : Installing Sinatra instrumentation
+[06/20/13 11:31:07 -0500 Chadwick-Air.local (3390)] INFO : Finished instrumentation
+[06/20/13 11:31:17 -0500 Chadwick-Air.local (3393)] INFO : Starting the New Relic agent in "development" environment.
+[06/20/13 11:31:17 -0500 Chadwick-Air.local (3393)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "development" section of your newrelic.yml.
+[06/20/13 11:31:17 -0500 Chadwick-Air.local (3393)] INFO : Reading configuration from newrelic.yml
+[06/20/13 11:31:17 -0500 Chadwick-Air.local (3393)] INFO : Disabling the Request Sampler.
+[06/20/13 11:31:17 -0500 Chadwick-Air.local (3393)] INFO : Environment: development
+[06/20/13 11:31:17 -0500 Chadwick-Air.local (3393)] INFO : Dispatcher: webrick
+[06/20/13 11:31:17 -0500 Chadwick-Air.local (3393)] INFO : Application: My Application
+[06/20/13 11:31:17 -0500 Chadwick-Air.local (3393)] WARN : Agent configured not to send data in this environment.
+[06/20/13 11:31:18 -0500 Chadwick-Air.local (3393)] INFO : Installing ActiveRecord instrumentation
+[06/20/13 11:31:18 -0500 Chadwick-Air.local (3393)] INFO : Installing Net instrumentation
+[06/20/13 11:31:18 -0500 Chadwick-Air.local (3393)] INFO : Installing Sinatra instrumentation
+[06/20/13 11:31:18 -0500 Chadwick-Air.local (3393)] INFO : Finished instrumentation
+[06/20/13 11:31:29 -0500 Chadwick-Air.local (3396)] INFO : Starting the New Relic agent in "development" environment.
+[06/20/13 11:31:29 -0500 Chadwick-Air.local (3396)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "development" section of your newrelic.yml.
+[06/20/13 11:31:29 -0500 Chadwick-Air.local (3396)] INFO : Reading configuration from newrelic.yml
+[06/20/13 11:31:29 -0500 Chadwick-Air.local (3396)] INFO : Disabling the Request Sampler.
+[06/20/13 11:31:29 -0500 Chadwick-Air.local (3396)] INFO : Environment: development
+[06/20/13 11:31:29 -0500 Chadwick-Air.local (3396)] INFO : Dispatcher: webrick
+[06/20/13 11:31:29 -0500 Chadwick-Air.local (3396)] INFO : Application: My Application
+[06/20/13 11:31:29 -0500 Chadwick-Air.local (3396)] WARN : Agent configured not to send data in this environment.
+[06/20/13 11:31:29 -0500 Chadwick-Air.local (3396)] INFO : Installing ActiveRecord instrumentation
+[06/20/13 11:31:29 -0500 Chadwick-Air.local (3396)] INFO : Installing Net instrumentation
+[06/20/13 11:31:29 -0500 Chadwick-Air.local (3396)] INFO : Installing Sinatra instrumentation
+[06/20/13 11:31:29 -0500 Chadwick-Air.local (3396)] INFO : Finished instrumentation
+[06/20/13 11:31:40 -0500 Chadwick-Air.local (3399)] INFO : Starting the New Relic agent in "development" environment.
+[06/20/13 11:31:40 -0500 Chadwick-Air.local (3399)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "development" section of your newrelic.yml.
+[06/20/13 11:31:40 -0500 Chadwick-Air.local (3399)] INFO : Reading configuration from newrelic.yml
+[06/20/13 11:31:40 -0500 Chadwick-Air.local (3399)] INFO : Disabling the Request Sampler.
+[06/20/13 11:31:40 -0500 Chadwick-Air.local (3399)] INFO : Environment: development
+[06/20/13 11:31:40 -0500 Chadwick-Air.local (3399)] INFO : Dispatcher: webrick
+[06/20/13 11:31:40 -0500 Chadwick-Air.local (3399)] INFO : Application: My Application
+[06/20/13 11:31:40 -0500 Chadwick-Air.local (3399)] WARN : Agent configured not to send data in this environment.
+[06/20/13 11:31:40 -0500 Chadwick-Air.local (3399)] INFO : Installing ActiveRecord instrumentation
+[06/20/13 11:31:40 -0500 Chadwick-Air.local (3399)] INFO : Installing Net instrumentation
+[06/20/13 11:31:40 -0500 Chadwick-Air.local (3399)] INFO : Installing Sinatra instrumentation
+[06/20/13 11:31:40 -0500 Chadwick-Air.local (3399)] INFO : Finished instrumentation
+[06/20/13 11:31:51 -0500 Chadwick-Air.local (3402)] INFO : Starting the New Relic agent in "development" environment.
+[06/20/13 11:31:51 -0500 Chadwick-Air.local (3402)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "development" section of your newrelic.yml.
+[06/20/13 11:31:51 -0500 Chadwick-Air.local (3402)] INFO : Reading configuration from newrelic.yml
+[06/20/13 11:31:51 -0500 Chadwick-Air.local (3402)] INFO : Disabling the Request Sampler.
+[06/20/13 11:31:51 -0500 Chadwick-Air.local (3402)] INFO : Environment: development
+[06/20/13 11:31:51 -0500 Chadwick-Air.local (3402)] INFO : Dispatcher: webrick
+[06/20/13 11:31:51 -0500 Chadwick-Air.local (3402)] INFO : Application: My Application
+[06/20/13 11:31:51 -0500 Chadwick-Air.local (3402)] WARN : Agent configured not to send data in this environment.
+[06/20/13 11:31:51 -0500 Chadwick-Air.local (3402)] INFO : Installing ActiveRecord instrumentation
+[06/20/13 11:31:51 -0500 Chadwick-Air.local (3402)] INFO : Installing Net instrumentation
+[06/20/13 11:31:51 -0500 Chadwick-Air.local (3402)] INFO : Installing Sinatra instrumentation
+[06/20/13 11:31:51 -0500 Chadwick-Air.local (3402)] INFO : Finished instrumentation
+[06/20/13 11:32:02 -0500 Chadwick-Air.local (3405)] INFO : Starting the New Relic agent in "development" environment.
+[06/20/13 11:32:02 -0500 Chadwick-Air.local (3405)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "development" section of your newrelic.yml.
+[06/20/13 11:32:02 -0500 Chadwick-Air.local (3405)] INFO : Reading configuration from newrelic.yml
+[06/20/13 11:32:02 -0500 Chadwick-Air.local (3405)] INFO : Disabling the Request Sampler.
+[06/20/13 11:32:02 -0500 Chadwick-Air.local (3405)] INFO : Environment: development
+[06/20/13 11:32:02 -0500 Chadwick-Air.local (3405)] INFO : Dispatcher: webrick
+[06/20/13 11:32:02 -0500 Chadwick-Air.local (3405)] INFO : Application: My Application
+[06/20/13 11:32:02 -0500 Chadwick-Air.local (3405)] WARN : Agent configured not to send data in this environment.
+[06/20/13 11:32:02 -0500 Chadwick-Air.local (3405)] INFO : Installing ActiveRecord instrumentation
+[06/20/13 11:32:03 -0500 Chadwick-Air.local (3405)] INFO : Installing Net instrumentation
+[06/20/13 11:32:03 -0500 Chadwick-Air.local (3405)] INFO : Installing Sinatra instrumentation
+[06/20/13 11:32:03 -0500 Chadwick-Air.local (3405)] INFO : Finished instrumentation
+[06/20/13 11:32:13 -0500 Chadwick-Air.local (3408)] INFO : Starting the New Relic agent in "development" environment.
+[06/20/13 11:32:13 -0500 Chadwick-Air.local (3408)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "development" section of your newrelic.yml.
+[06/20/13 11:32:13 -0500 Chadwick-Air.local (3408)] INFO : Reading configuration from newrelic.yml
+[06/20/13 11:32:13 -0500 Chadwick-Air.local (3408)] INFO : Disabling the Request Sampler.
+[06/20/13 11:32:13 -0500 Chadwick-Air.local (3408)] INFO : Environment: development
+[06/20/13 11:32:13 -0500 Chadwick-Air.local (3408)] INFO : Dispatcher: webrick
+[06/20/13 11:32:13 -0500 Chadwick-Air.local (3408)] INFO : Application: My Application
+[06/20/13 11:32:13 -0500 Chadwick-Air.local (3408)] WARN : Agent configured not to send data in this environment.
+[06/20/13 11:32:13 -0500 Chadwick-Air.local (3408)] INFO : Installing ActiveRecord instrumentation
+[06/20/13 11:32:14 -0500 Chadwick-Air.local (3408)] INFO : Installing Net instrumentation
+[06/20/13 11:32:14 -0500 Chadwick-Air.local (3408)] INFO : Installing Sinatra instrumentation
+[06/20/13 11:32:14 -0500 Chadwick-Air.local (3408)] INFO : Finished instrumentation
