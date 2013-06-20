@@ -15,6 +15,9 @@ configure :development do
   set :database, "sqlite3:///orders.db"
 end
 
+enable :sessions
+  set :session_secret, 'H65uT0A4s9uY41w3'
+
 configure :production do
   db = URI.parse(ENV['DATABASE_URL'] || 'postgres://localhost/mydb')
 
@@ -39,8 +42,6 @@ end
 
 configure do
   set :public_folder, Proc.new { File.join(root, "static") }
-  enable :sessions
-  set :session_secret, 'H65uT0A4s9uY41w3'
 end
 
 helpers do
