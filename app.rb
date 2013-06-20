@@ -123,7 +123,7 @@ end
 
 # After checkin, shows form for drink order. Upon reordering, keeps session via lastname
 post '/orders/drinks' do
-  if session[:lastname]
+  if session[:venue]
     @order = Order.new
     erb :"orders/drinks"
   else
