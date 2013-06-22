@@ -9,7 +9,7 @@
      <script>
       $(document).ready(function() {
       	setTimeout(function() {
-        	$('#content').load('/');}, 10000);
+        	$('#content').load('/venue/<%= @venue %>/table/<%= @table %>');}, 10000);
       });
     </script>
   <% end %>
