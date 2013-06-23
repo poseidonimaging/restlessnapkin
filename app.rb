@@ -144,31 +144,9 @@ post '/orders' do
   end
 end
 
-#Get orders by user's table
-#get "/orders/:venue" do
-#  @order = Order.find(params[:venue])
-#  erb :"orders/table"
-#end
-
 # Provides next step options to user after order
 get '/orders/confirm' do
   erb :"orders/confirm"
-end
-
-# Table change via main menu
-get '/table/change' do
-  erb :"table/change"
-end
-
-# Provides next step options to user after table change
-post '/table/change' do
-  erb :"table/change"
-end
-
-# Provides next step options to user after table change
-post '/table/confirm' do
-  session[:table] = params['table']
-  erb :"table/confirm"
 end
 
 # Showing all orders via main menu
