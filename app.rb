@@ -95,6 +95,7 @@ end
 get '/:venue/checkin/*' do 
   session[:venue] = params['venue']
   session[:phone] = params[:splat].first
+  #session[:phone_short] = session[:phone].[-4..-1]
   if session[:venue]
     erb :"/checkin"
   else
