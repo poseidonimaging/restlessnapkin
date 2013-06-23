@@ -96,10 +96,10 @@ get '/:venue/checkin/*' do
   session[:venue] = params['venue']
   session[:phone] = params[:splat].first
   #session[:phone_short] = session[:phone].[-4..-1]
-  if session[:venue]
+  if session[:venue] && session[:phone]
     erb :"/checkin"
   else
-    erb "I have not saved the venue"
+    erb "Something went awry. Please try again and make sure you texted the venue's name properly."
   end
 end
 

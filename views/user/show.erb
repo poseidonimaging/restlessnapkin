@@ -1,11 +1,11 @@
 <div id='content'>
-<h1>Orders for this User</h1><br>
+<h3>User's Orders</h3><hr>
   <% @orders.each do |order| %>
           
-    <h4><%= order.lastname %> at <a href="/venue/<%= order.venue %>"><%= order.venue %></a> <a href="/venue/<%= order.venue %>/table/<%= order.table %>">Table <%= order.table %></a></h4>
-    <h3><a href="/orders/<%= order.id %>"><%= order.drinks %></a></h3>
+    <h5><%= order.lastname %> at <a href="/venue/<%= order.venue %>"><%= order.venue %></a> <a href="/venue/<%= order.venue %>/table/<%= order.table %>">Table <%= order.table %></a></h5>
+    <h4><a href="/orders/<%= order.id %>"><%= order.drinks %></a></h4>
     <p><%= pretty_date(order.created_at) %> from <%= order.phone %></p>
-    <br>
+    <hr>
     <script>
       $(document).ready(function() {
       	setTimeout(function() {

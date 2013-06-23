@@ -1,9 +1,9 @@
 <div id='content'>
-	<h3>Austin's Orders</h1><hr>
+	<h3>Austin's Orders</h3><hr>
 		<% @orders.each do |order| %>
   				
-    	<h5><a href="/venue/<%= order.venue %>"><%= order.venue %></a> at <a href="/venue/<%= order.venue %>/table/<%= order.table %>">Table <%= order.table %></a></h4>
-    	<h4><a href="/orders/<%= order.id %>"><%= order.drinks %></a></h3>
+    	<h5><a href="/venue/<%= order.venue %>"><%= order.venue %></a> at <a href="/venue/<%= order.venue %>/table/<%= order.table %>">Table <%= order.table %></a></h5>
+    	<h4><a href="/orders/<%= order.id %>"><%= order.drinks %></a></h4>
     	<p><%= pretty_date(order.created_at) %> from <%= order.firstname %></a></p>
     	<hr>
   	<% end %>
