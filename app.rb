@@ -105,20 +105,28 @@ end
 
 # Get form for main menu drink order access
 get '/orders/drinks' do
-  if session[:venue] && session[:table] && session[:lastname] && session[:phone]
+  if session[:venue] && session[:phone] && session[:firstname] && session[:lastname] && session[:table]
+    @order = Order.new
+    erb :"orders/drinks"
+  elsif
+    session[:venue] && session[:phone]
+    @order = Order.new
+    session[:firstname] = params['firstname']
+    session[:lastname] = params['lastname']
+    session[:table] = params['table']
     erb :"orders/drinks"
   else
-    @order = Order.new
-    session[:lastname] = params['lastname']
-    session[:firstname] = params['firstname']
-    session[:table] = params['table']
-    erb :"orders/drinks", :layout => (request.xhr? ? false : :layout)
+    erb "There has been a problem. Please click the link we last texted you to continue."
   end
 end
 
 # After checkin, shows form for drink order. Upon reordering, keeps session via lastname
 post '/orders/drinks' do
-  if session[:venue] && session[:phone]
+  if session[:venue] && session[:phone] && session[:firstname] && session[:lastname] && session[:table]
+    @order = Order.new
+    erb :"orders/drinks"
+  elsif
+    session[:venue] && session[:phone]
     @order = Order.new
     session[:firstname] = params['firstname']
     session[:lastname] = params['lastname']
