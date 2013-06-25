@@ -1,7 +1,7 @@
 
 require 'rubygems'
 require 'sinatra'
-require "sinatra/json"
+require 'sinatra/json'
 require 'sinatra/activerecord'
 require 'newrelic_rpm'
 require 'open-uri'
