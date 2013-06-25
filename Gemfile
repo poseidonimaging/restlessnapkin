@@ -7,6 +7,7 @@ gem "sinatra-activerecord"
 group :production, :staging do
 	gem "mysql2"
 	gem "newrelic_rpm"
+	gem "unicorn", :platforms => :ruby
 end
 
 group :development do

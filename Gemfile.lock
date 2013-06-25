@@ -71,3 +71,4 @@ DEPENDENCIES
   sinatra-activerecord
   sqlite3
   tux
+  unicorn
