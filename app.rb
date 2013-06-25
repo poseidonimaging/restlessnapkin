@@ -118,8 +118,7 @@ get '/orders/drinks' do
   if session[:venue] && session[:phone] && session[:firstname] && session[:lastname] && session[:table]
     @order = Order.new
     erb :"orders/drinks"
-  elsif
-    session[:venue] && session[:phone]
+  elsif session[:venue] && session[:phone]
     @order = Order.new
     session[:firstname] = params['firstname']
     session[:lastname] = params['lastname']
