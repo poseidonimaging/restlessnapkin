@@ -50,9 +50,11 @@
 
 	<div class="container-fluid">
     <div class="span12">
-		<%if @error then %>
-			<div class="alert alert-error"><%= @error %></div>
-		<% end %>
+      <div id="desktop-spacing" class="visible-desktop" style="padding-top:60px">
+      </div>
+		    <%if @error then %>
+			   <div class="alert alert-error"><%= @error %></div>
+		    <% end %>
     	<%= yield %>
     </div>
 	</div>
