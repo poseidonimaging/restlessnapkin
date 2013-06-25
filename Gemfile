@@ -5,7 +5,7 @@ gem "activerecord"
 gem "sinatra-activerecord"
 
 group :production, :staging do
-	gem "pg"
+	gem "mysql2"
 	gem "newrelic_rpm"
 end
 
