@@ -33,7 +33,7 @@ configure :production do
   #   :encoding => 'utf8'
   # )
 
-  db_yml = YAML::load(File.read(File.join(root, "config", "database.yml")))
+  db_yml = YAML::load(File.read(File.join(File.dirname(__FILE__), "config", "database.yml")))
   ActiveRecord::Base.establish_connection(
     :adapter    => db_yml["production"]["adapter"],
     :host       => db_yml["production"]["host"],
