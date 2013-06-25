@@ -1,0 +1,3 @@
+add_column :tablename, :columnname, :type, :null => true
+
+(:type = :datetime, :tablename = :orders, etc.)
