@@ -104,6 +104,11 @@ post '/' do
   erb :"orders/index", :layout => (request.xhr? ? false : :layout)
 end
 
+get '/example.json' do
+  content_type :json
+  { :key1 => 'value1', :key2 => 'value2' }.to_json
+end
+
 #Looks at the venue and the phone number(splat), then shows form for checkin
 get '/:venue/checkin/*' do 
   session[:venue] = params['venue']
