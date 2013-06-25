@@ -34,14 +34,18 @@ configure :production do
   # )
 
   db_yml = YAML::load(File.read(File.join(File.dirname(__FILE__), "config", "database.yml")))
-  ActiveRecord::Base.establish_connection(
+  settings = {
     :adapter    => db_yml["production"]["adapter"],
     :host       => db_yml["production"]["host"],
     :username   => db_yml["production"]["username"],
     :password   => db_yml["production"]["password"],
     :database   => db_yml["production"]["database"],
     :encoding   => db_yml["production"]["encoding"]
-  )
+  }
+
+  puts "Using database settings: #{settings.inspect}"
+
+  ActiveRecord::Base.establish_connection(settings)
 end
 
 class Order < ActiveRecord::Base
