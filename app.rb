@@ -1,6 +1,7 @@
 
 require 'rubygems'
 require 'sinatra'
+require "sinatra/json"
 require 'sinatra/activerecord'
 require 'newrelic_rpm'
 require 'open-uri'
@@ -186,8 +187,9 @@ get '/orders/:id' do
   erb :"orders/show"
 end
 
-# Get moontower test version
+# Barkeeper orders that need attention
 get '/barkeeper' do
+  @orders = Order.where(:received_at => nil)
   erb :barkeeper, :layout => (request.xhr? ? false : :layout)
 end
 
