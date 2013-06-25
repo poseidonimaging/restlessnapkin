@@ -43,8 +43,6 @@ configure :production do
     :encoding   => db_yml["production"]["encoding"]
   }
 
-  puts "Using database settings: #{settings.inspect}"
-
   ActiveRecord::Base.establish_connection(settings)
 end
 
