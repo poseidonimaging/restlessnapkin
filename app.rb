@@ -13,7 +13,7 @@ require 'uri'
 configure do
   set :public_folder, Proc.new { File.join(root, "static") }
   enable :sessions
-  set :session_secret, ENV['SESSION_KEY']
+  set :session_secret, "nPiOpaoyqcyeaABv2huEqlvZw6CxkC0Qo71hMlbwMbhmzWAjcndLD5piz9PqXt8"
 end
 
 configure :development do
