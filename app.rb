@@ -181,9 +181,14 @@ post '/orders/index' do
 end
 
 # Get individual orders
-get "/orders/:id" do
+get '/orders/:id' do
   @order = Order.find(params[:id])
   erb :"orders/show"
+end
+
+# Get moontower test version
+get '/barkeeper' do
+  erb :barkeeper, :layout => (request.xhr? ? false : :layout)
 end
 
 # Get orders by venue
