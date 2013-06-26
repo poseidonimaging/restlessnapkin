@@ -208,11 +208,11 @@ end
 put '/orders/received/:id' do
   @order = Order.find(params[:id])
   @order.received_at = DateTime.now
-  #if @order.update_attributes(params[:received_at])
-  #  redirect "/barkeeper"
-  #else
-  #  erb "Didn't update"
-  #end
+  if @order.save
+    redirect "/barkeeper"
+  else
+    raise "Didn't update :("
+  end
 end
 
 # Get orders by venue
