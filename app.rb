@@ -207,7 +207,7 @@ end
 # Put where received_at's go
 put '/orders/received/:id' do
   @order = Order.find(params[:id])
-  @order.received_at = DateTime.now
+  @order.received_at = Time.now
   if @order.save
     redirect "/barkeeper"
   else
