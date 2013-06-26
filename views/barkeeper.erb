@@ -4,7 +4,9 @@
 
     <div class="row-fluid" style="background: #A21721; color: white">	
       <div style="padding:25px;" class="span6">
-    	 <h1><%= order.drinks %></h1>
+    	 <h2><%= order.lastname %>, <%= order.firstname %> at <%= order.table %></h2>
+       <h1><%= order.drinks %></h1>
+       <h3><%= pretty_date(order.created_at) %></h3>
       </div>
 
       <div class="span3 offset3">
@@ -34,7 +36,7 @@
 		<script>
       $(document).ready(function() {
       	setTimeout(function() {
-        	$('#content').load('/barkeeper');}, 10000);
+        	$('#content').load('/barkeeper');}, 2000);
       });
     </script>
 </div>
