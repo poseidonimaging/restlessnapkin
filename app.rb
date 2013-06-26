@@ -1,7 +1,6 @@
 
 require 'rubygems'
 require 'sinatra'
-require 'sinatra/json'
 require 'sinatra/activerecord'
 require 'newrelic_rpm'
 require 'open-uri'
@@ -109,6 +108,11 @@ get '/example.json' do
   { :key1 => 'value1', :key2 => 'value2' }.to_json
 end
 
+get '/hello/:name.json' do
+  content_type :json
+  {"message" => "Hello #{params[:name]}!"}.to_json
+end
+
 #Looks at the venue and the phone number(splat), then shows form for checkin
 get '/:venue/checkin/*' do 
   session[:venue] = params['venue']
@@ -195,7 +199,19 @@ end
 # Barkeeper orders that need attention
 get '/barkeeper' do
   @orders = Order.where(:received_at => nil)
+  @received = Order.where(:id => 1)
   erb :barkeeper, :layout => (request.xhr? ? false : :layout)
+end
+
+# Put where received_at's go
+put '/orders/received/:id' do
+  @order = Order.find(params[:id])
+  @order.received_at = DateTime.now
+  #if @order.update_attributes(params[:received_at])
+  #  redirect "/barkeeper"
+  #else
+  #  erb "Didn't update"
+  #end
 end
 
 # Get orders by venue
