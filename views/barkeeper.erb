@@ -7,7 +7,7 @@
       </div>
 
       <div class="span3 offset3">
-        <a href="#" class="received_id_<%= received.id %>"> <img style="padding:20px;"src="http://restlessnapkin.wpengine.com/wp-content/uploads/2013/06/dark_grey_dot.png" class="img-circle"></a>
+        <a href="/barkeeper" class="received_id_<%= received.id %>"> <img style="padding:20px;"src="http://restlessnapkin.wpengine.com/wp-content/uploads/2013/06/dark_grey_dot.png" class="img-circle"></a>
       </div>
     </div>
 
@@ -23,7 +23,7 @@
       </div>
 
       <div class="span3 offset3">
-          <a href="#" class="order_id_<%= order.id %>">
+          <a href="/barkeeper" class="order_id_<%= order.id %>">
           <img style="padding:20px;"src="http://restlessnapkin.wpengine.com/wp-content/uploads/2013/06/grey_dot.png" class="img-circle"></a>
       </div>
     </div>
@@ -37,7 +37,7 @@
             type: "PUT",
             url: "/orders/received/<%= order.id %>",
             }).done(function( msg ) {
-            alert( "Data Saved");
+              alert( "Data Saved");
           });
         });
       });
@@ -48,7 +48,7 @@
 		<script>
       $(document).ready(function() {
       	setTimeout(function() {
-        	$('#content').load('/barkeeper');}, 10000);
+        	$('#content').load('/barkeeper');}, 5000);
       });
     </script>
 </div>

@@ -4,7 +4,7 @@
           
     <h5><%= order.venue %> at <a href="/venue/<%= order.venue %>/table/<%= order.table %>">Table <%= order.table %></a></h5>
     <h4><a href="/orders/<%= order.id %>"><%= order.drinks %></a></h4>
-    <p>from <a href="/user/<%= order.phone %>"><%= order.firstname %></a></p>
+    <p><%= pretty_date(order.created_at) %> from <a href="/user/<%= order.phone %>"><%= order.firstname %></a></p>
     <hr>
     <script>
       $(document).ready(function() {

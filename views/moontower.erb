@@ -4,7 +4,9 @@
 
     <div class="row-fluid" style="background: #A21721; color: white">	
       <div style="padding:25px;" class="span6">
+       <h2><%= order.lastname %></h2>
     	 <h1><%= order.drinks %></h1>
+       <h3><%= order.created_at %></h3>
       </div>
 
       <div class="span3 offset3">
@@ -17,8 +19,13 @@
 
     <script>
       $(document).ready(function() {
-        $('order_id_<%= order.id %>').click(function() {
-          $('order_id_<%= order.id %>').fadeOut('fast');
+        $('.order_id_<%= order.id %>').click(function() {
+          $.ajax({
+            type: "PUT",
+            url: "/orders/received/<%= order.id %>",
+            }).done(function( msg ) {
+              alert( "Data Saved");
+            });
         });
       });
     </script>
