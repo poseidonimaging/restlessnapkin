@@ -5,6 +5,7 @@ require 'sinatra/activerecord'
 require 'newrelic_rpm'
 require 'open-uri'
 require 'uri'
+require "json"
 
 #require 'twilio-ruby'
 #phone_number = '+15128616050'
@@ -206,12 +207,16 @@ end
 
 # Put where received_at's go
 put '/orders/received/:id' do
+  content_type :json
+
   @order = Order.find(params[:id])
   @order.received_at = Time.now
   if @order.save
-    redirect "/barkeeper"
+    status 200 # OK
+    { "success" => true }.to_json
   else
-    raise "Didn't update :("
+    status 422 # Unprocessable Entity
+    { "success" => false }.to_json
   end
 end
 
