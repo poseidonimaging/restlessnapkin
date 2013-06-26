@@ -1,0 +1,34 @@
+<div id="content">
+
+    <% @orders.each do |order| %>
+
+    <div class="row-fluid" style="background: #A21721; color: white">	
+      <div style="padding:25px;" class="span6">
+    	 <h1><%= order.drinks %></h1>
+      </div>
+
+      <div class="span3 offset3">
+          <a href="#" class="order_id_<%= order.id %>">
+          <img style="padding:20px;"src="http://restlessnapkin.wpengine.com/wp-content/uploads/2013/06/grey_dot.png" class="img-circle"></a>
+      </div>
+    </div>
+
+    <br>
+
+    <script>
+      $(document).ready(function() {
+        $('order_id_<%= order.id %>').click(function() {
+          $('order_id_<%= order.id %>').fadeOut('fast');
+        });
+      });
+    </script>
+
+    <% end %>
+
+		<script>
+      $(document).ready(function() {
+      	setTimeout(function() {
+        	$('#content').load('/moontower');}, 5000);
+      });
+    </script>
+</div>

@@ -198,20 +198,25 @@ end
 
 # Barkeeper orders that need attention
 get '/barkeeper' do
-  @orders = Order.where(:received_at => nil)
+  @orders = Order.where(:received_at => nil).limit(5)
   @received = Order.where(:id => 1)
   erb :barkeeper, :layout => (request.xhr? ? false : :layout)
+end
+
+get '/moontower' do
+  @orders = Order.where(:received_at => nil).limit(10)
+  erb :moontower, :layout => (request.xhr? ? false : :layout)
 end
 
 # Put where received_at's go
 put '/orders/received/:id' do
   @order = Order.find(params[:id])
-  @order.received_at = DateTime.now
-  #if @order.update_attributes(params[:received_at])
-  #  redirect "/barkeeper"
-  #else
-  #  erb "Didn't update"
-  #end
+  time_received = DateTime.now
+  if @order.update_attributes(:received_at => time_received)
+    redirect "/barkeeper"
+  else
+    erb "Didn't update"
+  end
 end
 
 # Get orders by venue
