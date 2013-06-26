@@ -1,5 +1,22 @@
 <div id="content">
 
+    <% @received.each do |received| %>
+
+    <div class="row-fluid"> 
+      <div style="padding:25px;" class="span6">
+       <h1><%= received.drinks %></h1>
+      </div>
+
+      <div class="span3 offset3">
+        <a href="/barkeeper" class="received_id_<%= received.id %>"> <img style="padding:20px;"src="http://restlessnapkin.wpengine.com/wp-content/uploads/2013/06/dark_grey_dot.png" class="img-circle"></a>
+      </div>
+    </div>
+
+    <br>
+
+    <% end %>
+    
+
     <% @orders.each do |order| %>
 
     <div class="row-fluid" style="background: #A21721; color: white">	

@@ -201,11 +201,11 @@ end
 # Barkeeper orders that need attention
 get '/barkeeper' do
   @orders = Order.where(:received_at => nil).limit(10)
-  if @order.received_at
-    @received = Order.where(:fulfilled_at => nil).limit(10)
-  else
-    @received = nil
-  end
+  #if @order.received_at
+  #  @received = Order.where(:fulfilled_at => nil).limit(10)
+  #else
+  #  @received = nil
+  #end
   erb :barkeeper, :layout => (request.xhr? ? false : :layout)
 end
 
