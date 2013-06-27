@@ -6,7 +6,6 @@
       <div style="padding:25px;" class="span6">
     	 <h2><%= order.lastname %>, <%= order.firstname %> at <%= order.table %></h2>
        <h1><%= order.drinks %></h1>
-       <h3><%= pretty_date(order.created_at) %></h3>
       </div>
 
       <div class="span3 offset3">
@@ -24,8 +23,7 @@
             type: "PUT",
             url: "/orders/received/<%= order.id %>",
             }).done(function() {
-              $(this).fadeOut('fast', function() {
-              });
+              $(this).remove();
           });
         });
       });
