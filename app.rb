@@ -181,7 +181,7 @@ post '/orders' do
   @order.lastname = session[:lastname]
   @order.phone = session[:phone]
   if @order.save
-    redirect "/orders/confirm"
+    redirect "/orders/#{@order.id}"
   else
     erb :"orders/drinks"
   end
@@ -281,8 +281,19 @@ end
 
 #User checkout of venue
 post '/checkout' do
-  session.delete(:lastname)
-  erb :checkout
+  @order = Order.new(params[:order])
+  @order.drinks = params['drinks']
+  @order.venue = session[:venue]
+  @order.table = session[:table]
+  @order.firstname = session[:firstname]
+  @order.lastname = session[:lastname]
+  @order.phone = session[:phone]
+  if @order.save
+    session.delete(:lastname)
+    redirect "/orders/#{@order.id}"
+  else
+    erb "Checkout was unsuccessful"
+  end
 end
 
 

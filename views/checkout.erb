@@ -1,4 +1,4 @@
-<div class='alert alert-success'>Verify your location listed below is correct then click to close.</div>
+<div class='alert alert-info'>Verify your location listed below is correct then click to close.</div>
 
 <h3><%= @location %></h3>
 
@@ -6,9 +6,11 @@
     <p><input class="btn btn-large btn-info" type='submit' value='Change Location'></p>
 	</form>
 
-  <form action='/checkout' method='post' class="form-horizontal">
-    <p><input class="btn btn-large btn-danger" type='submit' value='Close Tab'></p>
-  </form>
+<p><input class="span12" type="hidden" name="drinks" value="CLOSE TAB"></p>
+
+<form action='/checkout' method='post' class="form-horizontal">
+  <p><input class="btn btn-large btn-danger" type='submit' value='Close Tab'></p>
+</form>
 
 
 
