@@ -4,13 +4,15 @@
 
     <div class="row-fluid" style="background: #A21721; color: white"> 
       <div style="padding:25px;" class="span6">
-       <h2><%= order.lastname %>, <%= order.firstname %> at <%= order.table %></h2>
-       <h1><%= order.drinks %></h1>
+       <h2></h2>
+       <div class="main-row"><h1>a few minutes ago</h1></div>
+       <div class="bottom-row"></div>
       </div>
 
-      <div class="span3 offset3">
-          <a href="#" class="order_id_<%= order.id %>">
-          <img style="padding:20px;"src="http://restlessnapkin.wpengine.com/wp-content/uploads/2013/06/grey_dot.png" class="img-circle"></a>
+      <div class="span3 offset3" style="color: #e0e1de">
+          <div class="order_id_<%= order.id %>">
+              <h2><i class="icon-circle icon-4x"></i></h2>
+          </div>
       </div>
     </div>
 
@@ -25,6 +27,7 @@
             }).done(function() {
               $(this).remove();
           });
+        $("h2").html("<%= order.lastname %> at <%= order.venue %> <%= order.table %>");
         });
       });
     </script>
@@ -36,5 +39,10 @@
         setTimeout(function() {
           $('#content').load('/barkeeper');}, 2000);
       });
+
+      $(document).ready(function() {
+
+      });
+
     </script>
 </div>

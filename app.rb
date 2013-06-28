@@ -222,7 +222,7 @@ get '/barkeeper' do
 end
 
 get '/moontower' do
-  @orders = Order.where(:received_at => nil).where(:fulfilled_at => nil).limit(10)
+  @orders = Order.where(:fulfilled_at => nil).limit(10)
   erb :moontower, :layout => (request.xhr? ? false : :layout)
 end
 
