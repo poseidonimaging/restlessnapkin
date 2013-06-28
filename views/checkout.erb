@@ -1,4 +1,14 @@
-<div class='alert alert-success'>Your check will arrive shortly</div>
+<div class='alert alert-success'>Verify your location listed below is correct then click to close.</div>
 
-<h3>To check back in, text your venue to 512.861.6050</h3>
+<h3><%= @location %></h3>
+
+<form action='/location/change' method='post' class="form-horizontal">
+    <p><input class="btn btn-large btn-info" type='submit' value='Change Location'></p>
+	</form>
+
+  <form action='/checkout' method='post' class="form-horizontal">
+    <p><input class="btn btn-large btn-danger" type='submit' value='Close Tab'></p>
+  </form>
+
+
 

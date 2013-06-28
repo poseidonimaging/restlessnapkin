@@ -1,8 +1,9 @@
+<div class='alert alert-info'>This is your order ticket. Its status will update when the order is seen and made. Show the number to your server, turn phone sideways for longer numbers.</div>
 <div class="row-fluid" style="background: #555555; color: #f9f9f9">
 	<div style="padding:10px;" class="span12">
-		<h5><a href="/venue/<%= @order.venue %>"><%= @order.venue %></a> at <a href="/venue/<%= @order.venue %>/table/<%= @order.table %>">Table <%= @order.table %></a></h5>
+		<h5><a href="/venue/<%= @order.venue %>"><%= @order.venue %></a> at <a href="/venue/<%= @order.venue %>/table/<%= @order.table %>"><%= @order.table %></a></h5>
   	<h4><%= @order.drinks %></h4>
-  	<p>from <%= @order.firstname %></p>
+  	<p><%= @order.firstname %> <%= @order.lastname %></p>
   </div>
 </div>
 

@@ -1,0 +1,19 @@
+<div class='alert alert-info'>Tell us who you are and where you're sitting.</div>
+
+	<h3><%= firstname %> <%= lastname %> @<%= venue %></h3>
+
+	<form action='/location/confirm' method='post' class="form-horizontal">
+
+  	<p>
+  	<select type="text" name='table'>
+  		<option>Front Covered Patio</option>
+  		<option>Main Patio Near</option>
+  		<option>Main Patio Mid</option>
+  		<option>Main Patio Far</option>
+  		<option>Side Gray Deck</option>
+  		<option>Lawn</option>
+		</select>
+	</p>
+
+  	<p><input class="btn btn-large btn-info" type='submit' value='Confirm Location'></p>
+	</form>

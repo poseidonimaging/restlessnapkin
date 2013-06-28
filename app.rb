@@ -261,9 +261,21 @@ get "/venue/:venue/table/:table" do
   erb :"venue/table/show", :layout => (request.xhr? ? false : :layout)
 end
 
+# Change location
+get "/location/change" do
+  erb :"location/change"
+end
+
+# Confirm location change
+post "/location/confirm" do
+  session[:table] = params['table']
+  @orders = Order.where(:phone => session[:phone]).order("created_at DESC").limit(20)
+  erb :"location/confirm", :layout => (request.xhr? ? false : :layout)
+end
+
 #User checkout of venue
 get '/checkout' do
-  session.delete(:lastname)
+  @location = session[:table]
   erb :checkout
 end
 
