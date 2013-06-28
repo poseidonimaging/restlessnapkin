@@ -211,6 +211,10 @@ body {
   color: #555555;
   background-color: #f9f9f9;
 }
+.order-number {
+  font-size:20em;
+  margin-top:100px;
+}
 a {
   color: #60b0b0;
   text-decoration: none;

@@ -1,0 +1,10 @@
+<div class='alert alert-info'>Be specific so the bartender doesn't totally screw up  your drink order. Everyone will be sad if <%= firstname %>'s drinks are wrong.</div>
+
+<h3>@<%= venue %> | Table <%= table %></h3>
+
+<form action='/orders' method='post' class="form-horizontal">
+  			
+	<p><input class="span12" type="text" id="order_drinks" name="order[drinks]" value="<%= @order.drinks %>" placeholder="ex. 2 Tito's and Sodas with Lime" autofocus></p>
+
+	<p><input class="btn btn-large btn-info" type='submit' value='Send Drink Order'></p>
+</form>

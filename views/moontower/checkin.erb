@@ -1,0 +1,28 @@
+<div class='alert alert-info'>Tell us who you are and where you're at.</div>
+
+	<h3>@<%= venue %></h3>
+
+	<form action='/orders/drinks' method='post' class="form-horizontal">
+			
+	<p>
+		<input class="span12" type="text" name='firstname' placeholder="Firstname" autofocus>
+	</p>
+
+	<p>
+  	<input class="span12" type="text" name='lastname' placeholder="Lastname">
+  </p>
+
+  <p>
+  	<select type="text" name='table'>
+  		<option>Front Covered Patio</option>
+  		<option>Main Patio Near</option>
+  		<option>Main Patio Mid</option>
+  		<option>Main Patio Far</option>
+  		<option>Side Gray Deck</option>
+  		<option>Lawn</option>
+		</select>
+	</p>
+
+  <p><input class="btn btn-large btn-info" type='submit' value='Check in'></p>
+	</form>
+

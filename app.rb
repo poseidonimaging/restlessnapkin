@@ -116,6 +116,18 @@ get '/hello/:name.json' do
 end
 
 #Looks at the venue and the phone number(splat), then shows form for checkin
+get '/moontower/checkin/*' do 
+  session[:venue] = 'moontower'
+  session[:phone] = params[:splat].first
+  #session[:phone_short] = session[:phone].[-4..-1]
+  if session[:venue] && session[:phone]
+    erb :"/moontower/checkin"
+  else
+    erb "Something went awry. Please try again and make sure you texted the venue's name properly."
+  end
+end
+
+#Looks at the venue and the phone number(splat), then shows form for checkin
 get '/:venue/checkin/*' do 
   session[:venue] = params['venue']
   session[:phone] = params[:splat].first
@@ -156,7 +168,7 @@ post '/orders/drinks' do
     session[:table] = params['table']
     erb :"orders/drinks"
   else
-    erb "There has been a problem. Please click the link we last texted you to continue."
+    erb "There has been a problem. Please reclick the link we texted you to start over."
   end
 end
 
@@ -210,7 +222,7 @@ get '/barkeeper' do
 end
 
 get '/moontower' do
-  @orders = Order.where(:received_at => nil).limit(10)
+  @orders = Order.where(:received_at => nil).where(:fulfilled_at => nil).limit(10)
   erb :moontower, :layout => (request.xhr? ? false : :layout)
 end
 

@@ -1,3 +1,7 @@
 <h5><a href="/venue/<%= @order.venue %>"><%= @order.venue %></a> at <a href="/venue/<%= @order.venue %>/table/<%= @order.table %>">Table <%= @order.table %></a></h5>
-    	<h4><%= @order.drinks %></h4>
-    	<p>from <%= @order.firstname %></p>
+  <h4><%= @order.drinks %></h4>
+  <p>from <%= @order.firstname %></p>
+
+<div class="order-number">
+ <p><%= @order.id %></p>
+</div>

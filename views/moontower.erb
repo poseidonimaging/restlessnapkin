@@ -1,29 +1,11 @@
 <div id="content">
-
-    <% @received.each do |received| %>
-
-    <div class="row-fluid"> 
-      <div style="padding:25px;" class="span6">
-       <h1><%= received.drinks %></h1>
-      </div>
-
-      <div class="span3 offset3">
-        <a href="/barkeeper" class="received_id_<%= received.id %>"> <img style="padding:20px;"src="http://restlessnapkin.wpengine.com/wp-content/uploads/2013/06/dark_grey_dot.png" class="img-circle"></a>
-      </div>
-    </div>
-
-    <br>
-
-    <% end %>
     
-
     <% @orders.each do |order| %>
 
-    <div class="row-fluid" style="background: #A21721; color: white">	
+    <div class="row-fluid" style="background: #A21721; color: white"> 
       <div style="padding:25px;" class="span6">
-       <h2><%= order.lastname %></h2>
-    	 <h1><%= order.drinks %></h1>
-       <h3><%= order.created_at %></h3>
+       <h2><%= order.lastname %>, <%= order.firstname %> at <%= order.table %></h2>
+       <h1><%= order.drinks %></h1>
       </div>
 
       <div class="span3 offset3">
@@ -40,19 +22,19 @@
           $.ajax({
             type: "PUT",
             url: "/orders/received/<%= order.id %>",
-            }).done(function( msg ) {
-              alert( "Data Saved");
-            });
+            }).done(function() {
+              $(this).remove();
+          });
         });
       });
     </script>
 
     <% end %>
 
-		<script>
+    <script>
       $(document).ready(function() {
-      	setTimeout(function() {
-        	$('#content').load('/moontower');}, 5000);
+        setTimeout(function() {
+          $('#content').load('/barkeeper');}, 2000);
       });
     </script>
 </div>
