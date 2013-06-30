@@ -26,8 +26,8 @@
             url: "/orders/received/<%= order.id %>",
             }).done(function() {
               $(this).remove();
+          $(".top-row").html("<%= order.lastname %> at <%= order.venue %> <%= order.table %>");
           });
-        $(".top-row").html("<%= order.lastname %> at <%= order.venue %> <%= order.table %>");
         });
       });
     </script>
