@@ -222,7 +222,7 @@ get '/barkeeper' do
 end
 
 get '/moontower' do
-  @orders = Order.where(:fulfilled_at => nil).limit(10)
+  @orders = Order.where(:fulfilled_at => nil, :venue => "moontower").limit(10)
   erb :moontower, :layout => (request.xhr? ? false : :layout)
 end
 
@@ -231,6 +231,20 @@ put '/orders/received/:id' do
   content_type :json
   @order = Order.find(params[:id])
   @order.received_at = Time.now
+  if @order.save
+    status 200 # OK
+    { "success" => true }.to_json
+  else
+    status 422 # Unprocessable Entity
+    { "success" => false }.to_json
+  end
+end
+
+# Put where fulfilled's go
+put '/orders/fulfilled/:id' do
+  content_type :json
+  @order = Order.find(params[:id])
+  @order.fulfilled_at = Time.now
   if @order.save
     status 200 # OK
     { "success" => true }.to_json

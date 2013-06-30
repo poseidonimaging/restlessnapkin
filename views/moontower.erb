@@ -2,17 +2,19 @@
     
     <% @orders.each do |order| %>
 
-    <div class="row-fluid" style="background: #A21721; color: white"> 
+    <div class="row-fluid">
+      <div class="<%= order.id %>" style="background: #A21721; color: white">
       <div style="padding:25px;" class="span6">
-       <div class="top-row"></div>
-       <div class="main-row"><h1>a few minutes ago</h1></div>
-       <div class="bottom-row"></div>
+       <div class="top-row-<%= order.id %>"></div>
+       <div class="main-row-<%= order.id %>"><h1><%= pretty_date(order.created_at) %></h1></div>
+       <div class="bottom-row-<%= order.id %>"></div>
       </div>
 
       <div class="span3 offset3" style="color: #e0e1de">
-          <div class="order_id_<%= order.id %>">
+          <div class="received-at-<%= order.id %>">
               <h2><i class="icon-circle icon-4x"></i></h2>
           </div>
+      </div>
       </div>
     </div>
 
@@ -20,15 +22,29 @@
 
     <script>
       $(document).ready(function() {
-        $('.order_id_<%= order.id %>').click(function() {
+        $('.received-at-<%= order.id %>').click(function() {
           $.ajax({
             type: "PUT",
             url: "/orders/received/<%= order.id %>",
             }).done(function() {
-              $(this).remove();
-          $(".top-row").html("<h2><%= order.lastname %> at <%= order.venue %> <%= order.table %></h2>");
-          $(".main-row").html("<h1><%= order.drinks %></h1>");
-          $(".bottom-row").html("<h3>a few seconds ago</h3>");
+          $(".top-row-<%= order.id %>").html("<h2><%= order.lastname %> at <%= order.venue %> <%= order.table %></h2>");
+          $(".main-row-<%= order.id %>").html("<h1><%= order.drinks %></h1>");
+          $(".bottom-row-<%= order.id %>").html("<h3>Order <%= order.id %> a few seconds ago</h3>");
+          $(".<%= order.id %>").css("background-color","#f9f9f9");
+          $(".<%= order.id %>").css("color","#eeeeee");
+          $(".received-at-<%= order.id %>").addClass(".fulfilled-at-<%= order.id %>");
+          $(".received-at-<%= order.id %>").removeClass(".received-at-<%= order.id %>");
+          });
+        });
+      });
+
+      $(document).ready(function() {
+        $('.fulfilled-at-<%= order.id %>').click(function() {
+          $.ajax({
+            type: "PUT",
+            url: "/orders/fulfilled/<%= order.id %>",
+            }).done(function() {
+          $(".main-row-<%= order.id %>").html("<h1>Order fulfilled</h1>");
           });
         });
       });
@@ -36,15 +52,5 @@
 
     <% end %>
 
-    <script>
-      $(document).ready(function() {
-        setTimeout(function() {
-          $('#content').load('/moontower');}, 10000);
-      });
-
-      $(document).ready(function() {
-
-      });
-
-    </script>
+   
 </div>
