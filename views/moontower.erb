@@ -4,7 +4,7 @@
 
     <div class="row-fluid" style="background: #A21721; color: white"> 
       <div style="padding:25px;" class="span6">
-       <h2></h2>
+       <div class="top-row"></div>
        <div class="main-row"><h1>a few minutes ago</h1></div>
        <div class="bottom-row"></div>
       </div>
@@ -27,7 +27,7 @@
             }).done(function() {
               $(this).remove();
           });
-        $("h2").html("<%= order.lastname %> at <%= order.venue %> <%= order.table %>");
+        $(".top-row").html("<%= order.lastname %> at <%= order.venue %> <%= order.table %>");
         });
       });
     </script>
