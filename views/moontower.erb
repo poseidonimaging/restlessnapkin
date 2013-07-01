@@ -2,19 +2,18 @@
     
     <% @orders.each do |order| %>
 
-    <div class="row-fluid">
-      <div class="<%= order.id %>" style="background: #A21721; color: white">
-      <div style="padding:25px;" class="span6">
-       <div class="top-row-<%= order.id %>"></div>
-       <div class="main-row-<%= order.id %>"><h1><%= pretty_date(order.created_at) %></h1></div>
-       <div class="bottom-row-<%= order.id %>"></div>
+    <div id="order-<%= order.id %>" class="row-fluid" style="background-color: black; color: white;">
+      
+      <div class="span6" style="padding:25px;" >
+        <div class="top-row-<%= order.id %>"></div>
+        <div class="main-row-<%= order.id %>"><h1><%= pretty_date(order.created_at) %></h1></div>
+        <div class="bottom-row-<%= order.id %>"></div>
       </div>
 
       <div class="span3 offset3" style="color: #e0e1de">
-          <div class="received-at-<%= order.id %>">
-              <h2><i class="icon-circle icon-4x"></i></h2>
-          </div>
-      </div>
+        <div id="order-<%= order.id %>-status">
+          <h2><i class="icon-circle icon-4x"></i></h2>
+        </div>
       </div>
     </div>
 
@@ -22,7 +21,7 @@
 
     <script>
       $(document).ready(function() {
-        $('.received-at-<%= order.id %>').click(function() {
+        $('#order-<%= order.id %>-status').click(function() {
           $.ajax({
             type: "PUT",
             url: "/orders/received/<%= order.id %>",
@@ -31,20 +30,19 @@
           $(".main-row-<%= order.id %>").html("<h1><%= order.drinks %></h1>");
           $(".bottom-row-<%= order.id %>").html("<h3>Order <%= order.id %> a few seconds ago</h3>");
           $(".<%= order.id %>").css("background-color","#f9f9f9");
-          $(".<%= order.id %>").css("color","#eeeeee");
-          $(".received-at-<%= order.id %>").addClass(".fulfilled-at-<%= order.id %>");
-          $(".received-at-<%= order.id %>").removeClass(".received-at-<%= order.id %>");
+          $(".<%= order.id %>").css("color","black");
+          $("#order-<%= order.id %>-status").addClass("<%= order.id %>-received");
           });
         });
       });
 
       $(document).ready(function() {
-        $('.fulfilled-at-<%= order.id %>').click(function() {
+        $('.<%= order.id %>-received').click(function() {
           $.ajax({
             type: "PUT",
             url: "/orders/fulfilled/<%= order.id %>",
             }).done(function() {
-          $(".main-row-<%= order.id %>").html("<h1>Order fulfilled</h1>");
+          $("#order-<%= order.id %>").fadeOut('fast');
           });
         });
       });
