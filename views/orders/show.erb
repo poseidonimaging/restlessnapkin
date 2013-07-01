@@ -2,7 +2,7 @@
 <div class="row-fluid" style="background: #555555; color: #f9f9f9">
 	<div style="padding:10px;" class="span12">
 		<h5><a href="/venue/<%= @order.venue %>"><%= @order.venue %></a> at <a href="/venue/<%= @order.venue %>/table/<%= @order.table %>"><%= @order.table %></a></h5>
-  	<h4><%= @order.drinks %></h4>
+  	<h4><%= @order.drinks %> <%= ' | <i class="icon-eye-open"></i>' unless @order.received_at.nil? %> <%= '<i class="icon-glass"></i>' unless @order.fulfilled_at.nil? %></h4>
   	<p>by <%= @order.firstname %> <%= @order.lastname %></p>
   </div>
 </div>
@@ -10,3 +10,11 @@
 <div class="order-number">
  <p><%= @order.id %></p>
 </div>
+
+<script>
+  $(document).ready(function() {
+   	setInterval(function() {
+   	$('#content').load('/orders/<%= @order.id %> #content');
+   	}, 10000);
+   });
+</script>
