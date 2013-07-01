@@ -68,7 +68,7 @@
         type: "PUT",
         url: ''.concat("/orders/fulfilled/", $this.closest(".order").data("order-id")),
       }).done(function() {
-        $this.closest(".order").remove();
+        $this.closest(".order").fadeOut('fast');
       });
     });
 
