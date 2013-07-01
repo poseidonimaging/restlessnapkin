@@ -295,8 +295,8 @@ end
 
 #User checkout of venue
 post '/checkout' do
-  @order = Order.new(params[:order])
-  @order.drinks = params['drinks']
+  @order = Order.new
+  @order.drinks = "CLOSE TAB"
   @order.venue = session[:venue]
   @order.table = session[:table]
   @order.firstname = session[:firstname]
