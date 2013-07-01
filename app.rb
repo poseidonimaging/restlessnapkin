@@ -221,7 +221,7 @@ get '/barkeeper' do
   erb :barkeeper, :layout => (request.xhr? ? false : :layout)
 end
 
-get '/moontower' do
+get '/moontower-barkeeper' do
   @orders = Order.where(:fulfilled_at => nil, :venue => "moontower").limit(10)
   erb :moontower, :layout => (request.xhr? ? false : :layout)
 end
