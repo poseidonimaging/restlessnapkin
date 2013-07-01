@@ -2,9 +2,9 @@
 	<h3>Austin's Orders</h3><hr>
 		<% @orders.each do |order| %>
   				
-    	<h5><%= order.venue %></a> at <%= order.table %></a></h5>
-    	<h4><%= order.drinks %></a> <%= ' | <i class="icon-eye-open"></i>' unless order.received_at.nil? %> <%= '<i class="icon-glass"></i>' unless order.fulfilled_at.nil? %></h4>
-    	<p>Order <%= order.id %> by <%= order.firstname %></a></p>
+    	<h5><%= order.venue %> at <%= order.table %></h5>
+    	<h4><%= order.drinks %> <%= ' | <i class="icon-eye-open"></i>' unless order.received_at.nil? %> <%= '<i class="icon-glass"></i>' unless order.fulfilled_at.nil? %></h4>
+    	<p>Order <%= order.id %> by <%= order.firstname %></p>
     	<hr>
   	<% end %>
 		

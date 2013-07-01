@@ -2,15 +2,16 @@
 <h3><%= firstname %>'s Orders</h3><hr>
   <% @orders.each do |order| %>
           
-    <h5><%= order.lastname %> at <a href="/venue/<%= order.venue %>"><%= order.venue %></a> <a href="/venue/<%= order.venue %>/table/<%= order.table %>"> <%= order.table %></a></h5>
-    <h4><a href="/orders/<%= order.id %>"><%= order.drinks %></a></h4>
-    <p>from <%= order.phone %></p>
+    <h5><%= order.lastname %> at <%= order.venue %> <%= order.table %></h5>
+    <h4><%= order.drinks %> <%= ' | <i class="icon-eye-open"></i>' unless order.received_at.nil? %> <%= '<i class="icon-glass"></i>' unless order.fulfilled_at.nil? %></h4>
+    <p>by <%= order.firstname %></p>
     <hr>
-    <script>
-      $(document).ready(function() {
-      	setTimeout(function() {
-        	$('#content').load('/user/<%= @phone %>');}, 10000);
-      });
-    </script>
   <% end %>
+
+<script>
+  $(document).ready(function() {
+    setTimeout(function() {
+      $('#content').load('/user/<%= @phone %>');}, 10000);
+  });
+</script>
 </div>
