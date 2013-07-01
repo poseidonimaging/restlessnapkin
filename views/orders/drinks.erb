@@ -1,6 +1,24 @@
-<div class='alert alert-info'>Be specific so the bartender doesn't totally screw up  your drink order. Everyone will be sad if <%= firstname %>'s drinks are wrong.</div>
+<div class='alert alert-info'>Be specific so the bartender doesn't totally screw up your drink order.</div>
 
 <h3>@<%= venue %> | <%= table %></h3>
+
+<div class="menu" style="background-color: #555555; color: #f9f9f9;">
+	<h3 class="slide"><a href="#" class="pull-me">Drink Menu</a></h3>
+
+	<div class="panel">
+   <ul>
+   	<li>Miller Lite</li>
+   	<li>Pedernales Classic Hefe-Weizen</li>
+   	<li>Rogness Beardy Guard</li>
+   	<li>Thirsty Planet Yellow Armadillo</li>
+   	<li>Coors Light</li>
+   	<li>Real Ale Firemans #4</li>
+   	<li>(512) IPA</li>
+   	<li>Live Oak Hefe Weizen</li>
+   	<li>Bud Light</li>
+   </ul>
+ 	</div>
+</div>
 
 <form action='/orders' method='post' class="form-horizontal">
   			
@@ -9,3 +27,10 @@
 	<p><input class="btn btn-large btn-info" type='submit' value='Send Drink Order'></p>
 </form>
 
+<script>
+	$(document).ready(function() {
+    $('.pull-me').click(function() {
+        $('.panel').slideToggle('slow');
+    });
+	});
+</script>
