@@ -2,10 +2,11 @@
 
 <h3>@<%= venue %> | <%= table %></h3>
 
-<div class="menu" style="background-color: #555555; color: #f9f9f9;">
-	<h3 class="slide"><a href="#" class="pull-me">Drink Menu</a></h3>
+<div class="menu" style="background-color: #eeeeee; color: #555555;">
+	<h3 class="slide" style="padding-left:10px;"><a href="#" class="toggle-me">Drink Menu</a></h3>
 
-	<div class="panel">
+	<div class="panel" style="display:none;">
+   <h4 style="padding-left:10px;">Drafts</h4>
    <ul>
    	<li>Miller Lite</li>
    	<li>Pedernales Classic Hefe-Weizen</li>
@@ -29,8 +30,8 @@
 
 <script>
 	$(document).ready(function() {
-    $('.pull-me').click(function() {
-        $('.panel').slideToggle('slow');
+    $('.toggle-me').click(function() {
+        $('.panel').slideToggle('fast');
     });
 	});
 </script>
