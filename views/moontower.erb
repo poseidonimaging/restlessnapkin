@@ -2,12 +2,12 @@
    
   <% @orders.each do |order| %>
 
-    <div id="order-<%= order.id %>" class="row-fluid order" data-order-id="<%= order.id %>" style="<% if order.received_at.nil? %>background-color: black; color: white;<% else %>background-color: #f9f9f9; color: black;<% end %>">
+    <div id="order-<%= order.id %>" class="row-fluid order" data-order-id="<%= order.id %>" style="<% if order.received_at.nil? %>background-color: #A21721; color: white;<% else %>background-color: #eeeeee; color: #555555;<% end %>">
  
       <div class="order-not-received <%= "hide" unless order.received_at.nil? %>">
         <div class="span6" style="padding:25px;" >
           <div class="top-row"></div>
-          <div class="main-row"><h1><%= pretty_date(order.created_at) %></h1></div>
+          <div class="main-row"><h1><b>Order <%= order.id %> <%= pretty_date(order.created_at) %></h1></div>
           <div class="bottom-row"></div>
         </div>
 
@@ -20,14 +20,14 @@
 
       <div class="order-received <%= "hide" if order.received_at.nil? %>">
         <div class="span6" style="padding:25px;" >
-          <div class="top-row"><h2><%= order.lastname %> at <%= order.venue %> <%= order.table %></h2></div>
+          <div class="top-row"><h3><%= order.lastname %>, <%= order.firstname %> - <%= order.table %></h3></div>
           <div class="main-row"><h1><%= order.drinks %></h1></div>
-          <div class="bottom-row"><h3>Order <%= order.id %> a few seconds ago</h3></div>
+          <div class="bottom-row"><h3><b>Order <%= order.id %></b> - <%= pretty_date(order.created_at) %></h3></div>
         </div>
 
         <div class="span3 offset3" style="color: #e0e1de">
           <div class="received">
-            <h2><i class="icon-circle icon-4x"></i></h2>
+            <h2><i class="icon-remove-circle icon-4x"></i></h2>
           </div>
         </div>
       </div>
@@ -55,8 +55,8 @@
             .hide()
           .end()
           .css({
-            "background-color": "#f9f9f9",
-            "color": "black"
+            "background-color": "#eeeeee",
+            "color": "#555555"
           });
       });
     });
