@@ -240,7 +240,7 @@ put '/orders/received/:id' do
   end
 end
 
-# Put where fulfilled's go
+# Put where fulfilled_at's go
 put '/orders/fulfilled/:id' do
   content_type :json
   @order = Order.find(params[:id])

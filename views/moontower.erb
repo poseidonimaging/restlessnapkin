@@ -11,7 +11,7 @@
       </div>
 
       <div class="span3 offset3" style="color: #e0e1de">
-        <div id="order-<%= order.id %>-status">
+        <div id="order-<%= order.id %>-status" class="<%= order.id %>-not-received">
           <h2><i class="icon-circle icon-4x"></i></h2>
         </div>
       </div>
@@ -20,22 +20,6 @@
     <br>
 
     <script>
-      $(document).ready(function() {
-        $('#order-<%= order.id %>-status').click(function() {
-          $.ajax({
-            type: "PUT",
-            url: "/orders/received/<%= order.id %>",
-            }).done(function() {
-          $(".top-row-<%= order.id %>").html("<h2><%= order.lastname %> at <%= order.venue %> <%= order.table %></h2>");
-          $(".main-row-<%= order.id %>").html("<h1><%= order.drinks %></h1>");
-          $(".bottom-row-<%= order.id %>").html("<h3>Order <%= order.id %> a few seconds ago</h3>");
-          $(".<%= order.id %>").css("background-color","#f9f9f9");
-          $(".<%= order.id %>").css("color","black");
-          $("#order-<%= order.id %>-status").addClass("<%= order.id %>-received");
-          });
-        });
-      });
-
       $(document).ready(function() {
         $('.<%= order.id %>-received').click(function() {
           $.ajax({
@@ -46,6 +30,25 @@
           });
         });
       });
+
+      $(document).ready(function() {
+        $('.<%= order.id %>-not-received').click(function() {
+          $.ajax({
+            type: "PUT",
+            url: "/orders/received/<%= order.id %>",
+            }).done(function() {
+          $(".top-row-<%= order.id %>").html("<h2><%= order.lastname %> at <%= order.venue %> <%= order.table %></h2>");
+          $(".main-row-<%= order.id %>").html("<h1><%= order.drinks %></h1>");
+          $(".bottom-row-<%= order.id %>").html("<h3>Order <%= order.id %> a few seconds ago</h3>");
+          $("#order-<%= order.id %>").css("background-color","#f9f9f9");
+          $("#order-<%= order.id %>").css("color","black");
+          $("#order-<%= order.id %>-status").removeClass("<%= order.id %>-not-received");
+          $("#order-<%= order.id %>-status").addClass("<%= order.id %>-received");
+          });
+        });
+      });
+      
+
     </script>
 
     <% end %>
