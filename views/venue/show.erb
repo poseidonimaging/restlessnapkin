@@ -3,14 +3,15 @@
   <% @orders.each do |order| %>
           
     <h5><%= order.venue %> at <a href="/venue/<%= order.venue %>/table/<%= order.table %>">Table <%= order.table %></a></h5>
-    <h4><a href="/orders/<%= order.id %>"><%= order.drinks %></a></h4>
+    <h4><a href="/orders/<%= order.id %>"><%= order.drinks %></a> <%= ' | <i class="icon-eye-open"></i>' unless order.received_at.nil? %> <%= '<i class="icon-glass"></i>' unless order.fulfilled_at.nil? %></h4>
     <p><%= pretty_date(order.created_at) %> from <a href="/user/<%= order.phone %>"><%= order.firstname %></a></p>
     <hr>
-    <script>
-      $(document).ready(function() {
-      	setTimeout(function() {
-        	$('#content').load('/venue/<%= @venue %>');}, 10000);
-      });
-    </script>
   <% end %>
+
+<script>
+  $(document).ready(function() {
+    setTimeout(function() {
+      $('#content').load('/venue/<%= @venue %>');}, 10000);
+  });
+</script>
 </div>

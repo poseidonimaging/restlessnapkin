@@ -207,7 +207,7 @@ end
 # Get individual orders
 get '/orders/:id' do
   @order = Order.find(params[:id])
-  erb :"orders/show"
+  erb :"orders/show", :layout => (request.xhr? ? false : :layout)
 end
 
 # Barkeeper orders that need attention
