@@ -6,9 +6,9 @@
  
       <div class="order-not-received <%= "hide" unless order.received_at.nil? %>">
         <div class="span6" style="padding:25px;" >
-          <div class="top-row"></div>
-          <div class="main-row"><h1><b>Order <%= order.id %> <%= pretty_date(order.created_at) %></h1></div>
-          <div class="bottom-row"></div>
+          <div class="top-row"><%= order.lastname %>, <%= order.firstname %></div>
+          <div class="main-row"><h1>Order <%= order.id %></h1></div>
+          <div class="bottom-row"><%= pretty_date(order.created_at) %></div>
         </div>
 
         <div class="span3 offset3" style="color: #e0e1de">
@@ -22,7 +22,7 @@
         <div class="span6" style="padding:25px;" >
           <div class="top-row"><h3><%= order.lastname %>, <%= order.firstname %> - <%= order.table %></h3></div>
           <div class="main-row"><h1><%= order.drinks %></h1></div>
-          <div class="bottom-row"><h3><b>Order <%= order.id %></b> - <%= pretty_date(order.created_at) %></h3></div>
+          <div class="bottom-row"><h3>Order <%= order.id %> - <%= pretty_date(order.created_at) %></h3></div>
         </div>
 
         <div class="span3 offset3" style="color: #e0e1de">
