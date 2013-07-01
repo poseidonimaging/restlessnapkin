@@ -2,9 +2,9 @@
 <h3><%= @venue %></h3><hr>
   <% @orders.each do |order| %>
           
-    <h5><%= order.venue %> at <a href="/venue/<%= order.venue %>/table/<%= order.table %>">Table <%= order.table %></a></h5>
+    <h5><%= order.venue %> at <%= order.table %></h5>
     <h4><a href="/orders/<%= order.id %>"><%= order.drinks %></a> <%= ' | <i class="icon-eye-open"></i>' unless order.received_at.nil? %> <%= '<i class="icon-glass"></i>' unless order.fulfilled_at.nil? %></h4>
-    <p><%= pretty_date(order.created_at) %> from <%= order.firstname %> <%= order.lastname %></a></p>
+    <p><%= pretty_date(order.created_at) %> by <%= order.firstname %> <%= order.lastname %></a></p>
     <hr>
   <% end %>
 
