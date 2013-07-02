@@ -1,41 +1,79 @@
 <div id="content">
-  	
-    <% @orders.each do |order| %>
+   
+  <% @orders.each do |order| %>
 
-    <div class="row-fluid" style="background: #A21721; color: white">	
-      <div style="padding:25px;" class="span6">
-    	 <h2><%= order.lastname %>, <%= order.firstname %> at <%= order.table %></h2>
-       <h1><%= order.drinks %></h1>
+    <div id="order-<%= order.id %>" class="row-fluid order" data-order-id="<%= order.id %>" style="<% if order.received_at.nil? %>background-color: #A21721; color: white;<% else %>background-color: #eeeeee; color: #555555;<% end %>">
+ 
+      <div class="order-not-received <%= "hide" unless order.received_at.nil? %>">
+        <div class="span6" style="padding:25px;" >
+          <div class="top-row"><h3><%= order.lastname %>, <%= order.firstname %></h3></div>
+          <div class="main-row"><h1>Order <%= order.id %></h1></div>
+          <div class="bottom-row"><h3><%= pretty_date(order.created_at) %></h3></div>
+        </div>
+
+        <div class="span3 offset3" style="color: #e0e1de">
+          <div class="not-received">
+            <h2><i class="icon-circle icon-4x"></i></h2>
+          </div>
+        </div>
       </div>
 
-      <div class="span3 offset3" style="color: #e0e1de">
-          <div class="order_id_<%= order.id %>">
-              <h2><i class="icon-circle icon-4x"></i></h2>
+      <div class="order-received <%= "hide" if order.received_at.nil? %>">
+        <div class="span6" style="padding:25px;" >
+          <div class="top-row"><h3><%= order.lastname %>, <%= order.firstname %></h3></div>
+          <div class="main-row"><h1><%= order.drinks %></h1></div>
+          <div class="bottom-row"><h3>Order <%= order.id %> - <%= pretty_date(order.created_at) %></h3></div>
+        </div>
+
+        <div class="span3 offset3" style="color: #e0e1de">
+          <div class="received">
+            <h2><i class="icon-remove-circle icon-4x"></i></h2>
           </div>
+        </div>
       </div>
     </div>
 
-    <br>
+    <br />
 
-    <script>
-      $(document).ready(function() {
-        $('.order_id_<%= order.id %>').click(function() {
-          $.ajax({
-            type: "PUT",
-            url: "/orders/received/<%= order.id %>",
-            }).done(function() {
-              $(this).remove();
-          });
-        });
-      });
-    </script>
-
-    <% end %>
-
-		<script>
-      $(document).ready(function() {
-      	setTimeout(function() {
-        	$('#content').load('/barkeeper');}, 2000);
-      });
-    </script>
+  <% end %>
 </div>
+
+<script>
+  $(document).ready(function() {
+    $('#content').on('click', '.order .not-received', function () {
+      var $this = $(this);
+
+      $.ajax({
+        type: "PUT",
+        url: ''.concat("/orders/received/", $this.closest(".order").data("order-id")),
+      }).done(function() {
+        $this.closest(".order")
+          .find(".order-received")
+            .show()
+          .end()
+          .find(".order-not-received")
+            .hide()
+          .end()
+          .css({
+            "background-color": "#eeeeee",
+            "color": "#555555"
+          });
+      });
+    });
+
+    $('#content').on('click', '.order .received', function () {
+      var $this = $(this);
+
+      $.ajax({
+        type: "PUT",
+        url: ''.concat("/orders/fulfilled/", $this.closest(".order").data("order-id")),
+      }).done(function() {
+        $this.closest(".order").fadeOut('fast');
+      });
+    });
+
+    setInterval(function() {
+      $('#content').load('/barkeeper #content');
+    }, 5000);
+  });
+</script>
