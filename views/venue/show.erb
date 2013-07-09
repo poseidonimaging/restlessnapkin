@@ -4,7 +4,7 @@
           
     <h5><%= order.venue %> at <%= order.table %></h5>
     <h4><a href="/orders/<%= order.id %>">Order <%= order.id %> | <%= order.drinks %></a> <%= ' | <i class="icon-eye-open"></i>' unless order.received_at.nil? %> <%= '<i class="icon-glass"></i>' unless order.fulfilled_at.nil? %></h4>
-    <p><%= pretty_date(order.created_at) %> by <%= order.firstname %> <%= order.lastname %></p>
+    <p>by <%= order.firstname %> <%= order.lastname %></p>
     <hr>
   <% end %>
 
