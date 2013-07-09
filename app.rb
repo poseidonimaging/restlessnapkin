@@ -252,7 +252,7 @@ end
 # Get orders by venue
 get "/venue/:venue" do
   @venue = params[:venue]
-  @orders = Order.where(:venue => params[:venue]).order("created_at DESC").limit(20)
+  @orders = Order.where(:venue => params[:venue]).order("created_at DESC").limit(30)
   erb :"venue/show", :layout => (request.xhr? ? false : :layout)
 end
 
