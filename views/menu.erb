@@ -77,12 +77,20 @@
 
           </div>
         </div>
-      </div>
-  </div>
 
-  <div style="text-align:center; margin-top:-15px;">
+        <div class="remove" style="margin-top:-30px; margin-left:-10px; color:red;">
+          <h3><i class="icon-remove-sign"></i></h3>
+        </div>
+
+      </div>
+
+  
+
+  <div style="text-align:center; margin-top:-40px;">
     <h3><a href="#" class="add-drink"><i class="icon-plus-sign icon-large"></i></a></h3>
   </div>
+
+  <br>
 
   <p><input class="btn btn-large btn-info" style="float:right;" type='submit' value='Send Drink Order'></p>
   </form>
@@ -97,6 +105,9 @@
     var drink = $('.drink');
     $('.add-drink').click(function() {
       $(drink).clone().insertAfter(drink);
+    });
+    $('.remove').live("click",function() {
+      $(drink).remove();
     });
 	});
 
