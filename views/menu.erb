@@ -76,8 +76,9 @@
     $('.toggle-me').click(function() {
         $('.panel').slideToggle('fast');
     });
+    var drink = $('.drink');
     $('.add-drink').click(function() {
-      $('.row-fluid').clone().appendTo('.drink');
+      $(drink).clone().insertAfter(drink);
     });
 	});
 
