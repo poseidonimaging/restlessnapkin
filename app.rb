@@ -249,6 +249,10 @@ put '/orders/fulfilled/:id' do
   end
 end
 
+get '/menu' do
+  erb :menu, :layout => (request.xhr? ? false : :layout)
+end
+
 # Get orders by venue
 get "/venue/:venue" do
   @venue = params[:venue]
