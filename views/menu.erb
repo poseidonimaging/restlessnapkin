@@ -3,71 +3,85 @@
   <div class="menu" style="background-color: #eeeeee; color: #555555;">
   	<h3 class="slide" style="padding-left:10px;"><a href="#" class="toggle-me">Drink Menu</a></h3>
 
-  	<div class="panel" style="display:none;">
-     <h4 style="padding-left:10px;">Drink</h4>
-     <ul>
-     	<li>Beer</li>
-     	<li>Wine</li>
-     	<li>Vodka</li>
-     	<li>Whisky</li>
-     	<li>Tequila</li>
-     	<li>Rum</li>
-     	<li>Gin</li>
-     </ul>
-   	</div>
+  	 <div class="panel" style="display:none;">
+       <h4 style="padding-left:10px;">Drink</h4>
+       <ul>
+       	<li>Beer</li>
+       	<li>Wine</li>
+       	<li>Vodka</li>
+       	<li>Whisky</li>
+       	<li>Tequila</li>
+       	<li>Rum</li>
+       	<li>Gin</li>
+       </ul>
+     </div>
   </div>
 
 
-  <div class="drink">
-    <div class="row-fluid" style="background: #555555; color: #f9f9f9">
-    	<div style="padding:10px;" class="span12">
-    		
-        <select>
-      		<option>Smirnoff - Well</option>
-      		<option>Ketel One</option>
-      		<option>Tito's</option>
-      		<option>Dripping Springs</option>
-      		<option>Deep Eddy</option>
-    		</select>
+    <div class="drink">
+      <div class="row-fluid" style="background: #555555; color: #f9f9f9">
+      	
+        <form action='/orders' method='post' class="form-horizontal">
+          
+          <div style="float:left; padding-top:50px; padding-left:10px;"> 
+            <input class="input-mini" type="text" id="quantity" value="1">
+          </div>
+        
+          <div style="float:right; padding:10px">      
+      		
+            <p>
+              <select>
+            		<option>Smirnoff - Well</option>
+            		<option>Ketel One</option>
+            		<option>Tito's</option>
+            		<option>Dripping Springs</option>
+            		<option>Deep Eddy</option>
+          		</select>
+            </p>
+            
+            <p>
+          		<select>
+            		<option>Cola</option>
+            		<option>Diet Cola</option>
+            		<option>Cranberry Juice</option>
+            		<option>Ginger Ale</option>
+            		<option>Ginger Beer</option>
+            		<option>Grapefruit Juice</option>
+            		<option>Lemon Lime Soda</option>
+            		<option>Lemonade</option>
+            		<option>Orange Juice</option>
+            		<option>Pineapple Juice</option>
+            		<option>Red Bull</option>
+            		<option>Sugarfree Red Bull</option>
+            		<option>Soda</option>
+            		<option>Sour Mix</option>
+            		<option>Tonic</option>
+            		<option>Water</option>
+          		</select>
+            </p>
+            
+            <p>
+          		<select>
+            		<option>Cherry</option>
+            		<option>Lemon</option>
+            		<option>Lime</option>
+            		<option>Olive</option>
+            		<option>Orange</option>
+          		</select>
+            </p>
 
-        <br>
+          </div>
 
-    		<select>
-      		<option>Cola</option>
-      		<option>Diet Cola</option>
-      		<option>Cranberry Juice</option>
-      		<option>Ginger Ale</option>
-      		<option>Ginger Beer</option>
-      		<option>Grapefruit Juice</option>
-      		<option>Lemon Lime Soda</option>
-      		<option>Lemonade</option>
-      		<option>Orange Juice</option>
-      		<option>Pineapple Juice</option>
-      		<option>Red Bull</option>
-      		<option>Sugarfree Red Bull</option>
-      		<option>Soda</option>
-      		<option>Sour Mix</option>
-      		<option>Tonic</option>
-      		<option>Water</option>
-    		</select>
-
-        <br>
-
-    		<select>
-      		<option>Cherry</option>
-      		<option>Lemon</option>
-      		<option>Lime</option>
-      		<option>Olive</option>
-      		<option>Orange</option>
-    		</select>
-
+        </div>
+      
       </div>
-    
-    </div>
     <br>
   </div>
 
   <h3><a href="#" class="add-drink">Add Another</a></h3>
+
+  <p><input class="btn btn-large btn-info" type='submit' value='Send Drink Order'></p>
+  </form>
 
 </div>
 
