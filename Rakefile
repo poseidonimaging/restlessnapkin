@@ -31,4 +31,5 @@ namespace :restlessnapkin do
       liquor = Liquor.where(:liquor_type => "tequila", :name => name).first_or_initialize
       liquor.save!
     end
+  end
 end
