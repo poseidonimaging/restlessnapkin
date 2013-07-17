@@ -17,8 +17,9 @@
      </div>
   </div>
 
+    <div class="drinks-container"></div>
 
-    <div class="drink" style="padding:10px;">
+    <div class="drink-template" style="padding:10px; display: none;">
       <div class="row-fluid" style="background: #555555; color: #f9f9f9">
       	
         <form action='/orders' method='post' class="form-horizontal">
@@ -86,7 +87,7 @@
 
   
 
-  <div style="text-align:center; margin-top:-40px;">
+  <div style="text-align:center;">
     <h3><a href="#" class="add-drink"><i class="icon-plus-sign icon-large"></i></a></h3>
   </div>
 
@@ -102,12 +103,20 @@
     $('.toggle-me').click(function() {
         $('.panel').slideToggle('fast');
     });
-    var drink = $('.drink');
-    $('.add-drink').click(function() {
-      $(drink).clone().insertAfter(drink);
+ 
+    $('.add-drink').click(function(e) {
+      e.preventDefault();
+
+      $(".drink-template")
+        .clone()
+        .show()
+        .removeClass("drink-template")
+        .addClass("drink")
+        .appendTo(".drinks-container");
     });
+ 
     $('.remove').live("click",function() {
-      $(drink).remove();
+      $(this).closest(".drink").remove();
     });
 	});
 

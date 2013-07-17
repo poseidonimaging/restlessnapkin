@@ -6,6 +6,7 @@ require 'newrelic_rpm'
 require 'open-uri'
 require 'uri'
 require "json"
+require "./models"
 
 #require 'twilio-ruby'
 #phone_number = '+15128616050'
@@ -46,14 +47,6 @@ configure :production do
   }
 
   ActiveRecord::Base.establish_connection(settings)
-end
-
-class Order < ActiveRecord::Base
-  validates :venue, presence: true, length: { minimum: 3}
-  validates :table, presence: true, length: { minimum: 1}
-  validates :lastname, presence: true, length: { minimum: 2}
-  validates :phone, presence: true, length: { minimum: 10}
-  validates :drinks, presence: true, length: { minimum: 5}
 end
 
 helpers do
