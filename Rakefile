@@ -45,7 +45,7 @@ namespace :restlessnapkin do
   desc "Loads whisky into the liquors table"
   task :load_whiskys do
     # load whisky
-    ["Bulleit Bourbon", "Bulleit Rye", "Canadian Club", "Jack Daniels", "Jim Beam", "Knob Creek", "Seagrams 7"].each do |name|
+    ["Bulleit Bourbon", "Canadian Club", "Jack Daniels", "Jim Beam", "Knob Creek", "Seagrams 7"].each do |name|
       liquor = Liquor.where(:liquor_type => "whisky", :name => name).first_or_initialize
       liquor.save!
     end
