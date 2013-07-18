@@ -3,7 +3,7 @@ require "sinatra/activerecord/rake"
 
 namespace :restlessnapkin do
   desc "Loads liquors into the liquors table"
-  task :load_liquors => [:load_gins, :load_tequilas, :load_vodkas, :load_rums, :load_whiskys]
+  task :load_liquors => [:load_gins, :load_tequilas, :load_vodkas, :load_rums]
 
   desc "Loads vodkas into the liquors table"
   task :load_vodkas do
@@ -42,13 +42,13 @@ namespace :restlessnapkin do
     end
   end
 
-  desc "Loads whisky into the liquors table"
-  task :load_whiskys do
+  #desc "Loads whisky into the liquors table"
+  #task :load_whiskys do
     # load whisky
-    ["Bulleit Bourbon", "Canadian Club", "Jack Daniels", "Jim Beam", "Knob Creek", "Seagrams 7"].each do |name|
-      liquor = Liquor.where(:liquor_type => "whisky", :name => name).first_or_initialize
-      liquor.save!
-    end
-  end
+  #  ["Bulleit Bourbon", "Canadian Club", "Jack Daniels", "Jim Beam", "Knob Creek", "Seagrams 7"].each do |name|
+  #    liquor = Liquor.where(:liquor_type => "whisky", :name => name).first_or_initialize
+  #    liquor.save!
+  #  end
+  #end
 
 end
