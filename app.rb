@@ -243,6 +243,7 @@ put '/orders/fulfilled/:id' do
 end
 
 get '/menu' do
+  @vodkas = Venue.find(1).liquors.by_type("vodka")
   erb :menu, :layout => (request.xhr? ? false : :layout)
 end
 

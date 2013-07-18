@@ -29,15 +29,13 @@
           </div>
         
           <div style="float:right; padding:10px">      
-      		
+      		  
             <p>
               <select class="input-medium">
-            		<option>Smirnoff - Well</option>
-            		<option>Ketel One</option>
-            		<option>Tito's</option>
-            		<option>Dripping Springs</option>
-            		<option>Deep Eddy</option>
-          		</select>
+                <% @vodkas.each do |vodka| %>
+              		<option><%= vodka.name %></option>
+              	<% end %>
+            	</select>
             </p>
             
             <p>
