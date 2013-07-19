@@ -242,9 +242,18 @@ put '/orders/fulfilled/:id' do
   end
 end
 
+#needs venue/menu
 get "/:venue/menu" do
   @venue = Venue.where(:handle => params[:venue]).first
   @vodkas = Venue.find(@venue.id).liquors.by_type("vodka")
+  erb :"venue/menu", :layout => (request.xhr? ? false : :layout)
+end
+
+get "/menu" do
+  @gin = Venue.find(1).liquors.by_type("gin")
+  @rum = Venue.find(1).liquors.by_type("rum")
+  @tequila = Venue.find(1).liquors.by_type("tequila")
+  @vodkas = Venue.find(1).liquors.by_type("vodka")
   erb :menu, :layout => (request.xhr? ? false : :layout)
 end
 
