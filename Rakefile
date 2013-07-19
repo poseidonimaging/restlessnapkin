@@ -42,6 +42,23 @@ namespace :restlessnapkin do
     end
   end
 
+  desc "Loads venues into venues table"
+  task :load_venues do
+    # load venues
+      venue = Venue.where(:handle => "slipinn", :name => "Slip Inn").first_or_initialize
+      venue.save!
+    end
+  end
+
+  desc "Liquors for Slip Inn"
+  task :load_slipinn_liquors do
+    # load liquors for slipinn
+    ["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22"].each do |liquor_id|
+      liquor_venue = Liquor_Venue.where(:venue_id => "1", :liquor_id => liquor_id).first_or_initialize
+      liquor.save!
+    end
+  end
+
   #desc "Loads whisky into the liquors table"
   #task :load_whiskys do
     # load whisky
