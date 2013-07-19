@@ -53,7 +53,7 @@ namespace :restlessnapkin do
   task :load_slipinn_liquors do
     # load liquors for slipinn
     ["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21","22"].each do |liquor_id|
-      liquor_venue = Liquor_Venue.where(:venue_id => "1", :liquor_id => liquor_id).first_or_initialize
+      liquor_venue = Liquors_Venues.where(:venue_id => "1", :liquor_id => liquor_id).first_or_initialize
       liquor.save!
     end
   end
