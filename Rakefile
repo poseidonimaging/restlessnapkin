@@ -47,7 +47,6 @@ namespace :restlessnapkin do
     # load venues
       venue = Venue.where(:handle => "slipinn", :name => "Slip Inn").first_or_initialize
       venue.save!
-    end
   end
 
   desc "Liquors for Slip Inn"
