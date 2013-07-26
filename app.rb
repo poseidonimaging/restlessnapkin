@@ -8,12 +8,15 @@ require 'uri'
 require "json"
 require 'oauth2'
 require "./models"
+require "./orderviews"
+require "./userorders"
+require "./barkeeper"
 
 #require 'twilio-ruby'
 #phone_number = '+15128616050'
 #Twilio::REST::Client.new(ACc3d70d00cdb2818a1ea2564283aeffce,35583e7b60273fbd9560991dd0969860)
 
-#printer OAuth configuration
+# printer OAuth configuration
 client = OAuth2::Client.new('Ehfv3Qk44jJiB8bifM3A', 'g91EciYab2LdB83eKaRm', :site => 'https://manage.themprinter.com/api/v1/')
 
 client.auth_code.authorize_url(:redirect_uri => 'http://localhost:8080/oauth2/callback')
@@ -99,17 +102,6 @@ helpers do
   end
 end
 
-#Shows all orders by all users
-get '/' do
-  @orders = Order.order("created_at DESC").limit(20)
-  erb :"orders/index", :layout => (request.xhr? ? false : :layout)
-end
-
-post '/' do
-  @orders = Order.order("created_at DESC").limit(20)
-  erb :"orders/index", :layout => (request.xhr? ? false : :layout)
-end
-
 get '/example.json' do
   content_type :json
   { :key1 => 'value1', :key2 => 'value2' }.to_json
@@ -119,213 +111,6 @@ get '/hello/:name.json' do
   content_type :json
   {"message" => "Hello #{params[:name]}!"}.to_json
 end
-
-#Looks at the venue and the phone number(splat), then shows form for checkin
-get '/moontower/checkin/*' do 
-  session[:venue] = 'moontower'
-  session[:phone] = params[:splat].first
-  #session[:phone_short] = session[:phone].[-4..-1]
-  if session[:venue] && session[:phone]
-    erb :"/moontower/checkin"
-  else
-    erb "Something went awry. Please try again and make sure you texted the venue's name properly."
-  end
-end
-
-#Looks at the venue and the phone number(splat), then shows form for checkin
-get '/:venue/checkin/*' do 
-  session[:venue] = params['venue']
-  session[:phone] = params[:splat].first
-  #session[:phone_short] = session[:phone].[-4..-1]
-  if session[:venue] && session[:phone]
-    erb :"/checkin"
-  else
-    erb "Something went awry. Please try again and make sure you texted the venue's name properly."
-  end
-end
-
-# Get form for main menu drink order access
-get '/orders/drinks' do
-  if session[:venue] && session[:phone] && session[:firstname] && session[:lastname] && session[:table]
-    @order = Order.new
-    erb :"orders/drinks"
-  elsif session[:venue] && session[:phone]
-    @order = Order.new
-    session[:firstname] = params['firstname']
-    session[:lastname] = params['lastname']
-    session[:table] = params['table']
-    erb :"orders/drinks"
-  else
-    erb "There has been a problem. Please click the link we last texted you to continue."
-  end
-end
-
-# After checkin, shows form for drink order. Upon reordering, keeps session via lastname
-post '/orders/drinks' do
-  if session[:venue] && session[:phone] && session[:firstname] && session[:lastname] && session[:table]
-    @order = Order.new
-    erb :"orders/drinks"
-  elsif
-    session[:venue] && session[:phone]
-    @order = Order.new
-    session[:firstname] = params['firstname']
-    session[:lastname] = params['lastname']
-    session[:table] = params['table']
-    erb :"orders/drinks"
-  else
-    erb "There has been a problem. Please reclick the link we texted you to start over."
-  end
-end
-
-# New order form sends POST request here
-post '/orders' do
-  @order = Order.new(params[:order])
-  @order.venue = session[:venue]
-  @order.table = session[:table]
-  @order.firstname = session[:firstname]
-  @order.lastname = session[:lastname]
-  @order.phone = session[:phone]
-  if @order.save
-    redirect "/orders/#{@order.id}"
-  else
-    erb :"orders/drinks"
-  end
-end
-
-# Provides next step options to user after order
-get '/orders/confirm' do
-  erb :"orders/confirm"
-end
-
-# Showing all orders via main menu
-get '/orders/index' do
-  @orders = Order.order("created_at DESC")
-  erb :"orders/index", :layout => (request.xhr? ? false : :layout)
-end
-
-# Showing all orders via confirm screen
-post '/orders/index' do
-  @orders = Order.order("created_at DESC")
-  erb :"orders/index", :layout => (request.xhr? ? false : :layout)
-end
-
-# Get individual orders
-get '/orders/:id' do
-  @order = Order.find(params[:id])
-  erb :"orders/show", :layout => (request.xhr? ? false : :layout)
-end
-
-# Barkeeper orders that need attention
-get '/barkeeper' do
-  @orders = Order.where(:fulfilled_at => nil).limit(10)
-  erb :barkeeper, :layout => (request.xhr? ? false : :layout)
-end
-
-get '/moontower-barkeeper' do
-  @orders = Order.where(:fulfilled_at => nil, :venue => "moontower").limit(10)
-  erb :moontower, :layout => (request.xhr? ? false : :layout)
-end
-
-# Put where received_at's go
-put '/orders/received/:id' do
-  content_type :json
-  @order = Order.find(params[:id])
-  @order.received_at = Time.now
-  if @order.save
-    status 200 # OK
-    { "success" => true }.to_json
-  else
-    status 422 # Unprocessable Entity
-    { "success" => false }.to_json
-  end
-end
-
-# Put where fulfilled_at's go
-put '/orders/fulfilled/:id' do
-  content_type :json
-  @order = Order.find(params[:id])
-  @order.fulfilled_at = Time.now
-  if @order.save
-    status 200 # OK
-    { "success" => true }.to_json
-  else
-    status 422 # Unprocessable Entity
-    { "success" => false }.to_json
-  end
-end
-
-#needs venue/menu
-get "/:venue/menu" do
-  @venue = Venue.where(:handle => params[:venue]).first
-  @vodkas = Venue.find(@venue.id).liquors.by_type("vodka")
-  erb :"venue/menu", :layout => (request.xhr? ? false : :layout)
-end
-
-get "/menu" do
-  @gin = Venue.find(1).liquors.by_type("gin")
-  @rum = Venue.find(1).liquors.by_type("rum")
-  @tequila = Venue.find(1).liquors.by_type("tequila")
-  @vodkas = Venue.find(1).liquors.by_type("vodka")
-  erb :menutest, :layout => (request.xhr? ? false : :layout)
-end
-
-# Get orders by venue
-get "/venue/:venue" do
-  @venue = params[:venue]
-  @orders = Order.where(:venue => params[:venue]).order("created_at DESC").limit(30)
-  erb :"venue/show", :layout => (request.xhr? ? false : :layout)
-end
-
-# Get orders by user(phone)
-get "/user/:phone" do
-  @orders = Order.where(:phone => params[:phone]).order("created_at DESC").limit(20)
-  erb :"user/show", :layout => (request.xhr? ? false : :layout)
-end
-
-# Get orders by venue and table
-get "/venue/:venue/table/:table" do
-  @venue = params[:venue]
-  @table = params[:table]
-  @orders = Order.where(:venue => params[:venue],:table => params[:table]).order("created_at DESC").limit(20)
-  erb :"venue/table/show", :layout => (request.xhr? ? false : :layout)
-end
-
-# Change location
-get "/location/change" do
-  erb :"location/change"
-end
-
-# Confirm location change
-post "/location/confirm" do
-  session[:table] = params['table']
-  @orders = Order.where(:phone => session[:phone]).order("created_at DESC").limit(20)
-  erb :"location/confirm", :layout => (request.xhr? ? false : :layout)
-end
-
-#User checkout of venue
-get '/checkout' do
-  @location = session[:table]
-  erb :checkout
-end
-
-#User checkout of venue
-post '/checkout' do
-  @order = Order.new
-  @order.drinks = "CLOSE TAB"
-  @order.venue = session[:venue]
-  @order.table = session[:table]
-  @order.firstname = session[:firstname]
-  @order.lastname = session[:lastname]
-  @order.phone = session[:phone]
-  if @order.save
-    session.delete(:lastname)
-    redirect "/orders/#{@order.id}"
-  else
-    erb "Checkout was unsuccessful"
-  end
-end
-
-
 
 #Ancillary secure pages from sinatra/bootstrap github repo
 before '/secure/*' do
