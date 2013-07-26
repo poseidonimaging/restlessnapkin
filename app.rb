@@ -6,11 +6,23 @@ require 'newrelic_rpm'
 require 'open-uri'
 require 'uri'
 require "json"
+require 'oauth2'
 require "./models"
 
 #require 'twilio-ruby'
 #phone_number = '+15128616050'
 #Twilio::REST::Client.new(ACc3d70d00cdb2818a1ea2564283aeffce,35583e7b60273fbd9560991dd0969860)
+
+#printer OAuth configuration
+client = OAuth2::Client.new('Ehfv3Qk44jJiB8bifM3A', 'g91EciYab2LdB83eKaRm', :site => 'https://manage.themprinter.com/api/v1/')
+
+client.auth_code.authorize_url(:redirect_uri => 'http://localhost:8080/oauth2/callback')
+# => "https://example.org/oauth/authorization?response_type=code&client_id=client_id&redirect_uri=http://localhost:8080/oauth2/callback"
+
+token = client.auth_code.get_token('authorization_code_value', :redirect_uri => 'http://localhost:8080/oauth2/callback', :headers => {'Authorization' => 'Basic some_password'})
+response = token.get('/api/resource', :params => { 'query_foo' => 'bar' })
+response.class.name
+# => OAuth2::Response
 
 configure do
   set :public_folder, Proc.new { File.join(root, "static") }
