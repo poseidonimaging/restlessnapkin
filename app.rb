@@ -22,6 +22,13 @@ configure do
   enable :sessions
   set :session_secret, "nPiOpaoyqcyeaABv2huEqlvZw6CxkC0Qo71hMlbwMbhmzWAjcndLD5piz9PqXt8"
   set :method_override, true
+
+  # OAuth2 configuration
+  use OmniAuth::Builder do
+    provider :mprinter, 'Ehfv3Qk44jJiB8bifM3A','g91EciYab2LdB83eKaRm', callback_url => (ENV['https://manage.themprinter.com/api/v1/'])
+    provider :twitter, 'HnLokC5vWkVC0r1HK4ojOQ', 'WmGe0dWFNvLrtl06Gon4Y6LuVv6UBm57kjyVWXtNjNY'
+    #provider :att, 'client_id', 'client_secret', :callback_url => (ENV['BASE_DOMAIN']
+  end
 end
 
 configure :development do
@@ -52,13 +59,6 @@ configure :production do
   }
 
   ActiveRecord::Base.establish_connection(settings)
-end
-
-# printer OAuth2 configuration
-use OmniAuth::Builder do
-  provider :mprinter, 'Ehfv3Qk44jJiB8bifM3A','g91EciYab2LdB83eKaRm', callback_url => (ENV['https://manage.themprinter.com/api/v1/'])
-  provider :twitter, 'HnLokC5vWkVC0r1HK4ojOQ', 'WmGe0dWFNvLrtl06Gon4Y6LuVv6UBm57kjyVWXtNjNY'
-  #provider :att, 'client_id', 'client_secret', :callback_url => (ENV['BASE_DOMAIN']
 end
 
 helpers do
