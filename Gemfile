@@ -4,6 +4,9 @@ gem "sinatra"
 gem "sinatra-contrib"
 gem "activerecord"
 gem "sinatra-activerecord"
+gem "oauth2"
+gem "omniauth"
+gem "omniauth-oauth2"
 
 group :production, :staging do
 	gem "mysql2"

@@ -18,19 +18,38 @@ GEM
     builder (3.0.4)
     eventmachine (1.0.3)
     eventmachine (1.0.3-x86-mingw32)
+    faraday (0.8.8)
+      multipart-post (~> 1.2.0)
     ffi (1.9.0)
     ffi (1.9.0-x86-mingw32)
+    hashie (2.0.5)
+    httpauth (0.2.0)
     i18n (0.6.1)
     json (1.8.0)
+    jwt (0.1.4)
+      json (>= 1.2.4)
     kgio (2.8.0)
     listen (1.2.2)
       rb-fsevent (>= 0.9.3)
       rb-inotify (>= 0.9)
       rb-kqueue (>= 0.2)
     multi_json (1.7.7)
+    multipart-post (1.2.0)
     mysql2 (0.3.11)
     mysql2 (0.3.11-x86-mingw32)
     newrelic_rpm (3.6.4.122)
+    oauth2 (0.8.1)
+      faraday (~> 0.8)
+      httpauth (~> 0.1)
+      jwt (~> 0.1.4)
+      multi_json (~> 1.0)
+      rack (~> 1.2)
+    omniauth (1.1.4)
+      hashie (>= 1.2, < 3)
+      rack
+    omniauth-oauth2 (1.1.1)
+      oauth2 (~> 0.8.0)
+      omniauth (~> 1.0)
     rack (1.5.2)
     rack-protection (1.5.0)
       rack
@@ -91,6 +110,9 @@ DEPENDENCIES
   json
   mysql2
   newrelic_rpm
+  oauth2
+  omniauth
+  omniauth-oauth2
   rb-fsevent (~> 0.9.1)
   rerun
   shotgun

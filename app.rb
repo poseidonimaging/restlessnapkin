@@ -7,6 +7,7 @@ require 'open-uri'
 require 'uri'
 require "json"
 require 'oauth2'
+require 'omniauth-oauth2'
 require "./models"
 require "./orderviews"
 require "./userorders"
@@ -15,17 +16,6 @@ require "./barkeeper"
 #require 'twilio-ruby'
 #phone_number = '+15128616050'
 #Twilio::REST::Client.new(ACc3d70d00cdb2818a1ea2564283aeffce,35583e7b60273fbd9560991dd0969860)
-
-# printer OAuth configuration
-client = OAuth2::Client.new('Ehfv3Qk44jJiB8bifM3A', 'g91EciYab2LdB83eKaRm', :site => 'https://manage.themprinter.com/api/v1/')
-
-client.auth_code.authorize_url(:redirect_uri => 'http://localhost:8080/oauth2/callback')
-# => "https://example.org/oauth/authorization?response_type=code&client_id=client_id&redirect_uri=http://localhost:8080/oauth2/callback"
-
-token = client.auth_code.get_token('authorization_code_value', :redirect_uri => 'http://localhost:8080/oauth2/callback', :headers => {'Authorization' => 'Basic some_password'})
-response = token.get('/api/resource', :params => { 'query_foo' => 'bar' })
-response.class.name
-# => OAuth2::Response
 
 configure do
   set :public_folder, Proc.new { File.join(root, "static") }
@@ -64,6 +54,13 @@ configure :production do
   ActiveRecord::Base.establish_connection(settings)
 end
 
+# printer OAuth2 configuration
+use OmniAuth::Builder do
+  provider :mprinter, 'Ehfv3Qk44jJiB8bifM3A','g91EciYab2LdB83eKaRm', callback_url => (ENV['https://manage.themprinter.com/api/v1/'])
+  provider :twitter, 'HnLokC5vWkVC0r1HK4ojOQ', 'WmGe0dWFNvLrtl06Gon4Y6LuVv6UBm57kjyVWXtNjNY'
+  #provider :att, 'client_id', 'client_secret', :callback_url => (ENV['BASE_DOMAIN']
+end
+
 helpers do
   def phone
     session[:phone] ? session[:phone] : 'No Phone'
@@ -100,6 +97,23 @@ helpers do
    day_diff < 7 && day_diff.to_s + " days ago" ||
    day_diff < 31 && (day_diff.to_s / 7).ceil + " weeks ago";
   end
+end
+
+# Support both GET and POST for OAuth callbacks
+%w(get post).each do |method|
+  send(method, "/auth/:provider/callback") do
+    env['omniauth.auth'] # => OmniAuth::AuthHash
+  end
+end
+
+get '/twitter' do
+  erb "<a href='/auth/twitter'>Sign in with Twitter</a>"
+end
+
+# Support for OAuth failure
+get '/auth/failure' do
+  flash[:notice] = params[:message] # if using sinatra-flash or rack-flash
+  redirect '/'
 end
 
 get '/example.json' do
