@@ -1,17 +1,19 @@
 
-require 'rubygems'
-require 'sinatra'
-require 'sinatra/activerecord'
-require 'newrelic_rpm'
-require 'open-uri'
-require 'uri'
+require "rubygems"
+require "sinatra"
+require "sinatra/activerecord"
+require "newrelic_rpm"
+require "open-uri"
+require "uri"
 require "json"
-require 'oauth2'
-require 'omniauth-oauth2'
+require "oauth2"
+#require "omniauth"
+#require "omniauth-twitter"
+#require "omniauth-oauth2"
 require "./models"
-require "orderviews"
-require "userorders"
-require "barkeeper"
+load "./orderviews.rb"
+load "./userorders.rb"
+load "./barkeeper.rb"
 
 #require 'twilio-ruby'
 #phone_number = '+15128616050'
@@ -24,11 +26,11 @@ configure do
   set :method_override, true
 
   # OAuth2 configuration
-  use OmniAuth::Builder do
-    provider :mprinter, 'Ehfv3Qk44jJiB8bifM3A','g91EciYab2LdB83eKaRm', callback_url => (ENV['https://manage.themprinter.com/api/v1/'])
-    provider :twitter, 'HnLokC5vWkVC0r1HK4ojOQ', 'WmGe0dWFNvLrtl06Gon4Y6LuVv6UBm57kjyVWXtNjNY'
+  #use OmniAuth::Builder do
+    #provider :mprinter, 'Ehfv3Qk44jJiB8bifM3A','g91EciYab2LdB83eKaRm', callback_url => (ENV['https://manage.themprinter.com/api/v1/'])
+    #provider :twitter, 'HnLokC5vWkVC0r1HK4ojOQ', 'WmGe0dWFNvLrtl06Gon4Y6LuVv6UBm57kjyVWXtNjNY'
     #provider :att, 'client_id', 'client_secret', :callback_url => (ENV['BASE_DOMAIN']
-  end
+  #end
 end
 
 configure :development do
