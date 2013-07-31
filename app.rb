@@ -9,9 +9,9 @@ require "json"
 require 'oauth2'
 require 'omniauth-oauth2'
 require "./models"
-require "./orderviews"
-require "./userorders"
-require "./barkeeper"
+require "orderviews"
+require "userorders"
+require "barkeeper"
 
 #require 'twilio-ruby'
 #phone_number = '+15128616050'
