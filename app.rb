@@ -6,10 +6,10 @@ require "newrelic_rpm"
 require "open-uri"
 require "uri"
 require "json"
-require "oauth2"
-#require "omniauth"
-#require "omniauth-twitter"
-#require "omniauth-oauth2"
+#require "oauth2"
+require "omniauth"
+require "omniauth-twitter"
+require "omniauth-oauth2"
 require "./models"
 load "./orderviews.rb"
 load "./userorders.rb"
@@ -24,17 +24,11 @@ configure do
   enable :sessions
   set :session_secret, "nPiOpaoyqcyeaABv2huEqlvZw6CxkC0Qo71hMlbwMbhmzWAjcndLD5piz9PqXt8"
   set :method_override, true
-
-  # OAuth2 configuration
-  #use OmniAuth::Builder do
-    #provider :mprinter, 'Ehfv3Qk44jJiB8bifM3A','g91EciYab2LdB83eKaRm', callback_url => (ENV['https://manage.themprinter.com/api/v1/'])
-    #provider :twitter, 'HnLokC5vWkVC0r1HK4ojOQ', 'WmGe0dWFNvLrtl06Gon4Y6LuVv6UBm57kjyVWXtNjNY'
-    #provider :att, 'client_id', 'client_secret', :callback_url => (ENV['BASE_DOMAIN']
-  #end
 end
 
 configure :development do
   set :database, "sqlite3:///orders.db"
+  set :session_secret, "nPiOpaoyqcyeaABv2huEqlvZw6CxkC0Qo71hMlbwMbhmzWAjcndLD5piz9PqXt8"
 end
 
 configure :production do
@@ -84,6 +78,11 @@ helpers do
     session[:table] ? session[:table] : 'No Table'
   end
 
+  # define a current_user method, so we can be sure if an user is authenticated
+  def current_user
+    !session[:uid].nil?
+  end
+
  def pretty_date(stamp)
    now = Time.new
    diff = now - stamp
@@ -101,11 +100,37 @@ helpers do
   end
 end
 
+# OAuth2 configuration
+use Rack::Session::Cookie
+use OmniAuth::Builder do
+  #provider :mprinter, 'Ehfv3Qk44jJiB8bifM3A','g91EciYab2LdB83eKaRm', callback_url => (ENV['https://manage.themprinter.com/api/v1/'])
+  provider :twitter, 'HnLokC5vWkVC0r1HK4ojOQ', 'WmGe0dWFNvLrtl06Gon4Y6LuVv6UBm57kjyVWXtNjNY'
+  #provider :att, 'client_id', 'client_secret', :callback_url => (ENV['BASE_DOMAIN']
+end
+
+
+#before do
+  # we do not want to redirect to twitter when the path info starts
+  # with /auth/
+  #pass if request.path_info =~ /^\/auth\//
+
+  # /auth/twitter is captured by omniauth:
+  # when the path info matches /auth/twitter, omniauth will redirect to twitter
+  #redirect to('/auth/twitter') unless current_user
+#end
+
 # Support both GET and POST for OAuth callbacks
-%w(get post).each do |method|
-  send(method, "/auth/:provider/callback") do
-    env['omniauth.auth'] # => OmniAuth::AuthHash
-  end
+#%w(get post).each do |method|
+#  send(method, "/auth/:provider/callback") do
+#    env['omniauth.auth'] # => OmniAuth::AuthHash
+#  end
+#end
+
+get '/auth/twitter/callback' do
+  # probably you will need to create a user in the database too...
+  session[:uid] = env['omniauth.auth']['uid']
+  # this is the main endpoint to your application
+  redirect to('/')
 end
 
 get '/twitter' do

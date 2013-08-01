@@ -117,7 +117,6 @@ DEPENDENCIES
   json
   mysql2
   newrelic_rpm
-  oauth2
   omniauth
   omniauth-oauth2
   omniauth-twitter
