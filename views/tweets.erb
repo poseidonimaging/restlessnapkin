@@ -1,0 +1,29 @@
+<div id="content">
+   
+  <div id="tweets">
+    <p>Tweets from <%= @provider %> <%= @token %> <%= @secret %></p>
+  
+    <%= def twitterApp
+          url =  "http://twitter.com/statuses/user_timeline/yourusername.json?count=1"
+          buffer = open(url, "UserAgent" => "Ruby-Wget").read
+          result = JSON.parse(buffer)
+          result.each do |subject|
+          return subject['text']
+          end
+        end
+    %>
+  </div>
+</div>
+
+<script>
+  $(document).ready(function() {
+    $('#submit').click(function() {
+        var params = {
+            q: $('#query').val(),
+            rpp: 5
+        };
+        // alert(jQuery.param(params));
+        searchTwitter(params);
+    });
+});
+</script>

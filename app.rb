@@ -6,18 +6,16 @@ require "newrelic_rpm"
 require "open-uri"
 require "uri"
 require "json"
-#require "oauth2"
+require "oauth"
+require "oauth2"
 require "omniauth"
 require "omniauth-twitter"
 require "omniauth-oauth2"
+require "rest-client"
 require "./models"
-load "./orderviews.rb"
-load "./userorders.rb"
+load "./order_process.rb"
+load "./order_views.rb"
 load "./barkeeper.rb"
-
-#require 'twilio-ruby'
-#phone_number = '+15128616050'
-#Twilio::REST::Client.new(ACc3d70d00cdb2818a1ea2564283aeffce,35583e7b60273fbd9560991dd0969860)
 
 configure do
   set :public_folder, Proc.new { File.join(root, "static") }
@@ -32,17 +30,6 @@ configure :development do
 end
 
 configure :production do
-  # db = URI.parse(ENV['DATABASE_URL'] || 'postgres://localhost/mydb')
-
-  # ActiveRecord::Base.establish_connection(
-  #   :adapter  => db.scheme == 'postgres' ? 'postgresql' : db.scheme,
-  #   :host     => db.host,
-  #   :port     => db.port,
-  #   :username => db.user,
-  #   :password => db.password,
-  #   :database => db.path[1..-1],
-  #   :encoding => 'utf8'
-  # )
 
   db_yml = YAML::load(File.read(File.join(File.dirname(__FILE__), "config", "database.yml")))
   settings = {
@@ -103,38 +90,91 @@ end
 # OAuth2 configuration
 use Rack::Session::Cookie
 use OmniAuth::Builder do
-  #provider :mprinter, 'Ehfv3Qk44jJiB8bifM3A','g91EciYab2LdB83eKaRm', callback_url => (ENV['https://manage.themprinter.com/api/v1/'])
   provider :twitter, 'HnLokC5vWkVC0r1HK4ojOQ', 'WmGe0dWFNvLrtl06Gon4Y6LuVv6UBm57kjyVWXtNjNY'
   #provider :att, 'client_id', 'client_secret', :callback_url => (ENV['BASE_DOMAIN']
 end
 
-
-#before do
-  # we do not want to redirect to twitter when the path info starts
-  # with /auth/
-  #pass if request.path_info =~ /^\/auth\//
-
-  # /auth/twitter is captured by omniauth:
-  # when the path info matches /auth/twitter, omniauth will redirect to twitter
-  #redirect to('/auth/twitter') unless current_user
-#end
-
-# Support both GET and POST for OAuth callbacks
-#%w(get post).each do |method|
-#  send(method, "/auth/:provider/callback") do
-#    env['omniauth.auth'] # => OmniAuth::AuthHash
-#  end
-#end
-
-get '/auth/twitter/callback' do
-  # probably you will need to create a user in the database too...
-  session[:uid] = env['omniauth.auth']['uid']
-  # this is the main endpoint to your application
-  redirect to('/')
-end
+# Starting routes
 
 get '/twitter' do
   erb "<a href='/auth/twitter'>Sign in with Twitter</a>"
+end
+
+get '/mprinter' do
+  erb :mprinter
+end
+
+get '/mprinter/authorize' do
+  MPRINTER_OAUTH_CLIENT = 'Ehfv3Qk44jJiB8bifM3A'
+  MPRINTER_OAUTH_SECRET = 'g91EciYab2LdB83eKaRm'
+  MPRINTER_OAUTH_URL    = 'http://manage.themprinter.com/api/v1'
+
+  client = OAuth2::Client.new(MPRINTER_OAUTH_CLIENT, MPRINTER_OAUTH_SECRET, :site => MPRINTER_OAUTH_URL, :token_url => MPRINTER_OAUTH_URL + '/token')
+  token = client.client_credentials.get_token({ :client_id => MPRINTER_OAUTH_CLIENT, :client_secret => MPRINTER_OAUTH_SECRET })
+  response = token.get('/api/v1/account')
+  session[:access_token] = token.token
+  mprinter_token = session[:access_token]
+
+  redirect '/mprinter'
+end
+
+get '/mprinter/add_device' do
+  MPRINTER_OAUTH_CLIENT = 'Ehfv3Qk44jJiB8bifM3A'
+  MPRINTER_OAUTH_SECRET = 'g91EciYab2LdB83eKaRm'
+  MPRINTER_OAUTH_URL    = 'http://manage.themprinter.com/api/v1'
+  client = OAuth2::Client.new(MPRINTER_OAUTH_CLIENT, MPRINTER_OAUTH_SECRET, :site => MPRINTER_OAUTH_URL, :token_url => MPRINTER_OAUTH_URL + '/token')
+  token = OAuth2::AccessToken.new(client, session[:access_token])
+  #response = token.post(MPRINTER_OAUTH_URL + '/devices')
+
+  token.post(MPRINTER_OAUTH_URL + '/devices', :serial => 'KMHELM')
+
+  #RestClient.post MPRINTER_OAUTH_URL + '/devices', :serial => 'KMHELM', token.headers
+end
+
+get '/auth/twitter/callback' do
+  # probably you will need to create a user in the database too...
+  auth = request.env['omniauth.auth']
+  session[:provider] = auth['provider']
+  session[:uid] = auth['uid']
+  session[:nickname] = auth['info']['nickname']
+  session[:token] = auth['credentials']['token']
+  session[:secret] = auth['credentials']['secret']
+  # this is the main endpoint to your application
+  redirect to('/twitter/user')
+end
+
+get '/twitter/user' do
+  @user = session[:nickname]
+  @token = session[:token]
+  @secret = session[:secret]
+  timeline = open("https://api.twitter.com/1.1/statuses/user_timeline.json").read
+
+  erb :tweets
+end
+
+get '/tweets' do
+  uri = URI.parse("https://secure.com/")
+  http = Net::HTTP.new(uri.host, uri.port)
+  http.use_ssl = true
+  http.verify_mode = OpenSSL::SSL::VERIFY_NONE
+
+  request = Net::HTTP::Get.new(uri.request_uri, {
+    'oauth_consumer_key' => 'HnLokC5vWkVC0r1HK4ojOQ',
+    'oauth_nonce' => Oauth.nonce(), 
+    #TODO  Add signature security via https://github.com/intridea/oauth2
+    'oauth_signature_method' => '#####',
+    'oauth_signature_method' => 'HMAC-SHA1', 
+    'oauth_timestamp' => 'HnLokC5vWkVC0r1HK4ojOQ',
+    'oauth_token' => '#{session[:token]}',    
+    'oauth_version' => '1.0'
+    })
+
+  response = http.request(request)
+  response.body
+  response.status
+  response["header-here"] # All headers are lowercase
+
+  erb :tweets
 end
 
 # Support for OAuth failure
@@ -145,7 +185,7 @@ end
 
 get '/example.json' do
   content_type :json
-  { :key1 => 'value1', :key2 => 'value2' }.to_json
+  {:key1 => 'value1', :key2 => 'value2'}.to_json
 end
 
 get '/hello/:name.json' do

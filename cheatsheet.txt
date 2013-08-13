@@ -1,3 +1,31 @@
 add_column :table_name, :column_name, :type, :null => true
 
 (:type = :datetime, :tablename = :orders, etc.)
+
+
+
+GET /1.1/search/tweets.json?q=from:plindelauf&include_entities=true 
+HTTP/1.1 Authorization: 
+OAuth oauth_consumer_key="DOP3re9nlTPeyemlmcqg", 
+oauth_nonce="05d29110d282b24e516dae1ae2b54e1a", 
+oauth_signature="k9gHhrHD86D5sB7zAlXCKsaeNZ8%3D", 
+oauth_signature_method="HMAC-SHA1", 
+oauth_timestamp="1370691632", 
+oauth_token="288762088-DfqCgEIVvM56MSMZWjLuLl6oo3oaVkI0Z8ATKu3f", 
+oauth_version="1.0"
+
+
+
+
+
+uri = URI.parse("https://secure.com/")
+http = Net::HTTP.new(uri.host, uri.port)
+http.use_ssl = true
+http.verify_mode = OpenSSL::SSL::VERIFY_NONE
+
+request = Net::HTTP::Get.new(uri.request_uri, {'header1' => 'value1', 'header2' => 'value2'})
+
+response = http.request(request)
+response.body
+response.status
+response["header-here"] # All headers are lowercase

@@ -33,6 +33,7 @@ GEM
       rb-fsevent (>= 0.9.3)
       rb-inotify (>= 0.9)
       rb-kqueue (>= 0.2)
+    mime-types (1.21)
     multi_json (1.7.7)
     multipart-post (1.2.0)
     mysql2 (0.3.11)
@@ -70,6 +71,8 @@ GEM
       ffi (>= 0.5.0)
     rerun (0.8.1)
       listen (>= 1.0.3)
+    rest-client (1.6.7)
+      mime-types (>= 1.16)
     ripl (0.7.0)
       bond (~> 0.4.2)
     ripl-multi_line (0.3.1)
@@ -117,11 +120,14 @@ DEPENDENCIES
   json
   mysql2
   newrelic_rpm
+  oauth
+  oauth2
   omniauth
   omniauth-oauth2
   omniauth-twitter
   rb-fsevent (~> 0.9.1)
   rerun
+  rest-client
   shotgun
   sinatra
   sinatra-activerecord
