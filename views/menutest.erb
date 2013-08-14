@@ -95,7 +95,7 @@
         </div>
 
         <div class="remove" style="margin-top:-30px; margin-left:-10px; color:red;">
-          <h3><i class="icon-remove-sign"></i></h3>
+          <h3><a href="#" class="remove-drink"><i class="icon-remove-sign"></i></a></h3>
         </div>
 
       </div>
@@ -130,7 +130,7 @@
         .appendTo(".drinks-container");
     });
  
-    $('.remove').live("click",function() {
+    $('.remove-drink').live("click",function() {
       $(this).closest(".drink").remove();
     });
   });

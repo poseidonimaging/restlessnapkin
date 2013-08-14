@@ -29,3 +29,19 @@ response = http.request(request)
 response.body
 response.status
 response["header-here"] # All headers are lowercase
+
+
+$('.add-gin').click(function(e) {
+      e.preventDefault();
+
+      $(".drink-template")
+        .clone()
+        .show()
+        .removeClass("drink-template")
+        .addClass("drink")
+        .appendTo(".drinks-container");
+        $(".liquor-type")
+          .html("<% @gins.each do |gin| %>
+                    <option><%= gin.name %></option>
+                  <% end %>");
+    });

@@ -141,10 +141,7 @@
         .removeClass("drink-template")
         .addClass("drink")
         .appendTo(".drinks-container");
-        $(".liquor-type")
-          .html("<% @gins.each do |gin| %>
-                    <option><%= gin.name %></option>
-                  <% end %>");
+        
     });
 
     $('.add-rum').click(function(e) {
