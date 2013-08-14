@@ -67,7 +67,8 @@ get "/menu" do
   @gin = Venue.find(1).liquors.by_type("gin")
   @rum = Venue.find(1).liquors.by_type("rum")
   @tequila = Venue.find(1).liquors.by_type("tequila")
-  @vodkas = Venue.find(1).liquors.by_type("vodka")
+  @vodka = Venue.find(1).liquors.by_type("vodka")
+  #@whisky = Venue.find(1).liquors.by_type("whisky")
   erb :menutest, :layout => (request.xhr? ? false : :layout)
 end
 

@@ -45,3 +45,18 @@ $('.add-gin').click(function(e) {
                     <option><%= gin.name %></option>
                   <% end %>");
     });
+
+    $('.add-drink').click(function(e) {
+      e.preventDefault();
+
+      $(".drink-template")
+        .clone()
+        .show()
+        .removeClass("drink-template")
+        .addClass("drink")
+        .appendTo(".drinks-container");
+    });
+ 
+    $('.remove-drink').live("click",function() {
+      $(this).closest(".drink").remove();
+    });

@@ -9,20 +9,17 @@
           <h3 id="ModalLabel">Pick Drink Type</h3>
         </div>
         <div class="modal-body">
-          <h2><a href="#" class="add-drink" data-dismiss="modal" aria-hidden="true">Beer</a></h2>
-          <h2><a href="#" class="add-drink" data-dismiss="modal" aria-hidden="true">Wine</a></h2>
-          <h2><a href="#" class="add-drink" data-dismiss="modal" aria-hidden="true">Vodka</a></h2>
-          <h2><a href="#" class="add-drink" data-dismiss="modal" aria-hidden="true">Whisky</a></h2>
-          <h2><a href="#" class="add-drink" data-dismiss="modal" aria-hidden="true">Tequila</a></h2>
-          <h2><a href="#" class="add-drink" data-dismiss="modal" aria-hidden="true">Rum</a></h2>
-          <h2><a href="#" class="add-drink" data-dismiss="modal" aria-hidden="true">Gin</a></h2>
+          <h3><a href="#" class="add-vodka" data-dismiss="modal" aria-hidden="true">Vodka</a></h3>
+          <h3><a href="#" class="add-drink" data-dismiss="modal" aria-hidden="true">Tequila</a></h3>
+          <h3><a href="#" class="add-drink" data-dismiss="modal" aria-hidden="true">Rum</a></h3>
+          <h3><a href="#" class="add-gin" data-dismiss="modal" aria-hidden="true">Gin</a></h3>
         </div>
       </div>
     </div>
 
   <div class="drinks-container"></div>
 
-    <div class="drink-template" style="padding:10px; display: none;">
+    <div class="gin-template" style="padding:10px; display: none;">
       <div class="row-fluid" style="background: #555555; color: #f9f9f9">
         
         <form action='/orders' method='post' class="form-horizontal">
@@ -35,8 +32,8 @@
             
             <p>
               <select class="input-medium">
-                  <% @vodkas.each do |vodka| %>
-                    <option><%= vodka.name %></option>
+                  <% @gin.each do |gin| %>
+                    <option><%= gin.name %></option>
                   <% end %>
               </select>
             </p>
@@ -44,25 +41,16 @@
             <p>
               <select class="input-medium">
                 <option>- select mixer -</option>
+                <option>Cranberry Juice</option>
+                <option>Grapefruit Juice</option>
+                <option>Lemonade</option>
+                <option>Soda</option>
+                <option>Tonic</option>
+                <option>Water</option>
+                <option>* Martini *</option>
                 <option>* Neat *</option>
                 <option>* Rocks *</option>
                 <option>* Shot *</option>
-                <option>Cola</option>
-                <option>Diet Cola</option>
-                <option>Cranberry Juice</option>
-                <option>Ginger Ale</option>
-                <option>Ginger Beer</option>
-                <option>Grapefruit Juice</option>
-                <option>Lemon Lime Soda</option>
-                <option>Lemonade</option>
-                <option>Orange Juice</option>
-                <option>Pineapple Juice</option>
-                <option>Red Bull</option>
-                <option>Sugarfree Red Bull</option>
-                <option>Soda</option>
-                <option>Sour Mix</option>
-                <option>Tonic</option>
-                <option>Water</option>
               </select>
             </p>
             
@@ -84,7 +72,181 @@
           <h3><a href="#" class="remove-drink"><i class="icon-remove-sign"></i></a></h3>
         </div>
 
-      </div>
+    </div>
+
+
+    <div class="rum-template" style="padding:10px; display: none;">
+      <div class="row-fluid" style="background: #555555; color: #f9f9f9">
+        
+        <form action='/orders' method='post' class="form-horizontal">
+          
+          <div style="float:left; padding-top:50px; padding-left:10px;"> 
+            <input class="input-mini" type="text" id="quantity" value="1">
+          </div>
+        
+          <div style="float:right; padding:10px">      
+            
+            <p>
+              <select class="input-medium">
+                  <% @rum.each do |rum| %>
+                    <option><%= rum.name %></option>
+                  <% end %>
+              </select>
+            </p>
+            
+            <p>
+              <select class="input-medium">
+                <option>- select mixer -</option>
+                <option>Cola</option>
+                <option>Diet Cola</option>
+                <option>Ginger Ale</option>
+                <option>Ginger Beer</option>
+                <option>Soda</option>
+                <option>Tonic</option>
+                <option>Water</option>
+                <option>* Neat *</option>
+                <option>* Rocks *</option>
+                <option>* Shot *</option>
+              </select>
+            </p>
+            
+            <p>
+              <select class="input-medium">
+                <option>- select garnish -</option>
+                <option>Cherry</option>
+                <option>Lemon</option>
+                <option>Lime</option>
+                <option>Olive</option>
+                <option>Orange</option>
+              </select>
+            </p>
+
+          </div>
+        </div>
+
+        <div class="remove" style="margin-top:-30px; margin-left:-10px; color:red;">
+          <h3><a href="#" class="remove-drink"><i class="icon-remove-sign"></i></a></h3>
+        </div>
+
+    </div>
+
+
+    <div class="tequila-template" style="padding:10px; display: none;">
+      <div class="row-fluid" style="background: #555555; color: #f9f9f9">
+        
+        <form action='/orders' method='post' class="form-horizontal">
+          
+          <div style="float:left; padding-top:50px; padding-left:10px;"> 
+            <input class="input-mini" type="text" id="quantity" value="1">
+          </div>
+        
+          <div style="float:right; padding:10px">      
+            
+            <p>
+              <select class="input-medium">
+                  <% @tequila.each do |tequila| %>
+                    <option><%= tequila.name %></option>
+                  <% end %>
+              </select>
+            </p>
+            
+            <p>
+              <select class="input-medium">
+                <option>- select mixer -</option>
+                <option>Cola</option>
+                <option>Diet Cola</option>
+                <option>Cranberry Juice</option>
+                <option>Ginger Ale</option>
+                <option>Ginger Beer</option>
+                <option>Grapefruit Juice</option>
+                <option>Soda</option>
+                <option>Tonic</option>
+                <option>Water</option>
+                <option>* Neat *</option>
+                <option>* Rocks *</option>
+                <option>* Shot *</option>
+              </select>
+            </p>
+            
+            <p>
+              <select class="input-medium">
+                <option>- select garnish -</option>
+                <option>Cherry</option>
+                <option>Lemon</option>
+                <option>Lime</option>
+                <option>Olive</option>
+                <option>Orange</option>
+              </select>
+            </p>
+
+          </div>
+        </div>
+
+        <div class="remove" style="margin-top:-30px; margin-left:-10px; color:red;">
+          <h3><a href="#" class="remove-drink"><i class="icon-remove-sign"></i></a></h3>
+        </div>
+
+    </div>
+
+
+    <div class="vodka-template" style="padding:10px; display: none;">
+      <div class="row-fluid" style="background: #555555; color: #f9f9f9">
+        
+        <form action='/orders' method='post' class="form-horizontal">
+          
+          <div style="float:left; padding-top:50px; padding-left:10px;"> 
+            <input class="input-mini" type="text" id="quantity" value="1">
+          </div>
+        
+          <div style="float:right; padding:10px">      
+            
+            <p>
+              <select class="input-medium">
+                  <% @vodka.each do |vodka| %>
+                    <option><%= vodka.name %></option>
+                  <% end %>
+              </select>
+            </p>
+            
+            <p>
+              <select class="input-medium">
+                <option>- select mixer -</option>
+                <option>Cranberry Juice</option>
+                <option>Ginger Ale</option>
+                <option>Ginger Beer</option>
+                <option>Grapefruit Juice</option>
+                <option>Lemon Lime Soda</option>
+                <option>Red Bull</option>
+                <option>Sugarfree Red Bull</option>
+                <option>Soda</option>
+                <option>Tonic</option>
+                <option>Water</option>
+                <option>* Martini *</option>
+                <option>* Neat *</option>
+                <option>* Rocks *</option>
+                <option>* Shot *</option>
+              </select>
+            </p>
+            
+            <p>
+              <select class="input-medium">
+                <option>- select garnish -</option>
+                <option>Cherry</option>
+                <option>Lemon</option>
+                <option>Lime</option>
+                <option>Olive</option>
+                <option>Orange</option>
+              </select>
+            </p>
+
+          </div>
+        </div>
+
+        <div class="remove" style="margin-top:-30px; margin-left:-10px; color:red;">
+          <h3><a href="#" class="remove-drink"><i class="icon-remove-sign"></i></a></h3>
+        </div>
+
+    </div>
 
   
 
@@ -108,6 +270,61 @@
         .clone()
         .show()
         .removeClass("drink-template")
+        .addClass("drink")
+        .appendTo(".drinks-container");
+    });
+
+    $('.add-gin').click(function(e) {
+      e.preventDefault();
+
+      $(".gin-template")
+        .clone()
+        .show()
+        .removeClass("gin-template")
+        .addClass("drink")
+        .appendTo(".drinks-container");  
+    });
+
+    $('.add-rum').click(function(e) {
+      e.preventDefault();
+
+      $(".rum-template")
+        .clone()
+        .show()
+        .removeClass("rum-template")
+        .addClass("drink")
+        .appendTo(".drinks-container");
+    });
+
+    $('.add-tequila').click(function(e) {
+      e.preventDefault();
+
+      $(".tequila-template")
+        .clone()
+        .show()
+        .removeClass("tequila-template")
+        .addClass("drink")
+        .appendTo(".drinks-container");
+    });
+
+    $('.add-vodka').click(function(e) {
+      e.preventDefault();
+
+      $(".vodka-template")
+        .clone()
+        .show()
+        .removeClass("vodka-template")
+        .addClass("drink")
+        .appendTo(".drinks-container");
+    });
+
+    $('.whisky-drink').click(function(e) {
+      e.preventDefault();
+
+      $(".whisky-template")
+        .clone()
+        .show()
+        .removeClass("whisky-template")
         .addClass("drink")
         .appendTo(".drinks-container");
     });
