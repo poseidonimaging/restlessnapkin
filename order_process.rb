@@ -59,7 +59,7 @@ end
 get "/:venue/menu" do
   @venue = Venue.where(:handle => params[:venue]).first
   @vodkas = Venue.find(@venue.id).liquors.by_type("vodka")
-  erb :"venue/menu", :layout => (request.xhr? ? false : :layout)
+  erb :menu, :layout => (request.xhr? ? false : :layout)
 end
 
 # drink menu
