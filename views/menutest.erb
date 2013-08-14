@@ -1,40 +1,26 @@
 <div id='content'>
 
   <div class="menu" style="background-color: #eeeeee; color: #555555;">
-    <h3 class="slide" style="padding-left:10px;"><a href="#" class="toggle-me">Drink Menu</a></h3>
+    <h2 style="padding-left:10px;"><a href="#add-drink-modal" data-toggle="modal">Add Drink</a></h2>
 
-     <div class="panel" style="display:none;">
-       <h4 style="padding-left:10px;">Drink</h4>
-       <ul>
-        <li>Beer</li>
-        <li>Wine</li>
-        <li>Vodka</li>
-        <li>Whisky</li>
-        <li>Tequila</li>
-        <li>Rum</li>
-        <li>Gin</li>
-       </ul>
-     </div>
-  </div>
+     <div id="add-drink-modal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+          <h3 id="ModalLabel">Pick Drink Type</h3>
+        </div>
+        <div class="modal-body">
+          <h2><a href="#" class="add-drink" data-dismiss="modal" aria-hidden="true">Beer</a></h2>
+          <h2><a href="#" class="add-drink" data-dismiss="modal" aria-hidden="true">Wine</a></h2>
+          <h2><a href="#" class="add-drink" data-dismiss="modal" aria-hidden="true">Vodka</a></h2>
+          <h2><a href="#" class="add-drink" data-dismiss="modal" aria-hidden="true">Whisky</a></h2>
+          <h2><a href="#" class="add-drink" data-dismiss="modal" aria-hidden="true">Tequila</a></h2>
+          <h2><a href="#" class="add-drink" data-dismiss="modal" aria-hidden="true">Rum</a></h2>
+          <h2><a href="#" class="add-drink" data-dismiss="modal" aria-hidden="true">Gin</a></h2>
+        </div>
+      </div>
+    </div>
 
-  <ul>
-    <li class="dropdown">
-      <a href="#"
-            style="padding-top: 10px; a: white"
-            class="dropdown-toggle"
-            data-toggle="dropdown">
-            <i class="icon-reorder icon-large"></i>
-      </a>
-      <ul class="dropdown-menu">
-        <li><a href="#" class="add-gin">Gin</a></li>
-        <li><a href="#" class="add-rum">Rum</a></li>
-        <li><a href="#" class="add-tequila">Tequila</a></li>
-        <li><a href="#" class="add-vodka">Vodka</a></li>
-      </ul>
-    </li>
-  </ul>
-
-    <div class="drinks-container"></div>
+  <div class="drinks-container"></div>
 
     <div class="drink-template" style="padding:10px; display: none;">
       <div class="row-fluid" style="background: #555555; color: #f9f9f9">
@@ -103,7 +89,7 @@
   
 
   <div style="text-align:center;">
-    <h3><a href="#" class="add-drink"><i class="icon-plus-sign icon-large"></i></a></h3>
+    <h3><a href="#add-drink-modal" data-toggle="modal"><i class="icon-plus-sign icon-large"></i></a></h3>
   </div>
 
   <br>
@@ -115,10 +101,6 @@
 
 <script>
   $(document).ready(function() {
-    $('.toggle-me').click(function() {
-        $('.panel').slideToggle('fast');
-    });
- 
     $('.add-drink').click(function(e) {
       e.preventDefault();
 
