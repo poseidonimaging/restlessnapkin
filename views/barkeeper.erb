@@ -75,5 +75,10 @@
     setInterval(function() {
       $('#content').load('/barkeeper #content');
     }, 10000);
+        $.ajax({
+        type: "PUT",
+        url: ''.concat("/venue/active/", $this.closest(".venue").data("@venue")),
+      }).done(function() {
+      });
   });
 </script>

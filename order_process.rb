@@ -58,7 +58,7 @@ end
 # venue drink menu (needs venue/menu)
 get "/:venue/menu" do
   @venue = Venue.where(:handle => params[:venue]).first
-  @vodkas = Venue.find(@venue.id).liquors.by_type("vodka")
+  @vodka = Venue.find(@venue.id).liquors.by_type("vodka")
   erb :menu, :layout => (request.xhr? ? false : :layout)
 end
 
@@ -125,4 +125,10 @@ post '/checkout' do
   else
     erb "Checkout was unsuccessful"
   end
+end
+
+get '/:venue/status' do
+  @venue = Venue.where(:handle => params[:venue]).first
+  erb :status
+
 end
