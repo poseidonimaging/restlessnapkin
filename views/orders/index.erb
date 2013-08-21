@@ -2,7 +2,7 @@
 	<h3>Austin's Orders</h3><hr>
 		<% @orders.each do |order| %>
   				
-    	<h5><%= order.venue %> at <%= order.table %></h5>
+    	<h5><%= order.venue %> at <%= order.location %></h5>
     	<h4><%= order.drinks %> <%= ' | <i class="icon-eye-open"></i>' unless order.received_at.nil? %> <%= '<i class="icon-glass"></i>' unless order.fulfilled_at.nil? %></h4>
     	<p>by <%= order.firstname %></p>
     	<hr>

@@ -3,7 +3,7 @@
 <div id='content'>
   <% @orders.each do |order| %>
           
-    <h5><%= order.lastname %> at <a href="/venue/<%= order.venue %>"><%= order.venue %></a> <a href="/venue/<%= order.venue %>/table/<%= order.table %>">Table <%= order.table %></a></h5>
+    <h5><%= order.lastname %> at <a href="/<%= order.venue %>/orders"><%= order.venue %></a> <a href="/<%= order.venue %>/location/<%= order.location %>">Table <%= order.location %></a></h5>
     <h4><a href="/orders/<%= order.id %>"><%= order.drinks %></a></h4>
     <p>from <%= order.phone %></p>
     <hr>

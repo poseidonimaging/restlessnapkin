@@ -17,7 +17,7 @@ get '/orders/:id' do
 end
 
 # Get orders by venue
-get "/venue/:venue" do
+get "/:venue/orders" do
   @venue = params[:venue]
   @orders = Order.where(:venue => params[:venue]).order("created_at DESC").limit(30)
   erb :"venue/show", :layout => (request.xhr? ? false : :layout)
@@ -29,12 +29,12 @@ get "/user/:phone" do
   erb :"user/show", :layout => (request.xhr? ? false : :layout)
 end
 
-# Get orders by venue and table
-get "/venue/:venue/table/:table" do
+# Get orders by venue and location
+get "/:venue/location/:location" do
   @venue = params[:venue]
-  @table = params[:table]
-  @orders = Order.where(:venue => params[:venue],:table => params[:table]).order("created_at DESC").limit(20)
-  erb :"venue/table/show", :layout => (request.xhr? ? false : :layout)
+  @location = params[:location]
+  @orders = Order.where(:venue => params[:venue],:location => params[:location]).order("created_at DESC").limit(20)
+  erb :"venue/location/show", :layout => (request.xhr? ? false : :layout)
 end
 
 #Shows all orders by all users

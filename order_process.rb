@@ -14,7 +14,6 @@ end
 get '/:venue/checkin/*' do 
   session[:venue] = params['venue']
   session[:phone] = params[:splat].first
-  #session[:phone_short] = session[:phone].[-4..-1]
   if session[:venue] && session[:phone]
     erb :"/checkin"
   else
@@ -24,15 +23,15 @@ end
 
 # Get form for main menu drink order access
 get '/orders/drinks' do
-  if session[:venue] && session[:phone] && session[:firstname] && session[:lastname] && session[:table]
+  if session[:venue] && session[:phone] && session[:firstname] && session[:lastname] && session[:location]
     @order = Order.new
     erb :"orders/drinks"
   elsif session[:venue] && session[:phone]
     @order = Order.new
     session[:firstname] = params['firstname']
     session[:lastname] = params['lastname']
-    session[:table] = params['table']
-    erb :menutest
+    session[:location] = params['location']
+    erb :menu
   else
     erb "There has been a problem. Please click the link we last texted you to continue."
   end
@@ -40,7 +39,7 @@ end
 
 # After checkin, shows form for drink order. Upon reordering, keeps session via lastname
 post '/orders/drinks' do
-  if session[:venue] && session[:phone] && session[:firstname] && session[:lastname] && session[:table]
+  if session[:venue] && session[:phone] && session[:firstname] && session[:lastname] && session[:location]
     @order = Order.new
     erb :"orders/drinks"
   elsif
@@ -48,7 +47,7 @@ post '/orders/drinks' do
     @order = Order.new
     session[:firstname] = params['firstname']
     session[:lastname] = params['lastname']
-    session[:table] = params['table']
+    session[:location] = params['location']
     erb :"orders/drinks"
   else
     erb "There has been a problem. Please reclick the link we texted you to start over."
@@ -58,6 +57,7 @@ end
 # venue drink menu (needs venue/menu)
 get "/:venue/menu" do
   @venue = Venue.find_by_handle(params[:venue])
+  @location = session[:location]
   @gin = Venue.find(@venue.id).liquors.by_type("gin")
   @rum = Venue.find(@venue.id).liquors.by_type("rum")
   @tequila = Venue.find(@venue.id).liquors.by_type("tequila")
@@ -79,7 +79,7 @@ end
 post '/orders' do
   @order = Order.new(params[:order])
   @order.venue = session[:venue]
-  @order.table = session[:table]
+  @order.location = session[:location]
   @order.firstname = session[:firstname]
   @order.lastname = session[:lastname]
   @order.phone = session[:phone]
@@ -102,14 +102,14 @@ end
 
 # Confirm location change
 post "/location/confirm" do
-  session[:table] = params['table']
+  session[:location] = params['location']
   @orders = Order.where(:phone => session[:phone]).order("created_at DESC").limit(20)
   erb :"location/confirm", :layout => (request.xhr? ? false : :layout)
 end
 
 #User checkout of venue
 get '/checkout' do
-  @location = session[:table]
+  @location = session[:location]
   erb :checkout
 end
 
@@ -118,7 +118,7 @@ post '/checkout' do
   @order = Order.new
   @order.drinks = "CLOSE TAB"
   @order.venue = session[:venue]
-  @order.table = session[:table]
+  @order.location = session[:location]
   @order.firstname = session[:firstname]
   @order.lastname = session[:lastname]
   @order.phone = session[:phone]
