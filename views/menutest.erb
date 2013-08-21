@@ -24,13 +24,13 @@
     <div class="row-fluid" style="background: #555555; color: #f9f9f9">
         
         <div style="float:left; padding-top:50px; padding-left:10px;"> 
-          <input class="input-mini" type="text" id="quantity" value="1">
+          <input class="input-mini quantity" type="text" value="1">
         </div>
       
         <div style="float:right; padding:10px">      
           
           <p>
-            <select class="input-medium" >
+            <select class="input-medium liquor" >
                 <% @gin.each do |gin| %>
                   <option><%= gin.name %></option>
                 <% end %>
@@ -38,7 +38,7 @@
           </p>
           
           <p>
-            <select class="input-medium">
+            <select class="input-medium mixer">
               <option>- select mixer -</option>
               <option>Cranberry Juice</option>
               <option>Grapefruit Juice</option>
@@ -54,7 +54,7 @@
           </p>
           
           <p>
-            <select class="input-medium">
+            <select class="input-medium garnish">
               <option>- select garnish -</option>
               <option>Cherry</option>
               <option>Lemon</option>
@@ -79,13 +79,13 @@
     <div class="row-fluid" style="background: #555555; color: #f9f9f9">
         
         <div style="float:left; padding-top:50px; padding-left:10px;"> 
-          <input class="input-mini" type="text" id="quantity" value="1">
+          <input class="input-mini quantity" type="text" value="1">
         </div>
       
         <div style="float:right; padding:10px">      
           
           <p>
-            <select class="input-medium">
+            <select class="input-medium liquor">
                 <% @rum.each do |rum| %>
                   <option><%= rum.name %></option>
                 <% end %>
@@ -93,7 +93,7 @@
           </p>
           
           <p>
-            <select class="input-medium">
+            <select class="input-medium mixer">
               <option>- select mixer -</option>
               <option>Cola</option>
               <option>Diet Cola</option>
@@ -109,7 +109,7 @@
           </p>
           
           <p>
-            <select class="input-medium">
+            <select class="input-medium garnish">
               <option>- select garnish -</option>
               <option>Cherry</option>
               <option>Lemon</option>
@@ -134,13 +134,13 @@
     <div class="row-fluid" style="background: #555555; color: #f9f9f9">
         
         <div style="float:left; padding-top:50px; padding-left:10px;"> 
-          <input class="input-mini" type="text" id="quantity" value="1">
+          <input class="input-mini quantity" type="text" value="1">
         </div>
       
         <div style="float:right; padding:10px">      
           
           <p>
-            <select class="input-medium">
+            <select class="input-medium liquor">
                 <% @tequila.each do |tequila| %>
                   <option><%= tequila.name %></option>
                 <% end %>
@@ -148,7 +148,7 @@
           </p>
           
           <p>
-            <select class="input-medium">
+            <select class="input-medium mixer">
               <option>- select mixer -</option>
               <option>Cola</option>
               <option>Diet Cola</option>
@@ -166,7 +166,7 @@
           </p>
           
           <p>
-            <select class="input-medium">
+            <select class="input-medium garnish">
               <option>- select garnish -</option>
               <option>Cherry</option>
               <option>Lemon</option>
@@ -356,13 +356,13 @@
           $(this).closest(".drink").remove();
         });
 
-        $(document).on("change", "input.quantity, select.liquor, select.garnish, select.mixer", function () {
+        $(document).on("change", "input.quantity, select.liquor, select.mixer, select.garnish", function () {
           var $this = $(this);
           var $drink = $this.closest(".drink").find(".drink_value");
           var quantity = $this.closest(".drink").find("input.quantity").val();
           var liquor = $this.closest(".drink").find("select.liquor").val();
-          var garnish = $this.closest(".drink").find("select.garnish").val();
           var mixer = $this.closest(".drink").find("select.mixer").val();
+          var garnish = $this.closest(".drink").find("select.garnish").val();
 
           $drink.val(quantity + "x " + liquor + " " + mixer + " " + garnish);
         });

@@ -57,7 +57,10 @@ end
 
 # venue drink menu (needs venue/menu)
 get "/:venue/menu" do
-  @venue = Venue.where(:handle => params[:venue]).first
+  @venue = Venue.find_by_handle(params[:venue])
+  @gin = Venue.find(@venue.id).liquors.by_type("gin")
+  @rum = Venue.find(@venue.id).liquors.by_type("rum")
+  @tequila = Venue.find(@venue.id).liquors.by_type("tequila")
   @vodka = Venue.find(@venue.id).liquors.by_type("vodka")
   erb :menu, :layout => (request.xhr? ? false : :layout)
 end
@@ -69,7 +72,7 @@ get "/menu" do
   @tequila = Venue.find(1).liquors.by_type("tequila")
   @vodka = Venue.find(1).liquors.by_type("vodka")
   #@whisky = Venue.find(1).liquors.by_type("whisky")
-  erb :menutest, :layout => (request.xhr? ? false : :layout)
+  erb :menu, :layout => (request.xhr? ? false : :layout)
 end
 
 # New order form sends POST request here

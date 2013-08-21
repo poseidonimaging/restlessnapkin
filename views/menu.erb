@@ -1,186 +1,372 @@
 <div id='content'>
 
-  <div class="menu" style="background-color: #eeeeee; color: #555555;">
-  	<h3 class="slide" style="padding-left:10px;"><a href="#" class="toggle-me">Drink Menu</a></h3>
+  <h3><%= @venue.name %> | <%= table %></h3>
 
-  	 <div class="panel" style="display:none;">
-       <h4 style="padding-left:10px;">Drink</h4>
-       <ul>
-       	<li>Beer</li>
-       	<li>Wine</li>
-       	<li>Vodka</li>
-       	<li>Whisky</li>
-       	<li>Tequila</li>
-       	<li>Rum</li>
-       	<li>Gin</li>
-       </ul>
-     </div>
+  <div class="menu" style="background-color: #eeeeee; color: #555555;">
+    <h2 style="padding-left:10px;"><a href="#add-drink-modal" data-toggle="modal">Add Drink</a></h2>
+
+    <div id="add-drink-modal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h3 id="ModalLabel">Pick Drink Type</h3>
+      </div>
+      <div class="modal-body">
+        <h3><a href="#" class="add-vodka" data-dismiss="modal" aria-hidden="true">Vodka</a></h3>
+        <h3><a href="#" class="add-tequila" data-dismiss="modal" aria-hidden="true">Tequila</a></h3>
+        <h3><a href="#" class="add-gin" data-dismiss="modal" aria-hidden="true">Gin</a></h3>
+        <h3><a href="#" class="add-rum" data-dismiss="modal" aria-hidden="true">Rum</a></h3>
+      </div>
+    </div>
   </div>
 
-  <ul>
-    <li class="dropdown">
-      <a href="#"
-            style="padding-top: 10px; a: white"
-            class="dropdown-toggle"
-            data-toggle="dropdown">
-            <i class="icon-reorder icon-large"></i>
-      </a>
-      <ul class="dropdown-menu">
-        <li><a href="#" class="add-gin">Gin</a></li>
-        <li><a href="#" class="add-rum">Rum</a></li>
-        <li><a href="#" class="add-tequila">Tequila</a></li>
-        <li><a href="#" class="add-vodka">Vodka</a></li>
-      </ul>
-    </li>
-  </ul>
-
-    <div class="drinks-container"></div>
-
-    <div class="drink-template" style="padding:10px; display: none;">
-      <div class="row-fluid" style="background: #555555; color: #f9f9f9">
-      	
-        <form action='/orders' method='post' class="form-horizontal">
-          
-          <div style="float:left; padding-top:50px; padding-left:10px;"> 
-            <input class="input-mini" type="text" id="quantity" value="1">
-          </div>
+  <div class="gin-template" style="padding:10px; display: none;">
+    <input type="hidden" class="drink_value" />
+    <div class="row-fluid" style="background: #555555; color: #f9f9f9">
         
-          <div style="float:right; padding:10px">      
-      		  
-            <p>
-              <select class="input-medium">
-                <div class="liquor-type">
-                  <% @vodkas.each do |vodka| %>
-                		<option><%= vodka.name %></option>
-                	<% end %>
-                </div>
-            	</select>
-            </p>
-            
-            <p>
-          		<select class="input-medium">
-            		<option>- select mixer -</option>
-                <option>* Neat *</option>
-                <option>* Rocks *</option>
-                <option>* Shot *</option>
-                <option>Cola</option>
-            		<option>Diet Cola</option>
-            		<option>Cranberry Juice</option>
-            		<option>Ginger Ale</option>
-            		<option>Ginger Beer</option>
-            		<option>Grapefruit Juice</option>
-            		<option>Lemon Lime Soda</option>
-            		<option>Lemonade</option>
-            		<option>Orange Juice</option>
-            		<option>Pineapple Juice</option>
-            		<option>Red Bull</option>
-            		<option>Sugarfree Red Bull</option>
-            		<option>Soda</option>
-            		<option>Sour Mix</option>
-            		<option>Tonic</option>
-            		<option>Water</option>
-          		</select>
-            </p>
-            
-            <p>
-          		<select class="input-medium">
-            		<option>- select garnish -</option>
-                <option>Cherry</option>
-            		<option>Lemon</option>
-            		<option>Lime</option>
-            		<option>Olive</option>
-            		<option>Orange</option>
-          		</select>
-            </p>
-
-          </div>
+        <div style="float:left; padding-top:50px; padding-left:10px;"> 
+          <input class="input-mini quantity" type="text" value="1">
         </div>
+      
+        <div style="float:right; padding:10px">      
+          
+          <p>
+            <select class="input-medium liquor" >
+                <% @gin.each do |gin| %>
+                  <option><%= gin.name %></option>
+                <% end %>
+            </select>
+          </p>
+          
+          <p>
+            <select class="input-medium mixer">
+              <option>- select mixer -</option>
+              <option>Cranberry Juice</option>
+              <option>Grapefruit Juice</option>
+              <option>Lemonade</option>
+              <option>Soda</option>
+              <option>Tonic</option>
+              <option>Water</option>
+              <option>* Martini *</option>
+              <option>* Neat *</option>
+              <option>* Rocks *</option>
+              <option>* Shot *</option>
+            </select>
+          </p>
+          
+          <p>
+            <select class="input-medium garnish">
+              <option>- select garnish -</option>
+              <option>Cherry</option>
+              <option>Lemon</option>
+              <option>Lime</option>
+              <option>Olive</option>
+              <option>Orange</option>
+            </select>
+          </p>
 
-        <div class="remove" style="margin-top:-30px; margin-left:-10px; color:red;">
-          <h3><i class="icon-remove-sign"></i></h3>
         </div>
-
       </div>
 
-  
+      <div class="remove" style="margin-top:-30px; margin-left:-10px;">
+        <h3><a href="#" class="remove-drink" style="color:red;"><i class="icon-remove-sign"></i></a></h3>
+      </div>
 
-  <div style="text-align:center;">
-    <h3><a href="#" class="add-drink"><i class="icon-plus-sign icon-large"></i></a></h3>
   </div>
 
-  <br>
 
-  <p><input class="btn btn-large btn-info" style="float:right;" type='submit' value='Send Drink Order'></p>
+  <div class="rum-template" style="padding:10px; display: none;">
+    <input type="hidden" class="drink_value" />
+    <div class="row-fluid" style="background: #555555; color: #f9f9f9">
+        
+        <div style="float:left; padding-top:50px; padding-left:10px;"> 
+          <input class="input-mini quantity" type="text" value="1">
+        </div>
+      
+        <div style="float:right; padding:10px">      
+          
+          <p>
+            <select class="input-medium liquor">
+                <% @rum.each do |rum| %>
+                  <option><%= rum.name %></option>
+                <% end %>
+            </select>
+          </p>
+          
+          <p>
+            <select class="input-medium mixer">
+              <option>- select mixer -</option>
+              <option>Cola</option>
+              <option>Diet Cola</option>
+              <option>Ginger Ale</option>
+              <option>Ginger Beer</option>
+              <option>Soda</option>
+              <option>Tonic</option>
+              <option>Water</option>
+              <option>* Neat *</option>
+              <option>* Rocks *</option>
+              <option>* Shot *</option>
+            </select>
+          </p>
+          
+          <p>
+            <select class="input-medium garnish">
+              <option>- select garnish -</option>
+              <option>Cherry</option>
+              <option>Lemon</option>
+              <option>Lime</option>
+              <option>Olive</option>
+              <option>Orange</option>
+            </select>
+          </p>
+
+        </div>
+      </div>
+
+      <div class="remove" style="margin-top:-30px; margin-left:-10px;">
+        <h3><a href="#" class="remove-drink" style="color:red;"><i class="icon-remove-sign"></i></a></h3>
+      </div>
+
+  </div>
+
+
+  <div class="tequila-template" style="padding:10px; display: none;">
+    <input type="hidden" class="drink_value" />
+    <div class="row-fluid" style="background: #555555; color: #f9f9f9">
+        
+        <div style="float:left; padding-top:50px; padding-left:10px;"> 
+          <input class="input-mini quantity" type="text" value="1">
+        </div>
+      
+        <div style="float:right; padding:10px">      
+          
+          <p>
+            <select class="input-medium liquor">
+                <% @tequila.each do |tequila| %>
+                  <option><%= tequila.name %></option>
+                <% end %>
+            </select>
+          </p>
+          
+          <p>
+            <select class="input-medium mixer">
+              <option>- select mixer -</option>
+              <option>Cola</option>
+              <option>Diet Cola</option>
+              <option>Cranberry Juice</option>
+              <option>Ginger Ale</option>
+              <option>Ginger Beer</option>
+              <option>Grapefruit Juice</option>
+              <option>Soda</option>
+              <option>Tonic</option>
+              <option>Water</option>
+              <option>* Neat *</option>
+              <option>* Rocks *</option>
+              <option>* Shot *</option>
+            </select>
+          </p>
+          
+          <p>
+            <select class="input-medium garnish">
+              <option>- select garnish -</option>
+              <option>Cherry</option>
+              <option>Lemon</option>
+              <option>Lime</option>
+              <option>Olive</option>
+              <option>Orange</option>
+            </select>
+          </p>
+
+        </div>
+      </div>
+
+      <div class="remove" style="margin-top:-30px; margin-left:-10px;">
+        <h3><a href="#" class="remove-drink" style="color:red;"><i class="icon-remove-sign"></i></a></h3>
+      </div>
+
+  </div>
+
+
+  <div class="vodka-template" style="padding:10px; display: none;">
+    <input type="hidden" class="drink_value" />
+    <div class="row-fluid" style="background: #555555; color: #f9f9f9">
+        
+        <div style="float:left; padding-top:50px; padding-left:10px;"> 
+          <input class="input-mini quantity" type="text" value="1">
+        </div>
+      
+        <div style="float:right; padding:10px">      
+          
+          <p>
+            <select class="input-medium liquor">
+                <% @vodka.each do |vodka| %>
+                  <option><%= vodka.name %></option>
+                <% end %>
+            </select>
+          </p>
+          
+          <p>
+            <select class="input-medium mixer">
+              <option>- select mixer -</option>
+              <option>Cranberry Juice</option>
+              <option>Ginger Ale</option>
+              <option>Ginger Beer</option>
+              <option>Grapefruit Juice</option>
+              <option>Lemon Lime Soda</option>
+              <option>Red Bull</option>
+              <option>Sugarfree Red Bull</option>
+              <option>Soda</option>
+              <option>Tonic</option>
+              <option>Water</option>
+              <option>* Martini *</option>
+              <option>* Neat *</option>
+              <option>* Rocks *</option>
+              <option>* Shot *</option>
+            </select>
+          </p>
+          
+          <p>
+            <select class="input-medium garnish">
+              <option>- select garnish -</option>
+              <option>Cherry</option>
+              <option>Lemon</option>
+              <option>Lime</option>
+              <option>Olive</option>
+              <option>Orange</option>
+            </select>
+          </p>
+
+        </div>
+      </div>
+
+      <div class="remove" style="margin-top:-30px; margin-left:-10px;">
+        <h3><a href="#" class="remove-drink" style="color:red;"><i class="icon-remove-sign"></i></a></h3>
+      </div>
+
+  </div>
+
+  <form action='/orders' method='post' class="form-horizontal">
+    <div class="drinks-container"></div>
+
+    <div style="text-align:center;">
+      <h3><a href="#add-drink-modal" data-toggle="modal"><i class="icon-plus-sign icon-large"></i></a></h3>
+    </div>
+
+    <br />
+
+    <p><input class="btn btn-large btn-info" style="float:right;" type='submit' value='Send Drink Order'></p>
   </form>
-
 </div>
 
 <script>
-	$(document).ready(function() {
-    $('.toggle-me').click(function() {
-        $('.panel').slideToggle('fast');
-    });
- 
-    $('.add-drink').click(function(e) {
-      e.preventDefault();
+  $(document).ready(function() {
+    i = 1;
 
-      $(".drink-template")
-        .clone()
-        .show()
-        .removeClass("drink-template")
-        .addClass("drink")
-        .appendTo(".drinks-container");
-    });
 
-    $('.add-gin').click(function(e) {
-      e.preventDefault();
+        $('.add-drink').click(function(e) {
+          e.preventDefault();
 
-      $(".drink-template")
-        .clone()
-        .show()
-        .removeClass("drink-template")
-        .addClass("drink")
-        .appendTo(".drinks-container");
-        
-    });
+          $(".drink-template")
+            .clone()
+            .show()
+            .removeClass("drink-template")
+            .addClass("drink")
+            .find("input.drink_value")
+              .attr("name", "order[drinks_" + i + "]")
+            .end()
+            .appendTo(".drinks-container");
+          i++;
+        });
 
-    $('.add-rum').click(function(e) {
-      e.preventDefault();
+        $('.add-gin').click(function(e) {
+          e.preventDefault();
 
-      $(".drink-template")
-        .clone()
-        .show()
-        .removeClass("drink-template")
-        .addClass("drink")
-        .appendTo(".drinks-container");
-    });
+          $(".gin-template")
+            .clone()
+            .show()
+            .removeClass("gin-template")
+            .addClass("drink")
+            .find("input.drink_value")
+              .attr("name", "order[drinks_" + i + "]")
+            .end()
+            .appendTo(".drinks-container");
+          i++;  
+        });
 
-    $('.add-tequila').click(function(e) {
-      e.preventDefault();
+        $('.add-rum').click(function(e) {
+          e.preventDefault();
 
-      $(".drink-template")
-        .clone()
-        .show()
-        .removeClass("drink-template")
-        .addClass("drink")
-        .appendTo(".drinks-container");
-    });
+          $(".rum-template")
+            .clone()
+            .show()
+            .removeClass("rum-template")
+            .addClass("drink")
+            .find("input.drink_value")
+              .attr("name", "order[drinks_" + i + "]")
+            .end()
+            .appendTo(".drinks-container");
+          i++;
+        });
 
-    $('.add-vodka').click(function(e) {
-      e.preventDefault();
+        $('.add-tequila').click(function(e) {
+          e.preventDefault();
 
-      $(".drink-template")
-        .clone()
-        .show()
-        .removeClass("drink-template")
-        .addClass("drink")
-        .appendTo(".drinks-container");
-    });
- 
-    $('.remove').live("click",function() {
-      $(this).closest(".drink").remove();
-    });
-	});
+          $(".tequila-template")
+            .clone()
+            .show()
+            .removeClass("tequila-template")
+            .addClass("drink")
+            .find("input.drink_value")
+              .attr("name", "order[drinks_" + i + "]")
+            .end()
+            .appendTo(".drinks-container");
+          i++;
+        });
+
+        $('.add-vodka').click(function(e) {
+          e.preventDefault();
+
+          $(".vodka-template")
+            .clone()
+            .show()
+            .removeClass("vodka-template")
+            .addClass("drink")
+            .find("input.drink_value")
+              .attr("name", "order[drinks_" + i + "]")
+            .end()
+            .appendTo(".drinks-container");
+          i++;
+        });
+
+        $('.whisky-drink').click(function(e) {
+          e.preventDefault();
+
+          $(".whisky-template")
+            .clone()
+            .show()
+            .removeClass("whisky-template")
+            .addClass("drink")
+            .find("input.drink_value")
+              .attr("name", "order[drinks_" + i + "]")
+            .end()
+            .appendTo(".drinks-container");
+          i++;
+        });
+     
+        $('.remove-drink').live("click",function() {
+          $(this).closest(".drink").remove();
+        });
+
+        $(document).on("change", "input.quantity, select.liquor, select.mixer, select.garnish", function () {
+          var $this = $(this);
+          var $drink = $this.closest(".drink").find(".drink_value");
+          var quantity = $this.closest(".drink").find("input.quantity").val();
+          var liquor = $this.closest(".drink").find("select.liquor").val();
+          var mixer = $this.closest(".drink").find("select.mixer").val();
+          var garnish = $this.closest(".drink").find("select.garnish").val();
+
+          $drink.val(quantity + "x " + liquor + " " + mixer + " " + garnish);
+        });
+  });
 
 
 </script>
