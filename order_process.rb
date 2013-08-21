@@ -32,7 +32,7 @@ get '/orders/drinks' do
     session[:firstname] = params['firstname']
     session[:lastname] = params['lastname']
     session[:table] = params['table']
-    erb :"orders/drinks"
+    erb :menutest
   else
     erb "There has been a problem. Please click the link we last texted you to continue."
   end
