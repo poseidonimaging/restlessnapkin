@@ -1,5 +1,5 @@
 <div id="content">
-   
+  <div class="venue_info" data-id="<%= @venue %>"></div>
   <% @orders.each do |order| %>
 
     <div id="order-<%= order.id %>" class="row-fluid order" data-order-id="<%= order.id %>" style="<% if order.received_at.nil? %>background-color: #A21721; color: white;<% else %>background-color: #eeeeee; color: #555555;<% end %>">
@@ -74,11 +74,10 @@
 
     setInterval(function() {
       $('#content').load('/<%= @venue %>/barkeeper #content');
-    }, 10000);
-        $.ajax({
+      $.ajax({
         type: "PUT",
-        url: ''.concat("/venue/active/", $this.closest(".venue").data("@venue")),
-      }).done(function() {
-      });
+        url: ''.concat("/venue/active/", $(".venue_info").data("id")),
+      }).done(function() {});
+    }, 10000);
   });
 </script>

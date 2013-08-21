@@ -41,7 +41,7 @@ end
 # PUT that determines when a venue is active
 put '/venue/active/:venue' do
   content_type :json
-  @venue = Venue.find(params[:venue])
+  @venue = Venue.find_by_handle(params[:venue])
   @venue.active = Time.now
   if @venue.save
     status 200 # OK
