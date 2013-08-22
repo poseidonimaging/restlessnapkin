@@ -1,6 +1,6 @@
 <div class='alert alert-info'>Be specific(Draft vs Bottle) so the bartender doesn't totally screw up your drink order.</div>
 
-<h3>@<%= venue %> | <%= table %></h3>
+<h3>@<%= venue %> | <%= location %></h3>
 
 <div class="menu" style="background-color: #eeeeee; color: #555555;">
 	<h3 class="slide" style="padding-left:10px;"><a href="#" class="toggle-me">Drink Menu</a></h3>
@@ -28,7 +28,7 @@
 
 <form action='/orders' method='post' class="form-horizontal">
   			
-	<p><input class="span12" type="text" id="order_drinks" name="order[drinks]" value="<%= @order.drinks %>" placeholder="2 Tito's Sodas with Lime"></p>
+	<p><input class="span12" type="text" name="order[drinks_1]" value="<%= @order.drinks_1 %>" placeholder="2 Tito's Sodas with Lime"></p>
 
 	<p><input class="btn btn-large btn-info" type='submit' value='Send Drink Order'></p>
 </form>

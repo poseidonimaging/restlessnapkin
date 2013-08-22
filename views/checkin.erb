@@ -1,6 +1,6 @@
 <div class='alert alert-info'>Tell us who you are and where you're sitting.</div>
 
-<h3>@<%= venue %></h3>
+<h3><%= @venue.name %> and <%= session[:phone] %></h3>
 
 	<form action='/orders/drinks' method='post' class="form-horizontal">
 			
@@ -14,8 +14,8 @@
 
   	<p>
   		<div class="input-prepend">
-  			<span class="add-on">Table #</span>
-  			<input class="span2" id="prependedInput" type="text" name='table'>
+  			<span class="add-on">Section #</span>
+  			<input class="span2" id="prependedInput" type="text" name='location'>
 			</div>
 		</p>
 

@@ -62,8 +62,8 @@ helpers do
     session[:venue] ? session[:venue] : 'No Venue'
   end
 
-  def table
-    session[:table] ? session[:table] : 'No Table'
+  def location
+    session[:location] ? session[:location] : 'No Location'
   end
 
   # define a current_user method, so we can be sure if an user is authenticated

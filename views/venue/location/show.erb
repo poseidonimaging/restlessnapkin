@@ -3,7 +3,7 @@
   <% @orders.each do |order| %>
           
     <h5><a href="/user/<%= order.phone %>"><%= order.lastname %></a> at <a href="/<%= order.venue %>/orders"><%= order.venue %></a> Table <%= order.location %></h4>
-     <h4><a href="/orders/<%= order.id %>"><%= order.drinks %></a></h3>
+     <h4><a href="/orders/<%= order.id %>"><%= order.drinks_1 %></a></h3>
      <p>from <a href="/user/<%= order.phone %>"><%= order.phone %></a></p>
      <hr>
      <script>

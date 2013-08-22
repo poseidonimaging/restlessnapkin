@@ -1,6 +1,6 @@
 <div id='content'>
 
-  <h3><%= @venue.name %> near <%= @location %></h3>
+  <h3><%= @venue.name %> near <%= @location %> via <%= session[:phone] %></h3>
 
   <div class="menu" style="background-color: #eeeeee; color: #555555;">
     <h2 style="padding-left:10px;"><a href="#add-drink-modal" data-toggle="modal">Add Drink</a></h2>
@@ -364,7 +364,7 @@
           var mixer = $this.closest(".drink").find("select.mixer").val();
           var garnish = $this.closest(".drink").find("select.garnish").val();
 
-          $drink.val(quantity + "x " + liquor + " " + mixer + " " + garnish);
+          $drink.val(quantity + "x " + liquor + " " + mixer + " with a " + garnish);
         });
   });
 

@@ -1,5 +1,5 @@
 #Looks at the venue and the phone number(splat), then shows form for checkin
-get '/moontower/checkin/*' do 
+get '/oontower/checkin/*' do 
   session[:venue] = 'moontower'
   session[:phone] = params[:splat].first
   #session[:phone_short] = session[:phone].[-4..-1]
@@ -12,12 +12,19 @@ end
 
 #Looks at the venue and the phone number(splat), then shows form for checkin
 get '/:venue/checkin/*' do 
-  session[:venue] = params['venue']
-  session[:phone] = params[:splat].first
-  if session[:venue] && session[:phone]
-    erb :"/checkin"
+  if Venue.exists?(:handle => params['venue'])
+    session[:venue] = params['venue']
+    @venue = Venue.find_by_handle(params['venue'])
+    #@venue_id = Venue.find_by_handle(session[:venue]).id
+    #session[:venue_id] = @venue_id
+    session[:phone] = params[:splat].first
+    if session[:venue] && session[:phone]
+      erb :"/checkin"
+    else
+      erb "Something has gone awry. The napkin isn't saving the venue properly, please try again."
+    end 
   else
-    erb "Something went awry. Please try again and make sure you texted the venue's name properly."
+    erb "We can't find that venue, please text the proper venue handle(no spaces like a twitter username)"
   end
 end
 
@@ -25,9 +32,10 @@ end
 get '/orders/drinks' do
   if session[:venue] && session[:phone] && session[:firstname] && session[:lastname] && session[:location]
     @order = Order.new
-    erb :"orders/drinks"
+    erb :menu
   elsif session[:venue] && session[:phone]
     @order = Order.new
+    @venue = session[:venue]
     session[:firstname] = params['firstname']
     session[:lastname] = params['lastname']
     session[:location] = params['location']
@@ -41,24 +49,40 @@ end
 post '/orders/drinks' do
   if session[:venue] && session[:phone] && session[:firstname] && session[:lastname] && session[:location]
     @order = Order.new
-    erb :"orders/drinks"
-  elsif
-    session[:venue] && session[:phone]
+    erb :menu
+  elsif session[:venue] && session[:phone]
     @order = Order.new
     session[:firstname] = params['firstname']
     session[:lastname] = params['lastname']
     session[:location] = params['location']
-    erb :"orders/drinks"
+    @venue = Venue.find_by_handle(session[:venue])
+    @location = session[:location]
+    @gin = Venue.find(@venue.id).liquors.by_type("gin")
+    @rum = Venue.find(@venue.id).liquors.by_type("rum")
+    @tequila = Venue.find(@venue.id).liquors.by_type("tequila")
+    @vodka = Venue.find(@venue.id).liquors.by_type("vodka")
+    erb :menu
   else
+    #@order = Order.new
+    #session[:firstname] = params['firstname']
+    #session[:lastname] = params['lastname']
+    #session[:location] = params['location']
+    #@venue = session[:venue]
+    #@location = session[:location]
+    #@gin = Venue.find(session[:venue_id]).liquors.by_type("gin")
+    #@rum = Venue.find(session[:venue_id]).liquors.by_type("rum")
+    #@tequila = Venue.find(@venue.id).liquors.by_type("tequila")
+    #@vodka = Venue.find(@venue.id).liquors.by_type("vodka")
+    #erb :menu
     erb "There has been a problem. Please reclick the link we texted you to start over."
   end
 end
 
 # venue drink menu (needs venue/menu)
 get "/:venue/menu" do
-  @venue = Venue.find_by_handle(params[:venue])
+  @venue = session[:venue]
   @location = session[:location]
-  @gin = Venue.find(@venue.id).liquors.by_type("gin")
+  @gin = Venue.find(session[:venue_id]).liquors.by_type("gin")
   @rum = Venue.find(@venue.id).liquors.by_type("rum")
   @tequila = Venue.find(@venue.id).liquors.by_type("tequila")
   @vodka = Venue.find(@venue.id).liquors.by_type("vodka")
@@ -75,7 +99,7 @@ get "/menu" do
   erb :menu, :layout => (request.xhr? ? false : :layout)
 end
 
-# New order form sends POST request here
+# order menu sends POST request here
 post '/orders' do
   @order = Order.new(params[:order])
   @order.venue = session[:venue]
@@ -116,7 +140,7 @@ end
 #User checkout of venue
 post '/checkout' do
   @order = Order.new
-  @order.drinks = "CLOSE TAB"
+  @order.drinks_1 = "CLOSE TAB"
   @order.venue = session[:venue]
   @order.location = session[:location]
   @order.firstname = session[:firstname]

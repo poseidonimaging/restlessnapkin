@@ -25,10 +25,10 @@ end
 
 class Order < ActiveRecord::Base
   validates :venue, presence: true, length: { minimum: 3}
-  validates :table, presence: true, length: { minimum: 1}
+  validates :location, presence: true, length: { minimum: 1}
   validates :lastname, presence: true, length: { minimum: 2}
   validates :phone, presence: true, length: { minimum: 10}
-  validates :drinks, presence: true, length: { minimum: 5}
+  validates :drinks_1, presence: true, length: { minimum: 5}
 end
 
 class Venue < ActiveRecord::Base
