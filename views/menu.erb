@@ -66,11 +66,6 @@
 
         </div>
       </div>
-
-      <div class="remove" style="margin-top:-30px; margin-left:-10px;">
-        <h3><a href="#" class="remove-drink" style="color:red;"><i class="icon-remove-sign"></i></a></h3>
-      </div>
-
   </div>
 
 
@@ -120,10 +115,6 @@
           </p>
 
         </div>
-      </div>
-
-      <div class="remove" style="margin-top:-30px; margin-left:-10px;">
-        <h3><a href="#" class="remove-drink" style="color:red;"><i class="icon-remove-sign"></i></a></h3>
       </div>
 
   </div>
@@ -177,10 +168,6 @@
           </p>
 
         </div>
-      </div>
-
-      <div class="remove" style="margin-top:-30px; margin-left:-10px;">
-        <h3><a href="#" class="remove-drink" style="color:red;"><i class="icon-remove-sign"></i></a></h3>
       </div>
 
   </div>
@@ -238,10 +225,6 @@
         </div>
       </div>
 
-      <div class="remove" style="margin-top:-30px; margin-left:-10px;">
-        <h3><a href="#" class="remove-drink" style="color:red;"><i class="icon-remove-sign"></i></a></h3>
-      </div>
-
   </div>
 
   <form action='/orders' method='post' class="form-horizontal">
@@ -254,6 +237,10 @@
     <br />
 
     <p><input class="btn btn-large btn-info" style="float:right;" type='submit' value='Send Drink Order'></p>
+  </form>
+
+  <form action='/orders/drinks' method='post' class="form-horizontal">
+    <p><input class="btn btn-large btn-danger" type='submit' value='Reset'></p>
   </form>
 </div>
 
@@ -350,10 +337,6 @@
             .end()
             .appendTo(".drinks-container");
           i++;
-        });
-     
-        $('.remove-drink').live("click",function() {
-          $(this).closest(".drink").remove();
         });
 
         $(document).on("change", "input.quantity, select.liquor, select.mixer, select.garnish", function () {

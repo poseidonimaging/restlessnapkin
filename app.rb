@@ -20,14 +20,11 @@ load "./venues.rb"
 
 configure do
   set :public_folder, Proc.new { File.join(root, "static") }
-  enable :sessions
-  set :session_secret, "nPiOpaoyqcyeaABv2huEqlvZw6CxkC0Qo71hMlbwMbhmzWAjcndLD5piz9PqXt8"
   set :method_override, true
 end
 
 configure :development do
   set :database, "sqlite3:///orders.db"
-  set :session_secret, "nPiOpaoyqcyeaABv2huEqlvZw6CxkC0Qo71hMlbwMbhmzWAjcndLD5piz9PqXt8"
 end
 
 configure :production do
@@ -44,6 +41,13 @@ configure :production do
 
   ActiveRecord::Base.establish_connection(settings)
 end
+
+use Rack::Session::Cookie, :key => 'rack.session',
+                           :path => '/',
+                           :expire_after => 14400, # In seconds
+                           :secret => 'nPiOpaoyqcyeaABv2huEqlvZw6CxkC0Qo71hMlbwMbhmzWAjcndLD5piz9PqXt8'
+
+
 
 helpers do
   def phone

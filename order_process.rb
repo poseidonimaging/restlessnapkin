@@ -15,11 +15,9 @@ get '/:venue/checkin/*' do
   if Venue.exists?(:handle => params['venue'])
     session[:venue] = params['venue']
     @venue = Venue.find_by_handle(params['venue'])
-    #@venue_id = Venue.find_by_handle(session[:venue]).id
-    #session[:venue_id] = @venue_id
     session[:phone] = params[:splat].first
     if session[:venue] && session[:phone]
-      erb :"/checkin"
+      erb :checkin
     else
       erb "Something has gone awry. The napkin isn't saving the venue properly, please try again."
     end 
@@ -32,13 +30,12 @@ end
 get '/orders/drinks' do
   if session[:venue] && session[:phone] && session[:firstname] && session[:lastname] && session[:location]
     @order = Order.new
-    erb :menu
-  elsif session[:venue] && session[:phone]
-    @order = Order.new
-    @venue = session[:venue]
-    session[:firstname] = params['firstname']
-    session[:lastname] = params['lastname']
-    session[:location] = params['location']
+    @venue = Venue.find_by_handle(session[:venue])
+    @location = session[:location]
+    @gin = Venue.find(@venue.id).liquors.by_type("gin")
+    @rum = Venue.find(@venue.id).liquors.by_type("rum")
+    @tequila = Venue.find(@venue.id).liquors.by_type("tequila")
+    @vodka = Venue.find(@venue.id).liquors.by_type("vodka")
     erb :menu
   else
     erb "There has been a problem. Please click the link we last texted you to continue."
@@ -47,10 +44,7 @@ end
 
 # After checkin, shows form for drink order. Upon reordering, keeps session via lastname
 post '/orders/drinks' do
-  if session[:venue] && session[:phone] && session[:firstname] && session[:lastname] && session[:location]
-    @order = Order.new
-    erb :menu
-  elsif session[:venue] && session[:phone]
+  if session[:venue] #&& session[:phone]
     @order = Order.new
     session[:firstname] = params['firstname']
     session[:lastname] = params['lastname']
@@ -63,40 +57,8 @@ post '/orders/drinks' do
     @vodka = Venue.find(@venue.id).liquors.by_type("vodka")
     erb :menu
   else
-    #@order = Order.new
-    #session[:firstname] = params['firstname']
-    #session[:lastname] = params['lastname']
-    #session[:location] = params['location']
-    #@venue = session[:venue]
-    #@location = session[:location]
-    #@gin = Venue.find(session[:venue_id]).liquors.by_type("gin")
-    #@rum = Venue.find(session[:venue_id]).liquors.by_type("rum")
-    #@tequila = Venue.find(@venue.id).liquors.by_type("tequila")
-    #@vodka = Venue.find(@venue.id).liquors.by_type("vodka")
-    #erb :menu
     erb "There has been a problem. Please reclick the link we texted you to start over."
   end
-end
-
-# venue drink menu (needs venue/menu)
-get "/:venue/menu" do
-  @venue = session[:venue]
-  @location = session[:location]
-  @gin = Venue.find(session[:venue_id]).liquors.by_type("gin")
-  @rum = Venue.find(@venue.id).liquors.by_type("rum")
-  @tequila = Venue.find(@venue.id).liquors.by_type("tequila")
-  @vodka = Venue.find(@venue.id).liquors.by_type("vodka")
-  erb :menu, :layout => (request.xhr? ? false : :layout)
-end
-
-# drink menu
-get "/menu" do
-  @gin = Venue.find(1).liquors.by_type("gin")
-  @rum = Venue.find(1).liquors.by_type("rum")
-  @tequila = Venue.find(1).liquors.by_type("tequila")
-  @vodka = Venue.find(1).liquors.by_type("vodka")
-  #@whisky = Venue.find(1).liquors.by_type("whisky")
-  erb :menu, :layout => (request.xhr? ? false : :layout)
 end
 
 # order menu sends POST request here
