@@ -46,9 +46,9 @@ end
 post '/orders/drinks' do
   if session[:venue] #&& session[:phone]
     @order = Order.new
-    session[:firstname] = params['firstname']
-    session[:lastname] = params['lastname']
-    session[:location] = params['location']
+    session[:firstname] = params[:firstname] unless params[:firstname].nil?
+    session[:lastname] = params[:lastname] unless params[:lastname].nil?
+    session[:location] = params[:location] unless params[:location].nil?
     @venue = Venue.find_by_handle(session[:venue])
     @location = session[:location]
     @gin = Venue.find(@venue.id).liquors.by_type("gin")
