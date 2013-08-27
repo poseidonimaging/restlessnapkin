@@ -18,6 +18,7 @@ load "./order_views.rb"
 load "./barkeeper.rb"
 load "./venue.rb"
 load "./liquor.rb"
+load "./admin.rb"
 
 configure do
   set :public_folder, Proc.new { File.join(root, "static") }
@@ -93,18 +94,7 @@ helpers do
   end
 end
 
-# OAuth2 configuration
-use Rack::Session::Cookie
-use OmniAuth::Builder do
-  provider :twitter, 'HnLokC5vWkVC0r1HK4ojOQ', 'WmGe0dWFNvLrtl06Gon4Y6LuVv6UBm57kjyVWXtNjNY'
-  #provider :att, 'client_id', 'client_secret', :callback_url => (ENV['BASE_DOMAIN']
-end
-
 # Starting routes
-
-get '/twitter' do
-  erb "<a href='/auth/twitter'>Sign in with Twitter</a>"
-end
 
 get '/mprinter' do
   erb :mprinter
@@ -140,52 +130,6 @@ get '/mprinter/add_device' do
   #RestClient.post MPRINTER_OAUTH_URL + '/devices', :serial => 'KMHELM', token.headers
 end
 
-get '/auth/twitter/callback' do
-  # probably you will need to create a user in the database too...
-  auth = request.env['omniauth.auth']
-  session[:provider] = auth['provider']
-  session[:uid] = auth['uid']
-  session[:nickname] = auth['info']['nickname']
-  session[:token] = auth['credentials']['token']
-  session[:secret] = auth['credentials']['secret']
-  # this is the main endpoint to your application
-  redirect to('/twitter/user')
-end
-
-get '/twitter/user' do
-  @user = session[:nickname]
-  @token = session[:token]
-  @secret = session[:secret]
-  timeline = open("https://api.twitter.com/1.1/statuses/user_timeline.json").read
-
-  erb :tweets
-end
-
-get '/tweets' do
-  uri = URI.parse("https://secure.com/")
-  http = Net::HTTP.new(uri.host, uri.port)
-  http.use_ssl = true
-  http.verify_mode = OpenSSL::SSL::VERIFY_NONE
-
-  request = Net::HTTP::Get.new(uri.request_uri, {
-    'oauth_consumer_key' => 'HnLokC5vWkVC0r1HK4ojOQ',
-    'oauth_nonce' => Oauth.nonce(), 
-    #TODO  Add signature security via https://github.com/intridea/oauth2
-    'oauth_signature_method' => '#####',
-    'oauth_signature_method' => 'HMAC-SHA1', 
-    'oauth_timestamp' => 'HnLokC5vWkVC0r1HK4ojOQ',
-    'oauth_token' => '#{session[:token]}',    
-    'oauth_version' => '1.0'
-    })
-
-  response = http.request(request)
-  response.body
-  response.status
-  response["header-here"] # All headers are lowercase
-
-  erb :tweets
-end
-
 # Support for OAuth failure
 get '/auth/failure' do
   flash[:notice] = params[:message] # if using sinatra-flash or rack-flash
@@ -200,17 +144,4 @@ end
 get '/hello/:name.json' do
   content_type :json
   {"message" => "Hello #{params[:name]}!"}.to_json
-end
-
-#Ancillary secure pages from sinatra/bootstrap github repo
-before '/secure/*' do
-  if !session[:lastname] then
-    session[:previous_url] = request.path
-    @error = 'Sorry guacamole, you need to be logged in to visit ' + request.path
-    halt erb(:checkin)
-  end
-end
-
-get '/secure/place' do
-  erb "This is a secret place that only <%=session[:identity]%> has access to!"
 end

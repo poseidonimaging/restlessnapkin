@@ -1,0 +1,63 @@
+<div id='content'>
+
+  <h1>Add a liquor</h1>
+
+  <form action='/admin/liquor/add' method='post' class="form-horizontal">
+      
+    <p>
+      <select type="text" name='liquor_type'>
+        <option>Gin</option>
+        <option>Rum</option>
+        <option>Tequila</option>
+        <option>Vodka</option>
+        <option>Whisky</option>
+      </select>
+    </p>
+
+    <p>
+      <input class="span4" type="text" name='name' placeholder="Name">
+    </p>
+
+    <p>
+      <input class="span4" type="text" name='description' placeholder="Description">
+    </p>
+
+    <p><input class="btn btn-large btn-info" type='submit' value='Add Liquor'></p>
+  </form>
+
+<br />
+
+  <h1>All available liquors</h1>
+    
+    <div class="row">
+
+      <div class="span3">
+        <h3>Vodka</h3>
+        <% @vodka.each do |vodka| %>
+          <p><%= vodka.name %></p>
+        <% end %>
+      </div>
+
+      <div class="span3">
+        <h3>Tequila</h3>
+        <% @tequila.each do |tequila| %>
+          <p><%= tequila.name %></p>
+        <% end %>
+      </div>
+
+      <div class="span3">
+        <h3>Gin</h3>
+        <% @gin.each do |gin| %>
+          <p><%= gin.name %></p>
+        <% end %>
+      </div>
+
+      <div class="span3">
+        <h3>Rum</h3>
+        <% @rum.each do |rum| %>
+          <p><%= rum.name %></p>
+        <% end %>
+      </div>
+
+    </div>
+</div>

@@ -1,35 +1,36 @@
 <div id='content'>
-<h1>All available liquors</h1>
-  
-  <div class="row">
 
-    <div class="span3">
-      <h3>Vodka</h3>
-      <% @vodka.each do |vodka| %>
-        <p><%= vodka.name %></p>
-      <% end %>
+  <h1>All available liquors</h1>
+    
+    <div class="row">
+
+      <div class="span3">
+        <h3>Vodka</h3>
+        <% @vodka.each do |vodka| %>
+          <p><%= vodka.name %></p>
+        <% end %>
+      </div>
+
+      <div class="span3">
+        <h3>Tequila</h3>
+        <% @tequila.each do |tequila| %>
+          <p><%= tequila.name %></p>
+        <% end %>
+      </div>
+
+      <div class="span3">
+        <h3>Gin</h3>
+        <% @gin.each do |gin| %>
+          <p><%= gin.name %></p>
+        <% end %>
+      </div>
+
+      <div class="span3">
+        <h3>Rum</h3>
+        <% @rum.each do |rum| %>
+          <p><%= rum.name %></p>
+        <% end %>
+      </div>
+
     </div>
-
-    <div class="span3">
-      <h3>Tequila</h3>
-      <% @tequila.each do |tequila| %>
-        <p><%= tequila.name %></p>
-      <% end %>
-    </div>
-
-    <div class="span3">
-      <h3>Gin</h3>
-      <% @gin.each do |gin| %>
-        <p><%= gin.name %></p>
-      <% end %>
-    </div>
-
-    <div class="span3">
-      <h3>Rum</h3>
-      <% @rum.each do |rum| %>
-        <p><%= rum.name %></p>
-      <% end %>
-    </div>
-
-  </div>
 </div>

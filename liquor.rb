@@ -1,3 +1,11 @@
+get '/admin/liquor/dashboard' do
+  @gin = Liquor.by_type("gin")
+  @rum = Liquor.by_type("rum")
+  @tequila = Liquor.by_type("tequila")
+  @vodka = Liquor.by_type("vodka")
+  erb :"liquor/dashboard"
+end
+
 # Show all available liquors
 get '/liquor/show' do
   @gin = Liquor.by_type("gin")
@@ -8,20 +16,20 @@ get '/liquor/show' do
 end
 
 # Form to add liquor to db
-get '/liquor/add' do
+get '/admin/liquor/add' do
   erb :"liquor/add"
 end
 
 # Add a liquor to db
-post '/liquor/add' do
+post '/admin/liquor/add' do
   @liquor = Liquor.new
   @liquor.liquor_type = params[:liquor_type].downcase
   @liquor.name = params[:name]
   @liquor.description = params[:description]
   if @liquor.save
-    redirect "/liquor/#{@liquor.id}"
+    redirect "/admin/liquor/dashboard"
   else
-    erb :"/liquor/add"
+    erb :"/admin/dashboard"
   end
 end
 

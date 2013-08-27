@@ -1,22 +1,27 @@
+get '/admin/venue/dashboard' do
+  @venue = Venue.order("created_at DESC")
+  erb :"venue/dashboard"
+end
+
 get '/venue/show' do
   @venue = Venue.order("created_at DESC")
   erb :"venue/show"
 end
 
 # Form to add a venue to db
-get '/venue/add' do
-  erb :"/venue/add_venue"
+get '/admin/venue/add' do
+  erb :"/venue/add"
 end
 
 # Add a venue
-post '/venue/add' do
+post '/admin/venue/add' do
   @venue = Venue.new
   @venue.name = params[:name]
   @venue.handle = params[:handle]
   if @venue.save
-    redirect "/venue/#{@venue.id}"
+    redirect "/admin/venue/dashboard"
   else
-    erb :"/venue/add_venue"
+    erb :"/admin/dashboard"
   end
 end
 
@@ -27,10 +32,10 @@ get '/:venue/liquor' do
 end
 
 # Add a liquor to a venue
-post '/venue/:id' do
-  @venue = Venue.find(params[:id])
-  erb "The venue is called #{@venue.name} and its handle is #{@venue.handle}"
-end
+#post '/admin/venue/:id' do
+#  @venue = Venue.find(params[:id])
+#  erb "The venue is called #{@venue.name} and its handle is #{@venue.handle}"
+#end
 
 # Show venue by id
 get '/venue/:id' do

@@ -1,0 +1,31 @@
+<div id='content'>
+
+  <div class="row">
+
+    <div class="span6">
+      <h1>All Venues</h1> <br />
+
+        <% @venue.each do |venue| %>
+          <h4><b><%= venue.name %></b> - @<%= venue.handle %></h4>
+          <hr>
+        <% end %>
+    </div>
+
+    <div class="span4">
+      <h1>Add a New Venue</h1> <br />
+
+        <form action='/admin/venue/add' method='post' class="form-horizontal">
+          <p>
+            <input class="span3" type="text" name='name' placeholder="Name">
+          </p>
+
+          <p>
+            <input class="span3" type="text" name='handle' placeholder="Handle">
+          </p>
+
+          <p><input class="btn btn-large btn-info" type='submit' value='Add Venue'></p>
+        </form>
+    </div>
+
+  </div>
+</div>
