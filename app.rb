@@ -17,6 +17,7 @@ load "./order_process.rb"
 load "./order_views.rb"
 load "./barkeeper.rb"
 load "./venues.rb"
+load "./liquor.rb"
 
 configure do
   set :public_folder, Proc.new { File.join(root, "static") }

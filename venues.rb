@@ -1,10 +1,9 @@
 # Showing all orders via main menu
 get '/venue/add' do
-  #@venue = Venue.new
   erb :"/venue/add_venue"
 end
 
-# POST for adding a venue
+# Add a venue
 post '/venue/add' do
   @venue = Venue.new
   @venue.name = params[:name]
@@ -14,6 +13,18 @@ post '/venue/add' do
   else
     erb :"/venue/add_venue"
   end
+end
+
+# Show liquors by venue
+get '/:venue/liquor' do
+  @venue = Venue.find(params[:id])
+  erb "The venue is called #{@venue.name} and its handle is #{@venue.handle}"
+end
+
+# Add a liquor to a venue
+post '/venue/:id' do
+  @venue = Venue.find(params[:id])
+  erb "The venue is called #{@venue.name} and its handle is #{@venue.handle}"
 end
 
 # Show venue by id

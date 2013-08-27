@@ -44,7 +44,7 @@ end
 
 # After checkin, shows form for drink order. Upon reordering, keeps session via lastname
 post '/orders/drinks' do
-  if session[:venue] #&& session[:phone]
+  if session[:venue] && session[:phone]
     @order = Order.new
     session[:firstname] = params[:firstname] unless params[:firstname].nil?
     session[:lastname] = params[:lastname] unless params[:lastname].nil?
