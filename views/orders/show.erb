@@ -4,12 +4,12 @@
 	<div style="padding:10px;" class="span12">
 		<h5><%= @order.venue %> at <%= @order.location %></h5>
   	<h4><%= @order.drinks_1 %> <%= ' | <i class="icon-eye-open"></i>' unless @order.received_at.nil? %> <%= '<i class="icon-glass"></i>' unless @order.fulfilled_at.nil? %></h4>
-  	<p><a href="/user/<%= @order.phone %>">Order <%= @order.id %> by <%= @order.firstname %> <%= @order.lastname %></a></p>
+  	<p><a href="/user/<%= @order.phone %>">Order <%= @order.id.to_s.rjust(2, "0")[-2..-1] %> by <%= @order.firstname %> <%= @order.lastname %></a></p>
   </div>
 </div>
 
 <div class="order-number">
- <p><%= @order.id %></p>
+ <p><%= @order.id.to_s.rjust(2, "0")[-2..-1] %></p>
 </div>
 
 <script>
