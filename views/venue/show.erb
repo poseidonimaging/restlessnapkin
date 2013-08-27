@@ -1,17 +1,8 @@
 <div id='content'>
-<h3><%= @venue %></h3><hr>
-  <% @orders.each do |order| %>
-          
-    <h5><%= order.venue %> at <%= order.location %></h5>
-    <h4><a href="/orders/<%= order.id %>">Order <%= order.id %> | <%= order.drinks_1 %></a> <%= ' | <i class="icon-eye-open"></i>' unless order.received_at.nil? %> <%= '<i class="icon-glass"></i>' unless order.fulfilled_at.nil? %></h4>
-    <p>by <%= order.firstname %> <%= order.lastname %></p>
+<h1>All Venues</h1> <br />
+
+  <% @venue.each do |venue| %>
+    <h4><b><%= venue.name %></b> - @<%= venue.handle %></h4>
     <hr>
   <% end %>
-
-<script>
-  $(document).ready(function() {
-    setTimeout(function() {
-      $('#content').load('/<%= @venue %>/orders');}, 10000);
-  });
-</script>
 </div>

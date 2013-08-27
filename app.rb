@@ -16,7 +16,7 @@ require "./models"
 load "./order_process.rb"
 load "./order_views.rb"
 load "./barkeeper.rb"
-load "./venues.rb"
+load "./venue.rb"
 load "./liquor.rb"
 
 configure do
