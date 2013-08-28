@@ -1,0 +1,51 @@
+<div id='content'>
+
+  <h1>EDIT <%= @venue.name %>'s Available Liquors</h1>
+  
+  <form action="/admin/<%= @venue.handle %>/liquor" method="post">
+  <input type="hidden" name="_method" value="put" />   
+    <div class="row">
+
+      <div class="span3">
+        <h3>Vodka</h3>
+        <% @vodka.each do |vodka| %>
+          <label class="checkbox">
+            <input type="checkbox" value="@vodka.id">
+            <%= vodka.name %>
+          </label>
+        <% end %>
+      </div>
+
+      <div class="span3">
+        <h3>Tequila</h3>
+        <% @tequila.each do |tequila| %>
+          <label class="checkbox">
+            <input type="checkbox" value="@vodka.id">
+            <%= tequila.name %>
+          </label>
+        <% end %>
+      </div>
+
+      <div class="span3">
+        <h3>Gin</h3>
+        <% @gin.each do |gin| %>
+          <label class="checkbox">
+            <input type="checkbox" value="@vodka.id">
+            <%= gin.name %>
+          </label>
+        <% end %>
+      </div>
+
+      <div class="span3">
+        <h3>Rum</h3>
+        <% @rum.each do |rum| %>
+          <label class="checkbox">
+            <input type="checkbox" value="@vodka.id">
+            <%= rum.name %>
+          </label>
+        <% end %>
+      </div>
+
+    </div>
+  </form>
+</div>

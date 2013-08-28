@@ -8,6 +8,12 @@ get '/venue/show' do
   erb :"venue/show"
 end
 
+# Show venue by id
+get '/venue/:id' do
+  @venue = Venue.find(params[:id])
+  erb "The venue is called #{@venue.name} and its handle is #{@venue.handle}"
+end
+
 # Form to add a venue to db
 get '/admin/venue/add' do
   erb :"/venue/add"
@@ -35,14 +41,15 @@ get '/:venue/liquor' do
   erb :"/venue/liquor"
 end
 
-# Show venue by id
-get '/venue/:id' do
-  @venue = Venue.find(params[:id])
-  erb "The venue is called #{@venue.name} and its handle is #{@venue.handle}"
-end
-
 # Edit which liquors are available at each venue
-# get '/:venue/liquor'
+get '/admin/:venue/liquor/edit' do
+  @venue = Venue.find_by_handle(params[:venue])
+  @gin = Liquor.by_type("gin")
+  @rum = Liquor.by_type("rum")
+  @tequila = Liquor.by_type("tequila")
+  @vodka = Liquor.by_type("vodka")
+  erb :"/venue/liquor/edit"
+end
 
 # Add a liquor to a venue
 #post '/admin/venue/:id' do
