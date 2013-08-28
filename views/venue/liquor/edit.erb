@@ -10,8 +10,8 @@
         <h3>Vodka</h3>
         <% @vodka.each do |vodka| %>
           <label class="checkbox">
-            <input type="checkbox" name="<%= vodka.id %>" checked>
-            <%= vodka.name %> - <%= @liquor_venue %>
+            <input type="checkbox" name="<%= vodka.id %>">
+            <%= vodka.name %>
           </label>
         <% end %>
       </div>
