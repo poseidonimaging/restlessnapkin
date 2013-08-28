@@ -77,7 +77,7 @@ helpers do
     !session[:uid].nil?
   end
 
- def pretty_date(stamp)
+  def pretty_date(stamp)
    now = Time.new
    diff = now - stamp
    day_diff = ((now - stamp) / 86400).floor
