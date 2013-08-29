@@ -10,7 +10,7 @@
         <h3>Vodka</h3>
         <% @vodka.each do |vodka| %>
           <label class="checkbox">
-            <input type="checkbox" name="<%= vodka.id %>">
+            <input type="checkbox" name="<%= vodka.id %>" <%= @liquor.include?("@vodka.id") ? "checked" : "" %>>
             <%= vodka.name %>
           </label>
         <% end %>
@@ -20,7 +20,7 @@
         <h3>Tequila</h3>
         <% @tequila.each do |tequila| %>
           <label class="checkbox">
-            <input type="checkbox" name="<%= tequila.id %>">
+            <input type="checkbox" name="<%= tequila.id %>" <%= @liquor.include?("tequila.id") ? "checked" : "" %>>
             <%= tequila.name %>
           </label>
         <% end %>
@@ -30,7 +30,7 @@
         <h3>Gin</h3>
         <% @gin.each do |gin| %>
           <label class="checkbox">
-            <input type="checkbox" name="<%= gin.id %>">
+            <input type="checkbox" name="<%= gin.id %>" <%= @liquor.include?("gin.id") ? "checked" : "" %>>
             <%= gin.name %>
           </label>
         <% end %>
@@ -40,7 +40,7 @@
         <h3>Rum</h3>
         <% @rum.each do |rum| %>
           <label class="checkbox">
-            <input type="checkbox" name="<%= rum.id %>">
+            <input type="checkbox" name="<%= rum.id %>" <%= @liquor.include?("rum.id") ? "checked" : "" %>>
             <%= rum.name %>
           </label>
         <% end %>
@@ -49,3 +49,23 @@
     </div>
   </form>
 </div>
+
+<script>
+  $(document).ready(function() {
+
+    $("input.checkbox").change(function(){
+      if($(this).is(':checked')){
+        $.ajax({
+          type: "PUT",
+          url: ''.concat("/liquor/checked/", $this.closest(".checkbox").data("###TODO")),
+        })
+      } else {
+        $.ajax({
+        type: "DELETE",
+        url: ''.concat("/liquor/unchecked/", $this.closest(".checkbox").data("###TODO")),
+      })
+      }
+    });
+
+  });
+</script>
