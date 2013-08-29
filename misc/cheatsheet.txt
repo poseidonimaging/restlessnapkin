@@ -60,3 +60,8 @@ $('.add-gin').click(function(e) {
     $('.remove-drink').live("click",function() {
       $(this).closest(".drink").remove();
     });
+
+
+    <%= @liquor.include?("vodka.id") ? "" : "checked" %>
+
+    <% @liquor.each do |liquor| %> <%= liquor.liquor_id %><% end %>

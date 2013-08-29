@@ -45,7 +45,9 @@ end
 get '/:venue/liquor/edit' do
   @venue = Venue.find_by_handle(params[:venue])
   #@liquor = LiquorsVenue.joins(:liquor).where(:venue_id => '#{@venue.id}')
-  @liquor = LiquorsVenue.find_by_venue_id(@venue.id).liquor_id
+  #@liquor = LiquorsVenue.find("1")
+  @liquor = Venue.find(@venue.id).liquors_venues.where(:venue_id => @venue.id)
+  @venues_liquor = @liquor.map { |liquor| liquor.liquor_id }
   @gin = Liquor.by_type("gin")
   @rum = Liquor.by_type("rum")
   @tequila = Liquor.by_type("tequila")
