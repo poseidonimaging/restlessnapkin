@@ -44,20 +44,40 @@ end
 # Edit which liquors are available at each venue
 get '/:venue/liquor/edit' do
   @venue = Venue.find_by_handle(params[:venue])
-  #@liquor = LiquorsVenue.joins(:liquor).where(:venue_id => '#{@venue.id}')
-  #@liquor = LiquorsVenue.find("1")
   @liquor = Venue.find(@venue.id).liquors_venues.where(:venue_id => @venue.id)
-  @venues_liquor = @liquor.map { |liquor| liquor.liquor_id }
+  @liquors_venue = @liquor.map { |liquor| liquor.liquor_id }
   @gin = Liquor.by_type("gin")
   @rum = Liquor.by_type("rum")
   @tequila = Liquor.by_type("tequila")
   @vodka = Liquor.by_type("vodka")
-  #@vodka = Liquor.joins(:liquors_venues).where(:liquor_type => 'vodka')
   erb :"/venue/liquor/edit"
 end
 
-# Add a liquor to a venue
-#post '/admin/venue/:id' do
-#  @venue = Venue.find(params[:id])
-#  erb "The venue is called #{@venue.name} and its handle is #{@venue.handle}"
-#end
+#Add a liquor to a venue
+post '/liquor/checked/:id' do
+  content_type :json
+  @liquors_venue = LiquorsVenue.new
+  @liquors_venue.liquor_id = params[:id]
+  @liquors_venue.venue_id = "1"
+  @liquors_venue.well = false
+  if @liquors_venue.save
+    status 200 # OK
+    { "success" => true }.to_json
+  else
+    status 422 # Unprocessable Entity
+    { "success" => false }.to_json
+  end
+end
+
+#Add a liquor to a venue
+delete '/liquor/unchecked/:id' do
+  content_type :json
+  @liquors_venue = LiquorsVenue.find_by_liquor_id(params[:id]).destroy
+  if @liquors_venue == nil
+    status 200 # OK
+    { "success" => true }.to_json
+  else
+    status 422 # Unprocessable Entity
+    { "success" => false }.to_json
+  end
+end

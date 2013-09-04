@@ -8,41 +8,49 @@
 
       <div class="span3">
         <h3>Vodka</h3>
-        <% @vodka.each do |vodka| %>
-          <label class="checkbox">
-            <input type="checkbox" name="<%= vodka.id %>" <%= @venues_liquor.include?(vodka.id) ? "checked" : "" %>>
-              <%= vodka.name %>
-          </label>
+        <% @vodka.each do |liquor| %>
+          <div id="liquor-<%= liquor.id %>" class="liquor" data-liquor-id="<%= liquor.id %>">
+            <label class="checkbox">
+              <input type="checkbox" name="liquor" <%= @liquors_venue.include?(liquor.id) ? "checked" : "" %>>
+                <%= liquor.name %>
+            </label>
+          </div>
         <% end %>
       </div>
 
       <div class="span3">
         <h3>Tequila</h3>
-        <% @tequila.each do |tequila| %>
-          <label class="checkbox">
-            <input type="checkbox" name="<%= tequila.id %>" <%= @venues_liquor.include?(tequila.id) ? "checked" : "" %>>
-              <%= tequila.name %>
-          </label>
+        <% @tequila.each do |liquor| %>
+          <div id="liquor-<%= liquor.id %>" class="liquor" data-liquor-id="<%= liquor.id %>">
+            <label class="checkbox">
+              <input type="checkbox" name="liquor" <%= @liquors_venue.include?(liquor.id) ? "checked" : "" %>>
+                <%= liquor.name %>
+            </label>
+        </div>
         <% end %>
       </div>
 
       <div class="span3">
         <h3>Gin</h3>
-        <% @gin.each do |gin| %>
-          <label class="checkbox">
-            <input type="checkbox" name="<%= gin.id %>" <%= @venues_liquor.include?(gin.id) ? "checked" : "" %>>
-              <%= gin.name %>
-          </label>
+        <% @gin.each do |liquor| %>
+          <div id="liquor-<%= liquor.id %>" class="liquor" data-liquor-id="<%= liquor.id %>">
+            <label class="checkbox">
+              <input type="checkbox" name="liquor" <%= @liquors_venue.include?(liquor.id) ? "checked" : "" %>>
+                <%= liquor.name %>
+            </label>
+          </div>
         <% end %>
       </div>
 
       <div class="span3">
         <h3>Rum</h3>
-        <% @rum.each do |rum| %>
-          <label class="checkbox">
-            <input type="checkbox" name="<%= rum.id %>" <%= @venues_liquor.include?(rum.id) ? "checked" : "" %>>
-              <%= rum.name %>
-          </label>
+        <% @rum.each do |liquor| %>
+          <div id="liquor-<%= liquor.id %>" class="liquor" data-liquor-id="<%= liquor.id %>">  
+            <label class="checkbox">
+              <input type="checkbox" name="liquor" <%= @liquors_venue.include?(liquor.id) ? "checked" : "" %>>
+                <%= liquor.name %>
+            </label>
+          </div>
         <% end %>
       </div>
 
@@ -52,18 +60,18 @@
 
 <script>
   $(document).ready(function() {
-
-    $("input.checkbox").change(function(){
-      if($(this).is(':checked')){
+    $("input[name='liquor']").change(function(){
+      var $this = $(this);
+      if ($this.is(':checked')) {
         $.ajax({
-          type: "PUT",
-          url: ''.concat("/liquor/checked/", $this.closest(".checkbox").data("###TODO")),
-        })
-      } else {
+          type: "POST",
+          url: ''.concat("/liquor/checked/", $this.closest(".liquor").data("liquor-id")),
+        });
+      }else{
         $.ajax({
-        type: "DELETE",
-        url: ''.concat("/liquor/unchecked/", $this.closest(".checkbox").data("###TODO")),
-      })
+            type: "DELETE",
+            url: ''.concat("/liquor/unchecked/", $this.closest(".liquor").data("liquor-id")),
+        });
       }
     });
 

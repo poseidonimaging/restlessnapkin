@@ -65,3 +65,19 @@ $('.add-gin').click(function(e) {
     <%= @liquor.include?("vodka.id") ? "" : "checked" %>
 
     <% @liquor.each do |liquor| %> <%= liquor.liquor_id %><% end %>
+
+
+
+    var $this = $(this);
+
+      if $this.is(':checked')){
+        $.ajax({
+          type: "POST",
+          url: ''.concat("/liquor/checked/", $this.closest(".liquor").data("liquor-id")),
+        });
+      } else {
+          $.ajax({
+            type: "DELETE",
+            url: ''.concat("/liquor/unchecked/", $this.closest(".liquor").data("liquor-id")),
+          });
+      }
