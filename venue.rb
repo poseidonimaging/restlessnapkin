@@ -31,18 +31,8 @@ post '/admin/venue/add' do
   end
 end
 
-# Show liquors by venue
-get '/:venue/liquor' do
-  @venue = Venue.find_by_handle(params[:venue])
-  @gin = Venue.find(@venue.id).liquors.by_type("gin")
-  @rum = Venue.find(@venue.id).liquors.by_type("rum")
-  @tequila = Venue.find(@venue.id).liquors.by_type("tequila")
-  @vodka = Venue.find(@venue.id).liquors.by_type("vodka")
-  erb :"/venue/liquor"
-end
-
-# Edit which liquors are available at each venue
-get '/:venue/liquor/edit' do
+# Edit which liquors are available per venue
+get '/admin/:venue/liquor/edit' do
   @venue = Venue.find_by_handle(params[:venue])
   @liquor = Venue.find(@venue.id).liquors_venues.where(:venue_id => @venue.id)
   @liquors_venue = @liquor.map { |liquor| liquor.liquor_id }
@@ -51,6 +41,16 @@ get '/:venue/liquor/edit' do
   @tequila = Liquor.by_type("tequila")
   @vodka = Liquor.by_type("vodka")
   erb :"/venue/liquor/edit"
+end
+
+# Show liquors by venue
+get '/:venue/liquor' do
+  @venue = Venue.find_by_handle(params[:venue])
+  @gin = Venue.find(@venue.id).liquors.by_type("gin")
+  @rum = Venue.find(@venue.id).liquors.by_type("rum")
+  @tequila = Venue.find(@venue.id).liquors.by_type("tequila")
+  @vodka = Venue.find(@venue.id).liquors.by_type("vodka")
+  erb :"/venue/liquor"
 end
 
 #Add a liquor to a venue
