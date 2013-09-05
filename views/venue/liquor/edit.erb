@@ -66,6 +66,7 @@
         $.ajax({
           type: "POST",
           url: ''.concat("/liquor/checked/", $this.closest(".liquor").data("liquor-id")),
+          data: "{'venue':'<%= @venue.id %>'}"
         });
       }else{
         $.ajax({
