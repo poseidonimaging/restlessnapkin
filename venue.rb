@@ -73,7 +73,7 @@ end
 delete '/liquor/unchecked/:id' do
   content_type :json
   @liquors_venue = LiquorsVenue.find_by_liquor_id(params[:id]).destroy
-  if @liquors_venue == nil
+  if @liquors_venue.destroy
     status 200 # OK
     { "success" => true }.to_json
   else
