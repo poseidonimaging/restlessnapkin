@@ -1,0 +1,19 @@
+<div id='content'>
+
+  <form action="/charge" method="post" class="payment">
+    <article>
+      <label class="amount">
+        <span>Amount: $24.00</span>
+      </label>
+    </article>
+
+    <script src="https://checkout.stripe.com/v2/checkout.js" 
+    class="stripe-button"
+    data-key="<%= settings.publishable_key %>" 
+    data-amount="2400"
+    data-description="2 Connecticut Rolls ($24.00)"
+    data-name="restlessnapkin"
+    data-image="https://si0.twimg.com/profile_images/1104245949/restless_napkin_avatar.png"></script>
+  </form>
+
+</div>

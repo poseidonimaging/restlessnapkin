@@ -12,6 +12,7 @@ require "omniauth"
 require "omniauth-twitter"
 require "omniauth-oauth2"
 require "rest-client"
+require "stripe"
 require "./models"
 load "./order_process.rb"
 load "./order_views.rb"
@@ -94,6 +95,14 @@ helpers do
   #end
 end
 
+ENV['PUBLISHABLE_KEY'] = 'pk_test_bxk512tPGSEZPnVoODbM2DMp'
+ENV['SECRET_KEY'] = 'sk_test_RIfykqVEJDdsKa5AvbCnUAtf'
+
+set :publishable_key, ENV['PUBLISHABLE_KEY']
+set :secret_key, ENV['SECRET_KEY']
+
+Stripe.api_key = settings.secret_key
+
 # Starting routes
 
 get '/mprinter' do
@@ -134,6 +143,31 @@ end
 get '/auth/failure' do
   flash[:notice] = params[:message] # if using sinatra-flash or rack-flash
   redirect '/'
+end
+
+# Stripe
+
+get '/charge' do
+  erb :chargeform
+end
+
+post '/charge' do
+  # Amount in cents
+  @amount = 2400
+
+  customer = Stripe::Customer.create(
+    :email => 'customer@example.com',
+    :card  => params[:stripeToken]
+  )
+
+  charge = Stripe::Charge.create(
+    :amount      => @amount,
+    :description => 'Sinatra Charge',
+    :currency    => 'usd',
+    :customer    => customer.id
+  )
+
+  erb :charge
 end
 
 get '/example.json' do

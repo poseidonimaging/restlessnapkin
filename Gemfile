@@ -10,6 +10,7 @@ gem "omniauth"
 gem "omniauth-oauth2"
 gem "omniauth-twitter"
 gem "rest-client"
+gem "stripe"
 
 group :production, :staging do
 	gem "mysql2"
