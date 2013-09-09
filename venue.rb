@@ -58,7 +58,7 @@ post '/liquor/checked/:id' do
   content_type :json
   @liquors_venue = LiquorsVenue.new
   @liquors_venue.liquor_id = params[:id]
-  @liquors_venue.venue_id = "1"
+  @liquors_venue.venue_id = params[:venue]
   @liquors_venue.well = false
   if @liquors_venue.save
     status 200 # OK
