@@ -2,8 +2,7 @@
 
   <h3><%= @venue.name %> near <%= @location %> via <%= session[:phone] %></h3>
 
-  <div class="menu" style="background-color: #eeeeee; color: #555555;">
-    <h2 style="padding-left:10px;"><a href="#add-drink-modal" data-toggle="modal">Add Drink</a></h2>
+  
 
     <div id="add-drink-modal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">
       <div class="modal-header">
@@ -17,7 +16,7 @@
         <h3><a href="#" class="add-rum" data-dismiss="modal" aria-hidden="true">Rum</a></h3>
       </div>
     </div>
-  </div>
+ 
 
   <div class="gin-template" style="padding:10px; display: none;">
     <input type="hidden" class="drink_value" />
@@ -230,8 +229,8 @@
   <form action='/orders' method='post' class="form-horizontal">
     <div class="drinks-container"></div>
 
-    <div style="text-align:center;">
-      <h3><a href="#add-drink-modal" data-toggle="modal"><i class="icon-plus-sign icon-large"></i></a></h3>
+    <div class="menu" style="background-color: #eeeeee; color: #555555;">
+      <h2 style="padding-left:10px;"><a href="#add-drink-modal" data-toggle="modal">Add Drink</a></h2>
     </div>
 
     <br />
@@ -239,9 +238,11 @@
     <p><input class="btn btn-large btn-info" style="float:right;" type='submit' value='Send Drink Order'></p>
   </form>
 
-  <form action='/orders/drinks' method='post' class="form-horizontal">
-    <p><input class="btn btn-large btn-danger" type='submit' value='Reset'></p>
-  </form>
+  <div style="margin-top: -20px">
+    <form action='/orders/drinks' method='post' class="form-horizontal">
+      <p><input class="btn btn-large btn-danger" type='submit' value='Reset'></p>
+    </form>
+  </div>
 </div>
 
 <script>
