@@ -5,13 +5,13 @@
     <div id="order-<%= order.id %>" class="row-fluid order" data-order-id="<%= order.id %>" style="<% if order.received_at.nil? %>background-color: #A21721; color: white;<% else %>background-color: #eeeeee; color: #555555;<% end %>">
  
       <div class="order-not-received <%= "hide" unless order.received_at.nil? %>">
-        <div class="span6" style="padding:25px;" >
+        <div class="span9" style="padding:25px;" >
           <div class="top-row"><h3><%= order.lastname %>, <%= order.firstname %></h3></div>
           <div class="main-row"><h1>Order <%= order.id.to_s.rjust(2, "0")[-2..-1] %></h1></div>
           <div class="bottom-row"><h3>Time</h3></div>
         </div>
 
-        <div class="span3 offset3" style="color: #e0e1de">
+        <div class="span2 offset1" style="color: #e0e1de">
           <div class="not-received">
             <h2><i class="icon-circle icon-4x"></i></h2>
           </div>
@@ -19,13 +19,18 @@
       </div>
 
       <div class="order-received <%= "hide" if order.received_at.nil? %>">
-        <div class="span6" style="padding:25px;" >
-          <div class="top-row"><h3><%= order.lastname %>, <%= order.firstname %></h3></div>
-          <div class="main-row"><h1><%= order.drinks_1 %></h1></div>
-          <div class="bottom-row"><h3>Order <%= order.id.to_s.rjust(2, "0")[-2..-1] %> - Time</h3></div>
+        <div class="span9" style="padding:25px;" >
+          <div class="top-row"><h3><a><%= order.lastname %>, <%= order.firstname %></a></h3></div>
+          <div class="main-row">
+            <h1><%= order.drinks_1 %></h1>
+            <h1><%= order.drinks_2 %></h1>
+            <h1><%= order.drinks_3 %></h1>
+            <h1><%= order.drinks_4 %></h1>
+          </div>
+          <div class="bottom-row"><h3><a>Order <%= order.id.to_s.rjust(2, "0")[-2..-1] %> - Time</a></h3></div>
         </div>
 
-        <div class="span3 offset3" style="color: #e0e1de">
+        <div class="span2 offset1" style="color: #e0e1de">
           <div class="received">
             <h2><i class="icon-remove-circle icon-4x"></i></h2>
           </div>
