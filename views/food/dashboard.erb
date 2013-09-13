@@ -1,0 +1,44 @@
+<div id='content'>
+
+  <div class="row">
+
+    <div class="span6">
+      <h1><%= @venue %>'s Items</h1> <br />
+
+        <% @item.each do |item| %>
+          <h3><%= item.name %> - <%= item.price %></h3>
+          <p><%= item.description %></p>
+          <hr>
+        <% end %>
+    </div>
+
+    <div class="span4">
+      <h1>Add a New Menu Item</h1> <br />
+
+        <form action='/admin/food/add' method='post' class="form-horizontal">
+          <p>
+            <input class="span3" type="text" name='name' placeholder="Name">
+          </p>
+
+          <p>
+            <input class="span3" type="text" name='description' placeholder="Description">
+          </p>
+
+          <p>
+            <input class="span3" type="text" name='price' placeholder="Price">
+          </p>
+
+          <p>
+            <input class="span3" type="hidden" name='venue_id' value='<%= @venue.id %>'>
+          </p>
+
+          <p>
+            <input class="span3" type="hidden" name='venue' value='<%= @venue.handle %>'>
+          </p>
+
+          <p><input class="btn btn-large btn-info" type='submit' value='Add Item'></p>
+        </form>
+    </div>
+
+  </div>
+</div>

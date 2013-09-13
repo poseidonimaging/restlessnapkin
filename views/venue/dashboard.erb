@@ -6,7 +6,7 @@
       <h1>All Venues</h1> <br />
 
         <% @venue.each do |venue| %>
-          <h4><b><%= venue.name %></b> | @<%= venue.handle %> | <a href='/admin/<%= venue.handle %>/liquor/edit'>Edit Liquors</a></h4>
+          <h4><b><%= venue.name %></b> | @<%= venue.handle %> | <a href='/admin/<%= venue.handle %>/liquor/edit'>Edit Liquors</a> | <a href='/admin/<%= venue.handle %>/food/dashboard'>Edit Food</a></h4>
           <hr>
         <% end %>
     </div>

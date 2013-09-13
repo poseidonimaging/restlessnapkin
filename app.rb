@@ -19,6 +19,7 @@ load "./order_views.rb"
 load "./barkeeper.rb"
 load "./venue.rb"
 load "./liquor.rb"
+load "./food.rb"
 load "./admin.rb"
 
 configure do
