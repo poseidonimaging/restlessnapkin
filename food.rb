@@ -13,7 +13,7 @@ post '/admin/food/add' do
   @item.price = params[:price]
   @item.venue_id = params[:venue_id]
   if @item.save
-    redirect "/admin/#{venue}/food/edit"
+    redirect "/admin/#{@item.venue_id}/food/edit"
   else
     erb :"/admin/dashboard"
   end
