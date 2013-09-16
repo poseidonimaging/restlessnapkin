@@ -3,7 +3,7 @@
   <div class="row">
 
     <div class="span6">
-      <h1><%= @venue %>'s Items</h1> <br />
+      <h1><%= @venue.name %>'s Items</h1> <br />
 
         <% @item.each do |item| %>
           <h3><%= item.name %> - <%= item.price %></h3>
