@@ -7,13 +7,14 @@ end
 
 # Add a menu item
 post '/admin/food/add' do
+  @venue = params[:venue]
   @item = MenuItem.new
   @item.name = params[:name]
   @item.description = params[:description]
   @item.price = params[:price]
   @item.venue_id = params[:venue_id]
   if @item.save
-    redirect "/admin/#{@item.venue_id}/food/edit"
+    redirect "/admin/#{@venue}/food/edit"
   else
     erb :"/admin/dashboard"
   end
