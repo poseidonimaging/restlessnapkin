@@ -1,5 +1,12 @@
 <div id='content'>
 
+  <h2><%= @venue.name %>'s Items</h2>
+    <% @item.each do |item| %>
+      <h3><%= item.name %> - <%= item.price %></h3>
+      <p><%= item.description %></p>
+      <hr>
+    <% end %>
+
   <form action="/charge" method="post" class="payment">
     <article>
       <label class="amount">
@@ -13,7 +20,8 @@
     data-amount="2400"
     data-description="2 Connecticut Rolls ($24.00)"
     data-name="restlessnapkin"
-    data-image="https://si0.twimg.com/profile_images/1104245949/restless_napkin_avatar.png"></script>
+    data-image="https://si0.twimg.com/profile_images/1104245949/restless_napkin_avatar.png">
+    </script>
   </form>
 
 </div>
