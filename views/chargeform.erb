@@ -1,13 +1,17 @@
 <div id='content'>
 
-  <h2><%= @venue.name %>'s Items</h2>
+ <h2><%= @venue.name %>'s Items</h2>
     <% @item.each do |item| %>
-      <h3><%= item.name %> - <%= item.price %></h3>
-      <p><%= item.description %></p>
+      <div class="<%= item.id %>">
+        <h3><%= item.name %> - <%= item.price %></h3>
+        <p><%= item.description %></p>
+      </div>
+
       <hr>
-    <% end %>
+    <% end %> 
 
   <form action="/charge" method="post" class="payment">
+
     <article>
       <label class="amount">
         <span>Amount: $24.00</span>
@@ -25,3 +29,19 @@
   </form>
 
 </div>
+
+<script>
+  $(document).ready(function() {
+    i = 1;
+      $(document).on("change", "input.quantity, select.liquor, select.mixer, select.garnish", function () {
+          var $this = $(this);
+          var $item = $this.closest(".drink").find(".drink_value");
+          var quantity = $this.closest(".drink").find("input.quantity").val();
+          var liquor = $this.closest(".drink").find("select.liquor").val();
+          var mixer = $this.closest(".drink").find("select.mixer").val();
+          var garnish = $this.closest(".drink").find("select.garnish").val();
+
+          $drink.val(quantity + "x " + liquor + " " + mixer + " with a " + garnish);
+        });
+  });
+</script>
