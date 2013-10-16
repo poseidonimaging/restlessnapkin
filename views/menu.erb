@@ -248,96 +248,108 @@
 <script>
   $(document).ready(function() {
     i = 1;
-
+    max = 5;
 
         $('.add-drink').click(function(e) {
           e.preventDefault();
-
-          $(".drink-template")
-            .clone()
-            .show()
-            .removeClass("drink-template")
-            .addClass("drink")
-            .find("input.drink_value")
-              .attr("name", "order[drinks_" + i + "]")
-            .end()
-            .appendTo(".drinks-container");
-          i++;
+          if (i < max)
+          {
+            $(".drink-template")
+              .clone()
+              .show()
+              .removeClass("drink-template")
+              .addClass("drink")
+              .find("input.drink_value")
+                .attr("name", "order[drinks_" + i + "]")
+              .end()
+              .appendTo(".drinks-container");
+            i++;
+          }
         });
 
         $('.add-gin').click(function(e) {
           e.preventDefault();
-
-          $(".gin-template")
-            .clone()
-            .show()
-            .removeClass("gin-template")
-            .addClass("drink")
-            .find("input.drink_value")
-              .attr("name", "order[drinks_" + i + "]")
-            .end()
-            .appendTo(".drinks-container");
-          i++;  
+          if (i < max)
+          {
+            $(".gin-template")
+              .clone()
+              .show()
+              .removeClass("gin-template")
+              .addClass("drink")
+              .find("input.drink_value")
+                .attr("name", "order[drinks_" + i + "]")
+              .end()
+              .appendTo(".drinks-container");
+            i++;
+          }
         });
 
         $('.add-rum').click(function(e) {
           e.preventDefault();
-
-          $(".rum-template")
-            .clone()
-            .show()
-            .removeClass("rum-template")
-            .addClass("drink")
-            .find("input.drink_value")
-              .attr("name", "order[drinks_" + i + "]")
-            .end()
-            .appendTo(".drinks-container");
-          i++;
+          if (i < max)
+          {
+            $(".rum-template")
+              .clone()
+              .show()
+              .removeClass("rum-template")
+              .addClass("drink")
+              .find("input.drink_value")
+                .attr("name", "order[drinks_" + i + "]")
+              .end()
+              .appendTo(".drinks-container");
+            i++;
+          }
         });
 
         $('.add-tequila').click(function(e) {
           e.preventDefault();
-
-          $(".tequila-template")
-            .clone()
-            .show()
-            .removeClass("tequila-template")
-            .addClass("drink")
-            .find("input.drink_value")
-              .attr("name", "order[drinks_" + i + "]")
-            .end()
-            .appendTo(".drinks-container");
-          i++;
+          if (i < max)
+          {
+            $(".tequila-template")
+              .clone()
+              .show()
+              .removeClass("tequila-template")
+              .addClass("drink")
+              .find("input.drink_value")
+                .attr("name", "order[drinks_" + i + "]")
+              .end()
+              .appendTo(".drinks-container");
+            i++;
+          }
         });
 
         $('.add-vodka').click(function(e) {
           e.preventDefault();
-
-          $(".vodka-template")
-            .clone()
-            .show()
-            .removeClass("vodka-template")
-            .addClass("drink")
-            .find("input.drink_value")
-              .attr("name", "order[drinks_" + i + "]")
-            .end()
-            .appendTo(".drinks-container");
-          i++;
+          if (i < max)
+          {
+            $(".vodka-template")
+              .clone()
+              .show()
+              .removeClass("vodka-template")
+              .addClass("drink")
+              .find("input.drink_value")
+                .attr("name", "order[drinks_" + i + "]")
+              .end()
+              .appendTo(".drinks-container");
+            i++;
+          }
         });
 
         $('.whisky-drink').click(function(e) {
           e.preventDefault();
-
-          $(".whisky-template")
-            .clone()
-            .show()
-            .removeClass("whisky-template")
-            .addClass("drink")
-            .find("input.drink_value")
-              .attr("name", "order[drinks_" + i + "]")
-            .end()
-            .appendTo(".drinks-container");
-          i++;
+          if (i < max)
+          {
+            $(".whisky-template")
+              .clone()
+              .show()
+              .removeClass("whisky-template")
+              .addClass("drink")
+              .find("input.drink_value")
+                .attr("name", "order[drinks_" + i + "]")
+              .end()
+              .appendTo(".drinks-container");
+            i++;
+          }
         });
 
         $(document).on("change", "input.quantity, select.liquor, select.mixer, select.garnish", function () {
@@ -348,7 +360,7 @@
           var mixer = $this.closest(".drink").find("select.mixer").val();
           var garnish = $this.closest(".drink").find("select.garnish").val();
 
-          $drink.val(quantity + "x " + liquor + " " + mixer + " with a " + garnish);
+          $drink.val(quantity + "x " + liquor + " " + mixer + " with a/an " + garnish);
         });
   });
 
