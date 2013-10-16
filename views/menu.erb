@@ -2,21 +2,18 @@
 
   <h3><%= @venue.name %> near <%= @location %> via <%= session[:phone] %></h3>
 
-  
-
-    <div id="add-drink-modal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-        <h3 id="ModalLabel">Pick Drink Type</h3>
-      </div>
-      <div class="modal-body">
-        <h3><a href="#" class="add-vodka" data-dismiss="modal" aria-hidden="true">Vodka</a></h3>
-        <h3><a href="#" class="add-tequila" data-dismiss="modal" aria-hidden="true">Tequila</a></h3>
-        <h3><a href="#" class="add-gin" data-dismiss="modal" aria-hidden="true">Gin</a></h3>
-        <h3><a href="#" class="add-rum" data-dismiss="modal" aria-hidden="true">Rum</a></h3>
-      </div>
+  <div id="add-drink-modal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="ModalLabel" aria-hidden="true">
+    <div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+      <h3 id="ModalLabel">Pick Drink Type</h3>
     </div>
- 
+    <div class="modal-body">
+      <h3><a href="#" class="add-vodka" data-dismiss="modal" aria-hidden="true">Vodka</a></h3>
+      <h3><a href="#" class="add-tequila" data-dismiss="modal" aria-hidden="true">Tequila</a></h3>
+      <h3><a href="#" class="add-gin" data-dismiss="modal" aria-hidden="true">Gin</a></h3>
+      <h3><a href="#" class="add-rum" data-dismiss="modal" aria-hidden="true">Rum</a></h3>
+    </div>
+  </div>
 
   <div class="gin-template" style="padding:10px; display: none;">
     <input type="hidden" class="drink_value" />
