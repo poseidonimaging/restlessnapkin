@@ -1,5 +1,5 @@
-# Edit menu items
-get '/:venue/food/menu' do
+# Test charge
+get '/test/:venue/food/menu' do
   @venue = Venue.find_by_handle(params[:venue])
   @item = MenuItem.where(:venue_id => @venue.id)
   erb :chargeform

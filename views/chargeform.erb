@@ -1,14 +1,20 @@
 <div id='content'>
 
- <h2><%= @venue.name %>'s Items</h2>
-    <% @item.each do |item| %>
-      <div class="<%= item.id %>">
-        <h3><%= item.name %> - <%= item.price %></h3>
-        <p><%= item.description %></p>
-      </div>
-
-      <hr>
-    <% end %> 
+  <div class="item-container">
+    <h2><%= @venue.name %>'s Items</h2>
+      <% @item.each do |item| %>
+        <div class="add-item">
+           <div class="item-template"> 
+            <div class="<%= item.id %>">
+              <h3><%= item.name %> - <%= item.price %></h3>
+              <p><%= item.description %></p>
+            </div>
+          </div>
+        </div>
+        <hr>
+      <% end %> 
+    <hr>
+  </div>
 
   <form action="/charge" method="post" class="payment">
 
@@ -21,8 +27,8 @@
     <script src="https://checkout.stripe.com/v2/checkout.js" 
     class="stripe-button"
     data-key="<%= settings.publishable_key %>" 
-    data-amount="2400"
-    data-description="2 Connecticut Rolls ($24.00)"
+    data-amount=pennies
+    data-description=
     data-name="restlessnapkin"
     data-image="https://si0.twimg.com/profile_images/1104245949/restless_napkin_avatar.png">
     </script>
@@ -33,15 +39,35 @@
 <script>
   $(document).ready(function() {
     i = 1;
-      $(document).on("change", "input.quantity, select.liquor, select.mixer, select.garnish", function () {
-          var $this = $(this);
-          var $item = $this.closest(".drink").find(".drink_value");
-          var quantity = $this.closest(".drink").find("input.quantity").val();
-          var liquor = $this.closest(".drink").find("select.liquor").val();
-          var mixer = $this.closest(".drink").find("select.mixer").val();
-          var garnish = $this.closest(".drink").find("select.garnish").val();
+    max = 5;
 
-          $drink.val(quantity + "x " + liquor + " " + mixer + " with a " + garnish);
+      $('.add-item').click(function(e) {
+          e.preventDefault();
+          if (i < max)
+          {
+            $(".item-template")
+              .clone()
+              .show()
+              .removeClass("item-template")
+              .addClass("item")
+              .find("input.item_value")
+                .attr("name", "order[drinks_" + i + "]", )
+              .end()
+              .appendTo(".drinks-container");
+            i++;
+          }
+        });
+
+      $(document).on("change", function () {
+          var $this = $(this);
+          var $item = $this.closest(".item").find(".item_value");
+          var quantity = $this.closest(".item").find("input.quantity").val();
+          var name = $this.closest(".item").find(".name").val();
+          var price = $this.closest(".item").find(".price").val();
+          var subtotal = $this.closest(".item").find(".price").val() + subtotal;
+          var pennies = subtotal*100
+
+          $item.val(quantity + "x " + name + " " + "($" + subtotal + ")");
         });
   });
 </script>
