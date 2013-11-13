@@ -2,72 +2,131 @@
 
   <div class="item-container">
     <h2><%= @venue.name %>'s Items</h2>
-      <% @item.each do |item| %>
+      <div data-bind="foreach: items" /> 
         <div class="add-item">
            <div class="item-template"> 
-            <div class="<%= item.id %>">
-              <h3><%= item.name %> - <%= item.price %></h3>
-              <p><%= item.description %></p>
+            <div data-bind="attr: { class: item_id }">
+              <div class="item-name-price">
+                <h3><span data-bind="text: item_name"></span> - <span data-bind="text: item_price"></span></h3>
+                <a data-bind="click: $parent.addToCart" href="#" class="btn btn-mini btn-success">
+                  <i class="icon-plus icon-white"></i> Add
+                </a>
+              </div>
+              <div class="item-description">
+                <p data-bind="text: item_description"></p>
+              </div>
             </div>
           </div>
         </div>
         <hr>
-      <% end %> 
+    </div>
     <hr>
   </div>
 
-  <form action="/charge" method="post" class="payment">
+  <div data-bind="css: { 'navbar navbar-inner checkout' : total() > 0 } ">
+    <div data-bind="foreach: cart">
+      <div class="cart_item">
+        <span data-bind="text:$data.quantity, css: 'item_quantity' "></span>
+        <span data-bind="text:$data.product().item_name, css: 'item_name' "></span>
+        <span data-bind="css:, 'item_price'">$<span data-bind="text:$data.product().item_price"></span></span>
+        <a href="#" class="btn btn-mini btn-danger" data-bind="click:$parent.removeFromCart">
+          <i class="icon-remove icon-white"></i> Remove
+        </a>
+      </div>
+    </div>
+    <form action="/charge" method="post" class="payment" data-bind="visible: total() > 0">
+      <article>
+        <label class="amount">
+          <!--<span>Amount: $24.00</span>-->
+        </label>
+        <h3 data-bind="visible: total() > 0">
+          Total: $<span data-bind="text: total()"></span>
+        </h3>
+      </article>
 
-    <article>
-      <label class="amount">
-        <span>Amount: $24.00</span>
-      </label>
-    </article>
-
-    <script src="https://checkout.stripe.com/v2/checkout.js" 
-    class="stripe-button"
-    data-key="<%= settings.publishable_key %>" 
-    data-amount="2400"
-    data-description="food"
-    data-name="restlessnapkin"
-    data-image="https://si0.twimg.com/profile_images/1104245949/restless_napkin_avatar.png">
-    </script>
-  </form>
-
+      <script src="https://checkout.stripe.com/v2/checkout.js" 
+      class="stripe-button"
+      data-key="<%= settings.publishable_key %>" 
+      data-bind="attr: { 'data-amount': total() }"
+      data-description="food"
+      data-name="restlessnapkin"
+      data-image="https://si0.twimg.com/profile_images/1104245949/restless_napkin_avatar.png">
+      </script>
+    </form>
+  </div>
 </div>
 
-<script>
-  $(document).ready(function() {
-    i = 1;
-    max = 5;
+<script type="text/javascript">
+  function formatCurrency(value) {
+      return "$" + value.toFixed(2);
+  }
 
-      $('.add-item').click(function(e) {
-          e.preventDefault();
-          if (i < max)
-          {
-            $(".item-template")
-              .clone()
-              .show()
-              .removeClass("item-template")
-              .addClass("item")
-              .find("input.item_value")
-                .attr("name", "order[drinks_" + i + "]", )
-              .end()
-              .appendTo(".drinks-container");
-            i++;
-          }
+  function CartItem(item, quantity){
+    var self      = this; // Scope Trick
+ 
+    self.product  = ko.observable(item);
+    self.quantity = ko.observable(quantity || 1);
+   
+    self.cost = ko.computed(function(){
+      return self.product().item_price() * self.quantity();
+    });
+  }
+
+  function Item(cosa){
+    var self = this;
+    self.item = ko.observable(cosa);
+    self.item_id = ko.observable(cosa.id);
+    self.item_name = ko.observable(cosa.name);
+    self.item_price = ko.observable(cosa.price);
+    self.item_description = ko.observable(cosa.description);
+  }
+
+  function ItemsViewModel(items){
+    var self = this;
+    self.items = ko.observableArray(); 
+    self.cart  = ko.observableArray();
+
+    var mappedItems = $.map(items, function (item) {
+        var this_item = item.menu_item;
+        var cosa = {
+            created_at: this_item.created_at, description: this_item.description, 
+            id: this_item.id, name: this_item.name, updated_at: this_item.updated_at, 
+            venue_id: this_item.venue_id, price: this_item.price
+        };
+        return new Item(cosa);
+    });
+
+    self.items = ko.observableArray(mappedItems);
+
+    self.subtotal = ko.computed(function(){
+        var subtotal = 0;
+        $(self.cart()).each(function(index, cart_item){
+          subtotal += cart_item.cost() * cart_item.quantity();
         });
+        return subtotal;
+    });
 
-      $(document).on("change", function () {
-          var $this = $(this);
-          var $item = $this.closest(".item").find(".item_value");
-          var quantity = $this.closest(".item").find("input.quantity").val();
-          var name = $this.closest(".item").find(".name").val();
-          var price = $this.closest(".item").find(".price").val();
-          var subtotal = $this.closest(".item").find(".price").val() + subtotal;
-          var pennies = subtotal*100
+    self.total = ko.computed(function(){
+      return self.subtotal();
+    });
 
-          $item.val(quantity + "x " + name + " " + "($" + subtotal + ")");
-        });
-  });
+    self.addToCart = function(item, event) {
+      // Instantiate a new CartItem object using the passed
+      // in `Product` object, and then set a quantity of 1.
+
+      var _item = new CartItem(item, 1);
+      // Add the CartItem instance to the self.cart (Observable Array)
+      
+      self.cart.push(_item);
+    };
+
+     self.removeFromCart = function(cart_item, event) {
+      //Remove the `cart_item` (which is a `CartItem` instance) from self.cart
+      self.cart.remove(cart_item);
+    };
+  }
+
+  item_json = <%= (@item.to_json) %>;
+  ko.applyBindings(new ItemsViewModel(item_json));
+
 </script>
