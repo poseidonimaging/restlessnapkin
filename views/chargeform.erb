@@ -7,10 +7,12 @@
            <div class="item-template"> 
             <div data-bind="attr: { class: item_id }">
               <div class="item-name-price">
-                <h3><span data-bind="text: item_name"></span> - <span data-bind="text: item_price"></span></h3>
-                <a data-bind="click: $parent.addToCart" href="#" class="btn btn-mini btn-success">
-                  <i class="icon-plus icon-white"></i> Add
-                </a>
+                <h3>
+                  <span data-bind="text: item_name"></span> - <span data-bind="text: item_price"></span>
+                  <a data-bind="click: $parent.addToCart" href="#" class="btn btn-mini btn-success">
+                    <i class="icon-plus icon-white"></i> Add
+                  </a>
+                </h3>
               </div>
               <div class="item-description">
                 <p data-bind="text: item_description"></p>
@@ -26,23 +28,23 @@
   <div data-bind="css: { 'navbar navbar-inner checkout' : total() > 0 } ">
     <div data-bind="foreach: cart">
       <div class="cart_item">
-        <span data-bind="text:$data.quantity, css: 'item_quantity' "></span>
-        <span data-bind="text:$data.product().item_name, css: 'item_name' "></span>
-        <span data-bind="css:, 'item_price'">$<span data-bind="text:$data.product().item_price"></span></span>
-        <a href="#" class="btn btn-mini btn-danger" data-bind="click:$parent.removeFromCart">
-          <i class="icon-remove icon-white"></i> Remove
-        </a>
+        <h3>
+          <span data-bind="text:$data.quantity, css: 'item_quantity' "></span>
+          <span data-bind="text:$data.product().item_name, css: 'item_name' "></span>
+          <span data-bind="css:, 'item_price'">$<span data-bind="text:$data.product().item_price"></span></span>
+          <a href="#" class="btn btn-mini btn-danger" data-bind="click:$parent.removeFromCart">
+            <i class="icon-remove icon-white"></i> Remove
+          </a>
+        </h3>
       </div>
     </div>
     <form action="/charge" method="post" class="payment" data-bind="visible: total() > 0">
       <article>
-        <label class="amount">
-          <!--<span>Amount: $24.00</span>-->
-        </label>
         <h3 data-bind="visible: total() > 0">
           Total: $<span data-bind="text: total()"></span>
         </h3>
       </article>
+      <a href="#" class="btn btn btn-warning" data-bind="click: clearCart">Clear Checkout</a>
 
       <script src="https://checkout.stripe.com/v2/checkout.js" 
       class="stripe-button"
@@ -52,6 +54,7 @@
       data-name="restlessnapkin"
       data-image="https://si0.twimg.com/profile_images/1104245949/restless_napkin_avatar.png">
       </script>
+
     </form>
   </div>
 </div>
@@ -62,14 +65,18 @@
   }
 
   function CartItem(item, quantity){
-    var self      = this; // Scope Trick
+    var self = this; // Scope Trick
  
     self.product  = ko.observable(item);
     self.quantity = ko.observable(quantity || 1);
    
     self.cost = ko.computed(function(){
+      console.log('self.product().item_price(): ' + self.product().item_price());
+      console.log('self.quantity(): ' + self.quantity());
       return self.product().item_price() * self.quantity();
     });
+
+    //console.log(self.product().item_id());
   }
 
   function Item(cosa){
@@ -111,18 +118,37 @@
     });
 
     self.addToCart = function(item, event) {
-      // Instantiate a new CartItem object using the passed
-      // in `Product` object, and then set a quantity of 1.
+      var current_cart = self.cart();
 
-      var _item = new CartItem(item, 1);
-      // Add the CartItem instance to the self.cart (Observable Array)
+      var oldCartItems = ko.utils.arrayFirst(self.cart(), function (cosa) {
+          return cosa.product().item_id() == item.item_id();
+      });
       
-      self.cart.push(_item);
+      if(oldCartItems != undefined){
+        console.log('item name: ' + oldCartItems.product().item_name());
+        console.log('item price: ' + oldCartItems.product().item_price());
+        console.log('quantity: ' + oldCartItems.quantity());
+        console.log('id: ' + oldCartItems.product().item_id());
+        self.cart.replace(oldCartItems, new CartItem(item, oldCartItems.quantity() + 1));
+      }
+      else{
+        // Instantiate a new CartItem object using the passed
+        // in `Product` object, and then set a quantity of 1.
+        var _item = new CartItem(item, 1);
+        // Add the CartItem instance to the self.cart (Observable Array)
+        //console.log(_item.product().item_price());
+
+        self.cart.push(_item);
+      }
     };
 
      self.removeFromCart = function(cart_item, event) {
       //Remove the `cart_item` (which is a `CartItem` instance) from self.cart
       self.cart.remove(cart_item);
+    };
+
+    self.clearCart = function () {
+        self.cart([]);
     };
   }
 
@@ -130,3 +156,15 @@
   ko.applyBindings(new ItemsViewModel(item_json));
 
 </script>
+
+<style type="text/css">
+.cart_item h3, .payment article h3{
+  color: white;
+}
+
+.item_quantity{
+  padding: 0 10px 0 10px;
+  background-color: #FFF;
+  color: #000;
+}
+</style>
