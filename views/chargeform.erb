@@ -71,12 +71,8 @@
     self.quantity = ko.observable(quantity || 1);
    
     self.cost = ko.computed(function(){
-      console.log('self.product().item_price(): ' + self.product().item_price());
-      console.log('self.quantity(): ' + self.quantity());
       return self.product().item_price() * self.quantity();
     });
-
-    //console.log(self.product().item_id());
   }
 
   function Item(cosa){
@@ -108,8 +104,14 @@
     self.subtotal = ko.computed(function(){
         var subtotal = 0;
         $(self.cart()).each(function(index, cart_item){
-          subtotal += cart_item.cost() * cart_item.quantity();
+          if(cart_item.quantity() > 1){
+            subtotal += cart_item.cost();
+          }
+          else{
+            subtotal += cart_item.cost() * cart_item.quantity();
+          }
         });
+
         return subtotal;
     });
 
@@ -125,25 +127,15 @@
       });
       
       if(oldCartItems != undefined){
-        console.log('item name: ' + oldCartItems.product().item_name());
-        console.log('item price: ' + oldCartItems.product().item_price());
-        console.log('quantity: ' + oldCartItems.quantity());
-        console.log('id: ' + oldCartItems.product().item_id());
         self.cart.replace(oldCartItems, new CartItem(item, oldCartItems.quantity() + 1));
       }
       else{
-        // Instantiate a new CartItem object using the passed
-        // in `Product` object, and then set a quantity of 1.
         var _item = new CartItem(item, 1);
-        // Add the CartItem instance to the self.cart (Observable Array)
-        //console.log(_item.product().item_price());
-
         self.cart.push(_item);
       }
     };
 
      self.removeFromCart = function(cart_item, event) {
-      //Remove the `cart_item` (which is a `CartItem` instance) from self.cart
       self.cart.remove(cart_item);
     };
 
