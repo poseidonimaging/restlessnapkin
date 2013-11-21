@@ -3,15 +3,15 @@
   <div class="item-container">
     <h2><%= @venue.name %>'s Items</h2>
       <div data-bind="foreach: items" /> 
-        <div class="add-item">
+        <div class="add-item" data-bind="click: $parent.addToCart">
            <div class="item-template"> 
             <div data-bind="attr: { class: item_id }">
               <div class="item-name-price">
                 <h3>
                   <span data-bind="text: item_name"></span> - <span data-bind="text: item_price"></span>
-                  <a data-bind="click: $parent.addToCart" href="#" class="btn btn-mini btn-success">
+                  <!--<a data-bind="click: $parent.addToCart" href="#" class="btn btn-mini btn-success">
                     <i class="icon-plus icon-white"></i> Add
-                  </a>
+                  </a>-->
                 </h3>
               </div>
               <div class="item-description">
@@ -24,7 +24,7 @@
     </div>
     <hr>
   </div>
-
+  <a href="#" class="scrollup" data-bind="visible: total() > 0, text: 'checkout'"></a>
   <div data-bind="css: { 'navbar navbar-inner checkout' : total() > 0 } ">
     <div data-bind="foreach: cart">
       <div class="cart_item">
@@ -32,9 +32,9 @@
           <span data-bind="text:$data.quantity, css: 'item_quantity' "></span>
           <span data-bind="text:$data.product().item_name, css: 'item_name' "></span>
           <span data-bind="css:, 'item_price'">$<span data-bind="text:$data.product().item_price"></span></span>
-          <a href="#" class="btn btn-mini btn-danger" data-bind="click:$parent.removeFromCart">
+          <!--<a href="#" class="btn btn-mini btn-danger" data-bind="click:$parent.removeFromCart">
             <i class="icon-remove icon-white"></i> Remove
-          </a>
+          </a>-->
         </h3>
       </div>
     </div>
@@ -44,7 +44,11 @@
           Total: $<span data-bind="text: total()"></span>
         </h3>
       </article>
-      <a href="#" class="btn btn btn-warning" data-bind="click: clearCart">Clear Checkout</a>
+      <button type="button" class="btn btn-default btn-lg">
+        <!--<span class="glyphicon glyphicon-circle-arrow-left"></span>-->
+        <span class="glyphicon glyphicon-arrow-left"></span>
+      </button>
+      <a href="#" class="clear_cart" data-bind="click: clearCart">Clear Checkout</a>
 
       <script src="https://checkout.stripe.com/v2/checkout.js" 
       class="stripe-button"
@@ -54,7 +58,7 @@
       data-name="restlessnapkin"
       data-image="https://si0.twimg.com/profile_images/1104245949/restless_napkin_avatar.png">
       </script>
-
+      
     </form>
   </div>
 </div>
@@ -149,6 +153,25 @@
 
 </script>
 
+<script type="text/javascript">
+    $(document).ready(function(){ 
+ 
+        $(window).scroll(function(){
+            if ($(this).scrollTop() > 100) {
+                $('.scrollup').fadeIn();
+            } else {
+                $('.scrollup').fadeOut();
+            }
+        }); 
+ 
+        $('.scrollup').click(function(){
+            $("html, body").animate({ scrollTop: 0 }, 600);
+            return false;
+        });
+ 
+    });
+</script>
+
 <style type="text/css">
 .cart_item h3, .payment article h3{
   color: white;
@@ -156,7 +179,37 @@
 
 .item_quantity{
   padding: 0 10px 0 10px;
-  background-color: #FFF;
+  background-color: #C5C5C5;
   color: #000;
+  border-radius: 20px;
+}
+
+.clear_cart, .clear_cart:hover {
+  text-decoration: none;
+  color: #F00;
+  border: 1px #F00 solid;
+  padding: 5px;
+}
+
+.payment article h3{
+  font-weight: normal !important;
+}
+
+.item-container h2{
+  border-bottom: 5px solid #CCC;
+}
+
+.scrollup, .scrollup:hover{
+    width: 9%;
+    height: 40px;
+    position: fixed;
+    top: 48%;
+    left: 55%;
+    display: none;
+    color: #FFF !important;
+    background-color: #1B2125;
+    border-radius: 21px;
+    text-decoration: none;
+    text-indent: 75px;
 }
 </style>
