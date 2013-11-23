@@ -12,6 +12,7 @@ gem "omniauth-twitter"
 gem "rest-client"
 gem "stripe"
 gem "less", "~> 2.4.0"
+gem 'sinatra-assetpack'
 
 group :production, :staging do
 	gem "mysql2"
