@@ -11,6 +11,7 @@ gem "omniauth-oauth2"
 gem "omniauth-twitter"
 gem "rest-client"
 gem "stripe"
+gem "less", "~> 2.4.0"
 
 group :production, :staging do
 	gem "mysql2"
