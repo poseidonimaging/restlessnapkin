@@ -13,7 +13,6 @@ require "omniauth-twitter"
 require "omniauth-oauth2"
 require "rest-client"
 require "stripe"
-require "less"
 require 'sinatra/assetpack'
 require "./models"
 load "./order_process.rb"
