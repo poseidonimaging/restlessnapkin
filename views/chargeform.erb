@@ -29,26 +29,26 @@
   <div data-bind="css: { 'navbar navbar-inner checkout' : total() > 0 } ">
     <div data-bind="foreach: cart">
       <div class="cart_item">
-        <h4>
+        <h3>
           <span data-bind="text:$data.quantity, css: 'item_quantity' "></span>
           <span data-bind="text:$data.product().item_name, css: 'item_name' "></span>
           <span data-bind="css:, 'item_price'">$<span data-bind="text:$data.product().item_price"></span></span>
           <!--<a href="#" class="btn btn-mini btn-danger" data-bind="click:$parent.removeFromCart">
             <i class="icon-remove icon-white"></i> Remove
           </a>-->
-        </h4>
+        </h3>
       </div>
     </div>
     <form action="/charge" method="post" class="payment" data-bind="visible: total() > 0">
       <article>
-        <h4 data-bind="visible: total() > 0">
+        <h3 data-bind="visible: total() > 0">
           Total: $<span data-bind="text: total()"></span>
-        </h4>
+        </h3>
       </article>
-      <button type="button" class="btn btn-default btn-lg">
-        <!--<span class="glyphicon glyphicon-circle-arrow-left"></span>-->
-        <!--<span class="glyphicon glyphicon-arrow-left"></span>-->
-      </button>
+      <!--<button type="button" class="btn btn-default btn-lg">
+        <span class="glyphicon glyphicon-circle-arrow-left"></span>
+        <span class="glyphicon glyphicon-arrow-left"></span>
+      </button>-->
       <a href="#" class="clear_cart" data-bind="click: clearCart">Clear Checkout</a>
 
       <script src="https://checkout.stripe.com/v2/checkout.js" 
