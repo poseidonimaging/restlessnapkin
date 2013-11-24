@@ -16,7 +16,6 @@ GEM
     backports (3.3.2)
     bond (0.4.3)
     builder (3.0.4)
-    commonjs (0.2.7)
     eventmachine (1.0.3)
     eventmachine (1.0.3-x86-mingw32)
     faraday (0.8.8)
@@ -31,8 +30,6 @@ GEM
     jwt (0.1.4)
       json (>= 1.2.4)
     kgio (2.8.0)
-    less (2.4.0)
-      commonjs (~> 0.2.7)
     listen (1.2.2)
       rb-fsevent (>= 0.9.3)
       rb-inotify (>= 0.9)
@@ -130,7 +127,6 @@ PLATFORMS
 DEPENDENCIES
   activerecord
   json
-  less (~> 2.4.0)
   mysql2
   newrelic_rpm
   oauth

@@ -1,7 +1,8 @@
 <div id='content'>
 
   <div class="item-container">
-    <h2><%= @venue.name %>'s Items</h2>
+    <h2><%= @venue.name %></h2>
+    <p>Tap to add items to checkout</p>
       <div data-bind="foreach: items" /> 
         <div class="add-item" data-bind="click: $parent.addToCart">
            <div class="item-template"> 
@@ -28,25 +29,25 @@
   <div data-bind="css: { 'navbar navbar-inner checkout' : total() > 0 } ">
     <div data-bind="foreach: cart">
       <div class="cart_item">
-        <h3>
+        <h4>
           <span data-bind="text:$data.quantity, css: 'item_quantity' "></span>
           <span data-bind="text:$data.product().item_name, css: 'item_name' "></span>
           <span data-bind="css:, 'item_price'">$<span data-bind="text:$data.product().item_price"></span></span>
           <!--<a href="#" class="btn btn-mini btn-danger" data-bind="click:$parent.removeFromCart">
             <i class="icon-remove icon-white"></i> Remove
           </a>-->
-        </h3>
+        </h4>
       </div>
     </div>
     <form action="/charge" method="post" class="payment" data-bind="visible: total() > 0">
       <article>
-        <h3 data-bind="visible: total() > 0">
+        <h4 data-bind="visible: total() > 0">
           Total: $<span data-bind="text: total()"></span>
-        </h3>
+        </h4>
       </article>
       <button type="button" class="btn btn-default btn-lg">
         <!--<span class="glyphicon glyphicon-circle-arrow-left"></span>-->
-        <span class="glyphicon glyphicon-arrow-left"></span>
+        <!--<span class="glyphicon glyphicon-arrow-left"></span>-->
       </button>
       <a href="#" class="clear_cart" data-bind="click: clearCart">Clear Checkout</a>
 
