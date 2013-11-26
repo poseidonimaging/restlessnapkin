@@ -29,21 +29,21 @@
   <div data-bind="css: { 'navbar navbar-inner checkout' : total() > 0 } ">
     <div data-bind="foreach: cart">
       <div class="cart_item">
-        <h3>
+        <h4>
           <span data-bind="text:$data.quantity, css: 'item_quantity' "></span>
           <span data-bind="text:$data.product().item_name, css: 'item_name' "></span>
           <span data-bind="css:, 'item_price'">$<span data-bind="text:$data.product().item_price"></span></span>
           <!--<a href="#" class="btn btn-mini btn-danger" data-bind="click:$parent.removeFromCart">
             <i class="icon-remove icon-white"></i> Remove
           </a>-->
-        </h3>
+        </h4>
       </div>
     </div>
     <form action="/charge" method="post" class="payment" data-bind="visible: total() > 0">
       <article>
-        <h3 data-bind="visible: total() > 0">
+        <h4 data-bind="visible: total() > 0">
           Total: $<span data-bind="text: total()"></span>
-        </h3>
+        </h4>
       </article>
       <!--<button type="button" class="btn btn-default btn-lg">
         <span class="glyphicon glyphicon-circle-arrow-left"></span>
@@ -54,9 +54,9 @@
       <script src="https://checkout.stripe.com/v2/checkout.js" 
       class="stripe-button"
       data-key="<%= settings.publishable_key %>" 
-      data-bind="attr: { 'data-amount': total() }"
-      data-description="food"
+      data-description="<%= @venue.name %>"
       data-name="restlessnapkin"
+      data-amount="700"
       data-image="https://si0.twimg.com/profile_images/1104245949/restless_napkin_avatar.png">
       </script>
       
@@ -174,7 +174,7 @@
 </script>
 
 <style type="text/css">
-.cart_item h3, .payment article h3{
+.cart_item h4, .payment article h4{
   color: white;
 }
 
