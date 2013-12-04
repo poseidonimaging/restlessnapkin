@@ -13,7 +13,7 @@
     </div>
 
     <div class="span4">
-      <h1>Add a New Menu Item</h1> <br />
+      <h2>Add Menu Item</h2> <br />
 
         <form action='/admin/food/add' method='post' class="form-horizontal">
           <p>
@@ -21,11 +21,14 @@
           </p>
 
           <p>
-            <input class="span3" type="text" name='description' placeholder="Description">
+            <textarea rows="3" class="span3" name='description' placeholder="Description"></textarea>
           </p>
 
           <p>
-            <input class="span3" type="text" name='price' placeholder="Price">
+            <div class="input-prepend">
+              <span class="add-on">$</span>
+              <input class="span1" type="text" name='price'>
+            </div>
           </p>
 
           <p>
