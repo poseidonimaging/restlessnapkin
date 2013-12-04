@@ -1,20 +1,42 @@
-Hello!
-====
+restlessnapkin
+================
 
-This is a demonstrator for [Sinatra](http://www.sinatrarb.com/), [Twitter Bootstrap](http://twitter.github.com/bootstrap/), and [Font Awesome](http://fortawesome.github.io/Font-Awesome/). 
+This app was built off of Pokle's sinatra-bootstrap
 
-Use it as a boilerplate to start your own apps.
+In its current form, it's a hodgepodge of the original version of the bar ordering application and its current iteration of a street vendor mobile ordering and payment application. Once everything is working, I plan to reorganize the code to focus mainly on the current iteration and strip away all the bar ordering code into an archive within the app to make working on the current iteration easier.
 
-Go!
-===
+Thinks that need to get done before launch:
 
-Download and run sinatra-bootstrap:
+   * Checkout Pill with total number of items
 
-	git clone git@github.com:pokle/sinatra-bootstrap.git
+      * Eddie has this initial piece working backwards, modifying code to work properly
 
-	cd sinatra-bootstrap
-    bundle install				# To install sinatra
+   * Need to convert javascript variables to ruby for passage to stripe
 
-	ruby app.rb 				# To run the sample
-	
-Then open [http://localhost:4567/](http://localhost:4567/)
+      * Eddie to make this happen
+
+         * Total
+         * Total in pennies
+         * Line items with quantity, name and price
+
+
+   * Build out order confirmation page
+
+      * Copy from original bar page
+
+   * Build checkin with texting >> name request >> order
+
+      * Might not need name, could be on credit card
+      * Pull code from original checkin
+
+   * Stripe Connect needs to be tested and implemented
+   * Receipt Printer
+
+      * Authorize printer
+      * Post to printer
+      * Only show menu when printer is active and post if active
+
+         * If not active, list phone number to venue
+
+      * Mark as received when printer prints payload
+
