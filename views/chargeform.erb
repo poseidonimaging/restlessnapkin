@@ -27,12 +27,13 @@
   </div>
   <a href="#" class="scrollup" data-bind="visible: total() > 0, text: 'checkout'"></a>
   <div data-bind="css: { 'navbar navbar-inner checkout' : total() > 0 } ">
+    <h3>Checkout</h3>
     <div data-bind="foreach: cart">
       <div class="cart_item">
         <h4>
           <span data-bind="text:$data.quantity, css: 'item_quantity' "></span>
           <span data-bind="text:$data.product().item_name, css: 'item_name' "></span>
-          <span data-bind="css:, 'item_price'">$<span data-bind="text:$data.product().item_price"></span></span>
+          <span data-bind="css:, 'item_price'"> - $<span data-bind="text:$data.product().item_price"></span></span>
           <!--<a href="#" class="btn btn-mini btn-danger" data-bind="click:$parent.removeFromCart">
             <i class="icon-remove icon-white"></i> Remove
           </a>-->
@@ -41,7 +42,7 @@
     </div>
     <form action="/charge" method="post" class="payment" data-bind="visible: total() > 0">
       <article>
-        <h4 data-bind="visible: total() > 0">
+        <h4 style="text-align:center" data-bind="visible: total() > 0">
           Total: $<span data-bind="text: total()"></span>
         </h4>
       </article>
@@ -51,7 +52,7 @@
       </button>-->
       <a href="#" class="clear_cart" data-bind="click: clearCart">Clear Checkout</a>
 
-      <script src="https://checkout.stripe.com/v2/checkout.js" 
+      <script src="https://checkout.stripe.com/v3/checkout.js" 
       class="stripe-button"
       data-key="<%= settings.publishable_key %>" 
       data-description="<%= @venue.name %>"
