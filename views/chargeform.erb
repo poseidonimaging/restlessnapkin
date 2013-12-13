@@ -25,7 +25,10 @@
     </div>
     <hr>
   </div>
-  <a href="#" class="scrollup" data-bind="visible: total() > 0, text: 'checkout'"></a>
+
+  <a href="#" class="scrollup" data-bind="visible: total() > 0, text: 'Checkout'"></a>
+  
+
   <div data-bind="css: { 'navbar navbar-inner checkout' : total() > 0 } ">
     <div data-bind="foreach: cart">
       <div class="cart_item">
@@ -54,9 +57,9 @@
       <script src="https://checkout.stripe.com/checkout.js" 
       class="stripe-button"
       data-key="<%= settings.publishable_key %>" 
-      data-description="<%= @venue.name %>"
       data-name="restlessnapkin"
-      data-amount="700"
+      data-description="<%= @venue.name %>"
+      data-amount="1000"
       data-image="https://si0.twimg.com/profile_images/1104245949/restless_napkin_avatar.png">
       </script>
       
@@ -138,9 +141,11 @@
         var _item = new CartItem(item, 1);
         self.cart.push(_item);
       }
+
+      var jsonCart = ko.toJSON(self.cart());
     };
 
-     self.removeFromCart = function(cart_item, event) {
+    self.removeFromCart = function(cart_item, event) {
       self.cart.remove(cart_item);
     };
 
