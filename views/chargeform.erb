@@ -55,6 +55,7 @@
       </button>-->
       <a href="#" class="clear_cart" data-bind="click: clearCart">Clear Checkout</a>
 
+      <!--<div data-bind="text: stripe "></div>-->
       <script src="https://checkout.stripe.com/checkout.js" 
       class="stripe-button"
       data-key="<%= settings.publishable_key %>" 
@@ -111,9 +112,10 @@
     self.items = ko.observableArray(mappedItems);
 
     self.save = function() {
-        var dataToSave = $.map(self.items(), function (item) {
-            return item.item() ? {
-                item: item.item_name()
+        var dataToSave = $.map(self.cart(), function (item) {
+            return item.product() ? {
+                quantity: item.quantity(),
+                item: item.product().item_name()
             } : undefined
         });
         alert("Could now send this to server: " + JSON.stringify(dataToSave));
