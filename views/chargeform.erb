@@ -11,9 +11,6 @@
               <div class="item-name-price">
                 <h3>
                   <span data-bind="text: item_name"></span> - <span data-bind="text: item_price"></span>
-                  <!--<a data-bind="click: $parent.addToCart" href="#" class="btn btn-mini btn-success">
-                    <i class="icon-plus icon-white"></i> Add
-                  </a>-->
                 </h3>
               </div>
               <div class="item-description">
@@ -29,7 +26,6 @@
 
   <a href="#" class="scrollup" data-bind="visible: total() > 0, text: 'Checkout'"></a>
   
-
   <div data-bind="css: { 'navbar navbar-inner checkout' : total() > 0 } ">
     <div data-bind="foreach: cart">
       <div class="cart_item">
@@ -37,9 +33,6 @@
           <span data-bind="text:$data.quantity, css: 'item_quantity' "></span>
           <span data-bind="text:$data.product().item_name, css: 'item_name' "></span>
           <span data-bind="css:, 'item_price'"> - $<span data-bind="text:$data.product().item_price"></span></span>
-          <!--<a href="#" class="btn btn-mini btn-danger" data-bind="click:$parent.removeFromCart">
-            <i class="icon-remove icon-white"></i> Remove
-          </a>-->
         </h4>
       </div>
     </div>
@@ -49,27 +42,62 @@
           Total: $<span data-bind="text: total()"></span>
         </h4>
       </article>
-      <!--<button type="button" class="btn btn-default btn-lg">
-        <span class="glyphicon glyphicon-circle-arrow-left"></span>
-        <span class="glyphicon glyphicon-arrow-left"></span>
-      </button>-->
       <a href="#" class="clear_cart" data-bind="click: clearCart">Clear Checkout</a>
-
-      <!--<div data-bind="text: stripe "></div>-->
-      <script src="https://checkout.stripe.com/checkout.js" 
-      class="stripe-button"
-      data-key="<%= settings.publishable_key %>" 
-      data-name="restlessnapkin"
-      data-description="<%= @venue.name %>"
-      data-amount="1000"
-      data-image="https://si0.twimg.com/profile_images/1104245949/restless_napkin_avatar.png">
-      </script>
-      
+      <script src="https://checkout.stripe.com/checkout.js"></script>
+      <span id="customButton" class="btn btn-info" data-bind="script: 'stripe'">Pay with card</span>
     </form>
   </div>
 </div>
 
 <script type="text/javascript">
+  ko.bindingHandlers.script = {
+      init: function(element, valueAccessor, allBindings, viewModel, bindingContext) {
+          class_name = 'stripe-button active';
+          data_key = '<%= (settings.publishable_key) %>';
+          data_name = 'restlessnapkin';
+          data_description = '<%= (@venue.name) %>';
+          data_amount = viewModel.total() * 100;
+          data_image = 'https://si0.twimg.com/profile_images/1104245949/restless_napkin_avatar.png';
+
+          var handler = StripeCheckout.configure({
+            key: data_key,
+            image: data_image,
+            token: function(token, args) {
+              // Use the token to create the charge with a server-side script.
+            }
+          });
+
+          document.getElementById('customButton').addEventListener('click', function(e) {
+            // Open Checkout with further options
+            handler.open({
+              name: data_name,
+              description: data_description,
+              amount: data_amount
+            });
+            e.preventDefault();
+          });
+
+      },
+      update: function (element, valueAccessor, allBindingsAccessor, viewModel, bindingContext) {
+          class_name = 'stripe-button active';
+          data_key = '<%= (settings.publishable_key) %>';
+          data_name = 'restlessnapkin';
+          data_description = '<%= (@venue.name) %>';
+          data_amount = viewModel.total() * 100;
+          data_image = 'https://si0.twimg.com/profile_images/1104245949/restless_napkin_avatar.png';
+
+          var scriptName = ko.utils.unwrapObservable(valueAccessor());
+          var scriptTag = '<script type="text/javascript" src="' + scriptName + '"' + 
+                            ' class="' + class_name + '"' + 
+                            ' data-key="' + data_key + '"' + 
+                            ' data-name="' + data_name + '"' + 
+                            ' data-description="' + data_description + '"' + 
+                            ' data-amount="' + data_amount + '"' + 
+                            ' data-image="' + data_image + '"><\/script>';
+          
+      }
+  }
+
   function formatCurrency(value) {
       return "$" + value.toFixed(2);
   }
@@ -167,8 +195,8 @@
   }
 
   item_json = <%= (@item.to_json) %>;
+  
   ko.applyBindings(new ItemsViewModel(item_json));
-
 </script>
 
 <script type="text/javascript">
