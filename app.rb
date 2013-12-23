@@ -209,10 +209,10 @@ end
 
 post '/charge' do
   # Amount in cents
-  @amount = 2400
+  @amount = params[:amount]
 
   customer = Stripe::Customer.create(
-    :email => 'customer@example.com',
+    :email => 'chad@restlessnapkin.com',
     :card  => params[:stripeToken]
   )
 

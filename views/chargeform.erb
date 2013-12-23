@@ -37,6 +37,7 @@
       </div>
     </div>
     <form action="/charge" method="post" class="payment" data-bind="visible: total() > 0">
+      <input class="span2" name="amount" type="text" data-bind="value: total()">
       <article>
         <h4 style="text-align:center" data-bind="visible: total() > 0">
           Total: $<span data-bind="text: total()"></span>
@@ -57,7 +58,7 @@
           data_name = 'restlessnapkin';
           data_description = '<%= (@venue.name) %>';
           data_amount = viewModel.total() * 100;
-          data_image = 'https://si0.twimg.com/profile_images/1104245949/restless_napkin_avatar.png';
+          data_image = 'http://restlessnapkin.wpengine.com/wp-content/uploads/2013/06/restless_napkin_posterous.png';
 
           var handler = StripeCheckout.configure({
             key: data_key,
@@ -84,7 +85,7 @@
           data_name = 'restlessnapkin';
           data_description = '<%= (@venue.name) %>';
           data_amount = viewModel.total() * 100;
-          data_image = 'https://si0.twimg.com/profile_images/1104245949/restless_napkin_avatar.png';
+          data_image = 'http://restlessnapkin.wpengine.com/wp-content/uploads/2013/06/restless_napkin_posterous.png';
 
           var scriptName = ko.utils.unwrapObservable(valueAccessor());
           var scriptTag = '<script type="text/javascript" src="' + scriptName + '"' + 
