@@ -203,16 +203,14 @@ end
 
 # Stripe
 
-get '/charge' do
-  erb :chargeform
-end
-
 post '/charge' do
   # Amount in cents
-  @amount = params[:amount] * 100
+  @amount = (params[:amount].to_i) * 100
+  @user_amount = @amount / 100
+
 
   customer = Stripe::Customer.create(
-    :email => 'chad@restlessnapkin.com',
+    :email => params[:stripeEmail],
     :card  => params[:stripeToken]
   )
 
@@ -225,6 +223,8 @@ post '/charge' do
 
   erb :charge
 end
+
+
 
 get '/example.json' do
   content_type :json

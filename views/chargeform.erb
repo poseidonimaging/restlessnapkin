@@ -64,8 +64,11 @@
             key: data_key,
             image: data_image,
             token: function(token, args) {
-              // Use the token to create the charge with a server-side script.
+            var $form = $('.payment');
+            $form.append($('<input type="hidden" name="stripeToken" />').val(token.id));
+            $form.get(0).submit()
             }
+            
           });
 
           document.getElementById('customButton').addEventListener('click', function(e) {
@@ -88,7 +91,7 @@
           data_image = 'http://restlessnapkin.wpengine.com/wp-content/uploads/2013/06/restless_napkin_posterous.png';
 
           var scriptName = ko.utils.unwrapObservable(valueAccessor());
-          var scriptTag = '<script type="text/javascript" src="' + scriptName + '"' + 
+         var scriptTag = '<script type="text/javascript" src="' + scriptName + '"' + 
                             ' class="' + class_name + '"' + 
                             ' data-key="' + data_key + '"' + 
                             ' data-name="' + data_name + '"' + 
