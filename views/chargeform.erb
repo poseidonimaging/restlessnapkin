@@ -37,7 +37,7 @@
       </div>
     </div>
     <form action="/charge" method="post" class="payment" data-bind="visible: total() > 0">
-      <input class="span2" name="amount" type="text" data-bind="value: total()">
+      <input class="span2" name="amount" type="hidden" data-bind="value: total()">
       <article>
         <h4 style="text-align:center" data-bind="visible: total() > 0">
           Total: $<span data-bind="text: total()"></span>
