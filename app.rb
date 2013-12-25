@@ -106,6 +106,7 @@ set :secret_key, ENV['SECRET_KEY']
 
 Stripe.api_key = settings.secret_key
 
+
 # Starting routes
 
 get '/mprinter' do
@@ -222,6 +223,15 @@ post '/charge' do
   )
 
   erb :charge
+end
+
+post '/json/order' do
+  session[:data] = JSON.parse(params[:json])
+end
+
+get '/json/order' do
+  @data = session[:data]
+  erb :json
 end
 
 get '/example.json' do

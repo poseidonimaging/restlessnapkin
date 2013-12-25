@@ -2,7 +2,7 @@
 
   <div class="item-container">
     <h2><%= @venue.name %></h2>
-    <button data-bind='click: save'>Submit order</button>
+    <button data-bind='click: order'>Submit order</button>
 
       <div data-bind="foreach: items" /> 
         <div class="add-item" data-bind="click: $parent.addToCart">
@@ -37,6 +37,7 @@
       </div>
     </div>
     <form action="/charge" method="post" class="payment" data-bind="visible: total() > 0">
+      <input class="span2" name="order" type="textarea" data-bind="value: order()">
       <input class="span2" name="amount" type="hidden" data-bind="value: total()">
       <article>
         <h4 style="text-align:center" data-bind="visible: total() > 0">
@@ -143,14 +144,16 @@
 
     self.items = ko.observableArray(mappedItems);
 
-    self.save = function() {
-        var dataToSave = $.map(self.cart(), function (item) {
-            return item.product() ? {
-                quantity: item.quantity(),
-                item: item.product().item_name()
-            } : undefined
-        });
-        alert("Could now send this to server: " + JSON.stringify(dataToSave));
+    self.order = function() {
+      var saveOrder = $.map(self.cart(), function (item) {
+        return item.product() ? {
+          quantity: item.quantity(),
+          item: item.product().item_name()
+        } : undefined
+      });
+      var jsonData = ko.toJSON(saveOrder);
+      $.post("http://127.0.0.1:9393/json/order", jsonData, function(returnedData){
+      });
     };
 
     self.subtotal = ko.computed(function(){
