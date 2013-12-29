@@ -24,8 +24,10 @@
     <hr>
   </div>
 
-  <a href="#" class="scrollup" data-bind="visible: total() > 0, text: 'Checkout'"></a>
-  
+  <div data-bind="visible: total() > 0">
+    <a href="#" data-bind="css: 'scrollup', text: total_quantity"></a>
+  </div>
+
   <div data-bind="css: { 'navbar navbar-inner checkout' : total() > 0 } ">
     <div data-bind="foreach: cart">
       <div class="cart_item">
@@ -69,7 +71,6 @@
             $form.append($('<input type="hidden" name="stripeToken" />').val(token.id));
             $form.get(0).submit()
             }
-            
           });
 
           document.getElementById('customButton').addEventListener('click', function(e) {
@@ -131,6 +132,7 @@
     var self = this;
     self.items = ko.observableArray(); 
     self.cart  = ko.observableArray();
+    self.total_quantity = ko.observable();
 
     var mappedItems = $.map(items, function (item) {
         var this_item = item.menu_item;
@@ -168,6 +170,21 @@
         });
 
         return subtotal;
+    });
+
+    self.total_quantity = ko.computed(function(){
+        var qty = 0;
+        $(self.cart()).each(function(index, cart_item){
+          if(cart_item.quantity() > 1){
+            qty += cart_item.quantity();
+          }
+          else{
+            qty += cart_item.quantity();
+          }
+        });
+
+        return qty;
+
     });
 
     self.total = ko.computed(function(){
@@ -208,7 +225,6 @@
 
 <script type="text/javascript">
     $(document).ready(function(){ 
- 
         $(window).scroll(function(){
             if ($(this).scrollTop() > 100) {
                 $('.scrollup').fadeIn();
@@ -218,10 +234,10 @@
         }); 
  
         $('.scrollup').click(function(){
-            $("html, body").animate({ scrollTop: 0 }, 600);
+            //$("html, body").animate({ scrollTop: 0 }, 600);
+            $("html, body").animate({ scrollTop: $(document).height() }, 1000);
             return false;
         });
- 
     });
 </script>
 
