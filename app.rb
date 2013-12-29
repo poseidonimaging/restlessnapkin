@@ -1,6 +1,7 @@
 
 require "rubygems"
 require "sinatra"
+require "sinatra/json"
 require "sinatra/activerecord"
 require "newrelic_rpm"
 require "open-uri"
@@ -225,12 +226,13 @@ post '/charge' do
   erb :charge
 end
 
-post '/json/order' do
-  session[:data] = JSON.parse(params[:json])
+post '/json/order.json' do
+  request.body.rewind
+  @data = JSON.parse request.body.read
 end
 
 get '/json/order' do
-  @data = session[:data]
+  output = session[:data][0]
   erb :json
 end
 
