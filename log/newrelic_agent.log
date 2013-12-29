@@ -1,0 +1,300 @@
+# Logfile created on 2013-12-29 14:05:16 -0600 by logger.rb/31641
+[12/29/13 14:05:16 -0600 chadwick-air (10582)] INFO : Starting the New Relic agent in "development" environment.
+[12/29/13 14:05:16 -0600 chadwick-air (10582)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "development" section of your newrelic.yml.
+[12/29/13 14:05:16 -0600 chadwick-air (10582)] INFO : Reading configuration from 
+[12/29/13 14:05:16 -0600 chadwick-air (10582)] ERROR : Unable to read configuration file : can't convert nil into String
+[12/29/13 14:05:16 -0600 chadwick-air (10582)] INFO : Disabling the Request Sampler.
+[12/29/13 14:05:16 -0600 chadwick-air (10582)] INFO : Environment: development
+[12/29/13 14:05:16 -0600 chadwick-air (10582)] INFO : Dispatcher: webrick
+[12/29/13 14:05:16 -0600 chadwick-air (10582)] INFO : Application: development
+[12/29/13 14:05:16 -0600 chadwick-air (10582)] WARN : No license key found in newrelic.yml config. This often means your newrelic.yml is missing a section for the running environment 'development'
+[12/29/13 14:05:16 -0600 chadwick-air (10582)] INFO : Installing ActiveRecord instrumentation
+[12/29/13 14:05:16 -0600 chadwick-air (10582)] INFO : Installing Net instrumentation
+[12/29/13 14:05:16 -0600 chadwick-air (10582)] INFO : Installing Sinatra instrumentation
+[12/29/13 14:05:16 -0600 chadwick-air (10582)] INFO : Finished instrumentation
+[12/29/13 14:05:19 -0600 chadwick-air (10588)] INFO : Starting the New Relic agent in "development" environment.
+[12/29/13 14:05:19 -0600 chadwick-air (10588)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "development" section of your newrelic.yml.
+[12/29/13 14:05:19 -0600 chadwick-air (10588)] INFO : Reading configuration from 
+[12/29/13 14:05:19 -0600 chadwick-air (10588)] ERROR : Unable to read configuration file : can't convert nil into String
+[12/29/13 14:05:19 -0600 chadwick-air (10588)] INFO : Disabling the Request Sampler.
+[12/29/13 14:05:19 -0600 chadwick-air (10588)] INFO : Environment: development
+[12/29/13 14:05:19 -0600 chadwick-air (10588)] INFO : Dispatcher: webrick
+[12/29/13 14:05:19 -0600 chadwick-air (10588)] INFO : Application: development
+[12/29/13 14:05:19 -0600 chadwick-air (10588)] WARN : No license key found in newrelic.yml config. This often means your newrelic.yml is missing a section for the running environment 'development'
+[12/29/13 14:05:19 -0600 chadwick-air (10588)] INFO : Installing ActiveRecord instrumentation
+[12/29/13 14:05:20 -0600 chadwick-air (10588)] INFO : Installing Net instrumentation
+[12/29/13 14:05:20 -0600 chadwick-air (10588)] INFO : Installing Sinatra instrumentation
+[12/29/13 14:05:20 -0600 chadwick-air (10588)] INFO : Finished instrumentation
+[12/29/13 14:05:20 -0600 chadwick-air (10589)] INFO : Starting the New Relic agent in "development" environment.
+[12/29/13 14:05:20 -0600 chadwick-air (10589)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "development" section of your newrelic.yml.
+[12/29/13 14:05:20 -0600 chadwick-air (10589)] INFO : Reading configuration from 
+[12/29/13 14:05:20 -0600 chadwick-air (10589)] ERROR : Unable to read configuration file : can't convert nil into String
+[12/29/13 14:05:20 -0600 chadwick-air (10589)] INFO : Disabling the Request Sampler.
+[12/29/13 14:05:20 -0600 chadwick-air (10589)] INFO : Environment: development
+[12/29/13 14:05:20 -0600 chadwick-air (10589)] INFO : Dispatcher: webrick
+[12/29/13 14:05:20 -0600 chadwick-air (10589)] INFO : Application: development
+[12/29/13 14:05:20 -0600 chadwick-air (10589)] WARN : No license key found in newrelic.yml config. This often means your newrelic.yml is missing a section for the running environment 'development'
+[12/29/13 14:05:20 -0600 chadwick-air (10589)] INFO : Installing ActiveRecord instrumentation
+[12/29/13 14:05:21 -0600 chadwick-air (10589)] INFO : Installing Net instrumentation
+[12/29/13 14:05:21 -0600 chadwick-air (10589)] INFO : Installing Sinatra instrumentation
+[12/29/13 14:05:21 -0600 chadwick-air (10589)] INFO : Finished instrumentation
+[12/29/13 14:05:23 -0600 chadwick-air (10595)] INFO : Starting the New Relic agent in "development" environment.
+[12/29/13 14:05:23 -0600 chadwick-air (10595)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "development" section of your newrelic.yml.
+[12/29/13 14:05:23 -0600 chadwick-air (10595)] INFO : Reading configuration from 
+[12/29/13 14:05:23 -0600 chadwick-air (10595)] ERROR : Unable to read configuration file : can't convert nil into String
+[12/29/13 14:05:23 -0600 chadwick-air (10595)] INFO : Disabling the Request Sampler.
+[12/29/13 14:05:23 -0600 chadwick-air (10595)] INFO : Environment: development
+[12/29/13 14:05:23 -0600 chadwick-air (10595)] INFO : Dispatcher: webrick
+[12/29/13 14:05:23 -0600 chadwick-air (10595)] INFO : Application: development
+[12/29/13 14:05:23 -0600 chadwick-air (10595)] WARN : No license key found in newrelic.yml config. This often means your newrelic.yml is missing a section for the running environment 'development'
+[12/29/13 14:05:23 -0600 chadwick-air (10595)] INFO : Installing ActiveRecord instrumentation
+[12/29/13 14:05:24 -0600 chadwick-air (10595)] INFO : Installing Net instrumentation
+[12/29/13 14:05:24 -0600 chadwick-air (10595)] INFO : Installing Sinatra instrumentation
+[12/29/13 14:05:24 -0600 chadwick-air (10595)] INFO : Finished instrumentation
+[12/29/13 14:05:24 -0600 chadwick-air (10596)] INFO : Starting the New Relic agent in "development" environment.
+[12/29/13 14:05:24 -0600 chadwick-air (10596)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "development" section of your newrelic.yml.
+[12/29/13 14:05:24 -0600 chadwick-air (10596)] INFO : Reading configuration from 
+[12/29/13 14:05:24 -0600 chadwick-air (10596)] ERROR : Unable to read configuration file : can't convert nil into String
+[12/29/13 14:05:24 -0600 chadwick-air (10596)] INFO : Disabling the Request Sampler.
+[12/29/13 14:05:24 -0600 chadwick-air (10596)] INFO : Environment: development
+[12/29/13 14:05:24 -0600 chadwick-air (10596)] INFO : Dispatcher: webrick
+[12/29/13 14:05:24 -0600 chadwick-air (10596)] INFO : Application: development
+[12/29/13 14:05:24 -0600 chadwick-air (10596)] WARN : No license key found in newrelic.yml config. This often means your newrelic.yml is missing a section for the running environment 'development'
+[12/29/13 14:05:24 -0600 chadwick-air (10596)] INFO : Installing ActiveRecord instrumentation
+[12/29/13 14:05:25 -0600 chadwick-air (10596)] INFO : Installing Net instrumentation
+[12/29/13 14:05:25 -0600 chadwick-air (10596)] INFO : Installing Sinatra instrumentation
+[12/29/13 14:05:25 -0600 chadwick-air (10596)] INFO : Finished instrumentation
+[12/29/13 14:06:13 -0600 chadwick-air (10603)] INFO : Starting the New Relic agent in "development" environment.
+[12/29/13 14:06:13 -0600 chadwick-air (10603)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "development" section of your newrelic.yml.
+[12/29/13 14:06:13 -0600 chadwick-air (10603)] INFO : Reading configuration from 
+[12/29/13 14:06:13 -0600 chadwick-air (10603)] ERROR : Unable to read configuration file : can't convert nil into String
+[12/29/13 14:06:13 -0600 chadwick-air (10603)] INFO : Disabling the Request Sampler.
+[12/29/13 14:06:13 -0600 chadwick-air (10603)] INFO : Environment: development
+[12/29/13 14:06:13 -0600 chadwick-air (10603)] INFO : Dispatcher: webrick
+[12/29/13 14:06:13 -0600 chadwick-air (10603)] INFO : Application: development
+[12/29/13 14:06:13 -0600 chadwick-air (10603)] WARN : No license key found in newrelic.yml config. This often means your newrelic.yml is missing a section for the running environment 'development'
+[12/29/13 14:06:14 -0600 chadwick-air (10603)] INFO : Installing ActiveRecord instrumentation
+[12/29/13 14:06:14 -0600 chadwick-air (10603)] INFO : Installing Net instrumentation
+[12/29/13 14:06:14 -0600 chadwick-air (10603)] INFO : Installing Sinatra instrumentation
+[12/29/13 14:06:14 -0600 chadwick-air (10603)] INFO : Finished instrumentation
+[12/29/13 14:06:16 -0600 chadwick-air (10608)] INFO : Starting the New Relic agent in "development" environment.
+[12/29/13 14:06:16 -0600 chadwick-air (10608)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "development" section of your newrelic.yml.
+[12/29/13 14:06:16 -0600 chadwick-air (10608)] INFO : Reading configuration from 
+[12/29/13 14:06:16 -0600 chadwick-air (10608)] ERROR : Unable to read configuration file : can't convert nil into String
+[12/29/13 14:06:16 -0600 chadwick-air (10607)] INFO : Starting the New Relic agent in "development" environment.
+[12/29/13 14:06:16 -0600 chadwick-air (10608)] INFO : Disabling the Request Sampler.
+[12/29/13 14:06:16 -0600 chadwick-air (10607)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "development" section of your newrelic.yml.
+[12/29/13 14:06:16 -0600 chadwick-air (10607)] INFO : Reading configuration from 
+[12/29/13 14:06:16 -0600 chadwick-air (10607)] ERROR : Unable to read configuration file : can't convert nil into String
+[12/29/13 14:06:16 -0600 chadwick-air (10608)] INFO : Environment: development
+[12/29/13 14:06:16 -0600 chadwick-air (10608)] INFO : Dispatcher: webrick
+[12/29/13 14:06:16 -0600 chadwick-air (10608)] INFO : Application: development
+[12/29/13 14:06:16 -0600 chadwick-air (10607)] INFO : Disabling the Request Sampler.
+[12/29/13 14:06:16 -0600 chadwick-air (10608)] WARN : No license key found in newrelic.yml config. This often means your newrelic.yml is missing a section for the running environment 'development'
+[12/29/13 14:06:16 -0600 chadwick-air (10607)] INFO : Environment: development
+[12/29/13 14:06:16 -0600 chadwick-air (10607)] INFO : Dispatcher: webrick
+[12/29/13 14:06:16 -0600 chadwick-air (10607)] INFO : Application: development
+[12/29/13 14:06:16 -0600 chadwick-air (10607)] WARN : No license key found in newrelic.yml config. This often means your newrelic.yml is missing a section for the running environment 'development'
+[12/29/13 14:06:16 -0600 chadwick-air (10606)] INFO : Starting the New Relic agent in "development" environment.
+[12/29/13 14:06:16 -0600 chadwick-air (10606)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "development" section of your newrelic.yml.
+[12/29/13 14:06:16 -0600 chadwick-air (10606)] INFO : Reading configuration from 
+[12/29/13 14:06:16 -0600 chadwick-air (10606)] ERROR : Unable to read configuration file : can't convert nil into String
+[12/29/13 14:06:16 -0600 chadwick-air (10606)] INFO : Disabling the Request Sampler.
+[12/29/13 14:06:16 -0600 chadwick-air (10606)] INFO : Environment: development
+[12/29/13 14:06:16 -0600 chadwick-air (10606)] INFO : Dispatcher: webrick
+[12/29/13 14:06:16 -0600 chadwick-air (10606)] INFO : Application: development
+[12/29/13 14:06:16 -0600 chadwick-air (10606)] WARN : No license key found in newrelic.yml config. This often means your newrelic.yml is missing a section for the running environment 'development'
+[12/29/13 14:06:17 -0600 chadwick-air (10608)] INFO : Installing ActiveRecord instrumentation
+[12/29/13 14:06:17 -0600 chadwick-air (10607)] INFO : Installing ActiveRecord instrumentation
+[12/29/13 14:06:17 -0600 chadwick-air (10606)] INFO : Installing ActiveRecord instrumentation
+[12/29/13 14:06:17 -0600 chadwick-air (10609)] INFO : Starting the New Relic agent in "development" environment.
+[12/29/13 14:06:17 -0600 chadwick-air (10609)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "development" section of your newrelic.yml.
+[12/29/13 14:06:17 -0600 chadwick-air (10609)] INFO : Reading configuration from 
+[12/29/13 14:06:17 -0600 chadwick-air (10609)] ERROR : Unable to read configuration file : can't convert nil into String
+[12/29/13 14:06:17 -0600 chadwick-air (10609)] INFO : Disabling the Request Sampler.
+[12/29/13 14:06:17 -0600 chadwick-air (10609)] INFO : Environment: development
+[12/29/13 14:06:17 -0600 chadwick-air (10609)] INFO : Dispatcher: webrick
+[12/29/13 14:06:17 -0600 chadwick-air (10609)] INFO : Application: development
+[12/29/13 14:06:17 -0600 chadwick-air (10609)] WARN : No license key found in newrelic.yml config. This often means your newrelic.yml is missing a section for the running environment 'development'
+[12/29/13 14:06:17 -0600 chadwick-air (10610)] INFO : Starting the New Relic agent in "development" environment.
+[12/29/13 14:06:17 -0600 chadwick-air (10610)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "development" section of your newrelic.yml.
+[12/29/13 14:06:17 -0600 chadwick-air (10610)] INFO : Reading configuration from 
+[12/29/13 14:06:17 -0600 chadwick-air (10610)] ERROR : Unable to read configuration file : can't convert nil into String
+[12/29/13 14:06:17 -0600 chadwick-air (10610)] INFO : Disabling the Request Sampler.
+[12/29/13 14:06:17 -0600 chadwick-air (10610)] INFO : Environment: development
+[12/29/13 14:06:17 -0600 chadwick-air (10610)] INFO : Dispatcher: webrick
+[12/29/13 14:06:17 -0600 chadwick-air (10610)] INFO : Application: development
+[12/29/13 14:06:17 -0600 chadwick-air (10610)] WARN : No license key found in newrelic.yml config. This often means your newrelic.yml is missing a section for the running environment 'development'
+[12/29/13 14:06:17 -0600 chadwick-air (10609)] INFO : Installing ActiveRecord instrumentation
+[12/29/13 14:06:17 -0600 chadwick-air (10610)] INFO : Installing ActiveRecord instrumentation
+[12/29/13 14:06:17 -0600 chadwick-air (10608)] INFO : Installing Net instrumentation
+[12/29/13 14:06:17 -0600 chadwick-air (10608)] INFO : Installing Sinatra instrumentation
+[12/29/13 14:06:17 -0600 chadwick-air (10608)] INFO : Finished instrumentation
+[12/29/13 14:06:17 -0600 chadwick-air (10606)] INFO : Installing Net instrumentation
+[12/29/13 14:06:17 -0600 chadwick-air (10606)] INFO : Installing Sinatra instrumentation
+[12/29/13 14:06:17 -0600 chadwick-air (10607)] INFO : Installing Net instrumentation
+[12/29/13 14:06:17 -0600 chadwick-air (10606)] INFO : Finished instrumentation
+[12/29/13 14:06:17 -0600 chadwick-air (10607)] INFO : Installing Sinatra instrumentation
+[12/29/13 14:06:18 -0600 chadwick-air (10607)] INFO : Finished instrumentation
+[12/29/13 14:06:18 -0600 chadwick-air (10609)] INFO : Installing Net instrumentation
+[12/29/13 14:06:18 -0600 chadwick-air (10609)] INFO : Installing Sinatra instrumentation
+[12/29/13 14:06:18 -0600 chadwick-air (10609)] INFO : Finished instrumentation
+[12/29/13 14:06:18 -0600 chadwick-air (10610)] INFO : Installing Net instrumentation
+[12/29/13 14:06:18 -0600 chadwick-air (10610)] INFO : Installing Sinatra instrumentation
+[12/29/13 14:06:18 -0600 chadwick-air (10610)] INFO : Finished instrumentation
+[12/29/13 14:06:20 -0600 chadwick-air (10622)] INFO : Starting the New Relic agent in "development" environment.
+[12/29/13 14:06:20 -0600 chadwick-air (10622)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "development" section of your newrelic.yml.
+[12/29/13 14:06:20 -0600 chadwick-air (10622)] INFO : Reading configuration from 
+[12/29/13 14:06:20 -0600 chadwick-air (10622)] ERROR : Unable to read configuration file : can't convert nil into String
+[12/29/13 14:06:20 -0600 chadwick-air (10622)] INFO : Disabling the Request Sampler.
+[12/29/13 14:06:20 -0600 chadwick-air (10622)] INFO : Environment: development
+[12/29/13 14:06:20 -0600 chadwick-air (10622)] INFO : Dispatcher: webrick
+[12/29/13 14:06:20 -0600 chadwick-air (10622)] INFO : Application: development
+[12/29/13 14:06:20 -0600 chadwick-air (10622)] WARN : No license key found in newrelic.yml config. This often means your newrelic.yml is missing a section for the running environment 'development'
+[12/29/13 14:06:20 -0600 chadwick-air (10622)] INFO : Installing ActiveRecord instrumentation
+[12/29/13 14:06:20 -0600 chadwick-air (10623)] INFO : Starting the New Relic agent in "development" environment.
+[12/29/13 14:06:20 -0600 chadwick-air (10623)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "development" section of your newrelic.yml.
+[12/29/13 14:06:20 -0600 chadwick-air (10623)] INFO : Reading configuration from 
+[12/29/13 14:06:20 -0600 chadwick-air (10623)] ERROR : Unable to read configuration file : can't convert nil into String
+[12/29/13 14:06:20 -0600 chadwick-air (10623)] INFO : Disabling the Request Sampler.
+[12/29/13 14:06:20 -0600 chadwick-air (10623)] INFO : Environment: development
+[12/29/13 14:06:20 -0600 chadwick-air (10623)] INFO : Dispatcher: webrick
+[12/29/13 14:06:20 -0600 chadwick-air (10623)] INFO : Application: development
+[12/29/13 14:06:20 -0600 chadwick-air (10623)] WARN : No license key found in newrelic.yml config. This often means your newrelic.yml is missing a section for the running environment 'development'
+[12/29/13 14:06:20 -0600 chadwick-air (10624)] INFO : Starting the New Relic agent in "development" environment.
+[12/29/13 14:06:20 -0600 chadwick-air (10624)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "development" section of your newrelic.yml.
+[12/29/13 14:06:20 -0600 chadwick-air (10624)] INFO : Reading configuration from 
+[12/29/13 14:06:20 -0600 chadwick-air (10624)] ERROR : Unable to read configuration file : can't convert nil into String
+[12/29/13 14:06:20 -0600 chadwick-air (10624)] INFO : Disabling the Request Sampler.
+[12/29/13 14:06:20 -0600 chadwick-air (10624)] INFO : Environment: development
+[12/29/13 14:06:20 -0600 chadwick-air (10624)] INFO : Dispatcher: webrick
+[12/29/13 14:06:20 -0600 chadwick-air (10624)] INFO : Application: development
+[12/29/13 14:06:20 -0600 chadwick-air (10624)] WARN : No license key found in newrelic.yml config. This often means your newrelic.yml is missing a section for the running environment 'development'
+[12/29/13 14:06:20 -0600 chadwick-air (10623)] INFO : Installing ActiveRecord instrumentation
+[12/29/13 14:06:20 -0600 chadwick-air (10624)] INFO : Installing ActiveRecord instrumentation
+[12/29/13 14:06:21 -0600 chadwick-air (10622)] INFO : Installing Net instrumentation
+[12/29/13 14:06:21 -0600 chadwick-air (10622)] INFO : Installing Sinatra instrumentation
+[12/29/13 14:06:21 -0600 chadwick-air (10622)] INFO : Finished instrumentation
+[12/29/13 14:06:21 -0600 chadwick-air (10623)] INFO : Installing Net instrumentation
+[12/29/13 14:06:21 -0600 chadwick-air (10624)] INFO : Installing Net instrumentation
+[12/29/13 14:06:21 -0600 chadwick-air (10623)] INFO : Installing Sinatra instrumentation
+[12/29/13 14:06:21 -0600 chadwick-air (10624)] INFO : Installing Sinatra instrumentation
+[12/29/13 14:06:21 -0600 chadwick-air (10623)] INFO : Finished instrumentation
+[12/29/13 14:06:21 -0600 chadwick-air (10624)] INFO : Finished instrumentation
+[12/29/13 14:06:23 -0600 chadwick-air (10631)] INFO : Starting the New Relic agent in "development" environment.
+[12/29/13 14:06:23 -0600 chadwick-air (10631)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "development" section of your newrelic.yml.
+[12/29/13 14:06:23 -0600 chadwick-air (10631)] INFO : Reading configuration from 
+[12/29/13 14:06:23 -0600 chadwick-air (10631)] ERROR : Unable to read configuration file : can't convert nil into String
+[12/29/13 14:06:23 -0600 chadwick-air (10631)] INFO : Disabling the Request Sampler.
+[12/29/13 14:06:23 -0600 chadwick-air (10631)] INFO : Environment: development
+[12/29/13 14:06:23 -0600 chadwick-air (10631)] INFO : Dispatcher: webrick
+[12/29/13 14:06:23 -0600 chadwick-air (10631)] INFO : Application: development
+[12/29/13 14:06:23 -0600 chadwick-air (10631)] WARN : No license key found in newrelic.yml config. This often means your newrelic.yml is missing a section for the running environment 'development'
+[12/29/13 14:06:23 -0600 chadwick-air (10631)] INFO : Installing ActiveRecord instrumentation
+[12/29/13 14:06:23 -0600 chadwick-air (10631)] INFO : Installing Net instrumentation
+[12/29/13 14:06:23 -0600 chadwick-air (10631)] INFO : Installing Sinatra instrumentation
+[12/29/13 14:06:23 -0600 chadwick-air (10631)] INFO : Finished instrumentation
+[12/29/13 14:06:24 -0600 chadwick-air (10634)] INFO : Starting the New Relic agent in "development" environment.
+[12/29/13 14:06:24 -0600 chadwick-air (10634)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "development" section of your newrelic.yml.
+[12/29/13 14:06:24 -0600 chadwick-air (10634)] INFO : Reading configuration from 
+[12/29/13 14:06:24 -0600 chadwick-air (10634)] ERROR : Unable to read configuration file : can't convert nil into String
+[12/29/13 14:06:24 -0600 chadwick-air (10634)] INFO : Disabling the Request Sampler.
+[12/29/13 14:06:24 -0600 chadwick-air (10634)] INFO : Environment: development
+[12/29/13 14:06:24 -0600 chadwick-air (10634)] INFO : Dispatcher: webrick
+[12/29/13 14:06:24 -0600 chadwick-air (10634)] INFO : Application: development
+[12/29/13 14:06:24 -0600 chadwick-air (10634)] WARN : No license key found in newrelic.yml config. This often means your newrelic.yml is missing a section for the running environment 'development'
+[12/29/13 14:06:24 -0600 chadwick-air (10634)] INFO : Installing ActiveRecord instrumentation
+[12/29/13 14:06:25 -0600 chadwick-air (10634)] INFO : Installing Net instrumentation
+[12/29/13 14:06:25 -0600 chadwick-air (10634)] INFO : Installing Sinatra instrumentation
+[12/29/13 14:06:25 -0600 chadwick-air (10634)] INFO : Finished instrumentation
+[12/29/13 14:11:26 -0600 chadwick-air (10647)] INFO : Starting the New Relic agent in "development" environment.
+[12/29/13 14:11:26 -0600 chadwick-air (10647)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "development" section of your newrelic.yml.
+[12/29/13 14:11:26 -0600 chadwick-air (10647)] INFO : Reading configuration from 
+[12/29/13 14:11:26 -0600 chadwick-air (10647)] ERROR : Unable to read configuration file : can't convert nil into String
+[12/29/13 14:11:26 -0600 chadwick-air (10647)] INFO : Disabling the Request Sampler.
+[12/29/13 14:11:26 -0600 chadwick-air (10647)] INFO : Environment: development
+[12/29/13 14:11:26 -0600 chadwick-air (10647)] INFO : Dispatcher: webrick
+[12/29/13 14:11:26 -0600 chadwick-air (10647)] INFO : Application: development
+[12/29/13 14:11:26 -0600 chadwick-air (10647)] WARN : No license key found in newrelic.yml config. This often means your newrelic.yml is missing a section for the running environment 'development'
+[12/29/13 14:11:26 -0600 chadwick-air (10647)] INFO : Installing ActiveRecord instrumentation
+[12/29/13 14:11:26 -0600 chadwick-air (10647)] INFO : Installing Net instrumentation
+[12/29/13 14:11:26 -0600 chadwick-air (10647)] INFO : Installing Sinatra instrumentation
+[12/29/13 14:11:26 -0600 chadwick-air (10647)] INFO : Finished instrumentation
+[12/29/13 14:11:28 -0600 chadwick-air (10651)] INFO : Starting the New Relic agent in "development" environment.
+[12/29/13 14:11:28 -0600 chadwick-air (10651)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "development" section of your newrelic.yml.
+[12/29/13 14:11:28 -0600 chadwick-air (10651)] INFO : Reading configuration from 
+[12/29/13 14:11:28 -0600 chadwick-air (10651)] ERROR : Unable to read configuration file : can't convert nil into String
+[12/29/13 14:11:28 -0600 chadwick-air (10651)] INFO : Disabling the Request Sampler.
+[12/29/13 14:11:28 -0600 chadwick-air (10651)] INFO : Environment: development
+[12/29/13 14:11:28 -0600 chadwick-air (10651)] INFO : Dispatcher: webrick
+[12/29/13 14:11:28 -0600 chadwick-air (10651)] INFO : Application: development
+[12/29/13 14:11:28 -0600 chadwick-air (10651)] WARN : No license key found in newrelic.yml config. This often means your newrelic.yml is missing a section for the running environment 'development'
+[12/29/13 14:11:28 -0600 chadwick-air (10651)] INFO : Installing ActiveRecord instrumentation
+[12/29/13 14:11:28 -0600 chadwick-air (10651)] INFO : Installing Net instrumentation
+[12/29/13 14:11:28 -0600 chadwick-air (10651)] INFO : Installing Sinatra instrumentation
+[12/29/13 14:11:28 -0600 chadwick-air (10651)] INFO : Finished instrumentation
+[12/29/13 14:11:31 -0600 chadwick-air (10656)] INFO : Starting the New Relic agent in "development" environment.
+[12/29/13 14:11:31 -0600 chadwick-air (10656)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "development" section of your newrelic.yml.
+[12/29/13 14:11:31 -0600 chadwick-air (10656)] INFO : Reading configuration from 
+[12/29/13 14:11:31 -0600 chadwick-air (10656)] ERROR : Unable to read configuration file : can't convert nil into String
+[12/29/13 14:11:31 -0600 chadwick-air (10656)] INFO : Disabling the Request Sampler.
+[12/29/13 14:11:31 -0600 chadwick-air (10656)] INFO : Environment: development
+[12/29/13 14:11:31 -0600 chadwick-air (10656)] INFO : Dispatcher: webrick
+[12/29/13 14:11:31 -0600 chadwick-air (10656)] INFO : Application: development
+[12/29/13 14:11:31 -0600 chadwick-air (10656)] WARN : No license key found in newrelic.yml config. This often means your newrelic.yml is missing a section for the running environment 'development'
+[12/29/13 14:11:31 -0600 chadwick-air (10656)] INFO : Installing ActiveRecord instrumentation
+[12/29/13 14:11:32 -0600 chadwick-air (10656)] INFO : Installing Net instrumentation
+[12/29/13 14:11:32 -0600 chadwick-air (10656)] INFO : Installing Sinatra instrumentation
+[12/29/13 14:11:32 -0600 chadwick-air (10656)] INFO : Finished instrumentation
+[12/29/13 14:11:32 -0600 chadwick-air (10657)] INFO : Starting the New Relic agent in "development" environment.
+[12/29/13 14:11:32 -0600 chadwick-air (10657)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "development" section of your newrelic.yml.
+[12/29/13 14:11:32 -0600 chadwick-air (10657)] INFO : Reading configuration from 
+[12/29/13 14:11:32 -0600 chadwick-air (10657)] ERROR : Unable to read configuration file : can't convert nil into String
+[12/29/13 14:11:32 -0600 chadwick-air (10657)] INFO : Disabling the Request Sampler.
+[12/29/13 14:11:32 -0600 chadwick-air (10657)] INFO : Environment: development
+[12/29/13 14:11:32 -0600 chadwick-air (10657)] INFO : Dispatcher: webrick
+[12/29/13 14:11:32 -0600 chadwick-air (10657)] INFO : Application: development
+[12/29/13 14:11:32 -0600 chadwick-air (10657)] WARN : No license key found in newrelic.yml config. This often means your newrelic.yml is missing a section for the running environment 'development'
+[12/29/13 14:11:32 -0600 chadwick-air (10657)] INFO : Installing ActiveRecord instrumentation
+[12/29/13 14:11:32 -0600 chadwick-air (10657)] INFO : Installing Net instrumentation
+[12/29/13 14:11:32 -0600 chadwick-air (10657)] INFO : Installing Sinatra instrumentation
+[12/29/13 14:11:32 -0600 chadwick-air (10657)] INFO : Finished instrumentation
+[12/29/13 14:11:40 -0600 chadwick-air (10662)] INFO : Starting the New Relic agent in "development" environment.
+[12/29/13 14:11:40 -0600 chadwick-air (10662)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "development" section of your newrelic.yml.
+[12/29/13 14:11:40 -0600 chadwick-air (10662)] INFO : Reading configuration from 
+[12/29/13 14:11:40 -0600 chadwick-air (10662)] ERROR : Unable to read configuration file : can't convert nil into String
+[12/29/13 14:11:40 -0600 chadwick-air (10662)] INFO : Disabling the Request Sampler.
+[12/29/13 14:11:40 -0600 chadwick-air (10662)] INFO : Environment: development
+[12/29/13 14:11:40 -0600 chadwick-air (10662)] INFO : Dispatcher: webrick
+[12/29/13 14:11:40 -0600 chadwick-air (10662)] INFO : Application: development
+[12/29/13 14:11:40 -0600 chadwick-air (10662)] WARN : No license key found in newrelic.yml config. This often means your newrelic.yml is missing a section for the running environment 'development'
+[12/29/13 14:11:40 -0600 chadwick-air (10662)] INFO : Installing ActiveRecord instrumentation
+[12/29/13 14:11:41 -0600 chadwick-air (10662)] INFO : Installing Net instrumentation
+[12/29/13 14:11:41 -0600 chadwick-air (10662)] INFO : Installing Sinatra instrumentation
+[12/29/13 14:11:41 -0600 chadwick-air (10662)] INFO : Finished instrumentation
+[12/29/13 14:11:41 -0600 chadwick-air (10663)] INFO : Starting the New Relic agent in "development" environment.
+[12/29/13 14:11:41 -0600 chadwick-air (10663)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "development" section of your newrelic.yml.
+[12/29/13 14:11:41 -0600 chadwick-air (10663)] INFO : Reading configuration from 
+[12/29/13 14:11:41 -0600 chadwick-air (10663)] ERROR : Unable to read configuration file : can't convert nil into String
+[12/29/13 14:11:41 -0600 chadwick-air (10663)] INFO : Disabling the Request Sampler.
+[12/29/13 14:11:41 -0600 chadwick-air (10663)] INFO : Environment: development
+[12/29/13 14:11:41 -0600 chadwick-air (10663)] INFO : Dispatcher: webrick
+[12/29/13 14:11:41 -0600 chadwick-air (10663)] INFO : Application: development
+[12/29/13 14:11:41 -0600 chadwick-air (10663)] WARN : No license key found in newrelic.yml config. This often means your newrelic.yml is missing a section for the running environment 'development'
+[12/29/13 14:11:41 -0600 chadwick-air (10663)] INFO : Installing ActiveRecord instrumentation
+[12/29/13 14:11:42 -0600 chadwick-air (10663)] INFO : Installing Net instrumentation
+[12/29/13 14:11:42 -0600 chadwick-air (10663)] INFO : Installing Sinatra instrumentation
+[12/29/13 14:11:42 -0600 chadwick-air (10663)] INFO : Finished instrumentation
+[12/29/13 14:11:42 -0600 chadwick-air (10666)] INFO : Starting the New Relic agent in "development" environment.
+[12/29/13 14:11:42 -0600 chadwick-air (10666)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "development" section of your newrelic.yml.
+[12/29/13 14:11:42 -0600 chadwick-air (10666)] INFO : Reading configuration from 
+[12/29/13 14:11:42 -0600 chadwick-air (10666)] ERROR : Unable to read configuration file : can't convert nil into String
+[12/29/13 14:11:42 -0600 chadwick-air (10666)] INFO : Disabling the Request Sampler.
+[12/29/13 14:11:42 -0600 chadwick-air (10666)] INFO : Environment: development
+[12/29/13 14:11:42 -0600 chadwick-air (10666)] INFO : Dispatcher: webrick
+[12/29/13 14:11:42 -0600 chadwick-air (10666)] INFO : Application: development
+[12/29/13 14:11:42 -0600 chadwick-air (10666)] WARN : No license key found in newrelic.yml config. This often means your newrelic.yml is missing a section for the running environment 'development'
+[12/29/13 14:11:42 -0600 chadwick-air (10666)] INFO : Installing ActiveRecord instrumentation
+[12/29/13 14:11:43 -0600 chadwick-air (10666)] INFO : Installing Net instrumentation
+[12/29/13 14:11:43 -0600 chadwick-air (10666)] INFO : Installing Sinatra instrumentation
+[12/29/13 14:11:43 -0600 chadwick-air (10666)] INFO : Finished instrumentation
