@@ -25,7 +25,9 @@
   </div>
 
   <div data-bind="visible: total() > 0">
-    <a href="#" data-bind="css: 'scrollup', text: total_quantity"></a>
+    <h4>
+      <a href="#" data-bind="css: 'scrolldown'"><span data-bind="text: total_quantity"></span> Checkout</a>
+    </h4>
   </div>
 
   <div data-bind="css: { 'navbar navbar-inner checkout' : total() > 0 } ">
@@ -223,19 +225,21 @@
   ko.applyBindings(new ItemsViewModel(item_json));
 </script>
 
+
 <script type="text/javascript">
+// This javascript is hacked for the checkout pill to scroll down instead of up
     $(document).ready(function(){ 
         $(window).scroll(function(){
-            if ($(this).scrollTop() > 100) {
-                $('.scrollup').fadeIn();
+            if ($(this).scrollTop() < $(document).height() - 700) {
+                $('.scrolldown').fadeIn();
             } else {
-                $('.scrollup').fadeOut();
+                $('.scrolldown').fadeOut();
             }
         }); 
  
-        $('.scrollup').click(function(){
+        $('.scrolldown').click(function(){
             //$("html, body").animate({ scrollTop: 0 }, 600);
-            $("html, body").animate({ scrollTop: $(document).height() }, 1000);
+            $("html, body").animate({ scrollTop: $(document).height()-$(window).height() }, 1000);
             return false;
         });
     });
@@ -268,17 +272,18 @@
   border-bottom: 5px solid #CCC;
 }
 
-.scrollup, .scrollup:hover{
-    width: 9%;
+.scrolldown, .scrolldown:hover{
+    width: 130px;
     height: 40px;
     position: fixed;
-    top: 48%;
-    left: 55%;
+    bottom: 1%;
+    right: 2%;
     display: none;
     color: #FFF !important;
     background-color: #1B2125;
     border-radius: 21px;
     text-decoration: none;
-    text-indent: 75px;
+    text-indent: 15px;
+    line-height: 37px;
 }
 </style>
