@@ -1,15 +1,15 @@
 <div id='content'>
 
-  <div class="item-container">
+  <div class="menu-container">
     <h2><%= @venue.name %></h2>
 
       <div data-bind="foreach: items" /> 
         <div class="add-item" data-bind="click: $parent.addToCart">
-           <div class="item-template"> 
+          <div class="item"> 
             <div data-bind="attr: { class: item_id }">
               <div class="item-name-price">
                 <h3>
-                  <span data-bind="text: item_name"></span> - <span data-bind="text: item_price"></span>
+                  <span data-bind="text: item_name"></span> $<span data-bind="text: item_price"></span>
                 </h3>
               </div>
               <div class="item-description">
@@ -18,8 +18,7 @@
             </div>
           </div>
         </div>
-        <hr>
-    </div>
+      </div>
   </div>
 
   <div data-bind="visible: total() > 0">
@@ -232,7 +231,7 @@
 <script type="text/javascript">
 // This javascript is hacked for the checkout pill to scroll down instead of up
     $(document).ready(function(){ 
-      if ($(this).scrollTop() < $(document).height() - 700) {
+      if ($(this).scrollTop() < $(document).height() - 600) {
         $('.scrolldown').fadeIn();
       } else {
         $('.scrolldown').fadeOut();
@@ -268,8 +267,13 @@
   font-weight: normal !important;
 }
 
-.item-container h2{
-  border-bottom: 5px solid #CCC;
+.item {
+  width: 95%;
+  background-color: white;
+  border-radius: 10px;
+  border-bottom: 5px solid #c0c0c0 ;
+  padding: 1px 5px 5px 15px;
+  margin: 1px 0 10px 0;
 }
 
 .scrolldown, .scrolldown:hover{
