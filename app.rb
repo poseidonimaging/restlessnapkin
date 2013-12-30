@@ -200,6 +200,7 @@ post '/charge' do
   @user_amount = @amount / 100
 
   # The order
+  @venue = params[:venue]
   @order = JSON.parse(params[:order].to_s) if params[:order]
   @customer_email = params[:stripeEmail]
 
@@ -213,12 +214,12 @@ post '/charge' do
 
   charge = Stripe::Charge.create(
     :amount      => @amount,
-    :description => 'Sinatra Charge',
+    :description => @venue,
     :currency    => 'usd',
     :customer    => customer.id
   )
 
-  # Print the order.
+  # Print the order
   if @order
     printer_erb = ERB.new(File.read(File.join(File.dirname(__FILE__), "views", "printer", "order.erb")))
     printer = Mprinter.new("529f7338449aa8a96b00001a")

@@ -1,14 +1,17 @@
 <div id='content'>
 
-  <h2>Thanks, you paid <strong>$<%= @user_amount %></strong>!</h2>
+<div class="row-fluid" style="background: #555555; color: #f9f9f9">
+  <div style="padding:10px;" class="span12">
+    <h5><%= @venue %> | <%= Time.new.strftime("%m-%d %I:%M%P") %></h5>
+    <h5><%= @customer_email %> ($<%= @user_amount %> on <%= @token[:card][:type] %> <%= @token[:card][:last4] %>)</h5>
 
-  <% if @order && @order.is_a?(Array) %>
-    <p>You ordered:</p>
-
-    <ul>
+    <ul style="font-size: 150%;">
       <% @order.each do |item| %>
-        <li><%= item["quantity"] %> &times; <%= item["item"] %></li>
+        <li><h4><%= item["quantity"] %> &times; <%= item["item"] %></h4></li>
       <% end %>
     </ul>
-  <% end %>
+
+  </div>
+</div>
+
 </div>
