@@ -2,7 +2,6 @@
 
   <div class="item-container">
     <h2><%= @venue.name %></h2>
-    <button data-bind='click: order'>Submit order</button>
 
       <div data-bind="foreach: items" /> 
         <div class="add-item" data-bind="click: $parent.addToCart">
@@ -21,7 +20,6 @@
         </div>
         <hr>
     </div>
-    <hr>
   </div>
 
   <div data-bind="visible: total() > 0">
@@ -31,6 +29,9 @@
   </div>
 
   <div data-bind="css: { 'navbar navbar-inner checkout' : total() > 0 } ">
+    <div data-bind="visible: total() > 0">
+      <h3>Checkout</h3>
+    </div>
     <div data-bind="foreach: cart">
       <div class="cart_item">
         <h4>
@@ -41,7 +42,6 @@
       </div>
     </div>
     <form action="/charge" method="post" class="payment" data-bind="visible: total() > 0">
-      <input class="span2" name="order" type="textarea" data-bind="value: order()">
       <input class="span2" name="amount" type="hidden" data-bind="value: total()">
       <article>
         <h4 style="text-align:center" data-bind="visible: total() > 0">
