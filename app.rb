@@ -16,6 +16,7 @@ require "rest-client"
 require "stripe"
 require 'sinatra/assetpack'
 require "./models"
+load "./lib/mprinter.rb"
 load "./order_process.rb"
 load "./order_views.rb"
 load "./barkeeper.rb"
@@ -181,20 +182,8 @@ get '/mprinter/device/status' do
 end
 
 get '/mprinter/device/html' do
-  RestClient.log = logger
-
-  MPRINTER_OAUTH_CLIENT = 'Ehfv3Qk44jJiB8bifM3A'
-  MPRINTER_OAUTH_SECRET = 'g91EciYab2LdB83eKaRm'
-  MPRINTER_OAUTH_URL    = 'http://manage.themprinter.com/api/v1'
-  
-  client = OAuth2::Client.new(MPRINTER_OAUTH_CLIENT, MPRINTER_OAUTH_SECRET, :site => MPRINTER_OAUTH_URL, :token_url => MPRINTER_OAUTH_URL + '/token')
-  client.connection.response :logger
-  token = client.client_credentials.get_token({ :client_id => MPRINTER_OAUTH_CLIENT, :client_secret => MPRINTER_OAUTH_SECRET })
-  response = token.post('/api/v1/queue/add/html/529f7338449aa8a96b00001a', :body => {:data => '<h1>Test 3</h1>'})
-  
-  erb "#{response.body}"
-  #puts token.get(MPRINTER_OAUTH_URL + "/devices").response.body.to_s
-  #RestClient.post MPRINTER_OAUTH_URL + '/devices', :serial => 'KMHELM', token.headers
+  printer = Mprinter.new("529f7338449aa8a96b00001a")
+  erb printer.print("<h1>TEST FROM NEW CODE</h1>").body
 end
 
 # Support for OAuth failure
@@ -210,9 +199,15 @@ post '/charge' do
   @amount = (params[:amount].to_i) * 100
   @user_amount = @amount / 100
 
+  # The order
+  @order = JSON.parse(params[:order].to_s) if params[:order]
+  @customer_email = params[:stripeEmail]
+
+  @token = Stripe::Token.retrieve(params[:stripeToken])
+  @customer_email = @token[:email]
 
   customer = Stripe::Customer.create(
-    :email => params[:stripeEmail],
+    :email => @customer_email,
     :card  => params[:stripeToken]
   )
 
@@ -222,6 +217,15 @@ post '/charge' do
     :currency    => 'usd',
     :customer    => customer.id
   )
+
+  # Print the order.
+  if @order
+    printer_erb = ERB.new(File.read(File.join(File.dirname(__FILE__), "views", "printer", "order.erb")))
+    printer = Mprinter.new("529f7338449aa8a96b00001a")
+    printer_html = printer_erb.result(binding)
+    puts printer_html.inspect
+    puts printer.print(printer_html).body
+  end
 
   erb :charge
 end

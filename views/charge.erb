@@ -1,5 +1,14 @@
 <div id='content'>
 
   <h2>Thanks, you paid <strong>$<%= @user_amount %></strong>!</h2>
-  
+
+  <% if @order && @order.is_a?(Array) %>
+    <p>You ordered:</p>
+
+    <ul>
+      <% @order.each do |item| %>
+        <li><%= item["quantity"] %> &times; <%= item["item"] %></li>
+      <% end %>
+    </ul>
+  <% end %>
 </div>

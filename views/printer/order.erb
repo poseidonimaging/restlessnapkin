@@ -1,0 +1,8 @@
+<h1>New Order @ <%= Time.new.strftime("%m/%d/%Y %I:%M:%S %P") %></h1>
+<h3 style="word-wrap: break-all;"><%= @customer_email %> (<%= @token[:card][:type] %> <%= @token[:card][:last4] %>)</h3>
+
+<ul style="font-size: 150%;">
+  <% @order.each do |item| %>
+    <li><%= item["quantity"] %> &times; <%= item["item"] %></li>
+  <% end %>
+</ul>

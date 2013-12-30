@@ -42,7 +42,9 @@
       </div>
     </div>
     <form action="/charge" method="post" class="payment" data-bind="visible: total() > 0">
-      <input class="span2" name="amount" type="hidden" data-bind="value: total()">
+      <input class="span2" name="amount" type="hidden" data-bind="value: total()" />
+      <input name="order" type="hidden" data-bind="value: order()" />
+
       <article>
         <h4 style="text-align:center" data-bind="visible: total() > 0">
           Total: $<span data-bind="text: total()"></span>
@@ -59,9 +61,9 @@
   ko.bindingHandlers.script = {
       init: function(element, valueAccessor, allBindings, viewModel, bindingContext) {
           class_name = 'stripe-button active';
-          data_key = '<%= (settings.publishable_key) %>';
+          data_key = <%= JSON.generate(settings.publishable_key) %>;
           data_name = 'restlessnapkin';
-          data_description = '<%= (@venue.name) %>';
+          data_description = <%= JSON.generate(@venue.name) %>;
           data_amount = viewModel.total() * 100;
           data_image = 'http://restlessnapkin.wpengine.com/wp-content/uploads/2013/06/restless_napkin_posterous.png';
 
@@ -88,9 +90,9 @@
       },
       update: function (element, valueAccessor, allBindingsAccessor, viewModel, bindingContext) {
           class_name = 'stripe-button active';
-          data_key = '<%= (settings.publishable_key) %>';
+          data_key = <%= JSON.generate(settings.publishable_key) %>;
           data_name = 'restlessnapkin';
-          data_description = '<%= (@venue.name) %>';
+          data_description = <%= JSON.generate(@venue.name) %>;
           data_amount = viewModel.total() * 100;
           data_image = 'http://restlessnapkin.wpengine.com/wp-content/uploads/2013/06/restless_napkin_posterous.png';
 
@@ -156,8 +158,8 @@
         } : undefined
       });
       var jsonData = ko.toJSON(saveOrder);
-      $.post("http://127.0.0.1:9393/json/order", jsonData, function(data){
-      });
+      console.log(jsonData);
+      return jsonData;
     };
 
     self.subtotal = ko.computed(function(){
