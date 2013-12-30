@@ -24,7 +24,7 @@
 
   <div data-bind="visible: total() > 0">
     <h4>
-      <a href="#" data-bind="css: 'scrolldown'"><span data-bind="text: total_quantity"></span> Checkout</a>
+      <a href="#" data-bind="css: 'scrolldown'"><span data-bind="text: total_quantity, css: 'item_quantity'"></span> Checkout</a>
     </h4>
   </div>
 
@@ -251,7 +251,7 @@
 }
 
 .item_quantity{
-  padding: 0 10px 0 10px;
+  padding: 0 7px 0 7px;
   background-color: #C5C5C5;
   color: #000;
   border-radius: 20px;
@@ -273,7 +273,7 @@
 }
 
 .scrolldown, .scrolldown:hover{
-    width: 130px;
+    width: 140px;
     height: 40px;
     position: fixed;
     bottom: 1%;
@@ -283,7 +283,7 @@
     background-color: #1B2125;
     border-radius: 21px;
     text-decoration: none;
-    text-indent: 15px;
-    line-height: 37px;
+    text-indent: 7px;
+    line-height: 38px;
 }
 </style>
