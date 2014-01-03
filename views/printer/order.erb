@@ -1,5 +1,5 @@
 <h2><%= @venue %> Order</h2>
-<h2><%= Time.new.strftime("%m-%d %I:%M%P %-6:00z") %></h2>
+<h2><%= Time.new.strftime("%m-%d %I:%M%P") %></h2>
 <h3 style="word-wrap: break-all;"><%= @customer_email %> (<%= @token[:card][:type] %> <%= @token[:card][:last4] %>)</h3>
 
 <ul style="font-size: 150%;">
