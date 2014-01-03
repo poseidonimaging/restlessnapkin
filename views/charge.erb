@@ -2,7 +2,7 @@
 
 <div class="row-fluid" style="background: #555555; color: #f9f9f9">
   <div style="padding:10px;" class="span12">
-    <h5><%= @venue %> | <%= Time.new.strftime("%m-%d %I:%M%P %z-0600") %></h5>
+    <h5><%= @venue %> | <%= Time.new.strftime("%m-%d %I:%M%P %-6:00z") %></h5>
     <h5><%= @customer_email %> ($<%= @user_amount %> on <%= @token[:card][:type] %> <%= @token[:card][:last4] %>)</h5>
 
     <ul style="font-size: 150%;">
