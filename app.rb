@@ -118,23 +118,3 @@ get '/auth/failure' do
   redirect '/'
 end
 
-
-post '/json/order.json' do
-  request.body.rewind
-  @data = JSON.parse request.body.read
-end
-
-get '/json/order' do
-  output = session[:data][0]
-  erb :json
-end
-
-get '/example.json' do
-  content_type :json
-  {:key1 => 'value1', :key2 => 'value2'}.to_json
-end
-
-get '/hello/:name.json' do
-  content_type :json
-  {"message" => "Hello #{params[:name]}!"}.to_json
-end

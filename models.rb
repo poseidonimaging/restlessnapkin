@@ -35,6 +35,7 @@ class Venue < ActiveRecord::Base
   has_many :liquors_venues, :inverse_of => :venue
   has_many :liquors, :through => :liquors_venues
   has_many :menu_items, :inverse_of => :venue
+  has_many :operating_times, :inverse_of => :venue
 
   validates :name, :presence => true
   validates :handle, :presence => true, :uniqueness => true
@@ -45,4 +46,11 @@ class MenuItem < ActiveRecord::Base
   validates :description, :presence => true
   validates :price, :presence => true
   validates :venue_id, :presence => true
+end
+
+class OperatingTime < ActiveRecord::Base
+  validates :venue_id, :presence => true
+  validates :day_of_week, :presence => true
+  validates :start_hour, :presence => true
+  validates :end_hour, :presence => true
 end
