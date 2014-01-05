@@ -3,17 +3,6 @@ get '/admin/venue/dashboard' do
   erb :"venue/dashboard"
 end
 
-get '/venue/show' do
-  @venue = Venue.order("created_at DESC")
-  erb :"venue/show"
-end
-
-# Show venue by id
-get '/venue/:id' do
-  @venue = Venue.find(params[:id])
-  erb "The venue is called #{@venue.name} and its handle is #{@venue.handle}"
-end
-
 # Form to add a venue to db
 get '/admin/venue/add' do
   erb :"/venue/add"
@@ -29,6 +18,17 @@ post '/admin/venue/add' do
   else
     erb :"/admin/dashboard"
   end
+end
+
+get '/venue/show' do
+  @venue = Venue.order("created_at DESC")
+  erb :"venue/show"
+end
+
+# Show venue by id
+get '/venue/:id' do
+  @venue = Venue.find(params[:id])
+  erb "The venue is called #{@venue.name} and its handle is #{@venue.handle}"
 end
 
 # Edit which liquors are available per venue

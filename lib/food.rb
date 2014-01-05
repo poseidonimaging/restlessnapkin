@@ -1,8 +1,14 @@
+# Add a menu item
+get '/admin/:venue/food/add' do
+  @venue = Venue.find_by_handle(params[:venue])
+  erb :"/venue/food/add"
+end
+
 # Edit menu items
 get '/admin/:venue/food/edit' do
   @venue = Venue.find_by_handle(params[:venue])
   @item = MenuItem.where(:venue_id => @venue.id)
-  erb :"/food/dashboard"
+  erb :"/venue/food/dashboard"
 end
 
 # Add a menu item via POST
@@ -18,12 +24,6 @@ post '/admin/food/add' do
   else
     erb :"/admin/dashboard"
   end
-end
-
-# Add a menu item
-get '/admin/:venue/food/add' do
-  @venue = Venue.find_by_handle(params[:venue])
-  erb :"/food/add"
 end
 
 # Show menu

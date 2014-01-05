@@ -25,6 +25,10 @@ get '/logout' do
   erb "<div class='alert alert-message'>Logged out</div>"
 end
 
+get '/admin' do
+  redirect "/admin/dashboard"
+end
+
 get '/admin/dashboard' do
   erb :"/admin/dashboard"
 end

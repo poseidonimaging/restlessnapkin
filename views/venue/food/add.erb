@@ -1,0 +1,32 @@
+<div id='content'>
+
+  <h1>Add a New Menu Item to <%= @venue.name %></h1> <br />
+
+  <form action='/admin/food/add' method='post' class="form-horizontal">
+    <p>
+      <input class="span3" type="text" name='name' placeholder="Name">
+    </p>
+
+    <p>
+      <textarea rows="3"></textarea>
+    </p>
+
+    <p>
+      <div class="input-prepend">
+        <span class="add-on">$</span>
+        <input class="span3" type="text" name='price' placeholder="Price">
+      </div>
+    </p>
+
+    <p>
+      <input class="span3" type="hidden" name='venue_id' value='<%= @venue.id %>'>
+    </p>
+
+    <p>
+      <input class="span3" type="hidden" name='venue' value='<%= @venue.handle %>'>
+    </p>
+
+    <p><input class="btn btn-large btn-info" type='submit' value='Add Item'></p>
+  </form>
+
+</div>
