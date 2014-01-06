@@ -1,14 +1,16 @@
+# Admin routes for venue specific management
+# Show all venues
 get '/admin/venue/dashboard' do
   @venue = Venue.order("created_at DESC")
-  erb :"venue/dashboard"
+  erb :"/venue/dashboard"
 end
 
-# Form to add a venue to db
+# Add a venue form
 get '/admin/venue/add' do
   erb :"/venue/add"
 end
 
-# Add a venue
+# Add a venue to db
 post '/admin/venue/add' do
   @venue = Venue.new
   @venue.name = params[:name]
@@ -20,15 +22,10 @@ post '/admin/venue/add' do
   end
 end
 
-get '/venue/show' do
-  @venue = Venue.order("created_at DESC")
-  erb :"venue/show"
-end
-
-# Show venue by id
-get '/venue/:id' do
-  @venue = Venue.find(params[:id])
-  erb "The venue is called #{@venue.name} and its handle is #{@venue.handle}"
+# Edit venue information
+get '/admin/:venue/edit' do
+  @venue = Venue.find_by_handle(params[:venue])
+  erb :"/venue/edit"
 end
 
 # Edit which liquors are available per venue
@@ -41,6 +38,20 @@ get '/admin/:venue/liquor/edit' do
   @tequila = Liquor.by_type("tequila")
   @vodka = Liquor.by_type("vodka")
   erb :"/venue/liquor/edit"
+end
+
+
+# Begin non-admin venue routes
+# List of all venues
+get '/venue/show' do
+  @venue = Venue.order("created_at DESC")
+  erb :"venue/show"
+end
+
+# Show venue by id
+get '/venue/:id' do
+  @venue = Venue.find(params[:id])
+  erb "The venue is called #{@venue.name} and its handle is #{@venue.handle}"
 end
 
 # Show liquors by venue

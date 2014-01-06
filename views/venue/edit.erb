@@ -1,0 +1,78 @@
+<div id='content'>
+
+  <h1>Manage <%= @venue.name %></h1>
+  <hr>
+
+    <form action='/venue/edit' method='post' class='form-horizontal'>
+      <div class='control-group'> 
+        <label class='control-label' for='name'>Name</label>
+        <div class='controls'>
+          <input type='text' id='name' name='name' placeholder='<%= @venue.name %>'>
+        </div>
+      </div>
+
+      <div class='control-group'> 
+        <label class='control-label' for='prependedInput'>Handle</label>
+        <div class='controls'>
+          <div class='input-prepend'>
+            <span class='add-on'>@</span>
+              <input type='text' id='prependedInput' name='handle' placeholder='<%= @venue.handle %>'>
+          </div>
+        </div>
+      </div>
+
+      <h4>Hours</h4>
+
+        <div class='control-group'>
+        <% (0..6).each do |day_of_week| %>
+          <label class='control-label' for='<%= @day_of_week %>'><%= day_of_week %></label>
+          <div class='controls controls-row'>
+            <select type='text' id='<%= day_of_week %>' name='<%= day_of_week %>_start_hour' class='span1'>
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+              <option>5</option>
+              <option>6</option>
+              <option>7</option>
+              <option>8</option>
+              <option>9</option>
+              <option>10</option>
+              <option>11</option>
+              <option>12</option>
+            </select>
+
+            <select type='text' id='<%= day_of_week %>' name='<%= day_of_week %>_start_meridian' class='span1'>
+              <option>am</option>
+              <option>pm</option>
+            </select>
+
+            <select type='text' id='<%= day_of_week %>' name='<%= day_of_week %>_end_hour' class='span1'>
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+              <option>5</option>
+              <option>6</option>
+              <option>7</option>
+              <option>8</option>
+              <option>9</option>
+              <option>10</option>
+              <option>11</option>
+              <option>12</option>
+            </select>
+
+            <select type='text' id='<%= day_of_week %>' name='<%= day_of_week %>_end_meridian' class='span1'>
+              <option>am</option>
+              <option>pm</option>
+            </select>
+          </div>
+          <br>
+        <% end %>  
+        </div>
+    
+    <p><input class='btn btn-large btn-info' type='submit' value='Update'></p>
+    </form>
+    
+    
+</div>
