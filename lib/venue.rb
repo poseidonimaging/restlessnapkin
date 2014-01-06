@@ -29,32 +29,16 @@ get '/admin/:venue/edit' do
   erb :"/venue/edit"
 end
 
-# Create or update venue hours to db
+# Update venue hours to db
 put '/admin/venue/hours/edit' do
   @venue = Venue.find(params[:venue_id])
   
-  # Parse day of week data
+  # Parse day of week data and write to db
   (0..6).each do |day|
     # Convert to military time if 'pm'
-    #if params["#{day}_start_meridian"] = "pm" then
-    #  start_hour = params["#{day}_start_hour"].to_i
-    #  start_hour = start_hour + 12 unless start_hour = 12
-    #else
-    #  start_hour = params["#{day}_start_hour"].to_i
-    #  start_hour = start_hour - 12 unless start_hour < 11
-    #end
-
-    #if params["#{day}_end_meridian"] = "pm" then
-    #  end_hour = params["#{day}_end_hour"].to_i
-    #  end_hour = end_hour - 12 unless end_hour = 12
-    #else
-    #  end_hour = params["#{day}_end_hour"].to_i
-    #  end_hour = end_hour - 12 unless end_hour < 11
-    #end
-
     end_meridian = params["#{day}_end_meridian"]
     end_hour = params["#{day}_end_hour"].to_i
-    if end_meridian = "pm"
+    if end_meridian == "pm"
       end_hour = end_hour + 12
     end
 
@@ -74,32 +58,16 @@ put '/admin/venue/hours/edit' do
 
 end
 
-# Create or update venue hours to db
+# Create venue hours to db
  post '/admin/venue/hours/edit' do
   @venue = Venue.find(params[:venue_id])
   
-  # Parse day of week data
+  # Parse day of week data and write to db
   (0..6).each do |day|
     # Convert to military time if 'pm'
-    #if params["#{day}_start_meridian"] = "pm" then
-    #  start_hour = params["#{day}_start_hour"].to_i
-    #  start_hour = start_hour + 12 unless start_hour = 12
-    #else
-    #  start_hour = params["#{day}_start_hour"].to_i
-    #  start_hour = start_hour - 12 unless start_hour < 11
-    #end
-
-    #if params["#{day}_end_meridian"] = "pm" then
-    #  end_hour = params["#{day}_end_hour"].to_i
-    #  end_hour = end_hour - 12 unless end_hour = 12
-    #else
-    #  end_hour = params["#{day}_end_hour"].to_i
-    #  end_hour = end_hour - 12 unless end_hour < 11
-    #end
-
     end_meridian = params["#{day}_end_meridian"]
     end_hour = params["#{day}_end_hour"].to_i
-    if end_meridian = "pm"
+    if end_meridian == "pm"
       end_hour = end_hour + 12
     end
 
@@ -111,12 +79,12 @@ end
     @operating_time.start_hour = start_hour
     @operating_time.end_hour = end_hour
     if @operating_time.save
-      redirect "/admin/venue/dashboard"
+      puts "Success"
     else
-      erb "<div class='alert alert-message'>Error saving Operating Time for #{@venue.name}</div>"
+      erb "<div class='alert alert-message'>Error saving Operating Time for #{@venue.name} for day #{day}</div>"
     end
   end
-
+  redirect "/admin/venue/dashboard"
 end
 
 # Edit which liquors are available per venue
