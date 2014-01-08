@@ -1,5 +1,5 @@
 class CreateOperatingTime < ActiveRecord::Migration
-  def up
+  def change
     create_table :operating_times do |t|
       t.integer :venue_id, :null => false
       t.integer :day_of_week, :null => false
