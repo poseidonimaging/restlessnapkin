@@ -101,10 +101,30 @@ end
 
 
 # Begin non-admin venue routes
+# Stripe setup routes
+
+# Stripe authorization
+get '/venue/authorize' do
+  erb :"/venue/stripe/authorize"
+end
+
+# Stripe authorization callback
+get '/venue/callback' do
+  
+  # Pull the authorization code out of the response
+  @code = params[:code]
+
+  # Make a request to the access_token_uri endpoint to get an access_token
+  #@resp = settings.client.auth_code.get_token(code, :params => {:scope => 'read_write'})
+  #@access_token = @resp.token
+
+  erb :"/venue/stripe/callback"
+end
+
 # List of all venues
 get '/venue/show' do
   @venue = Venue.order("created_at DESC")
-  erb :"venue/show"
+  erb :"/venue/show"
 end
 
 # Show venue by id
