@@ -34,3 +34,7 @@ post '/charge' do
 
   erb :charge
 end
+
+error Stripe::CardError do
+  env['sinatra.error'].message
+end
