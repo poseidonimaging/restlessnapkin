@@ -16,6 +16,7 @@ require "rest-client"
 require "stripe"
 require 'sinatra/assetpack'
 require "./models"
+load "./charge.rb"
 load "./lib/mprinter.rb"
 load "./lib/order_process.rb"
 load "./lib/order_views.rb"
@@ -23,7 +24,6 @@ load "./lib/barkeeper.rb"
 load "./lib/venue.rb"
 load "./lib/liquor.rb"
 load "./lib/food.rb"
-load "./lib/charge.rb"
 load "./lib/admin.rb"
 
 configure do
