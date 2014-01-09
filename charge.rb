@@ -35,17 +35,31 @@ post '/charge' do
     end
   end
 
-  # Write order to the database
+  # Write order to the Order
   @order = Order.new
-  @order.venue_id = @venue
+  @order.venue_id = @venue.id
   @order.customer_id = @customer.id
+  if @order.save
+    status 200 # OK
+    { "success" => true }.to_json
 
-  # Loop each line item
-  x = 1
-  @customer_order.each do |item|
-    line_item = "item_#{x}"
-    @order.line_item = item["quantity"] 'x' item["item"]
-    x += 1
+    # Write line items to LineItem
+    @customer_order.each do |item|
+      @line_item = LineItem.new
+      @line_item.order_id = @order.id
+      @line_item.quantity = item["quantity"]
+      @line_item.item = item["item"]
+      if @line_item.save
+        status 200 # OK
+        { "success" => true }.to_json
+      else
+        status 422 # Unprocessable Entity
+        { "success" => false }.to_json
+      end
+    end
+  else
+    status 422 # Unprocessable Entity
+    { "success" => false }.to_json
   end
 
   # If writing to db is successful, execute charge
@@ -55,7 +69,7 @@ post '/charge' do
 
     charge = Stripe::Charge.create(
       :amount      => @amount,
-      :description => @venue,
+      :description => @venue.name,
       :currency    => 'usd',
       :customer    => @stripe_customer.id
     )

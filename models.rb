@@ -24,11 +24,20 @@ class LiquorsVenue < ActiveRecord::Base
 end
 
 class Order < ActiveRecord::Base
+  has_many :line_items
+
   validates :venue, presence: true, length: { minimum: 3}
   validates :location, presence: true, length: { minimum: 1}
   validates :lastname, presence: true, length: { minimum: 2}
   validates :phone, presence: true, length: { minimum: 10}
-  validates :item_1, presence: true, length: { minimum: 5}
+end
+
+class LineItem < ActiveRecord::Base
+  belongs_to :order
+
+  validates :order_id, :presence => true
+  validates :quantity, :presence => true
+  validates :item, :presence => true
 end
 
 class Customer < ActiveRecord::Base
