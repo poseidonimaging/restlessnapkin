@@ -41,7 +41,7 @@
       </div>
     </div>
     <form action="/charge" method="post" class="payment" data-bind="visible: total() > 0">
-      <input name="venue" type="hidden" value="<%= @venue.name %>" />
+      <input name="venue" type="hidden" value="<%= @venue.id %>" />
       <input name="order" type="hidden" data-bind="value: order()" />
       <input name="amount" type="hidden" data-bind="value: total()" />
 

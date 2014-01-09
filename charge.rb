@@ -4,7 +4,7 @@ post '/charge' do
   @user_amount = @amount / 100
 
   # The order
-  @venue = params[:venue]
+  @venue = Venue.find(params[:venue])
   @order = JSON.parse(params[:order].to_s) if params[:order]
   @customer_email = params[:stripeEmail]
 

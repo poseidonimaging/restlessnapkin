@@ -1,17 +1,27 @@
 <div id='content'>
 
-<div class="row-fluid" style="background: #555555; color: #f9f9f9">
-  <div style="padding:10px;" class="span12">
-    <h5><%= @venue %> | <%= Time.utc.getlocal.new.strftime("%m-%d %I:%M%P") %></h5>
-    <h5><%= @customer_email %> ($<%= @user_amount %> on <%= @token[:card][:type] %> <%= @token[:card][:last4] %>)</h5>
+<div class="alert alert-block">
+  <h4><%= @venue.name %></h4>
+  <%= @venue.address %> <%= @venue.phone %>
+</div>
 
-    <ul style="font-size: 150%;">
+<div class="row-fluid" style="background: #baddd9; color: #555555">
+  <div style="padding:10px;" class="span12">
+    <h4>$<%= @user_amount %> on <%= @token[:card][:type] %> <%= @token[:card][:last4] %></h4>
+    <h4><%= Time.new.strftime("%m-%d %I:%M%P") %></h4>
+    <h5><%= @customer_email %></h5>
+
+    <ul style="font-size: 150%; list-style-type: none;">
       <% @order.each do |item| %>
         <li><h4><%= item["quantity"] %> &times; <%= item["item"] %></h4></li>
       <% end %>
     </ul>
 
   </div>
+</div>
+
+<div class="alert alert-warning" style="margin-top: 10px">
+  In roughly 20 minutes, <b>politely</b> make your way to the front of the line with this information
 </div>
 
 </div>

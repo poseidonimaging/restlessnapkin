@@ -1,5 +1,9 @@
 # Admin routes for venue specific management
 # Show all venues
+get '/admin/venue' do
+  redirect "/admin/venue/dashboard"
+end
+
 get '/admin/venue/dashboard' do
   @venue = Venue.order("created_at DESC")
   erb :"/venue/dashboard"
@@ -25,8 +29,31 @@ end
 # Edit venue information
 get '/admin/:venue/edit' do
   @venue = Venue.find_by_handle(params[:venue])
-  @day_of_week = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday']
   erb :"/venue/edit"
+end
+
+# Edit venue hours of operation
+get '/admin/:venue/hours/edit' do
+  @venue = Venue.find_by_handle(params[:venue])
+  @day_of_week = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday']
+  erb :"/venue/hours/edit"
+end
+
+# Update venue information
+put '/admin/venue/edit' do
+  @venue = Venue.find(params[:venue_id])
+  @venue.name = params[:name]
+  @venue.handle = params[:handle]
+  @venue.phone = params[:phone]
+  @venue.address = params[:address]
+  @venue.city = params[:city]
+  @venue.state = params[:state].upcase
+  @venue.postal_code = params[:postal_code]
+  if @venue.save
+    redirect "/admin/venue/dashboard"
+  else
+    erb :"/admin/#{@venue.name}/edit"
+  end
 end
 
 # Update venue hours to db

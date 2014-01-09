@@ -3,58 +3,52 @@
   <h2>Manage <%= @venue.name %> (@<%= @venue.handle %>)</h2>
   <hr>
 
-    <h4>Hours</h4>
-    <form action='/admin/venue/hours/edit' method='post' class='form-horizontal'>
+    <form action='/admin/venue/edit' method='post' class='form-horizontal'>
+      <input type="hidden" name="_method" value="put" />
       <input type='hidden' name='venue_id' value='<%= @venue.id %>'>
-      <div class='control-group'>
-      <% (0..6).each do |day| %>
-        <label class='control-label' for='<%= @day_of_week[day] %>'><%= @day_of_week[day] %></label>
-        <div class='controls controls-row'>
-          <select type='text' id='<%= @day_of_week[day] %>' name='<%= day %>_start_hour' class='span1'>
-            <option>1</option>
-            <option>2</option>
-            <option>3</option>
-            <option>4</option>
-            <option>5</option>
-            <option>6</option>
-            <option>7</option>
-            <option>8</option>
-            <option>9</option>
-            <option>10</option>
-            <option>11</option>
-            <option>12</option>
-          </select>
-
-          <select type='text' id='<%= @day_of_week[day] %>' name='<%= day %>_start_meridian' class='span1'>
-            <option>am</option>
-            <option>pm</option>
-          </select>
-
-          <select type='text' id='<%= @day_of_week[day] %>' name='<%= day %>_end_hour' class='span1'>
-            <option>1</option>
-            <option>2</option>
-            <option>3</option>
-            <option>4</option>
-            <option>5</option>
-            <option>6</option>
-            <option>7</option>
-            <option>8</option>
-            <option>9</option>
-            <option>10</option>
-            <option>11</option>
-            <option>12</option>
-          </select>
-
-          <select type='text' id='<%= @day_of_week[day] %>' name='<%= day %>_end_meridian' class='span1'>
-            <option>pm</option>
-            <option>am</option>
-          </select>
+      <div class='control-group'> 
+        <label class='control-label' for='name'>Name</label>
+        <div class='controls'>
+          <input type='text' id='name' name='name' placeholder="ACME Food" value='<%= @venue.name %>'>
         </div>
-        <br>
-      <% end %>  
       </div>
-  
+
+      <div class='control-group'> 
+        <label class='control-label' for='prependedInput'>Handle</label>
+        <div class='controls'>
+          <div class='input-prepend'>
+            <span class='add-on'>@</span>
+              <input type='text' id='prependedInput' name='handle' placeholder="nospacename" value='<%= @venue.handle %>'>
+          </div>
+        </div>
+      </div>
+
+      <div class='control-group'> 
+        <label class='control-label' for='phone'>Phone</label>
+        <div class='controls'>
+          <input type='text' id='phone' name='phone' placeholder="512-555-5555" value='<%= @venue.phone %>'>
+        </div>
+      </div>
+
+      <hr>
+
+      <div class='control-group'> 
+        <label class='control-label' for='address'>Address</label>
+        <div class='controls'>
+          <input type='text' id='address' name='address' placeholder="123 Main St" value='<%= @venue.address %>'>
+        </div>
+      </div>
+
+      <div class='control-group'> 
+        <label class='control-label' for='name'>City, ST Postal</label>
+        <div class='controls'>
+          <input class='span2' type='text' id='city' name='city' placeholder="Awestin" value='<%= @venue.city %>'>
+          <input class='span1' type='text' id='state' name='state' style="text-transform: uppercase" maxlength="2" placeholder="XT" value='<%= @venue.state %>'>
+          <input class='span1' type='text' id='postal_code' name='postal_code' maxlength="5" placeholder="77777" value='<%= @venue.postal_code %>'>
+        </div>
+      </div>
+
     <p><input class='btn btn-large btn-info' type='submit' value='Update'></p>
-    </form>
+  </form>
     
 </div>
