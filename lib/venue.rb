@@ -77,14 +77,17 @@ put '/admin/venue/hours/edit' do
     @operating_time.start_hour = start_hour
     @operating_time.end_hour = end_hour
     if @operating_time.save
-      redirect "/admin/venue/dashboard"
+      status 200 # OK
+      { "success" => true }.to_json
     else
-      erb "<div class='alert alert-message'>Error saving Operating Time for #{@venue.name}</div>"
+      status 422 # Unprocessable Entity
+      { "success" => false }.to_json
     end
   end
-
+  redirect "/admin/venue/dashboard"
 end
 
+# This is the one that works 1/8/14
 # Create venue hours to db
  post '/admin/venue/hours/edit' do
   @venue = Venue.find(params[:venue_id])
@@ -106,9 +109,11 @@ end
     @operating_time.start_hour = start_hour
     @operating_time.end_hour = end_hour
     if @operating_time.save
-      puts "Success"
+      status 200 # OK
+      { "success" => true }.to_json
     else
-      erb "<div class='alert alert-message'>Error saving Operating Time for #{@venue.name} for day #{day}</div>"
+      status 422 # Unprocessable Entity
+      { "success" => false }.to_json
     end
   end
   redirect "/admin/venue/dashboard"

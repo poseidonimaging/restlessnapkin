@@ -6,22 +6,56 @@ post '/charge' do
   # The order
   @venue = Venue.find(params[:venue])
   @order = JSON.parse(params[:order].to_s) if params[:order]
-  @customer_email = params[:stripeEmail]
 
+  # Retrieve Stripe token
   @token = Stripe::Token.retrieve(params[:stripeToken])
   @customer_email = @token[:email]
 
-  customer = Stripe::Customer.create(
-    :email => @customer_email,
-    :card  => params[:stripeToken]
-  )
+  # Check to see if customer exists, else create new customer
+  if Customer.exists?(:email => @customer_email)
+    @customer = Customer.find_by_email(@customer_email)
+    @stripe_customer = Stripe::Customer.retrieve(@customer.stripe_id)
+  else
+    @stripe_customer = Stripe::Customer.create(
+      :email => @customer_email,
+      :card  => params[:stripeToken]
+    )
+    @stripe_id = @stripe_customer.id
+
+    @customer = Customer.new
+    @customer.email = @customer_email
+    @customer.stripe_id = @stripe_id
+    if @customer.save
+      status 200 # OK
+      { "success" => true }.to_json
+    else
+      status 422 # Unprocessable Entity
+      { "success" => false }.to_json
+    end
+  end
 
   charge = Stripe::Charge.create(
     :amount      => @amount,
     :description => @venue,
     :currency    => 'usd',
-    :customer    => customer.id
+    :customer    => @stripe_customer.id
   )
+
+=begin
+  # Write order to database
+  if Venue.exists?(:handle => params['venue'])
+    session[:venue] = params['venue']
+    @venue = Venue.find_by_handle(params['venue'])
+    session[:phone] = params[:splat].first
+    if session[:venue] && session[:phone]
+      erb :checkin
+    else
+      erb "Something has gone awry. The napkin isn't saving the venue properly, please try again."
+    end 
+  else
+    erb "We can't find that venue, please text the proper venue handle(no spaces like a twitter username)"
+  end
+=end
 
   # Print the order
   if @order

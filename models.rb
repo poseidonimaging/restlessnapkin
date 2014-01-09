@@ -28,7 +28,14 @@ class Order < ActiveRecord::Base
   validates :location, presence: true, length: { minimum: 1}
   validates :lastname, presence: true, length: { minimum: 2}
   validates :phone, presence: true, length: { minimum: 10}
-  validates :drinks_1, presence: true, length: { minimum: 5}
+  validates :item_1, presence: true, length: { minimum: 5}
+end
+
+class Customer < ActiveRecord::Base
+  has_many :orders, :inverse_of => :order
+
+  validates :email, :presence => true
+  validates :stripe_id, :presence => true
 end
 
 class Venue < ActiveRecord::Base
@@ -43,7 +50,6 @@ end
 
 class MenuItem < ActiveRecord::Base
   validates :name, :presence => true
-  validates :description, :presence => true
   validates :price, :presence => true
   validates :venue_id, :presence => true
 end
