@@ -1,11 +1,11 @@
 post '/charge' do
   # Amount in cents
   @amount = (params[:amount].to_i) * 100
-  @user_amount = @amount / 100
+  @customer_amount = @amount / 100
 
   # The order
   @venue = Venue.find(params[:venue])
-  @order = JSON.parse(params[:order].to_s) if params[:order]
+  @customer_order = JSON.parse(params[:order].to_s) if params[:order]
 
   # Retrieve Stripe token
   @token = Stripe::Token.retrieve(params[:stripeToken])
@@ -22,6 +22,7 @@ post '/charge' do
     )
     @stripe_id = @stripe_customer.id
 
+    # No Stripe customer existed, create a new one
     @customer = Customer.new
     @customer.email = @customer_email
     @customer.stripe_id = @stripe_id
@@ -34,31 +35,37 @@ post '/charge' do
     end
   end
 
-  charge = Stripe::Charge.create(
-    :amount      => @amount,
-    :description => @venue,
-    :currency    => 'usd',
-    :customer    => @stripe_customer.id
-  )
+  # Write order to the database
+  @order = Order.new
+  @order.venue_id = @venue
+  @order.customer_id = @customer.id
 
-=begin
-  # Write order to database
-  if Venue.exists?(:handle => params['venue'])
-    session[:venue] = params['venue']
-    @venue = Venue.find_by_handle(params['venue'])
-    session[:phone] = params[:splat].first
-    if session[:venue] && session[:phone]
-      erb :checkin
-    else
-      erb "Something has gone awry. The napkin isn't saving the venue properly, please try again."
-    end 
-  else
-    erb "We can't find that venue, please text the proper venue handle(no spaces like a twitter username)"
+  # Loop each line item
+  x = 1
+  @customer_order.each do |item|
+    line_item = "item_#{x}"
+    @order.line_item = item["quantity"] 'x' item["item"]
+    x += 1
   end
-=end
+
+  # If writing to db is successful, execute charge
+  if @order.save
+    status 200 # OK
+    { "success" => true }.to_json
+
+    charge = Stripe::Charge.create(
+      :amount      => @amount,
+      :description => @venue,
+      :currency    => 'usd',
+      :customer    => @stripe_customer.id
+    )
+  else
+    status 422 # Unprocessable Entity
+    { "success" => false }.to_json
+  end
 
   # Print the order
-  if @order
+  if @customer_order
     printer_erb = ERB.new(File.read(File.join(File.dirname(__FILE__), "views", "printer", "order.erb")))
     printer = Mprinter.new("529f7338449aa8a96b00001a")
     printer_html = printer_erb.result(binding)
