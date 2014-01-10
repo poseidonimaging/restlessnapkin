@@ -26,10 +26,7 @@ end
 class Order < ActiveRecord::Base
   has_many :line_items
 
-  validates :venue, presence: true, length: { minimum: 3}
-  validates :location, presence: true, length: { minimum: 1}
-  validates :lastname, presence: true, length: { minimum: 2}
-  validates :phone, presence: true, length: { minimum: 10}
+  validates :venue_id, presence: true
 end
 
 class LineItem < ActiveRecord::Base
