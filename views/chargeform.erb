@@ -192,7 +192,8 @@
     });
 
     self.total = ko.computed(function(){
-      return self.subtotal();
+      var tax_total = (self.subtotal() * 1.0825);
+      return (Math.round((tax_total + 0.00001) * 100) / 100);
     });
 
     self.addToCart = function(item, event) {
