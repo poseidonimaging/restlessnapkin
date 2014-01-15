@@ -47,12 +47,12 @@
 
       <article>
         <h4 style="text-align:center" data-bind="visible: total() > 0">
-          Total: $<span data-bind="text: total()"></span>
+          + Sales Tax
         </h4>
       </article>
       <a href="#" class="clear_cart" data-bind="click: clearCart">Clear Checkout</a>
       <script src="https://checkout.stripe.com/checkout.js"></script>
-      <span id="customButton" class="btn btn-info" data-bind="script: 'stripe'">Pay with card</span>
+      <span id="customButton" class="btn btn-info" data-bind="script: 'stripe'">Pay $<span data-bind="text: total()"></span>
     </form>
   </div>
 </div>
@@ -192,8 +192,8 @@
     });
 
     self.total = ko.computed(function(){
-      var tax_total = (self.subtotal() * 1.0825);
-      return (Math.round((tax_total + 0.00001) * 100) / 100);
+      var with_tax_total = (self.subtotal() * 1.0825);
+      return (Math.round((with_tax_total + 0.00001) * 100) / 100);
     });
 
     self.addToCart = function(item, event) {
