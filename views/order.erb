@@ -8,7 +8,7 @@
 <div class="row-fluid" style="background: #baddd9; color: #555555">
   <div style="padding:10px;" class="span12">
     <h4>$<%= (@charge[:amount] / 100) %> on <%= @charge[:card][:type] %> <%= @charge[:card][:last4] %></h4>
-    <h4><%= @order.created_at.strftime("%m-%d %I:%M%P") %></h4>
+    <h4><%= (@order.created_at - 21600).strftime("%m-%d %I:%M%P") %></h4>
 
     <h5><%= @customer.email %></h5>
 
