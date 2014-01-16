@@ -67,12 +67,20 @@ post '/charge' do
     status 200 # OK
     { "success" => true }.to_json
 
-    charge = Stripe::Charge.create(
+    @charge = Stripe::Charge.create(
       :amount      => @amount,
       :description => @venue.name,
       :currency    => 'usd',
       :customer    => @stripe_customer.id
     )
+    @order.stripe_id = @charge.id
+    if @order.save
+      status 200 # OK
+      { "success" => true }.to_json
+    else
+    status 422 # Unprocessable Entity
+    { "success" => false }.to_json
+    end
   else
     status 422 # Unprocessable Entity
     { "success" => false }.to_json
@@ -87,7 +95,7 @@ post '/charge' do
     puts printer.print(printer_html).body
   end
 
-  erb :charge
+  redirect "/orders/#{@order.id}"
 end
 
 error Stripe::CardError do

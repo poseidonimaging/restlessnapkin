@@ -9,6 +9,7 @@
   <div style="padding:10px;" class="span12">
     <h4>$<%= @customer_amount %> on <%= @token[:card][:type] %> <%= @token[:card][:last4] %></h4>
     <h4><%= Time.new.strftime("%m-%d %I:%M%P") %></h4>
+    
     <h5><%= @customer_email %></h5>
 
     <ul style="font-size: 150%; list-style-type: none;">

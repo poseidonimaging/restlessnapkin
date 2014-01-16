@@ -11,9 +11,14 @@ post '/orders/index' do
 end
 
 # Get individual orders
+# Redirecting from successful charge 
 get '/orders/:id' do
   @order = Order.find(params[:id])
-  erb :"orders/show", :layout => (request.xhr? ? false : :layout)
+  @items = LineItem.where(:order_id => @order.id)
+  @venue = Venue.find(@order.venue_id)
+  @customer = Customer.find(@order.customer_id)
+  @charge = Stripe::Charge.retrieve(@order.stripe_id)
+  erb :"order", :layout => (request.xhr? ? false : :layout)
 end
 
 # Get orders by venue
