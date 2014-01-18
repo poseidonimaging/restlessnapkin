@@ -2,6 +2,7 @@
 
   <div class="menu-container">
     <h2><%= @venue.name %></h2>
+    <p><%=@venue.address %></p>
 
       <div data-bind="foreach: items" /> 
         <div class="add-item" data-bind="click: $parent.addToCart">
@@ -19,10 +20,9 @@
           </div>
         </div>
       </div>
-
-      
-
   </div>
+
+ 
 
   <div data-bind="visible: total() > 0">
     <h4>
@@ -59,6 +59,7 @@
     </form>
   </div>
 </div>
+
 
 <script type="text/javascript">
   ko.bindingHandlers.script = {
@@ -284,13 +285,13 @@
     width: 140px;
     height: 40px;
     position: fixed;
-    top: 5px;
+    top: 4px;
     right: 2%;
     display: none;
     color: #FFF !important;
     background-color: #67dbb2;
     border-radius: 21px;
-    border-bottom: 3px solid #939393;
+    border-bottom: 3px solid #02ae8e;
     text-decoration: none;
     text-indent: 7px;
     line-height: 40px;

@@ -47,7 +47,7 @@ get '/mprinter/devices' do
 
   client = OAuth2::Client.new(MPRINTER_OAUTH_CLIENT, MPRINTER_OAUTH_SECRET, :site => MPRINTER_OAUTH_URL, :token_url => MPRINTER_OAUTH_URL + '/token')
   token = client.client_credentials.get_token({ :client_id => MPRINTER_OAUTH_CLIENT, :client_secret => MPRINTER_OAUTH_SECRET })
-  response = token.get('/api/v1/devices', :body => {:status => 'online'})
+  response = token.get('/api/v1/devices')
 
   erb "#{response.body}"
 end
@@ -76,7 +76,7 @@ get '/mprinter/add_device' do
   client = OAuth2::Client.new(MPRINTER_OAUTH_CLIENT, MPRINTER_OAUTH_SECRET, :site => MPRINTER_OAUTH_URL, :token_url => MPRINTER_OAUTH_URL + '/token')
   client.connection.response :logger
   token = client.client_credentials.get_token({ :client_id => MPRINTER_OAUTH_CLIENT, :client_secret => MPRINTER_OAUTH_SECRET })
-  response = token.post('/api/v1/devices', :body => {:serial => 'KMHELM'})
+  response = token.post('/api/v1/devices', :body => {:serial => 'WBFFXA'})
   
   erb "#{response.body}"
   #puts token.get(MPRINTER_OAUTH_URL + "/devices").response.body.to_s
@@ -93,7 +93,7 @@ get '/mprinter/confirm_device' do
   client = OAuth2::Client.new(MPRINTER_OAUTH_CLIENT, MPRINTER_OAUTH_SECRET, :site => MPRINTER_OAUTH_URL, :token_url => MPRINTER_OAUTH_URL + '/token')
   client.connection.response :logger
   token = client.client_credentials.get_token({ :client_id => MPRINTER_OAUTH_CLIENT, :client_secret => MPRINTER_OAUTH_SECRET })
-  response = token.post('/api/v1/devices/confirm/529f7338449aa8a96b00001a', :body => {:code => 'VNWZKL'})
+  response = token.post('/api/v1/devices/confirm/52dae6f55740830000000024', :body => {:code => 'PPKTTJ'})
   
   erb "#{response.body}"
   #puts token.get(MPRINTER_OAUTH_URL + "/devices").response.body.to_s
@@ -110,7 +110,7 @@ get '/mprinter/device/status' do
   client = OAuth2::Client.new(MPRINTER_OAUTH_CLIENT, MPRINTER_OAUTH_SECRET, :site => MPRINTER_OAUTH_URL, :token_url => MPRINTER_OAUTH_URL + '/token')
   client.connection.response :logger
   token = client.client_credentials.get_token({ :client_id => MPRINTER_OAUTH_CLIENT, :client_secret => MPRINTER_OAUTH_SECRET })
-  response = token.get('/api/v1/devices/529f7338449aa8a96b00001a')
+  response = token.get('/api/v1/devices')
   
   erb "#{response.body}"
   #puts token.get(MPRINTER_OAUTH_URL + "/devices").response.body.to_s
@@ -118,6 +118,6 @@ get '/mprinter/device/status' do
 end
 
 get '/mprinter/device/html' do
-  printer = Mprinter.new("529f7338449aa8a96b00001a")
+  printer = Mprinter.new("52dae6f55740830000000024")
   erb printer.print("<h1>TEST FROM NEW CODE</h1>").body
 end

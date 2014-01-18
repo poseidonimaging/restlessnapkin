@@ -22,24 +22,6 @@
               restlessnapkin
             </a>
 
-            <ul class="nav pull-right">
-              <li class="dropdown">
-                <a href="#"
-                      style="padding-top: 10px; a: white"
-                      class="dropdown-toggle"
-                      data-toggle="dropdown">
-                      <i class="icon-reorder icon-large"></i>
-                </a>
-                <ul class="dropdown-menu">
-                      <li><a href="/orders/drinks"><i class="icon-glass"></i> Another Drink Order</a></li>
-                      <li><a href="/location/change"><i class="icon-map-marker"></i> Change Location</a></li>
-                      <li><a href="/user/<%= phone %>"><i class="icon-list-ul"></i> <%= firstname %>'s Orders</a></li>
-                      <li><a href="/checkout"><i class="icon-signout"></i> Close your tab</a></li>
-                </ul>
-              </li>
-            </ul>
-
-
         </div>
       </div>
     </div>
@@ -49,7 +31,7 @@
     <div class="span12">
       <div id="desktop-spacing" class="visible-desktop" style="padding-top:60px">
       </div>
-		    <%if @error then %>
+      <%if @error then %>
 			   <div class="alert alert-error"><%= @error %></div>
 		    <% end %>
     	<%= yield %>

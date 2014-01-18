@@ -89,7 +89,7 @@ post '/charge' do
   # Print the order
   if @customer_order
     printer_erb = ERB.new(File.read(File.join(File.dirname(__FILE__), "views", "printer", "order.erb")))
-    printer = Mprinter.new("529f7338449aa8a96b00001a")
+    printer = Mprinter.new("52dae6f55740830000000024")
     printer_html = printer_erb.result(binding)
     puts printer_html.inspect
     puts printer.print(printer_html).body

@@ -45,6 +45,7 @@ put '/admin/venue/edit' do
   @venue.name = params[:name]
   @venue.handle = params[:handle]
   @venue.phone = params[:phone]
+  @venue.printer_id = params[:printer_id]
   @venue.address = params[:address]
   @venue.city = params[:city]
   @venue.state = params[:state].upcase
