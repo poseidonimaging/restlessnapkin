@@ -93,7 +93,7 @@ get '/mprinter/confirm_device' do
   client = OAuth2::Client.new(MPRINTER_OAUTH_CLIENT, MPRINTER_OAUTH_SECRET, :site => MPRINTER_OAUTH_URL, :token_url => MPRINTER_OAUTH_URL + '/token')
   client.connection.response :logger
   token = client.client_credentials.get_token({ :client_id => MPRINTER_OAUTH_CLIENT, :client_secret => MPRINTER_OAUTH_SECRET })
-  response = token.post('/api/v1/devices/confirm/52dae6f55740830000000024', :body => {:code => 'PPKTTJ'})
+  response = token.post('/api/v1/devices/confirm/52dae7ae5740830000000032', :body => {:code => 'PPKTTJ'})
   
   erb "#{response.body}"
   #puts token.get(MPRINTER_OAUTH_URL + "/devices").response.body.to_s
@@ -118,6 +118,6 @@ get '/mprinter/device/status' do
 end
 
 get '/mprinter/device/html' do
-  printer = Mprinter.new("52dae6f55740830000000024")
+  printer = Mprinter.new("52dae7ae5740830000000032")
   erb printer.print("<h1>TEST FROM NEW CODE</h1>").body
 end
