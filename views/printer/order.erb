@@ -1,4 +1,4 @@
-<h2><%= @venue.name %> - Order <%= @order.id %></h2>
+<h2>Order <%= @order.id %></h2>
 <h2><%= (Time.new - 21600).strftime("%m-%d %I:%M%P") %></h2>
 <h3 style="word-wrap: break-all;"><%= @customer_email %> (<%= @token[:card][:type] %> <%= @token[:card][:last4] %>)</h3>
 

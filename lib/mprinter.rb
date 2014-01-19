@@ -113,8 +113,6 @@ get '/mprinter/device/status' do
   response = token.get('/api/v1/devices')
   
   erb "#{response.body}"
-  #puts token.get(MPRINTER_OAUTH_URL + "/devices").response.body.to_s
-  #RestClient.post MPRINTER_OAUTH_URL + '/devices', :serial => 'KMHELM', token.headers
 end
 
 get '/mprinter/queue' do
@@ -130,8 +128,6 @@ get '/mprinter/queue' do
   response = token.get('/api/v1/devices/queue/52dae7ae5740830000000032')
   
   erb "#{response.body}"
-  #puts token.get(MPRINTER_OAUTH_URL + "/devices").response.body.to_s
-  #RestClient.post MPRINTER_OAUTH_URL + '/devices', :serial => 'KMHELM', token.headers
 end
 
 get '/mprinter/device/html' do

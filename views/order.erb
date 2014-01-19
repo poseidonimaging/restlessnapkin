@@ -5,12 +5,13 @@
   <%= @venue.address %> <%= @venue.phone %>
 </div>
 
+<div class="order-number">
+ <p><%= @order.id.to_s.rjust(2, "0")[-2..-1] %></p>
+</div>
+
 <div class="row-fluid" style="background: #baddd9; color: #555555">
   <div style="padding:10px;" class="span12">
-    <h4>$<%= (@charge[:amount] / 100) %> on <%= @charge[:card][:type] %> <%= @charge[:card][:last4] %></h4>
-    <h4><%= (@order.created_at - 21600).strftime("%m-%d %I:%M%P") %></h4>
-
-    <h5><%= @customer.email %></h5>
+    <h4>$<%= (@charge[:amount] / 100) %> on <%= @charge[:card][:type] %> <%= @charge[:card][:last4] %> at <%= (@order.created_at - 21600).strftime("%I:%M%P") %></h4>
 
     <ul style="font-size: 150%; list-style-type: none;">
       <% @items.each do |item| %>
@@ -22,17 +23,13 @@
 </div>
 
 <div class="alert alert-warning" style="margin-top: 10px">
-  In roughly 20 minutes, <b>politely</b> make your way to the front of the line with this information
-</div>
-
-<div class="order-number">
- <p><%= @order.id.to_s.rjust(2, "0")[-2..-1] %></p>
+  In roughly 20 minutes, <b>politely</b> make your way to the front of the line with your order number and email address you ordered with
 </div>
 
 <script>
   $(document).ready(function() {
     setTimeout(function() {
-      $('#content').load('/');}, 10000);
+      $('#content').load('/orders/<%= @order.id %>');}, 10000);
   });
 </script>
 
