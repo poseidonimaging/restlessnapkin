@@ -2,15 +2,12 @@
 
 <div class="alert alert-block">
   <h4><%= @venue.name %></h4>
-  <%= @venue.address %> <%= @venue.phone %>
-</div>
-
-<div class="order-number">
- <p><%= @order.id.to_s.rjust(2, "0")[-2..-1] %></p>
+  <%= @venue.address %>
 </div>
 
 <div class="row-fluid" style="background: #baddd9; color: #555555">
   <div style="padding:10px;" class="span12">
+    <h1>Order <%= @order.id %></h1>
     <h4>$<%= (@charge[:amount] / 100) %> on <%= @charge[:card][:type] %> <%= @charge[:card][:last4] %> at <%= (@order.created_at - 21600).strftime("%I:%M%P") %></h4>
 
     <ul style="font-size: 150%; list-style-type: none;">
