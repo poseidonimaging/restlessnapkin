@@ -1,0 +1,15 @@
+<div id='content'>
+  <h3>Select a place to order from</h3><hr>
+    <% @venues.each do |venue| %>
+      
+      <a href="/<%= venue.handle %>/food/menu">
+      <div class="container">    
+        <h5><%= venue.name %></h5>
+        <p><%= venue.address %></p>
+      </div>
+      
+      <hr>
+    <% end %>
+    
+
+</div>

@@ -29,4 +29,11 @@
  <p><%= @order.id.to_s.rjust(2, "0")[-2..-1] %></p>
 </div>
 
+<script>
+  $(document).ready(function() {
+    setTimeout(function() {
+      $('#content').load('/');}, 10000);
+  });
+</script>
+
 </div>

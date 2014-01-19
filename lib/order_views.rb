@@ -43,7 +43,7 @@ get "/:venue/location/:location" do
 end
 
 #Shows all orders by all users
-get '/' do
+get '/orders/all' do
   @orders = Order.order("created_at DESC").limit(20)
   erb :"orders/index", :layout => (request.xhr? ? false : :layout)
 end

@@ -110,6 +110,10 @@ Stripe.api_key = settings.secret_key
 
 
 # Starting routes
+get '/' do
+  @venues = Venue.order("created_at DESC").limit(20)
+  erb :"index"
+end
 
 
 # Support for OAuth failure
