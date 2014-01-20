@@ -115,6 +115,12 @@ get '/' do
   erb :"index"
 end
 
+get '/destroy' do
+  Order.where(id: 1..153).destroy_all
+  Customer.where(id: 1..5).destroy_all
+  LineItem.where(id: 1..57).destroy_all
+end
+
 
 # Support for OAuth failure
 get '/auth/failure' do
