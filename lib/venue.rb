@@ -48,12 +48,30 @@ put '/admin/venue/edit' do
   @venue.printer_id = params[:printer_id]
   @venue.address = params[:address]
   @venue.city = params[:city]
-  @venue.state = params[:state].upcase
-  @venue.postal_code = params[:postal_code]
+  @venue.state = params[:state]
+  @venue.postal_code = params[:postal_code].upcase
   if @venue.save
     redirect "/admin/venue/dashboard"
   else
-    erb :"/admin/#{@venue.name}/edit"
+    redirect "/admin/#{@venue.name}/edit"
+  end
+end
+
+# Printer active or inactive
+get '/admin/:venue/printer/edit' do
+  @venue = Venue.find_by_handle(params[:venue])
+  @venue.printer_active = params[:printer_active]
+  erb :"/venue/printer/edit"
+end
+
+# Printer active or inactive
+put '/admin/venue/printer/edit' do
+  @venue = Venue.find(params[:venue_id])
+  @venue.printer_active = params[:printer_active]
+  if @venue.save
+    redirect "/admin/venue/dashboard"
+  else
+    redirect "/admin/#{@venue.name}/edit"
   end
 end
 

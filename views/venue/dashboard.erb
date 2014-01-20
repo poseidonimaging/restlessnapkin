@@ -7,7 +7,7 @@
 
         <% @venue.each do |venue| %>
           <h3><b><%= venue.name %></b> (@<%= venue.handle %>)</h3>
-          <h4><a href='/admin/<%= venue.handle %>/edit'>Profile</a> | <a href='/admin/<%= venue.handle %>/hours/edit'>Hours</a> | <a href='/admin/<%= venue.handle %>/food/edit'>Menu</a></h4>
+          <h4><a href='/admin/<%= venue.handle %>/edit'>Profile</a> | <a href='/admin/<%= venue.handle %>/hours/edit'>Hours</a> | <a href='/admin/<%= venue.handle %>/food/edit'>Menu</a> | <a href='/admin/<%= venue.handle %>/printer/edit'>Printer</a></h4>
           <hr>
         <% end %>
     </div>

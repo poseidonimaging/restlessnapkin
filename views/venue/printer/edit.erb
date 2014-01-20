@@ -1,0 +1,23 @@
+<div id='content'>
+
+  <h2><%= @venue.name %> Printer</h2>
+  <hr>
+
+    <form action='/admin/venue/printer/edit' method='post' class='form-horizontal'>
+      <input type="hidden" name="_method" value="put" />
+      <input type='hidden' name='venue_id' value='<%= @venue.id %>'>
+      
+      <div class='control-group'> 
+        <label class='control-label' for='printer_active'>Printer Active</label>
+        <div class='controls'>
+          <select type='text' id='printer_active' name='printer_active'>
+            <option>true</option>
+            <option>false</option>
+          </select>
+        </div>
+      </div>
+
+    <p><input class='btn btn-large btn-info' type='submit' value='Update'></p>
+  </form>
+    
+</div>
