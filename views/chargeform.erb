@@ -1,63 +1,74 @@
 <div id='content'>
 
-  <div class="menu-container">
-    <h2><%= @venue.name %></h2>
-    <p><%=@venue.address %></p>
+  <div class="row" class="visible-desktop">
+    <div class="span7" class="visible-desktop">
 
-      <div data-bind="foreach: items" /> 
-        <div class="add-item" data-bind="click: $parent.addToCart">
-          <div class="item"> 
-            <div data-bind="attr: { class: item_id }">
-              <div class="item-name-price">
-                <h3>
-                  <span data-bind="text: item_name"></span> $<span data-bind="text: item_price"></span>
-                </h3>
-              </div>
-              <div class="item-description">
-                <p data-bind="text: item_description"></p>
+      <div class="menu-container">
+        <h2><%= @venue.name %></h2>
+        <p><%=@venue.address %></p>
+
+          <div data-bind="foreach: items" /> 
+            <div class="add-item" data-bind="click: $parent.addToCart">
+              <div class="item"> 
+                <div data-bind="attr: { class: item_id }">
+                  <div class="item-name-price">
+                    <h3>
+                      <span data-bind="text: item_name"></span> $<span data-bind="text: item_price"></span>
+                    </h3>
+                  </div>
+                  <div class="item-description">
+                    <p data-bind="text: item_description"></p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
+      </div>
+
+    </div>
+
+
+    <div class="span5" class="visible-desktop">
+
+      <div class="hidden-desktop">
+        <div data-bind="visible: total() > 0">
+          <h4>
+            <a href="#" data-bind="css: 'scrolldown'"><span data-bind="text: total_quantity, css: 'item_quantity'"></span> Checkout</a>
+          </h4>
         </div>
       </div>
-  </div>
 
- 
+      <div data-bind="css: { 'navbar navbar-inner checkout' : total() > 0 } ">
+        <div data-bind="visible: total() > 0">
+          <h3>Checkout</h3>
+        </div>
+        <div data-bind="foreach: cart">
+          <div class="cart_item">
+            <h4>
+              <span data-bind="text:$data.quantity, css: 'item_quantity' "></span>
+              <span data-bind="text:$data.product().item_name, css: 'item_name' "></span>
+              <span data-bind="css:, 'item_price'"> $<span data-bind="text:$data.product().item_price"></span></span>
+            </h4>
+          </div>
+        </div>
+        <form action="/charge" method="post" class="payment" data-bind="visible: total() > 0">
+          <input name="venue" type="hidden" value="<%= @venue.id %>" />
+          <input name="order" type="hidden" data-bind="value: order()" />
+          <input name="amount" type="hidden" data-bind="value: total()" />
 
-  <div data-bind="visible: total() > 0">
-    <h4>
-      <a href="#" data-bind="css: 'scrolldown'"><span data-bind="text: total_quantity, css: 'item_quantity'"></span> Checkout</a>
-    </h4>
-  </div>
-
-  <div data-bind="css: { 'navbar navbar-inner checkout' : total() > 0 } ">
-    <div data-bind="visible: total() > 0">
-      <h3>Checkout</h3>
-    </div>
-    <div data-bind="foreach: cart">
-      <div class="cart_item">
-        <h4>
-          <span data-bind="text:$data.quantity, css: 'item_quantity' "></span>
-          <span data-bind="text:$data.product().item_name, css: 'item_name' "></span>
-          <span data-bind="css:, 'item_price'"> - $<span data-bind="text:$data.product().item_price"></span></span>
-        </h4>
+          <article>
+            <h4 data-bind="visible: total() > 0">
+              + Tax
+            </h4>
+          </article>
+          <a href="#" class="clear_cart" data-bind="click: clearCart">Clear Checkout</a>
+          <script src="https://checkout.stripe.com/checkout.js"></script>
+          <span id="customButton" class="btn btn-info" data-bind="script: 'stripe'">Pay $<span data-bind="text: total()"></span>
+        </form>
       </div>
     </div>
-    <form action="/charge" method="post" class="payment" data-bind="visible: total() > 0">
-      <input name="venue" type="hidden" value="<%= @venue.id %>" />
-      <input name="order" type="hidden" data-bind="value: order()" />
-      <input name="amount" type="hidden" data-bind="value: total()" />
-
-      <article>
-        <h4 style="text-align:center" data-bind="visible: total() > 0">
-          + Sales Tax
-        </h4>
-      </article>
-      <a href="#" class="clear_cart" data-bind="click: clearCart">Clear Checkout</a>
-      <script src="https://checkout.stripe.com/checkout.js"></script>
-      <span id="customButton" class="btn btn-info" data-bind="script: 'stripe'">Pay $<span data-bind="text: total()"></span>
-    </form>
   </div>
+
 </div>
 
 
