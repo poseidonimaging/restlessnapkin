@@ -37,7 +37,8 @@ get '/:venue/food/menu' do
     open = true if Time.now.hour >= today_opt.start_hour && Time.now.hour <= today_opt.end_hour 
   end
 
-  if open and venue.printer_active
+# if open and venue.printer_active
+  if venue.printer_active
     @venue = Venue.find_by_handle(params[:venue])
     @item = MenuItem.where(:venue_id => @venue.id)
     erb :"chargeform"
