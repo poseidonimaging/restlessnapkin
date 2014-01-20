@@ -35,6 +35,7 @@ end
 # Edit venue hours of operation
 get '/admin/:venue/hours/edit' do
   @venue = Venue.find_by_handle(params[:venue])
+  @hours = OperatingTime.find_by_venue_id(@venue.id)
   @day_of_week = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday']
   erb :"/venue/hours/edit"
 end
@@ -49,7 +50,7 @@ put '/admin/venue/edit' do
   @venue.address = params[:address]
   @venue.city = params[:city]
   @venue.state = params[:state]
-  @venue.postal_code = params[:postal_code].upcase
+  @venue.postal_code = params[:postal_code].upcase 
   if @venue.save
     redirect "/admin/venue/dashboard"
   else

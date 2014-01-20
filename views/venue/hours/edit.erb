@@ -3,7 +3,16 @@
   <h2>Operating Hours for <%= @venue.name %> (@<%= @venue.handle %>)</h2>
   <hr>
 
-    <h4>Hours</h4>
+    <h4>Existing Hours</h4>
+    <ul>
+      <% @hours.each do |time| 
+        unless @hours == null %>
+          <li><h4><%= time.day_of_week %> <%= time.start_hour %> to <%= time.end_hour %></h4></li>
+        <% end 
+      end%>
+    </ul>  
+
+    <h4>Set Hours</h4>
     <form action='/admin/venue/hours/edit' method='post' class='form-horizontal'>
       <input type='hidden' name='venue_id' value='<%= @venue.id %>'>
       <div class='control-group'>
