@@ -61,9 +61,12 @@
               + Tax
             </h4>
           </article>
-          <a href="#" class="clear_cart" data-bind="click: clearCart">Clear Checkout</a>
-          <script src="https://checkout.stripe.com/checkout.js"></script>
-          <span id="customButton" class="btn btn-info" data-bind="script: 'stripe'">Pay $<span data-bind="text: total()"></span>
+
+          <div align="center" style="clear:both;"> 
+            <a href="#" class="clear_cart" data-bind="click: clearCart">Clear Checkout</a>
+            <script src="https://checkout.stripe.com/checkout.js"></script>
+            <span id="customButton" class="btn btn-info" data-bind="script: 'stripe'">Pay $<span data-bind="text: total()"></span>
+          </div>
         </form>
       </div>
     </div>
@@ -277,6 +280,7 @@
   color: #F00;
   border: 1px #F00 solid;
   padding: 5px;
+  margin-top: 10px;
 }
 
 .payment article h3{
