@@ -1,15 +1,12 @@
 <div id='content'>
-  <h3>Select a place to order from</h3><hr>
-    <% @venues.each do |venue| %>
-      
-      <a href="/<%= venue.handle %>/food/menu">
-      <div class="container">    
-        <h5><%= venue.name %></h5>
-        <p><%= venue.address %></p>
-      </div>
-      
-      <hr>
-    <% end %>
+  <h3>Select a venue</h3><hr>
     
-
+      
+      <a href="/dockandroll/food/menu">
+      <div class="container">    
+        <h5>Dock and Roll - Midway</h5>
+        <p>1905 S. Capital of Texas Hwy</p>
+      </div>
+    
+    
 </div>
