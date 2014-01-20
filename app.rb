@@ -100,8 +100,8 @@ helpers do
   #end
 end
 
-ENV['PUBLISHABLE_KEY'] = 'pk_test_bxk512tPGSEZPnVoODbM2DMp'
-ENV['SECRET_KEY'] = 'sk_test_RIfykqVEJDdsKa5AvbCnUAtf'
+ENV['SECRET_KEY'] = 'sk_live_vS8zCWvoE6vrqt0GV0heKPFK'
+ENV['PUBLISHABLE_KEY'] = 'pk_live_4zkBWuo6HLSqUGNPSUhD29ex'
 
 set :publishable_key, ENV['PUBLISHABLE_KEY']
 set :secret_key, ENV['SECRET_KEY']
@@ -115,12 +115,12 @@ get '/' do
   erb :"index"
 end
 
-get '/destroy' do
-  Order.where(id: 1..500).destroy_all
-  Customer.where(id: 1..500).destroy_all
-  OperatingHour.where(id: 1..500).destroy_all
-  LineItem.where(id: 1..500).destroy_all
-end
+#get '/destroy' do
+#  Order.where(id: 1..500).destroy_all
+#  Customer.where(id: 1..500).destroy_all
+#  OperatingHour.where(id: 1..500).destroy_all
+#  LineItem.where(id: 1..500).destroy_all
+#end
 
 
 # Support for OAuth failure

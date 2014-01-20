@@ -42,6 +42,6 @@ get '/:venue/food/menu' do
     @item = MenuItem.where(:venue_id => @venue.id)
     erb :"chargeform"
   else
-    erb "<div class='alert alert-message'>#{venue.name} is not currently accepting online orders</div>"
+    erb "<div class='alert alert-message'>#{venue.name} is not currently accepting online orders. Please reach out to us on twitter @dockandroll</div>"
   end
 end

@@ -130,7 +130,7 @@ get '/mprinter/queue' do
   erb "#{response.body}"
 end
 
-get '/mprinter/device/html' do
+get '/mprinter/device/test' do
   printer = Mprinter.new("52dae7ae5740830000000032")
-  erb printer.print("<h1>TEST FROM NEW CODE</h1>").body
+  erb printer.print("<h1>PRINTER IS LIVE</h1>").body
 end
