@@ -24,6 +24,9 @@ class LiquorsVenue < ActiveRecord::Base
 end
 
 class Order < ActiveRecord::Base
+  belongs_to :venue
+  belongs_to :customer
+
   has_many :line_items
 
   validates :venue_id, presence: true
@@ -49,18 +52,23 @@ class Venue < ActiveRecord::Base
   has_many :liquors, :through => :liquors_venues
   has_many :menu_items, :inverse_of => :venue
   has_many :operating_times, :inverse_of => :venue
+  has_many :orders
 
   validates :name, :presence => true
   validates :handle, :presence => true, :uniqueness => true
 end
 
 class MenuItem < ActiveRecord::Base
+  belongs_to :venue
+
   validates :name, :presence => true
   validates :price, :presence => true
   validates :venue_id, :presence => true
 end
 
 class OperatingTime < ActiveRecord::Base
+  belongs_to :venue
+
   validates :venue_id, :presence => true
   validates :day_of_week, :presence => true
   validates :start_hour, :presence => true

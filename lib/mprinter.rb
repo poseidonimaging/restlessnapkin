@@ -125,7 +125,22 @@ get '/mprinter/queue' do
   client = OAuth2::Client.new(MPRINTER_OAUTH_CLIENT, MPRINTER_OAUTH_SECRET, :site => MPRINTER_OAUTH_URL, :token_url => MPRINTER_OAUTH_URL + '/token')
   client.connection.response :logger
   token = client.client_credentials.get_token({ :client_id => MPRINTER_OAUTH_CLIENT, :client_secret => MPRINTER_OAUTH_SECRET })
-  response = token.get('/api/v1/devices/queue/52dae7ae5740830000000032')
+  response = token.get("/api/v1/queue")
+  
+  erb "#{response.body}"
+end
+
+get '/mprinter/callbacks' do
+  RestClient.log = logger
+
+  MPRINTER_OAUTH_CLIENT = 'Ehfv3Qk44jJiB8bifM3A'
+  MPRINTER_OAUTH_SECRET = 'g91EciYab2LdB83eKaRm'
+  MPRINTER_OAUTH_URL    = 'http://manage.themprinter.com/api/v1'
+  
+  client = OAuth2::Client.new(MPRINTER_OAUTH_CLIENT, MPRINTER_OAUTH_SECRET, :site => MPRINTER_OAUTH_URL, :token_url => MPRINTER_OAUTH_URL + '/token')
+  client.connection.response :logger
+  token = client.client_credentials.get_token({ :client_id => MPRINTER_OAUTH_CLIENT, :client_secret => MPRINTER_OAUTH_SECRET })
+  response = token.get('/api/v1/callbacks')
   
   erb "#{response.body}"
 end

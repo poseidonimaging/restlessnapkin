@@ -52,9 +52,9 @@
           </div>
         </div>
         <form action="/charge" method="post" class="payment" data-bind="visible: total() > 0">
-          <input name="venue" type="hidden" value="<%= @venue.id %>" />
-          <input name="order" type="hidden" data-bind="value: order()" />
-          <input name="amount" type="hidden" data-bind="value: total()" />
+          <input name="venue" type="text" value="<%= @venue.id %>" />
+          <input name="order" type="text" data-bind="value: order()" />
+          <input name="amount" type="text" data-bind="value: total()" />
 
           <article>
             <h4 data-bind="visible: total() > 0">
@@ -65,7 +65,7 @@
           <div align="center" style="clear:both;"> 
             <a href="#" class="clear_cart" data-bind="click: clearCart">Clear Checkout</a>
             <script src="https://checkout.stripe.com/checkout.js"></script>
-            <span id="customButton" class="btn btn-info" data-bind="script: 'stripe'">Pay $<span data-bind="text: total()"></span>
+            <span id="customButton" class="btn btn-info" data-bind="script: 'stripe'">Pay $<span data-bind="text: (total() / 100)"></span>
           </div>
         </form>
       </div>
@@ -82,7 +82,7 @@
           data_key = '<%= (settings.publishable_key) %>';
           data_name = 'restlessnapkin';
           data_description = '<%= (@venue.name) %>';
-          data_amount = viewModel.total() * 100;
+          data_amount = viewModel.total();
           data_image = 'http://restlessnapkin.wpengine.com/wp-content/uploads/2013/06/restless_napkin_posterous.png';
 
           var handler = StripeCheckout.configure({
@@ -111,7 +111,7 @@
           data_key = '<%= (settings.publishable_key) %>';
           data_name = 'restlessnapkin';
           data_description = '<%= (@venue.name) %>';
-          data_amount = viewModel.total() * 100;
+          data_amount = viewModel.total();
           data_image = 'http://restlessnapkin.wpengine.com/wp-content/uploads/2013/06/restless_napkin_posterous.png';
 
           var scriptName = ko.utils.unwrapObservable(valueAccessor());
@@ -211,7 +211,7 @@
 
     self.total = ko.computed(function(){
       var with_tax_total = (self.subtotal() * 1.0825);
-      return (Math.round((with_tax_total + 0.00001) * 100) / 100);
+      return Math.round((with_tax_total + 0.00001) * 100);
     });
 
     self.addToCart = function(item, event) {

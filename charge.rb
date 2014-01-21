@@ -1,6 +1,6 @@
 post '/charge' do
   # Amount in cents
-  @amount = (params[:amount].to_i) * 100
+  @amount = params[:amount].to_i
   @customer_amount = @amount / 100
 
   # The order

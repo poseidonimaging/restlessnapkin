@@ -1,6 +1,9 @@
 # Showing all orders via main menu
-get '/orders/index' do
+get '/orders' do
   @orders = Order.order("created_at DESC")
+  @items = LineItem.where(:order_id => @orders.id)
+  @venue = Venue.where(:venue_id => @orders.venue_id)
+  @customer = Customer.where(:customer_id => @orders.customer_id)
   erb :"orders/index", :layout => (request.xhr? ? false : :layout)
 end
 
@@ -23,8 +26,10 @@ end
 
 # Get orders by venue
 get "/:venue/orders" do
-  @venue = params[:venue]
-  @orders = Order.where(:venue => params[:venue]).order("created_at DESC").limit(30)
+  @venue = Venue.find_by_handle(params[:venue])
+  @orders = Order.joins(:venue).where(:venues => {:handle => @venue.handle})
+  @items = Order.joins("LEFT OUTER JOIN line_items ON orders.id = line_items.order_id").where(:orders => {:id => @orders.id})
+  @customer = Customer.joins(:order).where(:orders => {:customer_id => @orders.customer_id})
   erb :"venue/show", :layout => (request.xhr? ? false : :layout)
 end
 

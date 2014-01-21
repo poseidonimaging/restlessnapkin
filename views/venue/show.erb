@@ -1,8 +1,13 @@
 <div id='content'>
-<h1>All Venues</h1> <br />
+<h1><%= @venue.name %></h1> <br />
 
-  <% @venue.each do |venue| %>
-    <h4><b><%= venue.name %></b> - @<%= venue.handle %></h4>
-    <hr>
-  <% end %>
+  <h3>Orders</h3><hr>
+    <% @orders.each do |order| %>
+      <h3>Order <%= order.id %></h3>
+      <h4><%= @customer.email %></h4>
+      <% @items.each do |item| %>
+        <h5><%= item.quantity %> x <%= item.item %></h5>
+      <% end %>
+      <hr>
+    <% end %>
 </div>
