@@ -118,7 +118,7 @@ end
 get '/destroy' do
 #  Order.where(id: 1..500).destroy_all
 #  Customer.where(id: 1..500).destroy_all
-   OperatingTime.where(id: 7..14).destroy_all
+   OperatingTime.where(id: 8..14).destroy_all
 #  LineItem.where(id: 1..500).destroy_all
 end
 
