@@ -34,6 +34,8 @@ end
 
 class LineItem < ActiveRecord::Base
   belongs_to :order
+  belongs_to :venue
+  belongs_to :customer
 
   validates :order_id, :presence => true
   validates :quantity, :presence => true
@@ -41,7 +43,7 @@ class LineItem < ActiveRecord::Base
 end
 
 class Customer < ActiveRecord::Base
-  has_many :orders, :inverse_of => :order
+  has_many :orders, :through => :line_items
 
   validates :email, :presence => true
   validates :stripe_id, :presence => true
@@ -52,7 +54,8 @@ class Venue < ActiveRecord::Base
   has_many :liquors, :through => :liquors_venues
   has_many :menu_items, :inverse_of => :venue
   has_many :operating_times, :inverse_of => :venue
-  has_many :orders
+  has_many :customers, :through => :orders
+  has_many :orders, :through => :line_items
 
   validates :name, :presence => true
   validates :handle, :presence => true, :uniqueness => true

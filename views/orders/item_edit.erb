@@ -1,0 +1,26 @@
+<div id='content'>
+  <div id='content'>
+  <form action='/admin/orders/item/<%= @item.id %>' method='post' class='form-horizontal'>
+      <input type="hidden" name="_method" value="put" />
+      
+      <span class="input-xlarge uneditable-input"><%= @item.id %></span>
+      <span class="input-xlarge uneditable-input"><%= @item.order_id %></span>
+
+      <div class='control-group'> 
+        <label class='control-label' for='venue'>Venue ID</label>
+        <div class='controls'>
+          <input type='text' id='venue' name='venue' placeholder="1">
+        </div>
+      </div>
+
+      <div class='control-group'> 
+        <label class='control-label' for='customer'>Customer ID</label>
+        <div class='controls'>
+          <input type='text' id='customer' name='customer' placeholder="1">
+        </div>
+      </div>
+
+      <p><input class='btn btn-large btn-info' type='submit' value='Update'></p>
+  </form>
+</div>
+</div>

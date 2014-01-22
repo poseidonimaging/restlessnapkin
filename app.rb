@@ -115,6 +115,10 @@ get '/' do
   erb :"index"
 end
 
+def index
+  @line_items = LineItem.all
+end
+
 #get '/destroy' do
 #  Order.where(id: 1..500).destroy_all
 #  Customer.where(id: 1..500).destroy_all
