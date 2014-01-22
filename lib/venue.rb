@@ -32,14 +32,6 @@ get '/admin/:venue/edit' do
   erb :"/venue/edit"
 end
 
-# Edit venue hours of operation
-get '/admin/:venue/hours/edit' do
-  @venue = Venue.find_by_handle(params[:venue])
-  @hours = OperatingTime.find_by_venue_id(@venue.id)
-  @day_of_week = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday']
-  erb :"/venue/hours/edit"
-end
-
 # Update venue information
 put '/admin/venue/edit' do
   @venue = Venue.find(params[:venue_id])
@@ -74,6 +66,14 @@ put '/admin/venue/printer/edit' do
   else
     redirect "/admin/#{@venue.name}/edit"
   end
+end
+
+# Edit venue hours of operation
+get '/admin/:venue/hours/edit' do
+  @venue = Venue.find_by_handle(params[:venue])
+  @time = OperatingTime.where(:venue_id => @venue.id)
+  @day_of_week = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday']
+  erb :"/venue/hours/edit"
 end
 
 # Update venue hours to db
