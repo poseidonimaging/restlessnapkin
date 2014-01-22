@@ -81,7 +81,7 @@ put '/admin/venue/hours/edit' do
   @venue = Venue.find(params[:venue_id])
   
   # Parse day of week data and write to db
-  (0..6).each do |day|
+  params[:id].each do |day|
     # Convert to military time if 'pm'
     end_meridian = params["#{day}_end_meridian"]
     end_hour = params["#{day}_end_hour"].to_i
@@ -109,7 +109,7 @@ end
 
 # This is the one that works 1/8/14
 # Create venue hours to db
- post '/admin/venue/hours/edit' do
+ post '/admin/venue/hours/add' do
   @venue = Venue.find(params[:venue_id])
   
   # Parse day of week data and write to db
