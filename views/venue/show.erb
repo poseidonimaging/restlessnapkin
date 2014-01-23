@@ -1,12 +1,13 @@
 <div id='content'>
 <h1><%= @venue.name %></h1> <br />
 
-  <h3>Orders</h3><hr>
-    <% @orders.each do |order| %>
-      <h3>Order <%= order.id %></h3>
-      <% @items.each do |item| %>
-        <h5><%= item.quantity %> x <%= item.item %></h5>
-      <% end %>
-      <hr>
+  <% @venue.orders.each do |order| %>
+    <h3>Order <%= order.id %></h3>
+    <h4><%= order.customer.email %></h4>
+    
+    <% order.line_items.each do |item| %>
+      <h5><%= item.quantity %> x <%= item.item %></h5>
     <% end %>
+  <% end %>
+
 </div>

@@ -44,11 +44,7 @@ end
 
 # Get orders by venue
 get "/:venue/orders" do
-  @venue = Venue.find_by_handle(params[:venue])
-  @orders = Order.where(:venue_id => @venue.id)
-  @items = LineItem.include(:order, :customer, :venue)
-  #@orders = Order.joins(:venue).where(:venues => {:handle => @venue.handle}).joins(:lineitem).where(:line_items => {:order_id => @orders.id})
-  #@customer = Customer.joins(:order).where(:orders => {:customer_id => @orders.customer_id})
+  @venue = Venue.includes({:orders => [:line_items, :customer]}).find_by_handle(params[:venue])
   erb :"venue/show", :layout => (request.xhr? ? false : :layout)
 end
 
