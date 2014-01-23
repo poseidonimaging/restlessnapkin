@@ -2,12 +2,16 @@
 <h1><%= @venue.name %></h1> <br />
 
   <% @venue.orders.each do |order| %>
-    <h3>Order <%= order.id %></h3>
+    <h3><a href="/orders/<%= order.id %>">Order <%= order.id %></a></h3>
     <h4><%= order.customer.email %></h4>
     
+    <ul>
     <% order.line_items.each do |item| %>
-      <h5><%= item.quantity %> x <%= item.item %></h5>
+      <li><h5><%= item.quantity %> x <%= item.item %></h5></li>
     <% end %>
+    </ul>
+    <hr>
+
   <% end %>
 
 </div>

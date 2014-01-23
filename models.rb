@@ -42,7 +42,6 @@ end
 
 class Customer < ActiveRecord::Base
   has_many :orders
-  #has_many :venues, :through => :orders
 
   validates :email, :presence => true
   validates :stripe_id, :presence => true
