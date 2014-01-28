@@ -61,7 +61,7 @@ get '/mprinter/devices/dockandroll' do
 
   client = OAuth2::Client.new(MPRINTER_OAUTH_CLIENT, MPRINTER_OAUTH_SECRET, :site => MPRINTER_OAUTH_URL, :token_url => MPRINTER_OAUTH_URL + '/token')
   token = client.client_credentials.get_token({ :client_id => MPRINTER_OAUTH_CLIENT, :client_secret => MPRINTER_OAUTH_SECRET })
-  response = token.get('/api/v1/devices/529f7338449aa8a96b00001a', :body => {:status => 'online'})
+  response = token.get('/api/v1/devices/52dae7ae5740830000000032')
 
   erb "#{response.body}"
 end
