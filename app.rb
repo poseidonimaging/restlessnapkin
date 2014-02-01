@@ -100,8 +100,8 @@ helpers do
   #end
 end
 
-ENV['SECRET_KEY'] = 'sk_live_vS8zCWvoE6vrqt0GV0heKPFK'
-ENV['PUBLISHABLE_KEY'] = 'pk_live_4zkBWuo6HLSqUGNPSUhD29ex'
+ENV['SECRET_KEY'] = 'sk_test_RIfykqVEJDdsKa5AvbCnUAtf'
+ENV['PUBLISHABLE_KEY'] = 'pk_test_bxk512tPGSEZPnVoODbM2DMp'
 
 set :publishable_key, ENV['PUBLISHABLE_KEY']
 set :secret_key, ENV['SECRET_KEY']
