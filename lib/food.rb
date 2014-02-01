@@ -32,6 +32,11 @@ get '/:venue/food/menu' do
   venue = Venue.find_by_handle(params[:venue])
   today_hours = OperatingTime.where(:venue_id => venue.id, :day_of_week => Time.now.wday)
 
+  # putting this code up here temporarily
+  @venue = Venue.find_by_handle(params[:venue])
+  @item = MenuItem.where(:venue_id => @venue.id)
+  erb :"chargeform"
+
 # if venue is open
 #  open = false
 #  today_hours.each do |today_opt|
@@ -39,11 +44,11 @@ get '/:venue/food/menu' do
 #  end
 
 # if venue.printer_active
-  if venue.printer_active
-    @venue = Venue.find_by_handle(params[:venue])
-    @item = MenuItem.where(:venue_id => @venue.id)
-    erb :"chargeform"
-  else
-    erb "<div class='alert alert-message'>#{venue.name} is not currently accepting online orders. Please reach out to us on twitter @dockandroll</div>"
-  end
+#  if venue.printer_active
+#    @venue = Venue.find_by_handle(params[:venue])
+#    @item = MenuItem.where(:venue_id => @venue.id)
+#    erb :"chargeform"
+#  else
+#    erb "<div class='alert alert-message'>#{venue.name} is not currently accepting online orders. Please reach out to us on twitter @dockandroll</div>"
+#  end
 end
