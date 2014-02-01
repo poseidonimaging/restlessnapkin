@@ -103,8 +103,8 @@ end
 ENV['SECRET_KEY'] = 'sk_test_RIfykqVEJDdsKa5AvbCnUAtf'
 ENV['PUBLISHABLE_KEY'] = 'pk_test_bxk512tPGSEZPnVoODbM2DMp'
 
-set :publishable_key, ENV['PUBLISHABLE_KEY']
 set :secret_key, ENV['SECRET_KEY']
+set :publishable_key, ENV['PUBLISHABLE_KEY']
 
 Stripe.api_key = settings.secret_key
 
