@@ -91,6 +91,10 @@ post '/charge' do
     printer_erb = ERB.new(File.read(File.join(File.dirname(__FILE__), "views", "printer", "order.erb")))
     printer = Mprinter.new(@venue.printer_id)
     printer_html = printer_erb.result(binding)
+
+    # Need to figure out how to return print id
+    @print_id = printer_html.inspect
+    
     puts printer_html.inspect
     puts printer.print(printer_html).body
   end
