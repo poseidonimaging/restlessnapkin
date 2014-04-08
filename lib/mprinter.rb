@@ -15,7 +15,7 @@ class Mprinter
   end
 
   def print(html)
-    return @printer.post("/api/v1/queue/add/html/#{@printer_id}", :body => { :data => html })
+    @print_response = @printer.post("/api/v1/queue/add/html/#{@printer_id}", :body => { :data => html })
   end
 end
 
@@ -141,7 +141,7 @@ get '/mprinter/queue/id' do
   client = OAuth2::Client.new(MPRINTER_OAUTH_CLIENT, MPRINTER_OAUTH_SECRET, :site => MPRINTER_OAUTH_URL, :token_url => MPRINTER_OAUTH_URL + '/token')
   client.connection.response :logger
   token = client.client_credentials.get_token({ :client_id => MPRINTER_OAUTH_CLIENT, :client_secret => MPRINTER_OAUTH_SECRET })
-  response = token.get("/api/v1/queue/531d01f02799929766000004")
+  response = token.get("/api/v1/queue/53339d5a0b5899000000000b")
   
   erb "#{response.body}"
 end

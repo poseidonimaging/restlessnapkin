@@ -92,11 +92,14 @@ post '/charge' do
     printer = Mprinter.new(@venue.printer_id)
     printer_html = printer_erb.result(binding)
 
-    # Need to figure out how to return print id
-    @print_id = printer_html.inspect
+    # 4/2/14 Take response print id and place it in database for retreival
+    #@order.item_1 = @response.id
     
     puts printer_html.inspect
-    puts printer.print(printer_html).body
+
+    session[:print_response] = printer.print(printer_html).body
+    puts session[:print_response]
+    
   end
 
   redirect "/orders/#{@order.id}"
