@@ -97,8 +97,9 @@ post '/charge' do
     
     puts printer_html.inspect
 
-    session[:print_response] = printer.print(printer_html).body
-    puts session[:print_response]
+    @print_response = printer.print(printer_html)
+    session[:print_id] = @print_response["id"]
+    puts @print_response
     
   end
 

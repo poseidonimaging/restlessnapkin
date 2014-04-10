@@ -15,7 +15,8 @@ class Mprinter
   end
 
   def print(html)
-    @print_response = @printer.post("/api/v1/queue/add/html/#{@printer_id}", :body => { :data => html })
+    @response = @printer.post("/api/v1/queue/add/html/#{@printer_id}", :body => { :data => html })
+    @response = JSON.parse(@response.body)
   end
 end
 
