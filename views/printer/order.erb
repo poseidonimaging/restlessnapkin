@@ -1,6 +1,6 @@
 <h2>Order <%= @order.id %></h2>
 <h2><%= (Time.new - 21600).strftime("%m-%d %I:%M%P") %></h2>
-<h3 style="word-wrap: break-all;"><%= @customer_email %> (<%= @token[:card][:type] %> <%= @token[:card][:last4] %>)</h3>
+<h3 style="word-wrap: break-all;"><%= @customer_email %> (<%= @token[:card][:type] %> <%= @token[:card][:last4] %>) <%= session[:print_id] %></h3>
 
 <ul style="font-size: 150%;">
   <% @customer_order.each do |item| 
