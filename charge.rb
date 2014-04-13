@@ -98,7 +98,16 @@ post '/charge' do
     puts printer_html.inspect
 
     @print_response = printer.print(printer_html)
-    session[:print_id] = @print_response["id"]
+    
+    @order.print_id = @print_response["id"]
+    if @order.save
+      status 200 # OK
+      { "success" => true }.to_json
+    else
+    status 422 # Unprocessable Entity
+    { "success" => false }.to_json
+    end
+
     puts @print_response
     
   end
