@@ -98,14 +98,17 @@ post '/charge' do
     puts printer_html.inspect
 
     @print_response = printer.print(printer_html)
-    
+
     @order.print_id = @print_response["id"]
+
     if @order.save
+      @print_callback = printer.print_callback(@order.print_id)
+
       status 200 # OK
       { "success" => true }.to_json
     else
-    status 422 # Unprocessable Entity
-    { "success" => false }.to_json
+      status 422 # Unprocessable Entity
+      { "success" => false }.to_json
     end
 
     puts @print_response

@@ -18,6 +18,10 @@ class Mprinter
     @response = @printer.post("/api/v1/queue/add/html/#{@printer_id}", :body => { :data => html })
     @response = JSON.parse(@response.body)
   end
+
+  def print_callback(id)
+    @response = @printer.post("/api/v1/callbacks", :body => {:type => 'queue_printed', :url => '/webhook/print/url'})
+  end
 end
 
 get '/mprinter' do
